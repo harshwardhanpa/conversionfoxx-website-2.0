@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-orange: #FF6B00;
+  --color-brand-dark: #0A0A0A;
+  --color-brand-glass: rgba(255, 255, 255, 0.03);
+  --color-brand-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-brand-glass border border-brand-glass-border;
+  }
+}
