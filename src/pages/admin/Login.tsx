@@ -9,7 +9,8 @@ const AdminLogin: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAdminAuth();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const { login, signUp } = useAdminAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -21,11 +22,21 @@ const AdminLogin: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const success = await login(password);
-      if (success) {
-        navigate(from, { replace: true });
+      if (isSignUp) {
+        const { success, error: signUpError } = await signUp(email, password);
+        if (success) {
+          setError('Account created! Please check your email for verification (if enabled) or try logging in.');
+          setIsSignUp(false);
+        } else {
+          setError(signUpError || 'Failed to create account.');
+        }
       } else {
-        setError('Invalid admin credentials. Please try again.');
+        const success = await login(email, password);
+        if (success) {
+          navigate(from, { replace: true });
+        } else {
+          setError('Invalid admin credentials. Please try again.');
+        }
       }
     } catch (err) {
       setError('An error occurred during authentication.');
@@ -37,15 +48,15 @@ const AdminLogin: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center p-6 relative overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-orange/10 rounded-2xl mb-6 border border-brand-orange/20">
-            <ShieldCheck className="w-8 h-8 text-brand-orange" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-2xl mb-6 border border-brand-primary/20">
+            <ShieldCheck className="w-8 h-8 text-brand-primary" />
           </div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Conversion<span className="text-brand-orange">Foxx</span></h1>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">Conversion<span className="text-brand-primary">Foxx</span></h1>
           <p className="text-white/40 uppercase tracking-widest text-xs font-bold">Private Admin Access Only</p>
         </div>
 
@@ -54,15 +65,14 @@ const AdminLogin: React.FC = () => {
             <div className="space-y-2">
               <label className="text-sm font-medium text-white/60 ml-1">Admin Email</label>
               <div className="relative group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-orange transition-colors" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-primary transition-colors" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-brand-orange/50 focus:ring-1 focus:ring-brand-orange/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                   placeholder="admin@conversionfoxx.com"
                   required
-                  readOnly
                 />
               </div>
             </div>
@@ -70,12 +80,12 @@ const AdminLogin: React.FC = () => {
             <div className="space-y-2">
               <label className="text-sm font-medium text-white/60 ml-1">Password</label>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-orange transition-colors" />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-primary transition-colors" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-12 text-white focus:outline-none focus:border-brand-orange/50 focus:ring-1 focus:ring-brand-orange/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-12 text-white focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                   placeholder="••••••••"
                   required
                 />
@@ -90,7 +100,7 @@ const AdminLogin: React.FC = () => {
             </div>
 
             {error && (
-              <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-sm py-3 px-4 rounded-xl text-center">
+              <div className="bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-sm py-3 px-4 rounded-xl text-center">
                 {error}
               </div>
             )}
@@ -98,21 +108,31 @@ const AdminLogin: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-brand-orange text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/20 disabled:opacity-50 disabled:cursor-not-allowed group"
+              className="w-full bg-brand-primary text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20 disabled:opacity-50 disabled:cursor-not-allowed group"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>
-                  Enter Admin Panel
+                  {isSignUp ? 'Create Admin Account' : 'Enter Admin Panel'}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </>
               )}
             </button>
 
+            <div className="text-center pt-2">
+              <button
+                type="button"
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-brand-primary text-sm font-bold hover:underline"
+              >
+                {isSignUp ? 'Already have an account? Log In' : 'First time? Create Admin Account'}
+              </button>
+            </div>
+
             <div className="flex items-center justify-between text-xs text-white/30 pt-4">
               <label className="flex items-center gap-2 cursor-pointer hover:text-white/60 transition-colors">
-                <input type="checkbox" className="rounded border-white/10 bg-white/5 text-brand-orange focus:ring-brand-orange" />
+                <input type="checkbox" className="rounded border-white/10 bg-white/5 text-brand-primary focus:ring-brand-primary" />
                 Remember Me
               </label>
               <span className="italic">Auth: admin123</span>

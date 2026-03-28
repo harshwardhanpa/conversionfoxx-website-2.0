@@ -10,7 +10,6 @@ import {
   Search, 
   Image, 
   Navigation, 
-  Menu, 
   Layout as LayoutIcon, 
   Phone, 
   User, 
@@ -18,7 +17,8 @@ import {
   ChevronRight, 
   X,
   Bell,
-  ExternalLink
+  ExternalLink,
+  Menu
 } from 'lucide-react';
 import { useAdminAuth } from '../../../context/AdminAuthContext';
 
@@ -36,11 +36,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, active, onCl
     onClick={onClick}
     className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 group ${
       active 
-        ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' 
+        ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20' 
         : 'text-white/60 hover:text-white hover:bg-white/5'
     }`}
   >
-    <span className={`${active ? 'text-white' : 'text-brand-orange group-hover:scale-110 transition-transform'}`}>
+    <span className={`${active ? 'text-white' : 'text-brand-primary group-hover:scale-110 transition-transform'}`}>
       {icon}
     </span>
     <span className="font-medium">{label}</span>
@@ -50,7 +50,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, active, onCl
 
 const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { logout } = useAdminAuth();
+  const { logout, user } = useAdminAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -69,15 +69,15 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { to: '/admin/profile', icon: <User size={20} />, label: 'Admin Profile' },
   ];
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     navigate('/admin/login');
   };
 
   const currentPageLabel = menuItems.find(item => item.to === location.pathname)?.label || 'Admin Panel';
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white flex overflow-hidden">
+    <div className="min-h-screen bg-[#0A0A0A] text-white flex overflow-hidden font-sans">
       {/* Sidebar Overlay */}
       {isSidebarOpen && (
         <div 
@@ -94,8 +94,8 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="h-full flex flex-col p-6">
           <div className="flex items-center justify-between mb-10">
             <Link to="/admin/dashboard" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center font-bold text-black">C</div>
-              <span className="text-xl font-bold tracking-tight">Conversion<span className="text-brand-orange">Foxx</span></span>
+              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold text-black">C</div>
+              <span className="text-xl font-bold tracking-tight">Conversion<span className="text-brand-primary">Foxx</span></span>
             </Link>
             <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-white/60 hover:text-white">
               <X size={24} />
@@ -117,7 +117,7 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="mt-auto pt-6 border-t border-white/5">
             <button 
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:text-white hover:bg-red-500/10 hover:text-red-500 transition-all duration-300"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all duration-300"
             >
               <LogOut size={20} />
               <span className="font-medium">Logout</span>
@@ -144,23 +144,23 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Link 
               to="/" 
               target="_blank"
-              className="hidden md:flex items-center gap-2 text-sm text-white/60 hover:text-brand-orange transition-colors"
+              className="hidden md:flex items-center gap-2 text-sm text-white/60 hover:text-brand-primary transition-colors"
             >
               <ExternalLink size={16} />
               View Site
             </Link>
             <button className="p-2 text-white/60 hover:text-white hover:bg-white/5 rounded-lg relative">
               <Bell size={20} />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-brand-orange rounded-full" />
+              <span className="absolute top-2 right-2 w-2 h-2 bg-brand-primary rounded-full" />
             </button>
             <div className="h-8 w-[1px] bg-white/10 hidden sm:block" />
             <div className="flex items-center gap-3">
               <div className="hidden sm:block text-right">
-                <p className="text-sm font-bold">Harsh Parmar</p>
+                <p className="text-sm font-bold">{user?.email?.split('@')[0] || 'Owner'}</p>
                 <p className="text-xs text-white/40 uppercase tracking-widest">Owner</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange/30 flex items-center justify-center text-brand-orange font-bold">
-                HP
+              <div className="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center text-brand-primary font-bold uppercase">
+                {user?.email?.[0] || 'O'}
               </div>
             </div>
           </div>

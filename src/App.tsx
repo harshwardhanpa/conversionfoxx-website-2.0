@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import WebDevelopment from './pages/services/WebDevelopment';
-import SocialMediaManagement from './pages/services/SocialMediaManagement';
-import AppDevelopment from './pages/services/AppDevelopment';
-import PaidAdvertising from './pages/services/PaidAdvertising';
-import CRMSolutions from './pages/services/CRMSolutions';
+import GrowthAudit from './pages/services/GrowthAudit';
+import LeadGeneration from './pages/services/LeadGeneration';
+import ConversionOptimization from './pages/services/ConversionOptimization';
+import RevenueOperationsSystem from './pages/services/RevenueOperationsSystem';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
 import BlogPost from './pages/BlogPost';
@@ -22,8 +21,11 @@ import AdminDashboard from './pages/admin/Dashboard';
 import SiteSettings from './pages/admin/SiteSettings';
 import Branding from './pages/admin/Branding';
 import PagesManager from './pages/admin/PagesManager';
+import PageEditor from './pages/admin/PageEditor';
 import ServicesManager from './pages/admin/ServicesManager';
+import ServiceEditor from './pages/admin/ServiceEditor';
 import BlogManager from './pages/admin/BlogManager';
+import BlogEditor from './pages/admin/BlogEditor';
 import SEOManager from './pages/admin/SEOManager';
 import MediaLibrary from './pages/admin/MediaLibrary';
 import NavigationManager from './pages/admin/NavigationManager';
@@ -40,11 +42,10 @@ const App: React.FC = () => {
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
-          <Route path="/services/social-media-management" element={<Layout><SocialMediaManagement /></Layout>} />
-          <Route path="/services/web-development" element={<Layout><WebDevelopment /></Layout>} />
-          <Route path="/services/app-development" element={<Layout><AppDevelopment /></Layout>} />
-          <Route path="/services/paid-advertising" element={<Layout><PaidAdvertising /></Layout>} />
-          <Route path="/services/crm-solutions" element={<Layout><CRMSolutions /></Layout>} />
+          <Route path="/services/growth-audit" element={<Layout><GrowthAudit /></Layout>} />
+          <Route path="/services/lead-generation" element={<Layout><LeadGeneration /></Layout>} />
+          <Route path="/services/conversion-optimization" element={<Layout><ConversionOptimization /></Layout>} />
+          <Route path="/services/revenue-operations-system" element={<Layout><RevenueOperationsSystem /></Layout>} />
           <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
           <Route path="/blogs/:slug" element={<Layout><BlogPost /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
@@ -58,8 +59,11 @@ const App: React.FC = () => {
           <Route path="/admin/site-settings" element={<ProtectedRoute><AdminLayout><SiteSettings /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/branding" element={<ProtectedRoute><AdminLayout><Branding /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/pages" element={<ProtectedRoute><AdminLayout><PagesManager /></AdminLayout></ProtectedRoute>} />
+          <Route path="/admin/pages/:id" element={<ProtectedRoute><AdminLayout><PageEditor /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/services" element={<ProtectedRoute><AdminLayout><ServicesManager /></AdminLayout></ProtectedRoute>} />
+          <Route path="/admin/services/:id" element={<ProtectedRoute><AdminLayout><ServiceEditor /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/blogs" element={<ProtectedRoute><AdminLayout><BlogManager /></AdminLayout></ProtectedRoute>} />
+          <Route path="/admin/blogs/:id" element={<ProtectedRoute><AdminLayout><BlogEditor /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/seo" element={<ProtectedRoute><AdminLayout><SEOManager /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/media" element={<ProtectedRoute><AdminLayout><MediaLibrary /></AdminLayout></ProtectedRoute>} />
           <Route path="/admin/navigation" element={<ProtectedRoute><AdminLayout><NavigationManager /></AdminLayout></ProtectedRoute>} />

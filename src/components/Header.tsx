@@ -37,18 +37,18 @@ const Header: React.FC = () => {
       <div
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
           isScrolled 
-            ? 'glass shadow-2xl shadow-brand-orange/5 py-3 px-6' 
+            ? 'glass shadow-2xl shadow-brand-primary/5 py-3 px-6' 
             : 'bg-transparent py-2 px-4'
         }`}
       >
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
               <span className="text-white font-bold text-xl">C</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-orange transition-colors duration-300">
-              Conversion<span className="text-brand-orange">Foxx</span>
+            <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300">
+              Conversion<span className="text-brand-primary">Foxx</span>
             </span>
           </Link>
 
@@ -59,11 +59,11 @@ const Header: React.FC = () => {
                 <Link
                   to={link.href}
                   className={`text-sm font-medium transition-colors duration-300 relative group ${
-                    location.pathname === link.href ? 'text-brand-orange' : 'text-white/70 hover:text-brand-orange'
+                    location.pathname === link.href ? 'text-brand-primary' : 'text-white/70 hover:text-brand-primary'
                   }`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-orange transition-all duration-300 ${
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-primary transition-all duration-300 ${
                     location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
                 </Link>
@@ -77,9 +77,9 @@ const Header: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-6 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 shadow-lg shadow-brand-orange/20 transition-all duration-300 group"
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 shadow-lg shadow-brand-primary/20 transition-all duration-300 group"
               >
-                Let's Talk
+                Get Free Growth Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </Link>
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                   <Link
                     to={link.href}
                     className={`text-lg font-medium transition-colors block py-2 ${
-                      location.pathname === link.href ? 'text-brand-orange' : 'text-white/80 hover:text-brand-orange'
+                      location.pathname === link.href ? 'text-brand-primary' : 'text-white/80 hover:text-brand-primary'
                     }`}
                   >
                     {link.name}
@@ -129,8 +129,8 @@ const Header: React.FC = () => {
                 className="pt-4 border-t border-white/10"
               >
                 <Link to="/contact">
-                  <button className="w-full bg-brand-orange text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2">
-                    Let's Talk
+                  <button className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2">
+                    Get Free Growth Audit
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>

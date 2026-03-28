@@ -13,7 +13,7 @@ interface LayoutProps {
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-orange selection:text-white overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-primary selection:text-white overflow-x-hidden flex flex-col">
       <ScrollToTop />
       <Header />
       

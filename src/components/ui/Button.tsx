@@ -34,10 +34,10 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = "inline-flex items-center justify-center font-bold tracking-tight transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-brand-orange text-white shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 active:scale-95",
-    secondary: "glass text-white hover:bg-white/10 active:scale-95",
-    ghost: "text-white/60 hover:text-brand-orange hover:bg-white/5 active:scale-95",
-    outline: "border border-white/10 text-white hover:border-brand-orange hover:text-brand-orange active:scale-95",
+    primary: "brand-gradient text-brand-dark shadow-lg shadow-brand-primary/20 hover:brightness-110 hover:shadow-brand-primary/40 active:scale-95",
+    secondary: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary hover:text-brand-dark active:scale-95",
+    ghost: "text-brand-text-secondary hover:text-brand-primary hover:bg-white/5 active:scale-95",
+    outline: "border border-white/10 text-brand-text-heading hover:border-brand-primary hover:text-brand-primary active:scale-95",
   };
 
   const sizes = {

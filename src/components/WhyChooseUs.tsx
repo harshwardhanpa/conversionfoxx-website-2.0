@@ -4,34 +4,34 @@ import { Target, Zap, Layers, Rocket, ShieldCheck, BarChart3 } from 'lucide-reac
 
 const reasons = [
   {
-    title: 'Results-Driven Approach',
-    description: 'We focus on metrics that matter—ROI, conversion rates, and revenue growth.',
-    icon: Target,
-  },
-  {
-    title: 'Conversion-Focused Strategy',
-    description: 'Every pixel and line of code is optimized to turn visitors into loyal customers.',
-    icon: Zap,
-  },
-  {
-    title: 'End-to-End Solutions',
-    description: 'From initial discovery to final scaling, we handle the entire growth lifecycle.',
+    title: 'System Thinking',
+    description: 'We don’t just fix parts; we optimize the entire growth system for maximum efficiency.',
     icon: Layers,
   },
   {
-    title: 'Fast Execution',
-    description: 'We move at the speed of tech, delivering high-quality results in record time.',
-    icon: Rocket,
+    title: 'Revenue Focused',
+    description: 'We focus on the metrics that matter: ROI, conversion rates, and bottom-line revenue.',
+    icon: Target,
   },
   {
-    title: 'Scalable Systems',
-    description: 'We build infrastructures that grow with your business, ensuring long-term stability.',
+    title: 'Data-Backed Strategy',
+    description: 'No guesswork. We use deep analytics and Growth Audits to drive every decision.',
+    icon: BarChart3,
+  },
+  {
+    title: 'Full Visibility',
+    description: 'Our Revenue Operations Systems give you complete visibility into your pipeline.',
+    icon: Zap,
+  },
+  {
+    title: 'Scalable Infrastructure',
+    description: 'We build systems that grow with your business, ensuring long-term stability.',
     icon: ShieldCheck,
   },
   {
-    title: 'Data-Backed Decisions',
-    description: 'No guesswork. We use advanced analytics to drive every strategic move.',
-    icon: BarChart3,
+    title: 'Rapid Optimization',
+    description: 'We move fast, testing and iterating to find the most efficient path to growth.',
+    icon: Rocket,
   },
 ];
 
@@ -46,27 +46,27 @@ const WhyChooseUs: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <span className="text-brand-orange text-sm font-bold uppercase tracking-widest">Why ConversionFoxx?</span>
+            <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Why ConversionFoxx?</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              We bridge the gap between <br />
-              <span className="text-brand-orange">technology and growth</span>
+              We build systems, <br />
+              <span className="brand-gradient-text">not just services</span>
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed max-w-xl">
-              ConversionFoxx is more than an IT agency. We are your strategic growth partner, dedicated to building digital ecosystems that actually drive results.
+            <p className="text-brand-text-secondary text-lg leading-relaxed max-w-xl">
+              ConversionFoxx is your strategic growth partner. We don't just run ads or build pages—we architect complete revenue systems that scale your business predictably.
             </p>
             
             <div className="flex flex-col gap-6 pt-4">
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors">
-                  <div className="w-6 h-6 bg-brand-orange rounded-full" />
+                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                  <div className="w-6 h-6 bg-brand-primary rounded-full" />
                 </div>
-                <div className="text-lg font-bold">100% Client Satisfaction</div>
+                <div className="text-lg font-bold">Predictable Revenue Growth</div>
               </div>
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors">
-                  <div className="w-6 h-6 bg-brand-orange rounded-full" />
+                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                  <div className="w-6 h-6 bg-brand-primary rounded-full" />
                 </div>
-                <div className="text-lg font-bold">Data-Driven Methodology</div>
+                <div className="text-lg font-bold">Full Revenue Visibility</div>
               </div>
             </div>
           </motion.div>
@@ -81,11 +81,11 @@ const WhyChooseUs: React.FC = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="glass p-6 rounded-3xl hover:bg-white/5 transition-all group"
               >
-                <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-orange transition-colors">
-                  <reason.icon className="w-5 h-5 text-brand-orange group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-primary transition-colors">
+                  <reason.icon className="w-5 h-5 text-brand-primary group-hover:text-brand-dark transition-colors" />
                 </div>
-                <h3 className="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">{reason.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">{reason.description}</p>
+                <h3 className="text-lg font-bold mb-2 group-hover:text-brand-primary transition-colors">{reason.title}</h3>
+                <p className="text-sm text-brand-text-secondary opacity-50 leading-relaxed group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">{reason.description}</p>
               </motion.div>
             ))}
           </div>

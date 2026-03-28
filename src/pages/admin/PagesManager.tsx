@@ -1,36 +1,44 @@
-import React, { useState } from 'react';
-import { FileText, Edit3, Eye, Search, Plus, Filter, ChevronRight, MoreVertical, CheckCircle2, Clock, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { FileText, Edit3, Eye, Search, Plus, Filter, ChevronRight, MoreVertical, CheckCircle2, Clock, X, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-interface PageItem {
-  id: string;
-  title: string;
-  slug: string;
-  status: 'published' | 'draft';
-  lastUpdated: string;
-  author: string;
-}
+import { pageService, Page } from '../../services/pageService';
 
 const PagesManager: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'draft'>('all');
+  const [pages, setPages] = useState<Page[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const pages: PageItem[] = [
-    { id: '1', title: 'Homepage', slug: '/', status: 'published', lastUpdated: '2 hours ago', author: 'Harsh Parmar' },
-    { id: '2', title: 'About Us', slug: '/about', status: 'published', lastUpdated: '1 day ago', author: 'Harsh Parmar' },
-    { id: '3', title: 'Services', slug: '/services', status: 'published', lastUpdated: '3 days ago', author: 'Harsh Parmar' },
-    { id: '4', title: 'Contact', slug: '/contact', status: 'published', lastUpdated: '1 week ago', author: 'Harsh Parmar' },
-    { id: '5', title: 'Blog', slug: '/blog', status: 'published', lastUpdated: '2 weeks ago', author: 'Harsh Parmar' },
-    { id: '6', title: 'Privacy Policy', slug: '/privacy', status: 'draft', lastUpdated: '1 month ago', author: 'Harsh Parmar' },
-    { id: '7', title: 'Terms of Service', slug: '/terms', status: 'draft', lastUpdated: '1 month ago', author: 'Harsh Parmar' },
-  ];
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const data = await pageService.getPages();
+        setPages(data);
+      } catch (error) {
+        console.error('Error fetching pages:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPages();
+  }, []);
 
   const filteredPages = pages.filter(page => {
     const matchesSearch = page.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           page.slug.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === 'all' || page.status === statusFilter;
+    const matchesStatus = statusFilter === 'all' || 
+                          (statusFilter === 'published' ? page.is_published : !page.is_published);
     return matchesSearch && matchesStatus;
   });
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="w-8 h-8 text-brand-primary animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-10">
@@ -39,7 +47,7 @@ const PagesManager: React.FC = () => {
           <h2 className="text-3xl font-bold tracking-tight mb-2">Page Content Manager</h2>
           <p className="text-white/40">Manage and edit the content of your website pages.</p>
         </div>
-        <button className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-white rounded-2xl font-bold shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 transition-all group">
+        <button className="flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-2xl font-bold shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all group">
           <Plus size={20} className="group-hover:rotate-90 transition-transform" />
           Create New Page
         </button>
@@ -48,13 +56,13 @@ const PagesManager: React.FC = () => {
       {/* Filters & Search */}
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1 relative group">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-orange transition-colors" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-primary transition-colors" />
           <input
             type="text"
             placeholder="Search pages by title or slug..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-[#111] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all"
+            className="w-full bg-[#111] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
           />
           {searchTerm && (
             <button 
@@ -72,7 +80,7 @@ const PagesManager: React.FC = () => {
               onClick={() => setStatusFilter(status)}
               className={`px-6 py-2 rounded-xl text-sm font-bold capitalize transition-all ${
                 statusFilter === status 
-                  ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' 
+                  ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20' 
                   : 'text-white/40 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -100,12 +108,11 @@ const PagesManager: React.FC = () => {
                 <tr key={page.id} className="hover:bg-white/[0.02] transition-colors group">
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+                      <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                         <FileText size={20} />
                       </div>
                       <div>
-                        <p className="font-bold text-white group-hover:text-brand-orange transition-colors">{page.title}</p>
-                        <p className="text-xs text-white/30 mt-0.5">Author: {page.author}</p>
+                        <p className="font-bold text-white group-hover:text-brand-primary transition-colors">{page.title}</p>
                       </div>
                     </div>
                   </td>
@@ -114,23 +121,23 @@ const PagesManager: React.FC = () => {
                   </td>
                   <td className="px-8 py-6">
                     <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
-                      page.status === 'published' 
-                        ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' 
-                        : 'bg-brand-orange/10 text-brand-orange border border-brand-orange/20'
+                      page.is_published 
+                        ? 'bg-brand-primary/20 text-brand-primary border border-brand-primary/20' 
+                        : 'bg-white/5 text-white/40 border border-white/5'
                     }`}>
-                      {page.status === 'published' ? <CheckCircle2 size={12} /> : <Clock size={12} />}
-                      {page.status}
+                      {page.is_published ? <CheckCircle2 size={12} /> : <Clock size={12} />}
+                      {page.is_published ? 'published' : 'draft'}
                     </div>
                   </td>
                   <td className="px-8 py-6 text-sm text-white/40">
-                    {page.lastUpdated}
+                    {new Date(page.updated_at).toLocaleDateString()}
                   </td>
                   <td className="px-8 py-6 text-right">
                     <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button className="p-2 text-white/40 hover:text-white hover:bg-white/5 rounded-lg transition-all" title="Preview">
                         <Eye size={18} />
                       </button>
-                      <Link to={`/admin/pages/${page.id}`} className="p-2 text-white/40 hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-all" title="Edit Content">
+                      <Link to={`/admin/pages/${page.id}`} className="p-2 text-white/40 hover:text-brand-primary hover:bg-brand-primary/10 rounded-lg transition-all" title="Edit Content">
                         <Edit3 size={18} />
                       </Link>
                       <button className="p-2 text-white/40 hover:text-white hover:bg-white/5 rounded-lg transition-all">
@@ -151,7 +158,7 @@ const PagesManager: React.FC = () => {
             <p className="text-white/40 font-medium">No pages found matching your search criteria.</p>
             <button 
               onClick={() => { setSearchTerm(''); setStatusFilter('all'); }}
-              className="text-brand-orange font-bold hover:text-white transition-colors"
+              className="text-brand-primary font-bold hover:text-white transition-colors"
             >
               Clear all filters
             </button>
@@ -162,7 +169,7 @@ const PagesManager: React.FC = () => {
           <div className="flex items-center gap-4">
             <button disabled className="hover:text-white transition-colors disabled:opacity-30">Previous</button>
             <div className="flex items-center gap-2">
-              <span className="w-6 h-6 bg-brand-orange text-white rounded flex items-center justify-center font-bold">1</span>
+              <span className="w-6 h-6 bg-brand-primary text-white rounded flex items-center justify-center font-bold">1</span>
             </div>
             <button disabled className="hover:text-white transition-colors disabled:opacity-30">Next</button>
           </div>

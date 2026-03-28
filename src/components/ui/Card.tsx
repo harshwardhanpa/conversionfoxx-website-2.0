@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({
   }[padding];
 
   const baseClasses = `glass rounded-[2.5rem] border border-white/5 relative overflow-hidden transition-all duration-500 ${paddingClasses} ${className}`;
-  const hoverClasses = hoverEffect ? 'hover:border-brand-orange/30 hover:shadow-2xl hover:shadow-brand-orange/5 hover:-translate-y-1' : '';
+  const hoverClasses = hoverEffect ? 'hover:border-brand-primary/30 hover:shadow-2xl hover:shadow-brand-primary/10 hover:-translate-y-1' : '';
 
   if (onClick) {
     return (

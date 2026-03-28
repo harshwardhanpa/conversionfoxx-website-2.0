@@ -4,24 +4,26 @@ import { ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
-    title: 'The Future of Digital Transformation in 2026',
-    preview: 'Exploring how AI and cloud computing are reshaping the IT landscape for modern enterprises.',
-    category: 'Technology',
-    image: 'https://picsum.photos/seed/tech/800/600',
+    title: 'Why Most Businesses Fail at Scaling Ads',
+    preview: 'Scaling isn’t just about increasing budget. It’s about creative strategy and funnel entry optimization.',
+    category: 'Lead Gen',
+    image: 'https://picsum.photos/seed/ads/800/600',
   },
   {
-    title: '5 Growth Strategies for SaaS Startups',
-    preview: 'How to leverage data-driven marketing to scale your SaaS product faster and more efficiently.',
-    category: 'Growth',
-    image: 'https://picsum.photos/seed/growth/800/600',
+    title: 'The Real Reason Your Funnel Isn’t Converting',
+    preview: 'Stop blaming the traffic. Discover the conversion leaks that are draining your revenue every single day.',
+    category: 'CRO',
+    image: 'https://picsum.photos/seed/funnel/800/600',
   },
   {
-    title: 'Why Conversion-Focused Design Matters',
-    preview: 'The psychology behind high-converting websites and how to apply it to your digital products.',
-    category: 'Design',
-    image: 'https://picsum.photos/seed/design/800/600',
+    title: 'From Leads to Revenue: Building a Growth System',
+    preview: 'Why a fragmented marketing approach fails and how a unified Revenue Operations System changes everything.',
+    category: 'Systems',
+    image: 'https://picsum.photos/seed/revenue/800/600',
   },
 ];
+
+import Button from './ui/Button';
 
 const Blog: React.FC = () => {
   return (
@@ -33,7 +35,7 @@ const Blog: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-brand-orange text-sm font-bold uppercase tracking-widest"
+              className="text-brand-primary text-sm font-bold uppercase tracking-widest"
             >
               Insights & Resources
             </motion.span>
@@ -44,15 +46,16 @@ const Blog: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
             >
-              Latest from <span className="text-brand-orange">our blog</span>
+              Latest from our blog
             </motion.h2>
           </div>
-          <motion.button
-            whileHover={{ x: 10 }}
-            className="text-brand-orange font-bold flex items-center gap-2 hover:gap-3 transition-all"
+          <Button 
+            to="/blogs"
+            variant="ghost"
+            className="text-brand-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"
           >
             View All Posts <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -77,13 +80,13 @@ const Blog: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4 px-2">
-                <h3 className="text-2xl font-bold group-hover:text-brand-orange transition-colors leading-tight">
+                <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading">
                   {blog.title}
                 </h3>
-                <p className="text-white/40 text-sm leading-relaxed line-clamp-2 group-hover:text-white/60 transition-colors">
+                <p className="text-brand-text-secondary opacity-40 text-sm leading-relaxed line-clamp-2 group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
                   {blog.preview}
                 </p>
-                <div className="flex items-center gap-2 text-brand-orange font-bold text-sm group-hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all">
                   Read More <ArrowRight className="w-4 h-4" />
                 </div>
               </div>

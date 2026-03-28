@@ -30,12 +30,12 @@ const Profile: React.FC = () => {
         <div className="flex items-center gap-4">
           <button 
             onClick={handleLogout}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl text-red-500 hover:bg-red-500/10 transition-all font-bold"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl text-white/40 hover:bg-white/5 hover:text-white transition-all font-bold"
           >
             <LogOut size={18} />
             Logout
           </button>
-          <button className="flex items-center gap-2 px-8 py-3 bg-brand-orange text-white rounded-xl font-bold shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 transition-all">
+          <button className="flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-xl font-bold shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all">
             <Save size={18} />
             Save Changes
           </button>
@@ -46,27 +46,27 @@ const Profile: React.FC = () => {
         {/* Left Column: Profile Card */}
         <div className="lg:col-span-1 space-y-8">
           <div className="bg-[#111] border border-white/5 rounded-[2.5rem] p-8 text-center space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
             
             <div className="relative inline-block group">
-              <div className="w-32 h-32 rounded-full bg-brand-orange/20 border-4 border-brand-orange/30 flex items-center justify-center text-brand-orange text-4xl font-bold shadow-2xl group-hover:scale-105 transition-transform duration-500">
+              <div className="w-32 h-32 rounded-full bg-brand-primary/20 border-4 border-brand-primary/30 flex items-center justify-center text-brand-primary text-4xl font-bold shadow-2xl group-hover:scale-105 transition-transform duration-500">
                 HP
               </div>
-              <button className="absolute bottom-0 right-0 w-10 h-10 bg-brand-orange text-white rounded-full flex items-center justify-center border-4 border-[#111] hover:scale-110 transition-transform">
+              <button className="absolute bottom-0 right-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center border-4 border-[#111] hover:scale-110 transition-transform">
                 <Camera size={16} />
               </button>
             </div>
 
             <div className="space-y-1">
               <h3 className="text-2xl font-bold tracking-tight">{profile.name}</h3>
-              <p className="text-brand-orange text-xs font-bold uppercase tracking-widest">{profile.role}</p>
+              <p className="text-brand-primary text-xs font-bold uppercase tracking-widest">{profile.role}</p>
             </div>
 
             <div className="pt-6 border-t border-white/5 space-y-4">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-white/40">Status</span>
-                <span className="text-emerald-500 font-bold flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-brand-primary font-bold flex items-center gap-1">
+                  <div className="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse" />
                   Active
                 </span>
               </div>
@@ -86,15 +86,15 @@ const Profile: React.FC = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Security Summary</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">
-                <CheckCircle2 size={16} className="text-emerald-500" />
+                <CheckCircle2 size={16} className="text-brand-primary" />
                 <span className="text-white/60">Email Verified</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <AlertCircle size={16} className="text-brand-orange" />
+                <AlertCircle size={16} className="text-brand-primary" />
                 <span className="text-white/60">2FA Not Enabled</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <CheckCircle2 size={16} className="text-emerald-500" />
+                <CheckCircle2 size={16} className="text-brand-primary" />
                 <span className="text-white/60">Strong Password</span>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Profile: React.FC = () => {
           {/* Personal Info */}
           <div className="bg-[#111] border border-white/5 rounded-3xl overflow-hidden">
             <div className="p-6 border-b border-white/5 flex items-center gap-4 bg-white/[0.02]">
-              <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+              <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                 <User size={20} />
               </div>
               <h3 className="text-lg font-bold tracking-tight">Personal Information</h3>
@@ -117,18 +117,18 @@ const Profile: React.FC = () => {
                   <label className="text-sm font-bold text-white/60 ml-1">Full Name</label>
                   <input
                     type="text"
-                    value={profile.name}
+                    value={profile.name || ''}
                     onChange={(e) => setProfile(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-white/60 ml-1">Email Address</label>
                   <input
                     type="email"
-                    value={profile.email}
+                    value={profile.email || ''}
                     onChange={(e) => setProfile(prev => ({ ...prev, email: e.target.value }))}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
                   />
                 </div>
               </div>
@@ -136,9 +136,9 @@ const Profile: React.FC = () => {
                 <label className="text-sm font-bold text-white/60 ml-1">Bio / Role Description</label>
                 <textarea
                   rows={3}
-                  value={profile.bio}
+                  value={profile.bio || ''}
                   onChange={(e) => setProfile(prev => ({ ...prev, bio: e.target.value }))}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all resize-none"
                 />
               </div>
             </div>
@@ -147,15 +147,15 @@ const Profile: React.FC = () => {
           {/* Security Settings */}
           <div className="bg-[#111] border border-white/5 rounded-3xl overflow-hidden">
             <div className="p-6 border-b border-white/5 flex items-center gap-4 bg-white/[0.02]">
-              <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+              <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                 <Shield size={20} />
               </div>
               <h3 className="text-lg font-bold tracking-tight">Security Settings</h3>
             </div>
             <div className="p-8 space-y-8">
-              <div className="flex items-center justify-between p-6 bg-white/5 rounded-2xl border border-white/5 group hover:border-brand-orange/30 transition-all">
+              <div className="flex items-center justify-between p-6 bg-white/5 rounded-2xl border border-white/5 group hover:border-brand-primary/30 transition-all">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                     <Lock size={20} />
                   </div>
                   <div>
@@ -163,14 +163,14 @@ const Profile: React.FC = () => {
                     <p className="text-xs text-white/40">Last changed 3 months ago</p>
                   </div>
                 </div>
-                <button className="px-6 py-2 bg-white/5 hover:bg-brand-orange hover:text-white rounded-xl text-xs font-bold transition-all">
+                <button className="px-6 py-2 bg-white/5 hover:bg-brand-primary hover:text-white rounded-xl text-xs font-bold transition-all">
                   Update
                 </button>
               </div>
 
-              <div className="flex items-center justify-between p-6 bg-white/5 rounded-2xl border border-white/5 group hover:border-brand-orange/30 transition-all">
+              <div className="flex items-center justify-between p-6 bg-white/5 rounded-2xl border border-white/5 group hover:border-brand-primary/30 transition-all">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                     <Shield size={20} />
                   </div>
                   <div>
@@ -180,7 +180,7 @@ const Profile: React.FC = () => {
                 </div>
                 <div className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" checked={profile.twoFactor} onChange={() => setProfile(p => ({ ...p, twoFactor: !p.twoFactor }))} />
-                  <div className="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-orange"></div>
+                  <div className="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-primary"></div>
                 </div>
               </div>
             </div>

@@ -1,125 +1,71 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import Button from './ui/Button';
 
 const Hero: React.FC = () => {
+  const scrollToProcess = () => {
+    const element = document.getElementById('process');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-orange/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full" />
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-dark">
+      {/* ... existing layers ... */}
+      <div className="absolute inset-0 bg-brand-dark" />
+      
+      {/* Layer 2: Core Horizon Light (Controlled) */}
+      <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[80%] h-[250px] bg-[radial-gradient(ellipse_at_center,_rgba(242,110,34,0.15)_0%,_transparent_70%)] blur-[60px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      {/* Layer 3: Inner Light Band (Subtle) */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[2px] bg-[radial-gradient(ellipse_at_center,_rgba(242,110,34,0.25)_0%,_transparent_80%)] blur-[10px] opacity-20 pointer-events-none" />
+
+      {/* Layer 4: Fade Control (Dark Overlay) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-transparent to-brand-dark/60 pointer-events-none" />
+
+      {/* Contrast Control: Lighten Left, Darken Right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/[0.005] via-transparent to-black/30 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="space-y-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4" />
-            Growth-First IT Agency
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] backdrop-blur-sm">
+            <Sparkles className="w-3.5 h-3.5" />
+            Growth System Architects
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-            We Don’t Just Build Digital Products — <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">
-              We Build Revenue Engines
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-white/60 max-w-xl font-light leading-relaxed">
-            From strategy to execution, ConversionFoxx helps businesses scale faster with powerful tech, data-driven marketing, and conversion-focused solutions.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(255, 107, 0, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-brand-orange text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all"
-            >
-              Let’s Talk
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto glass text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all"
-            >
-              Explore Services
-            </motion.button>
+          <div className="space-y-10">
+            <h1 className="font-bold tracking-tight leading-[0.9] text-brand-text-heading">
+              <span className="text-5xl md:text-6xl lg:text-7xl block mb-3 opacity-80">Architecting</span>
+              <span className="text-6xl md:text-7xl lg:text-8xl brand-gradient-text block">
+                Digital Revenue.
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-brand-text-secondary max-w-xl font-light leading-relaxed">
+              We build high-performance growth systems that transform traffic into predictable, scalable revenue engines.
+            </p>
           </div>
-
-          {/* Trust Badges */}
-          <div className="pt-8 flex items-center gap-6 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            <div className="text-sm font-bold tracking-tighter uppercase">Trusted by</div>
-            <div className="h-6 w-px bg-white/20" />
-            <div className="flex gap-6">
-              <span className="font-bold text-xl">TECHCORP</span>
-              <span className="font-bold text-xl">GROWTHLY</span>
-              <span className="font-bold text-xl">NEXUS</span>
-            </div>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-8 pt-8">
+            <Button to="/contact" size="xl" icon={ArrowRight}>
+              Get Free Growth Audit
+            </Button>
+            <Button variant="secondary" size="xl" onClick={scrollToProcess}>
+              See How It Works
+            </Button>
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative"
-        >
-          {/* Abstract Visual Element */}
-          <div className="relative z-10 glass rounded-[2.5rem] p-4 shadow-2xl border-white/10 overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="bg-brand-dark/50 rounded-[2rem] p-8 aspect-square flex flex-col gap-6">
-              {/* Mock Dashboard UI */}
-              <div className="flex justify-between items-center">
-                <div className="w-32 h-4 bg-white/10 rounded-full" />
-                <div className="w-8 h-8 bg-brand-orange/20 rounded-full" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="h-24 glass rounded-2xl p-4 flex flex-col justify-end gap-2">
-                  <div className="w-12 h-2 bg-brand-orange/40 rounded-full" />
-                  <div className="text-2xl font-bold">+320%</div>
-                </div>
-                <div className="h-24 glass rounded-2xl p-4 flex flex-col justify-end gap-2">
-                  <div className="w-12 h-2 bg-white/20 rounded-full" />
-                  <div className="text-2xl font-bold">5.2k</div>
-                </div>
-              </div>
-              <div className="flex-1 glass rounded-2xl p-6 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-end gap-2 p-4">
-                  {[40, 70, 45, 90, 65, 80, 55].map((h, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ height: 0 }}
-                      animate={{ height: `${h}%` }}
-                      transition={{ delay: 0.5 + i * 0.1, duration: 1 }}
-                      className="flex-1 bg-gradient-to-t from-brand-orange to-orange-400/50 rounded-t-lg"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Floating Accents */}
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -right-10 w-32 h-32 glass rounded-3xl flex items-center justify-center shadow-2xl z-20"
-          >
-            <div className="text-brand-orange font-bold text-3xl">🚀</div>
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-10 -left-10 w-40 h-24 glass rounded-3xl p-4 shadow-2xl z-20 flex flex-col justify-center"
-          >
-            <div className="text-xs text-white/40 font-bold uppercase tracking-widest">Conversion Rate</div>
-            <div className="text-2xl font-bold text-emerald-400">+12.5%</div>
-          </motion.div>
-        </motion.div>
+        {/* Right side remains empty for cinematic balance */}
+        <div className="hidden lg:block" />
       </div>
     </section>
   );

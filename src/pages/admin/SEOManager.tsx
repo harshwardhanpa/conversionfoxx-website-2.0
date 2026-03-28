@@ -35,7 +35,7 @@ const SEOManager: React.FC = () => {
           <p className="text-white/40">Optimize your website for search engines and social sharing.</p>
         </div>
         <div className="flex items-center gap-4">
-          <button className="flex items-center gap-2 px-8 py-3 bg-brand-orange text-white rounded-xl font-bold shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 transition-all">
+          <button className="flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-xl font-bold shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all">
             <Save size={18} />
             Save Changes
           </button>
@@ -48,7 +48,7 @@ const SEOManager: React.FC = () => {
           onClick={() => setActiveTab('global')}
           className={`px-8 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${
             activeTab === 'global' 
-              ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' 
+              ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20' 
               : 'text-white/40 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -59,7 +59,7 @@ const SEOManager: React.FC = () => {
           onClick={() => setActiveTab('pages')}
           className={`px-8 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${
             activeTab === 'pages' 
-              ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' 
+              ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20' 
               : 'text-white/40 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -73,7 +73,7 @@ const SEOManager: React.FC = () => {
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-[#111] border border-white/5 rounded-3xl p-8 space-y-8">
               <div className="flex items-center gap-4 mb-2">
-                <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                   <Globe size={20} />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight">Global Meta Tags</h3>
@@ -84,9 +84,9 @@ const SEOManager: React.FC = () => {
                   <label className="text-sm font-bold text-white/60 ml-1">Default Site Title</label>
                   <input
                     type="text"
-                    value={globalSEO.siteTitle}
+                    value={globalSEO.siteTitle || ''}
                     onChange={(e) => setGlobalSEO(prev => ({ ...prev, siteTitle: e.target.value }))}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
                   />
                   <div className="flex items-center justify-between text-[10px] text-white/30 px-1">
                     <span>Recommended: 50-60 characters</span>
@@ -98,9 +98,9 @@ const SEOManager: React.FC = () => {
                   <label className="text-sm font-bold text-white/60 ml-1">Default Meta Description</label>
                   <textarea
                     rows={4}
-                    value={globalSEO.metaDescription}
+                    value={globalSEO.metaDescription || ''}
                     onChange={(e) => setGlobalSEO(prev => ({ ...prev, metaDescription: e.target.value }))}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all resize-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all resize-none"
                   />
                   <div className="flex items-center justify-between text-[10px] text-white/30 px-1">
                     <span>Recommended: 150-160 characters</span>
@@ -114,7 +114,7 @@ const SEOManager: React.FC = () => {
                     <select 
                       value={globalSEO.robots}
                       onChange={(e) => setGlobalSEO(prev => ({ ...prev, robots: e.target.value }))}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all appearance-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all appearance-none"
                     >
                       <option value="index, follow">Index, Follow</option>
                       <option value="noindex, follow">Noindex, Follow</option>
@@ -126,9 +126,9 @@ const SEOManager: React.FC = () => {
                     <label className="text-sm font-bold text-white/60 ml-1">Canonical URL</label>
                     <input
                       type="text"
-                      value={globalSEO.canonical}
+                      value={globalSEO.canonical || ''}
                       onChange={(e) => setGlobalSEO(prev => ({ ...prev, canonical: e.target.value }))}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
                     />
                   </div>
                 </div>
@@ -137,7 +137,7 @@ const SEOManager: React.FC = () => {
 
             <div className="bg-[#111] border border-white/5 rounded-3xl p-8 space-y-8">
               <div className="flex items-center gap-4 mb-2">
-                <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                   <Share2 size={20} />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight">Social Sharing (Open Graph)</h3>
@@ -146,10 +146,10 @@ const SEOManager: React.FC = () => {
               <div className="space-y-6">
                 <div className="space-y-4">
                   <label className="text-sm font-bold text-white/60 ml-1">Default OG Image</label>
-                  <div className="aspect-video bg-white/5 border-2 border-dashed border-white/10 rounded-3xl flex flex-col items-center justify-center group cursor-pointer hover:border-brand-orange/50 transition-all overflow-hidden relative">
+                  <div className="aspect-video bg-white/5 border-2 border-dashed border-white/10 rounded-3xl flex flex-col items-center justify-center group cursor-pointer hover:border-brand-primary/50 transition-all overflow-hidden relative">
                     <img src={globalSEO.ogImage} alt="OG Preview" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity" />
                     <div className="relative z-10 text-center space-y-2">
-                      <div className="w-12 h-12 bg-brand-orange/20 rounded-2xl flex items-center justify-center mx-auto text-brand-orange">
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto text-brand-primary">
                         <Plus size={24} />
                       </div>
                       <p className="text-xs font-bold text-white/60">Upload New Image</p>
@@ -207,7 +207,7 @@ const SEOManager: React.FC = () => {
               {pageSEO.map((item) => (
                 <tr key={item.id} className="hover:bg-white/[0.02] transition-colors group">
                   <td className="px-8 py-6">
-                    <p className="font-bold text-white group-hover:text-brand-orange transition-colors">{item.page}</p>
+                    <p className="font-bold text-white group-hover:text-brand-primary transition-colors">{item.page}</p>
                     <code className="text-[10px] font-mono text-white/30">{item.slug}</code>
                   </td>
                   <td className="px-8 py-6">
@@ -217,17 +217,17 @@ const SEOManager: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-1.5 w-24 bg-white/5 rounded-full overflow-hidden">
                         <div 
-                          className={`h-full rounded-full ${item.score > 90 ? 'bg-emerald-500' : 'bg-brand-orange'}`} 
+                          className="h-full rounded-full bg-brand-primary" 
                           style={{ width: `${item.score}%` }} 
                         />
                       </div>
-                      <span className={`text-xs font-bold ${item.score > 90 ? 'text-emerald-500' : 'text-brand-orange'}`}>
+                      <span className="text-xs font-bold text-brand-primary">
                         {item.score}%
                       </span>
                     </div>
                   </td>
                   <td className="px-8 py-6 text-right">
-                    <button className="p-2 text-white/20 hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-all">
+                    <button className="p-2 text-white/20 hover:text-brand-primary hover:bg-brand-primary/10 rounded-lg transition-all">
                       <Edit3 size={18} />
                     </button>
                   </td>

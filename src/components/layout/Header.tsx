@@ -41,18 +41,18 @@ const Header: React.FC = () => {
       <div
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
           isScrolled 
-            ? 'glass shadow-2xl shadow-brand-orange/5 py-3 px-6' 
+            ? 'glass shadow-2xl shadow-brand-primary/5 py-3 px-6' 
             : 'bg-transparent py-2 px-4'
         }`}
       >
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">C</span>
+            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+              <span className="text-brand-dark font-bold text-xl">C</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-orange transition-colors duration-300">
-              Conversion<span className="text-brand-orange">Foxx</span>
+            <span className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
+              Conversion<span className="text-brand-primary">Foxx</span>
             </span>
           </Link>
 
@@ -64,13 +64,13 @@ const Header: React.FC = () => {
                   to={link.href}
                   className={({ isActive }) => `
                     text-sm font-medium transition-colors duration-300 relative group
-                    ${isActive ? 'text-brand-orange' : 'text-white/70 hover:text-brand-orange'}
+                    ${isActive ? 'text-brand-primary' : 'text-brand-text-secondary hover:text-brand-primary'}
                   `}
                 >
                   {({ isActive }) => (
                     <>
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-orange transition-all duration-300 ${
+                      <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-primary transition-all duration-300 ${
                         isActive ? 'w-full' : 'w-0 group-hover:w-full'
                       }`} />
                     </>
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                     to={link.href}
                     className={({ isActive }) => `
                       text-lg font-medium transition-colors block py-2
-                      ${isActive ? 'text-brand-orange' : 'text-white/80 hover:text-brand-orange'}
+                      ${isActive ? 'text-brand-primary' : 'text-white/80 hover:text-brand-primary'}
                     `}
                   >
                     {link.name}

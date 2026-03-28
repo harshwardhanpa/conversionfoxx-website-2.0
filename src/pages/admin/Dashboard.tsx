@@ -24,13 +24,13 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ label, value, icon, trend, trendUp }) => (
-  <div className="bg-[#111] border border-white/5 p-6 rounded-3xl hover:border-brand-orange/30 transition-all duration-500 group">
+  <div className="bg-[#111] border border-white/5 p-6 rounded-3xl hover:border-brand-primary/30 transition-all duration-500 group">
     <div className="flex items-center justify-between mb-4">
-      <div className="w-12 h-12 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all duration-500">
+      <div className="w-12 h-12 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
         {icon}
       </div>
       {trend && (
-        <div className={`flex items-center gap-1 text-xs font-bold ${trendUp ? 'text-emerald-500' : 'text-red-500'}`}>
+        <div className={`flex items-center gap-1 text-xs font-bold ${trendUp ? 'text-brand-primary' : 'text-white/40'}`}>
           {trendUp ? <TrendingUp size={14} /> : <TrendingUp size={14} className="rotate-180" />}
           {trend}
         </div>
@@ -59,7 +59,7 @@ const AdminDashboard: React.FC = () => {
   ];
 
   const quickActions = [
-    { label: 'Create New Blog', icon: <Plus size={18} />, to: '/admin/blogs/new', color: 'bg-brand-orange' },
+    { label: 'Create New Blog', icon: <Plus size={18} />, to: '/admin/blogs/new', color: 'bg-brand-primary' },
     { label: 'Edit Homepage', icon: <Edit3 size={18} />, to: '/admin/pages/homepage', color: 'bg-white/5' },
     { label: 'Update Branding', icon: <Palette size={18} />, to: '/admin/branding', color: 'bg-white/5' },
     { label: 'Manage SEO', icon: <Search size={18} />, to: '/admin/seo', color: 'bg-white/5' },
@@ -70,12 +70,12 @@ const AdminDashboard: React.FC = () => {
       {/* Welcome Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight mb-2">Welcome back, <span className="text-brand-orange">Harsh</span></h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-2">Welcome back, <span className="text-brand-primary">Harsh</span></h2>
           <p className="text-white/40">Here's what's happening with ConversionFoxx today.</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium flex items-center gap-2">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+            <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
             System Online
           </div>
           <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium">
@@ -103,8 +103,8 @@ const AdminDashboard: React.FC = () => {
               <Link
                 key={action.label}
                 to={action.to}
-                className={`flex items-center justify-between p-5 rounded-2xl border border-white/5 transition-all duration-300 hover:border-brand-orange/50 hover:translate-x-1 ${
-                  action.color === 'bg-brand-orange' ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' : 'bg-[#111] text-white/80 hover:text-white'
+                className={`flex items-center justify-between p-5 rounded-2xl border border-white/5 transition-all duration-300 hover:border-brand-primary/50 hover:translate-x-1 ${
+                  action.color === 'bg-brand-primary' ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/20' : 'bg-[#111] text-white/80 hover:text-white'
                 }`}
               >
                 <div className="flex items-center gap-4 font-bold">
@@ -122,11 +122,11 @@ const AdminDashboard: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-white/60">Database</span>
-                <span className="text-emerald-500 font-bold">Healthy</span>
+                <span className="text-brand-primary font-bold">Healthy</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-white/60">Storage</span>
-                <span className="text-emerald-500 font-bold">92% Free</span>
+                <span className="text-brand-primary font-bold">92% Free</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-white/60">Last Backup</span>
@@ -147,9 +147,9 @@ const AdminDashboard: React.FC = () => {
               {recentActivity.map((activity, index) => (
                 <div key={index} className="p-6 flex items-start gap-4 hover:bg-white/5 transition-colors group">
                   <div className={`mt-1 w-2 h-2 rounded-full ${
-                    activity.status === 'success' ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 
-                    activity.status === 'pending' ? 'bg-brand-orange shadow-[0_0_8px_rgba(242,125,38,0.5)]' : 
-                    'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]'
+                    activity.status === 'success' ? 'bg-brand-primary shadow-[0_0_8px_rgba(255,106,61,0.5)]' : 
+                    activity.status === 'pending' ? 'bg-brand-primary/50 shadow-[0_0_8px_rgba(255,106,61,0.2)]' : 
+                    'bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.1)]'
                   }`} />
                   <div className="flex-1">
                     <p className="font-medium text-white/90 group-hover:text-white transition-colors">{activity.action}</p>
@@ -158,14 +158,14 @@ const AdminDashboard: React.FC = () => {
                       {activity.time}
                     </p>
                   </div>
-                  <button className="p-2 text-white/20 hover:text-brand-orange transition-colors">
+                  <button className="p-2 text-white/20 hover:text-brand-primary transition-colors">
                     <Edit3 size={18} />
                   </button>
                 </div>
               ))}
             </div>
             <div className="p-6 bg-white/5 border-t border-white/5 text-center">
-              <button className="text-sm font-bold text-brand-orange hover:text-white transition-colors">
+              <button className="text-sm font-bold text-brand-primary hover:text-white transition-colors">
                 View All Activity
               </button>
             </div>

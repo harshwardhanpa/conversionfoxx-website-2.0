@@ -128,8 +128,8 @@ const Blogs: React.FC = () => {
         {/* 1. BLOGS HERO */}
         <Section className="relative pt-40 pb-24 overflow-hidden">
           {/* Background Glows */}
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-brand-orange/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
 
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -139,17 +139,15 @@ const Blogs: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest">
                   <BookOpen className="w-4 h-4" />
                   ConversionFoxx Insights
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
                   Insights That Help <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400 text-glow">
-                    Businesses Grow
-                  </span> Smarter
+                  Businesses Grow Smarter
                 </h1>
-                <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-xl">
+                <p className="text-lg md:text-xl text-brand-text-secondary opacity-60 font-light leading-relaxed max-w-xl">
                   Explore practical insights from ConversionFoxx on digital growth, marketing performance, websites, applications, CRM systems, and the strategies that help modern businesses move forward.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -174,8 +172,8 @@ const Blogs: React.FC = () => {
                 <Card padding="lg" className="rounded-[3rem] border-white/10 shadow-2xl" hoverEffect={false}>
                   <div className="space-y-6">
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5">
-                      <div className="w-12 h-12 bg-brand-orange/20 rounded-xl flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-brand-orange" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-bold">Growth Strategy</div>
@@ -183,8 +181,8 @@ const Blogs: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-8">
-                      <div className="w-12 h-12 bg-brand-orange/20 rounded-xl flex items-center justify-center">
-                        <LayoutIcon className="w-6 h-6 text-brand-orange" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <LayoutIcon className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-bold">Web Development</div>
@@ -192,8 +190,8 @@ const Blogs: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-4">
-                      <div className="w-12 h-12 bg-brand-orange/20 rounded-xl flex items-center justify-center">
-                        <Database className="w-6 h-6 text-brand-orange" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <Database className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-bold">CRM & Automation</div>
@@ -203,8 +201,8 @@ const Blogs: React.FC = () => {
                   </div>
                 </Card>
                 {/* Decorative Elements */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-orange/20 blur-3xl rounded-full" />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-orange/10 blur-3xl rounded-full" />
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-primary/20 blur-3xl rounded-full" />
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-primary/10 blur-3xl rounded-full" />
               </motion.div>
             </div>
           </Container>
@@ -236,13 +234,13 @@ const Blogs: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent lg:hidden" />
                   </div>
                   <div className="p-8 md:p-16 flex flex-col justify-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-brand-orange">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-brand-primary">
                       Growth Strategy
                     </div>
-                    <h3 className="text-3xl md:text-5xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                    <h3 className="text-3xl md:text-5xl font-bold leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading">
                       Why Connected Systems Matter More Than Isolated Marketing Tactics
                     </h3>
-                    <p className="text-white/60 text-lg leading-relaxed">
+                    <p className="text-brand-text-secondary opacity-60 text-lg leading-relaxed group-hover:opacity-100 transition-opacity">
                       Businesses often invest in campaigns, websites, and tools separately, but real growth comes when those systems work together. Here’s how connected execution creates stronger long-term performance.
                     </p>
                     <div className="flex items-center gap-6 text-white/40 text-sm">
@@ -280,8 +278,8 @@ const Blogs: React.FC = () => {
                       onClick={() => setActiveCategory(category)}
                       className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${
                         activeCategory === category 
-                        ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20' 
-                        : 'text-white/40 hover:text-white hover:bg-white/5'
+                        ? 'bg-brand-primary text-brand-dark shadow-lg shadow-brand-primary/20' 
+                        : 'text-brand-text-secondary opacity-40 hover:opacity-100 hover:bg-white/5'
                       }`}
                     >
                       {category}
@@ -292,13 +290,13 @@ const Blogs: React.FC = () => {
 
               {/* Search */}
               <div className="w-full lg:w-96 relative group">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-orange transition-colors" />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-primary transition-colors" />
                 <input 
                   type="text" 
                   placeholder="Search insights, topics, and ideas..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full glass bg-white/5 border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-orange/50 focus:ring-1 focus:ring-brand-orange/50 transition-all"
+                  className="w-full glass bg-white/5 border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                 />
               </div>
             </div>
@@ -349,13 +347,13 @@ const Blogs: React.FC = () => {
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-2xl font-bold group-hover:text-brand-orange transition-colors leading-tight">
+                        <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading">
                           {post.title}
                         </h3>
-                        <p className="text-white/40 text-sm leading-relaxed line-clamp-2 group-hover:text-white/60 transition-colors">
+                        <p className="text-brand-text-secondary opacity-40 text-sm leading-relaxed line-clamp-2 group-hover:opacity-100 transition-opacity">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center gap-2 text-brand-orange font-bold text-sm group-hover:gap-3 transition-all pt-2">
+                        <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all pt-2">
                           Read More <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -370,12 +368,13 @@ const Blogs: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-2">No articles found</h3>
                 <p className="text-white/40">Try adjusting your search or filters to find what you're looking for.</p>
-                <button 
+                <Button 
+                  variant="ghost"
                   onClick={() => {setActiveCategory('All'); setSearchQuery('');}}
-                  className="mt-8 text-brand-orange font-bold hover:underline"
+                  className="mt-8 text-brand-primary font-bold hover:underline"
                 >
                   Clear all filters
-                </button>
+                </Button>
               </Card>
             )}
           </Container>
@@ -385,7 +384,7 @@ const Blogs: React.FC = () => {
         <Section background="subtle">
           <Container>
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-orange text-sm font-bold uppercase tracking-widest">Deep Dives</span>
+              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Deep Dives</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Explore Popular Themes</h2>
             </div>
 
@@ -429,11 +428,11 @@ const Blogs: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card padding="lg" className="h-full hover:border-brand-orange/20 transition-all duration-500 group">
-                    <div className="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-orange transition-all duration-500">
-                      <topic.icon className="w-7 h-7 text-brand-orange group-hover:text-white transition-colors" />
+                  <Card padding="lg" className="h-full hover:border-brand-primary/20 transition-all duration-500 group">
+                    <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-all duration-500">
+                      <topic.icon className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-orange transition-colors">{topic.title}</h3>
+                    <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{topic.title}</h3>
                     <p className="text-white/40 text-sm leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
                       {topic.description}
                     </p>
@@ -442,12 +441,12 @@ const Blogs: React.FC = () => {
                         <Link 
                           key={link.slug} 
                           to={`/blogs/${link.slug}`}
-                          className="flex items-center justify-between group/link py-3 border-b border-white/5 hover:border-brand-orange/30 transition-colors"
+                          className="flex items-center justify-between group/link py-3 border-b border-white/5 hover:border-brand-primary/30 transition-colors"
                         >
                           <span className="text-sm font-medium text-white/70 group-hover/link:text-white transition-colors line-clamp-1">
                             {link.name}
                           </span>
-                          <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-brand-orange transition-colors" />
+                          <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-brand-primary transition-colors" />
                         </Link>
                       ))}
                     </div>
@@ -466,13 +465,13 @@ const Blogs: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-8 relative overflow-hidden border-brand-orange/20" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/5 blur-[120px] rounded-full" />
+              <Card padding="xl" className="text-center space-y-8 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-6">
-                  <div className="w-16 h-16 bg-brand-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-brand-orange" />
+                  <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-brand-primary" />
                   </div>
                   <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Stay Connected With New Insights</h2>
                   <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
@@ -483,7 +482,7 @@ const Blogs: React.FC = () => {
                     <input 
                       type="email" 
                       placeholder="Enter your email"
-                      className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-orange/50 focus:ring-1 focus:ring-brand-orange/50 transition-all"
+                      className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                     />
                     <Button type="submit" size="lg">
                       Subscribe
@@ -502,7 +501,7 @@ const Blogs: React.FC = () => {
         <Section>
           <Container>
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-orange text-sm font-bold uppercase tracking-widest">Our Editorial Philosophy</span>
+              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Editorial Philosophy</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Built Around Real Business Questions</h2>
             </div>
 
@@ -537,10 +536,10 @@ const Blogs: React.FC = () => {
                   transition={{ delay: idx * 0.1 }}
                 >
                   <Card padding="md" className="h-full text-center group">
-                    <div className="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange transition-all duration-500">
-                      <item.icon className="w-6 h-6 text-brand-orange group-hover:text-white transition-colors" />
+                    <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-primary transition-all duration-500">
+                      <item.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-brand-orange transition-colors">{item.title}</h3>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
                     <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/60 transition-colors">
                       {item.description}
                     </p>
@@ -559,16 +558,16 @@ const Blogs: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-orange/20" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/5 blur-[120px] rounded-full" />
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
                     Need Help Turning <br />
-                    <span className="text-brand-orange">Insight Into Action?</span>
+                    Insight Into Action?
                   </h2>
-                  <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                  <p className="text-brand-text-secondary opacity-60 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
                     If your business needs stronger systems, better execution, or clearer digital direction, ConversionFoxx is ready to help.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Palette, Save, RotateCcw, Type, Layout, Sliders, Check, Eye } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Palette, Save, RotateCcw, Type, Layout, Sliders, Check, Eye, Loader2 } from 'lucide-react';
+import { brandingService, BrandingSettings as IBrandingSettings } from '../../services/brandingService';
 
 interface ColorPickerProps {
   label: string;
@@ -19,11 +20,11 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ label, value, onChange }) => 
       <div className="flex-1 relative group">
         <input
           type="text"
-          value={value}
+          value={value || ''}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 text-white font-mono text-sm focus:outline-none focus:border-brand-orange/50 transition-all uppercase"
+          className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 text-white font-mono text-sm focus:outline-none focus:border-brand-primary/50 transition-all uppercase"
         />
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-brand-orange transition-colors">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-brand-primary transition-colors">
           #
         </div>
       </div>
@@ -32,21 +33,63 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ label, value, onChange }) => 
 );
 
 const Branding: React.FC = () => {
-  const [branding, setBranding] = useState({
-    primaryColor: '#F27D26',
-    secondaryColor: '#0A0A0A',
-    accentColor: '#10B981',
-    backgroundColor: '#000000',
-    textColor: '#FFFFFF',
-    headingFont: 'Inter',
-    bodyFont: 'Inter',
-    borderRadius: '1.5rem',
-    glassIntensity: 20,
-    buttonStyle: 'rounded',
+  const [branding, setBranding] = useState<IBrandingSettings>({
+    primary_color: '#F26E22',
+    secondary_color: '#BF4417',
+    accent_color: '#D91A2A',
+    background_color: '#0D0D0D',
+    text_color: '#E6EAF0',
+    font_family_heading: 'Inter',
+    font_family_body: 'Inter',
+    border_radius: '1.5rem',
+    glass_intensity: 20,
+    button_style: 'rounded',
   });
 
-  const handleChange = (field: string, value: any) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [hasChanges, setHasChanges] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: 'success' | 'error', message: string } | null>(null);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const data = await brandingService.getSettings();
+        if (data) {
+          setBranding(prev => ({ ...prev, ...data }));
+        }
+      } catch (err) {
+        console.error('Error loading branding:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
+  const handleChange = (field: keyof IBrandingSettings, value: any) => {
     setBranding(prev => ({ ...prev, [field]: value }));
+    setHasChanges(true);
+  };
+
+  const handleSave = async () => {
+    setIsSaving(true);
+    setFeedback(null);
+    try {
+      const success = await brandingService.updateSettings(branding);
+      if (success) {
+        setFeedback({ type: 'success', message: 'Branding saved successfully!' });
+        setHasChanges(false);
+      } else {
+        setFeedback({ type: 'error', message: 'Failed to save branding.' });
+      }
+    } catch (err) {
+      setFeedback({ type: 'error', message: 'An error occurred while saving.' });
+    } finally {
+      setIsSaving(false);
+      setTimeout(() => setFeedback(null), 3000);
+    }
   };
 
   const fonts = ['Inter', 'Space Grotesk', 'Outfit', 'Playfair Display', 'JetBrains Mono'];
@@ -58,24 +101,47 @@ const Branding: React.FC = () => {
     { label: 'Full', value: '9999px' },
   ];
 
+  if (isLoading) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <Loader2 className="w-10 h-10 text-brand-primary animate-spin" />
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-10 max-w-6xl mx-auto">
+    <div className="space-y-10 max-w-6xl mx-auto pb-24">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-3xl font-bold tracking-tight mb-2">Branding & Design</h2>
           <p className="text-white/40">Customize the visual identity and theme of your website.</p>
         </div>
         <div className="flex items-center gap-4">
-          <button className="flex items-center gap-2 px-6 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all font-bold">
+          <button 
+            onClick={() => window.location.reload()}
+            className="flex items-center gap-2 px-6 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all font-bold"
+          >
             <RotateCcw size={18} />
             Reset
           </button>
-          <button className="flex items-center gap-2 px-8 py-3 bg-brand-orange text-white rounded-xl font-bold shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 transition-all">
-            <Save size={18} />
+          <button 
+            onClick={handleSave}
+            disabled={isSaving || !hasChanges}
+            className="flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-xl font-bold shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSaving ? <Loader2 size={18} className="animate-spin" /> : <Save size={18} />}
             Save Changes
           </button>
         </div>
       </div>
+
+      {feedback && (
+        <div className={`p-4 rounded-xl border ${
+          feedback.type === 'success' ? 'bg-brand-primary/10 border-brand-primary/20 text-brand-primary' : 'bg-white/10 border-white/20 text-white/60'
+        } transition-all animate-in fade-in slide-in-from-top-2`}>
+          {feedback.message}
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Controls */}
@@ -83,24 +149,24 @@ const Branding: React.FC = () => {
           {/* Colors */}
           <div className="bg-[#111] border border-white/5 rounded-3xl p-8 space-y-8">
             <div className="flex items-center gap-4 mb-2">
-              <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+              <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                 <Palette size={20} />
               </div>
               <h3 className="text-xl font-bold tracking-tight">Color Palette</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ColorPicker label="Primary Color" value={branding.primaryColor} onChange={(v) => handleChange('primaryColor', v)} />
-              <ColorPicker label="Secondary Color" value={branding.secondaryColor} onChange={(v) => handleChange('secondaryColor', v)} />
-              <ColorPicker label="Accent Color" value={branding.accentColor} onChange={(v) => handleChange('accentColor', v)} />
-              <ColorPicker label="Background Color" value={branding.backgroundColor} onChange={(v) => handleChange('backgroundColor', v)} />
-              <ColorPicker label="Text Color" value={branding.textColor} onChange={(v) => handleChange('textColor', v)} />
+              <ColorPicker label="Primary Color" value={branding.primary_color} onChange={(v) => handleChange('primary_color', v)} />
+              <ColorPicker label="Secondary Color" value={branding.secondary_color} onChange={(v) => handleChange('secondary_color', v)} />
+              <ColorPicker label="Accent Color" value={branding.accent_color} onChange={(v) => handleChange('accent_color', v)} />
+              <ColorPicker label="Background Color" value={branding.background_color} onChange={(v) => handleChange('background_color', v)} />
+              <ColorPicker label="Text Color" value={branding.text_color} onChange={(v) => handleChange('text_color', v)} />
             </div>
           </div>
 
           {/* Typography */}
           <div className="bg-[#111] border border-white/5 rounded-3xl p-8 space-y-8">
             <div className="flex items-center gap-4 mb-2">
-              <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+              <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                 <Type size={20} />
               </div>
               <h3 className="text-xl font-bold tracking-tight">Typography</h3>
@@ -109,9 +175,9 @@ const Branding: React.FC = () => {
               <div className="space-y-3">
                 <label className="text-sm font-bold text-white/60 ml-1">Heading Font</label>
                 <select 
-                  value={branding.headingFont}
-                  onChange={(e) => handleChange('headingFont', e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all appearance-none"
+                  value={branding.font_family_heading || 'Inter'}
+                  onChange={(e) => handleChange('font_family_heading', e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all appearance-none"
                 >
                   {fonts.map(font => <option key={font} value={font}>{font}</option>)}
                 </select>
@@ -119,9 +185,9 @@ const Branding: React.FC = () => {
               <div className="space-y-3">
                 <label className="text-sm font-bold text-white/60 ml-1">Body Font</label>
                 <select 
-                  value={branding.bodyFont}
-                  onChange={(e) => handleChange('bodyFont', e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-orange/50 transition-all appearance-none"
+                  value={branding.font_family_body || 'Inter'}
+                  onChange={(e) => handleChange('font_family_body', e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all appearance-none"
                 >
                   {fonts.map(font => <option key={font} value={font}>{font}</option>)}
                 </select>
@@ -132,7 +198,7 @@ const Branding: React.FC = () => {
           {/* UI Elements */}
           <div className="bg-[#111] border border-white/5 rounded-3xl p-8 space-y-8">
             <div className="flex items-center gap-4 mb-2">
-              <div className="w-10 h-10 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange">
+              <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
                 <Sliders size={20} />
               </div>
               <h3 className="text-xl font-bold tracking-tight">UI Elements</h3>
@@ -144,10 +210,10 @@ const Branding: React.FC = () => {
                   {borderRadii.map((radius) => (
                     <button
                       key={radius.label}
-                      onClick={() => handleChange('borderRadius', radius.value)}
+                      onClick={() => handleChange('border_radius', radius.value)}
                       className={`px-6 py-3 rounded-xl border transition-all font-medium ${
-                        branding.borderRadius === radius.value 
-                          ? 'bg-brand-orange border-brand-orange text-white shadow-lg shadow-brand-orange/20' 
+                        branding.border_radius === radius.value 
+                          ? 'bg-brand-primary border-brand-primary text-white shadow-lg shadow-brand-primary/20' 
                           : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10'
                       }`}
                     >
@@ -159,15 +225,15 @@ const Branding: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <label className="text-sm font-bold text-white/60 ml-1">Glassmorphism Intensity</label>
-                  <span className="text-brand-orange font-bold font-mono">{branding.glassIntensity}%</span>
+                  <span className="text-brand-primary font-bold font-mono">{branding.glass_intensity}%</span>
                 </div>
                 <input 
                   type="range" 
                   min="0" 
                   max="100" 
-                  value={branding.glassIntensity}
-                  onChange={(e) => handleChange('glassIntensity', parseInt(e.target.value))}
-                  className="w-full h-2 bg-white/5 rounded-lg appearance-none cursor-pointer accent-brand-orange"
+                  value={branding.glass_intensity}
+                  onChange={(e) => handleChange('glass_intensity', parseInt(e.target.value))}
+                  className="w-full h-2 bg-white/5 rounded-lg appearance-none cursor-pointer accent-brand-primary"
                 />
               </div>
             </div>
@@ -181,14 +247,14 @@ const Branding: React.FC = () => {
             <div className="h-[1px] flex-1 bg-white/5" />
           </h3>
           <div className="bg-[#050505] border border-white/10 rounded-[2.5rem] p-8 space-y-8 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
             
             <div className="space-y-4 relative z-10">
-              <div className="w-12 h-12 bg-brand-orange rounded-2xl flex items-center justify-center font-bold text-black text-xl">C</div>
-              <h4 className="text-2xl font-bold tracking-tight" style={{ color: branding.textColor, fontFamily: branding.headingFont }}>
-                Design <span style={{ color: branding.primaryColor }}>Preview</span>
+              <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center font-bold text-black text-xl">C</div>
+              <h4 className="text-2xl font-bold tracking-tight" style={{ color: branding.text_color, fontFamily: branding.font_family_heading }}>
+                Design <span style={{ color: branding.primary_color }}>Preview</span>
               </h4>
-              <p className="text-sm leading-relaxed opacity-60" style={{ color: branding.textColor, fontFamily: branding.bodyFont }}>
+              <p className="text-sm leading-relaxed opacity-60" style={{ color: branding.text_color, fontFamily: branding.font_family_body }}>
                 This is how your branding elements will look on the live website. Adjust the colors and fonts to match your vision.
               </p>
             </div>
@@ -196,30 +262,30 @@ const Branding: React.FC = () => {
             <div 
               className="p-6 border border-white/10 shadow-xl space-y-4"
               style={{ 
-                borderRadius: branding.borderRadius,
-                backgroundColor: `rgba(255, 255, 255, ${branding.glassIntensity / 500})`,
-                backdropFilter: `blur(${branding.glassIntensity / 2}px)`
+                borderRadius: branding.border_radius,
+                backgroundColor: `rgba(255, 255, 255, ${branding.glass_intensity / 500})`,
+                backdropFilter: `blur(${branding.glass_intensity / 2}px)`
               }}
             >
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4" style={{ color: branding.accentColor }} />
+                <Check className="w-4 h-4" style={{ color: branding.accent_color }} />
                 <span className="text-xs font-bold uppercase tracking-widest opacity-40">Feature Item</span>
               </div>
               <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                <div className="h-full" style={{ backgroundColor: branding.primaryColor, width: '70%' }} />
+                <div className="h-full" style={{ backgroundColor: branding.primary_color, width: '70%' }} />
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
               <button 
                 className="w-full py-4 font-bold text-white shadow-lg transition-all hover:scale-[1.02]"
-                style={{ backgroundColor: branding.primaryColor, borderRadius: branding.borderRadius }}
+                style={{ backgroundColor: branding.primary_color, borderRadius: branding.border_radius }}
               >
                 Primary Action
               </button>
               <button 
                 className="w-full py-4 font-bold text-white/60 border border-white/10 transition-all hover:text-white hover:bg-white/5"
-                style={{ borderRadius: branding.borderRadius }}
+                style={{ borderRadius: branding.border_radius }}
               >
                 Secondary Action
               </button>
@@ -230,6 +296,34 @@ const Branding: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* Sticky Save Bar */}
+      {hasChanges && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6 z-50 animate-in slide-in-from-bottom-10">
+          <div className="bg-[#111]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center justify-between shadow-2xl">
+            <div className="flex items-center gap-3 text-sm text-white/60 ml-4">
+              <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
+              Unsaved changes detected
+            </div>
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={() => window.location.reload()}
+                className="px-6 py-2 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all text-sm font-bold"
+              >
+                Discard
+              </button>
+              <button 
+                onClick={handleSave}
+                disabled={isSaving}
+                className="px-8 py-2 bg-brand-primary text-white rounded-lg font-bold shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all text-sm flex items-center gap-2"
+              >
+                {isSaving && <Loader2 size={14} className="animate-spin" />}
+                Save All Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
