@@ -34,43 +34,43 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-4 ${
-        isScrolled ? 'pt-3 pb-3' : 'pt-6 pb-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-4 ${
+        isScrolled ? 'py-3' : 'py-5'
       }`}
     >
       <div
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
           isScrolled 
-            ? 'glass shadow-2xl shadow-brand-primary/5 py-3 px-6' 
+            ? 'glass shadow-2xl shadow-brand-primary/5 py-2.5 px-6' 
             : 'bg-transparent py-2 px-4'
         }`}
       >
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between h-12 md:h-14">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-brand-dark font-bold text-xl">C</span>
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+            <div className="w-9 h-9 bg-brand-primary rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-brand-primary/20">
+              <span className="text-brand-dark font-display font-bold text-xl">C</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
+            <span className="text-xl font-display font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
               Conversion<span className="text-brand-primary">Foxx</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <NavLink
                   to={link.href}
                   className={({ isActive }) => `
-                    text-sm font-medium transition-colors duration-300 relative group
+                    text-sm font-sans font-semibold transition-colors duration-300 relative group py-2
                     ${isActive ? 'text-brand-primary' : 'text-brand-text-secondary hover:text-brand-primary'}
                   `}
                 >
                   {({ isActive }) => (
                     <>
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-primary transition-all duration-300 ${
+                      <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-primary transition-all duration-300 ${
                         isActive ? 'w-full' : 'w-0 group-hover:w-full'
                       }`} />
                     </>
@@ -81,8 +81,8 @@ const Header: React.FC = () => {
           </ul>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button to="/contact" size="sm" icon={ArrowRight}>
+          <div className="hidden md:flex items-center">
+            <Button to="/contact" size="md" icon={ArrowRight} className="rounded-xl font-sans font-medium">
               Let's Talk
             </Button>
           </div>
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                   <NavLink
                     to={link.href}
                     className={({ isActive }) => `
-                      text-lg font-medium transition-colors block py-2
+                      text-lg font-sans font-medium transition-colors block py-2
                       ${isActive ? 'text-brand-primary' : 'text-white/80 hover:text-brand-primary'}
                     `}
                   >
@@ -132,7 +132,7 @@ const Header: React.FC = () => {
                 transition={{ delay: navLinks.length * 0.1 }}
                 className="pt-4 border-t border-white/10"
               >
-                <Button to="/contact" className="w-full" size="lg" icon={ArrowRight}>
+                <Button to="/contact" className="w-full font-sans font-medium" size="lg" icon={ArrowRight}>
                   Let's Talk
                 </Button>
               </motion.li>

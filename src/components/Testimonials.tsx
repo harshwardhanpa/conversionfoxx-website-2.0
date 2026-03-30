@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
+import Section from './ui/Section';
+import Container from './ui/Container';
 
 const testimonials = [
   {
@@ -25,14 +27,14 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-white/2">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+    <Section id="testimonials" padding="xl" background="subtle">
+      <Container>
         <div className="text-center space-y-4 mb-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-widest"
+            className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
           >
             What Our Clients Say
           </motion.span>
@@ -41,9 +43,9 @@ const Testimonials: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
-            Trusted by <span>industry leaders</span>
+            Trusted by <span className="brand-gradient-text">industry leaders</span>
           </motion.h2>
         </div>
 
@@ -56,32 +58,32 @@ const Testimonials: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative glass p-8 rounded-[2.5rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500"
+              className="group relative glass p-8 rounded-[2.5rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col h-full"
             >
               <div className="absolute top-8 right-8 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Quote className="w-12 h-12 text-brand-primary" />
               </div>
               
-              <div className="relative z-10 space-y-6">
+              <div className="relative z-10 space-y-6 flex flex-col h-full">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-brand-primary text-brand-primary" />
                   ))}
                 </div>
                 
-                <p className="text-brand-text-secondary opacity-70 leading-relaxed italic group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
+                <p className="text-brand-text-secondary opacity-70 leading-[1.6] italic group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors flex-grow font-sans">
                   "{testimonial.content}"
                 </p>
                 
-                <div className="pt-6 border-t border-white/10 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-brand-primary">
+                <div className="pt-6 border-t border-white/10 flex items-center gap-4 shrink-0">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-brand-primary font-display">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors">
+                    <div className="font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors font-display">
                       {testimonial.name}
                     </div>
-                    <div className="text-xs text-brand-text-secondary opacity-40 uppercase tracking-widest">
+                    <div className="text-xs text-brand-text-secondary opacity-40 uppercase tracking-widest font-sans">
                       {testimonial.role}
                     </div>
                   </div>
@@ -90,8 +92,8 @@ const Testimonials: React.FC = () => {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

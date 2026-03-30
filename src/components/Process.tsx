@@ -34,7 +34,7 @@ const Process: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-widest"
+            className="text-brand-primary text-sm font-sans font-bold uppercase tracking-widest"
           >
             Our Process
           </motion.span>
@@ -43,7 +43,7 @@ const Process: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight"
           >
             How we drive results
           </motion.h2>
@@ -66,16 +66,16 @@ const Process: React.FC = () => {
                 <div className="relative z-10 space-y-6">
                   <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500">
                     <step.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-dark glass rounded-full flex items-center justify-center text-xs font-bold text-brand-primary border-brand-primary/20">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-dark glass rounded-full flex items-center justify-center text-xs font-sans font-bold text-brand-primary border-brand-primary/20">
                       0{idx + 1}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-xl font-display font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors">
                     {step.title}
                   </h3>
                   
-                  <p className="text-brand-text-secondary opacity-50 leading-relaxed group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
+                  <p className="text-brand-text-secondary font-sans opacity-50 leading-relaxed group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
                     {step.description}
                   </p>
                 </div>

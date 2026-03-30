@@ -45,9 +45,9 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">C</span>
+              <span className="text-white font-bold text-xl font-display">C</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300">
+            <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300 font-display">
               Conversion<span className="text-brand-primary">Foxx</span>
             </span>
           </Link>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
               <li key={link.name}>
                 <Link
                   to={link.href}
-                  className={`text-sm font-medium transition-colors duration-300 relative group ${
+                  className={`text-sm font-medium transition-colors duration-300 relative group font-sans ${
                     location.pathname === link.href ? 'text-brand-primary' : 'text-white/70 hover:text-brand-primary'
                   }`}
                 >
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 shadow-lg shadow-brand-primary/20 transition-all duration-300 group"
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 shadow-lg shadow-brand-primary/20 transition-all duration-300 group font-sans tracking-wide"
               >
                 Get Free Growth Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

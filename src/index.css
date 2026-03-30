@@ -1,8 +1,9 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap');
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", sans-serif;
   --color-brand-primary: #F26E22;
   --color-brand-secondary: #BF4417;
   --color-brand-accent: #D91A2A;
@@ -17,10 +18,10 @@
 
 @layer base {
   body {
-    @apply bg-brand-dark text-brand-text-secondary font-sans antialiased;
+    @apply bg-brand-dark text-brand-text-secondary font-sans antialiased leading-[1.6];
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-brand-text-heading;
+    @apply font-display text-brand-text-heading tracking-tight;
   }
 }
 

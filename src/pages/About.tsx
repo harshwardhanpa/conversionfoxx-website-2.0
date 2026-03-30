@@ -23,15 +23,15 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto">
                 <Sparkles className="w-4 h-4" />
                 About ConversionFoxx
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                 We Build Systems That <br />
                 Scale Revenue Predictably
               </h1>
-              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-sans font-normal leading-[1.6]">
                 ConversionFoxx is a growth system architecture firm. We help businesses scale through data-backed Growth Audits, high-performance Lead Generation, and our flagship Revenue Operations System. We don't just provide services; we build engines for sustainable growth.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -56,9 +56,9 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Story</span>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Bridging the Gap Between <br />Traffic and Revenue</h2>
-                <div className="space-y-6 text-brand-text-secondary text-lg leading-relaxed">
+                <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Story</span>
+                <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.2] text-brand-text-heading">Bridging the Gap Between <br />Traffic and Revenue</h2>
+                <div className="space-y-6 text-brand-text-secondary font-sans text-lg leading-[1.6]">
                   <p>
                     In today's digital landscape, many businesses invest heavily in beautiful websites and expensive advertising, yet they often fail to see measurable revenue growth. They have traffic, but they lack a system to convert that traffic into predictable profit.
                   </p>
@@ -81,7 +81,7 @@ const About: React.FC = () => {
                   <div className="w-20 h-20 bg-brand-primary/20 rounded-3xl flex items-center justify-center mx-auto mb-8">
                     <Rocket className="w-10 h-10 text-brand-primary" />
                   </div>
-                  <h3 className="text-3xl font-bold italic">"Growth is not an accident; it's a system."</h3>
+                  <h3 className="text-3xl font-display font-bold italic">"Growth is not an accident; it's a system."</h3>
                   <div className="w-12 h-1 bg-brand-primary mx-auto" />
                 </div>
               </motion.div>
@@ -93,7 +93,7 @@ const About: React.FC = () => {
         <section id="mission-vision" className="py-24 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">What Drives Us</h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">What Drives Us</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div
@@ -105,8 +105,8 @@ const About: React.FC = () => {
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-colors duration-500">
                   <Target className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
-                <p className="text-brand-text-secondary text-lg leading-relaxed">
+                <h3 className="text-2xl font-display font-bold mb-6 text-brand-text-heading">Our Mission</h3>
+                <p className="text-brand-text-secondary font-sans text-lg leading-[1.6]">
                   To help businesses turn marketing efforts into predictable revenue through system-based growth architecture and data-backed optimization.
                 </p>
               </motion.div>
@@ -120,8 +120,8 @@ const About: React.FC = () => {
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-colors duration-500">
                   <Eye className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold mb-6">Our Vision</h3>
-                <p className="text-brand-text-secondary text-lg leading-relaxed">
+                <h3 className="text-2xl font-display font-bold mb-6 text-brand-text-heading">Our Vision</h3>
+                <p className="text-brand-text-secondary font-sans text-lg leading-[1.6]">
                   To become the world's leading growth architecture firm, known for building the most efficient and scalable revenue systems for ambitious brands.
                 </p>
               </motion.div>
@@ -133,8 +133,8 @@ const About: React.FC = () => {
         <section id="why-choose-us" className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Why ConversionFoxx?</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Businesses Choose Us</h2>
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Why ConversionFoxx?</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Why Businesses Choose Us</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -156,8 +156,8 @@ const About: React.FC = () => {
                   <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition-colors">
                     <item.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
-                  <p className="text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">{item.description}</p>
+                  <h3 className="text-xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{item.title}</h3>
+                  <p className="text-brand-text-secondary font-sans leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -168,9 +168,9 @@ const About: React.FC = () => {
         <section id="expertise" className="py-24 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Expertise</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Built to Support Modern Growth</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Expertise</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Built to Support Modern Growth</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
                 Built to support modern business growth across strategy, technology, and performance.
               </p>
             </div>
@@ -193,13 +193,13 @@ const About: React.FC = () => {
                   <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-all duration-500">
                     <service.icon className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{service.title}</h3>
-                  <p className="text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">{service.description}</p>
+                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{service.title}</h3>
+                  <p className="text-brand-text-secondary font-sans leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{service.description}</p>
                 </motion.div>
               ))}
               <div className="glass p-8 rounded-[2.5rem] flex flex-col justify-center items-center text-center gap-6 bg-brand-primary/5 border-dashed border-2 border-brand-primary/20">
-                <h3 className="text-2xl font-bold">Need a Custom Solution?</h3>
-                <Button to="/contact" variant="primary">
+                <h3 className="text-2xl font-display font-bold text-brand-text-heading">Need a Custom Solution?</h3>
+                <Button to="/contact" variant="primary" className="font-sans font-medium">
                   Let's Talk
                 </Button>
               </div>
@@ -217,8 +217,8 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">We Focus on Results <br /><span className="text-brand-primary">That Scale</span></h2>
-                <p className="text-white/60 text-lg leading-relaxed">
+                <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.2] text-brand-text-heading">We Focus on Results <br /><span className="text-brand-primary">That Scale</span></h2>
+                <p className="text-brand-text-secondary font-sans text-lg leading-[1.6]">
                   Every Growth Audit, Lead Gen campaign, or Revenue Operations System we build is centered around efficiency, conversion, and long-term scalability. We don't believe in vanity metrics; we believe in revenue outcomes.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -232,7 +232,7 @@ const About: React.FC = () => {
                       <div className="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center group-hover:bg-brand-primary transition-colors">
                         <div className="w-2 h-2 rounded-full bg-brand-primary group-hover:bg-white" />
                       </div>
-                      <span className="font-medium text-white/80 group-hover:text-white transition-colors">{item}</span>
+                      <span className="font-sans font-medium text-brand-text-secondary group-hover:text-brand-text-heading transition-colors">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -240,22 +240,22 @@ const About: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 pt-12">
                   <div className="glass p-8 rounded-3xl text-center space-y-2">
-                    <div className="text-4xl font-bold text-brand-primary">300%</div>
-                    <div className="text-xs text-white/40 uppercase tracking-widest">ROI Increase</div>
+                    <div className="text-4xl font-display font-bold text-brand-primary">300%</div>
+                    <div className="text-[10px] font-sans text-brand-text-secondary font-bold uppercase tracking-[0.2em]">ROI Increase</div>
                   </div>
                   <div className="glass p-8 rounded-3xl text-center space-y-2">
-                    <div className="text-4xl font-bold text-brand-primary">5X</div>
-                    <div className="text-xs text-white/40 uppercase tracking-widest">Lead Gen</div>
+                    <div className="text-4xl font-display font-bold text-brand-primary">5X</div>
+                    <div className="text-[10px] font-sans text-brand-text-secondary font-bold uppercase tracking-[0.2em]">Lead Gen</div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="glass p-8 rounded-3xl text-center space-y-2">
-                    <div className="text-4xl font-bold text-brand-primary">24/7</div>
-                    <div className="text-xs text-white/40 uppercase tracking-widest">Monitoring</div>
+                    <div className="text-4xl font-display font-bold text-brand-primary">24/7</div>
+                    <div className="text-[10px] font-sans text-brand-text-secondary font-bold uppercase tracking-[0.2em]">Monitoring</div>
                   </div>
                   <div className="glass p-8 rounded-3xl text-center space-y-2">
-                    <div className="text-4xl font-bold text-brand-primary">100%</div>
-                    <div className="text-xs text-white/40 uppercase tracking-widest">Commitment</div>
+                    <div className="text-4xl font-display font-bold text-brand-primary">100%</div>
+                    <div className="text-[10px] font-sans text-brand-text-secondary font-bold uppercase tracking-[0.2em]">Commitment</div>
                   </div>
                 </div>
               </div>
@@ -267,9 +267,9 @@ const About: React.FC = () => {
         <section id="team" className="py-24 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Team</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">The People Behind ConversionFoxx</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Team</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">The People Behind ConversionFoxx</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
                 ConversionFoxx brings together strategic thinking, technical expertise, and creative execution to deliver high-performance growth solutions.
               </p>
             </div>
@@ -291,9 +291,9 @@ const About: React.FC = () => {
                   <div className="w-24 h-24 bg-white/10 rounded-full mx-auto mb-6 flex items-center justify-center font-bold text-3xl text-brand-primary group-hover:scale-110 transition-transform">
                     {member.name.charAt(0)}
                   </div>
-                  <h3 className="text-xl font-bold mb-1 group-hover:text-brand-primary transition-colors">{member.name}</h3>
-                  <div className="text-brand-primary text-xs font-bold uppercase tracking-widest mb-4">{member.role}</div>
-                  <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/60 transition-colors">{member.bio}</p>
+                  <h3 className="text-xl font-display font-bold mb-1 group-hover:text-brand-primary transition-colors text-brand-text-heading">{member.name}</h3>
+                  <div className="text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mb-4">{member.role}</div>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{member.bio}</p>
                 </motion.div>
               ))}
             </div>
@@ -304,8 +304,8 @@ const About: React.FC = () => {
         <section id="process" className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">How We Work</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Process</h2>
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">How We Work</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Our Process</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
               {/* Timeline Line (Desktop) */}
@@ -328,12 +328,12 @@ const About: React.FC = () => {
                   <div className="relative z-10 space-y-6">
                     <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500">
                       <step.icon className="w-8 h-8 text-brand-primary group-hover:text-white transition-colors" />
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-dark glass rounded-full flex items-center justify-center text-xs font-bold text-brand-primary border-brand-primary/20">
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-dark glass rounded-full flex items-center justify-center text-[10px] font-sans font-bold text-brand-primary border-brand-primary/20">
                         0{idx + 1}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-brand-primary transition-colors">{step.title}</h3>
-                    <p className="text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">{step.description}</p>
+                    <h3 className="text-xl font-display font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors">{step.title}</h3>
+                    <p className="text-brand-text-secondary font-sans leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -347,11 +347,11 @@ const About: React.FC = () => {
             <div className="glass p-12 md:p-20 rounded-[3rem] text-center space-y-8 relative overflow-hidden border-brand-primary/10">
               <div className="absolute top-0 left-0 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full" />
               <div className="relative z-10 space-y-6">
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Want to See What We Can Build?</h2>
-                <p className="text-white/60 text-lg max-w-2xl mx-auto">
+                <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Want to See What We Can Build?</h2>
+                <p className="text-brand-text-secondary font-sans text-lg max-w-2xl mx-auto leading-[1.6]">
                   Explore our services and discover how ConversionFoxx helps brands grow through strategy, technology, and performance.
                 </p>
-                <Button to="/services">
+                <Button to="/services" className="font-sans font-medium">
                   View Services
                 </Button>
               </div>
@@ -372,11 +372,11 @@ const About: React.FC = () => {
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
               
               <div className="relative z-10 space-y-8">
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                   Let’s Build a <br />
                   Revenue System
                 </h2>
-                <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6]">
                   Whether you need a Growth Audit, better Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to scale your business.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">

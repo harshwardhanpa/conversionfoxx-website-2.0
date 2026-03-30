@@ -16,6 +16,8 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
+const MotionLink = motion(Link);
+
 /**
  * Standardized CTA and secondary buttons matching the ConversionFoxx style.
  */
@@ -31,11 +33,11 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
 }) => {
-  const baseStyles = "inline-flex items-center justify-center font-bold tracking-tight transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center font-medium tracking-wide font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "brand-gradient text-brand-dark shadow-lg shadow-brand-primary/20 hover:brightness-110 hover:shadow-brand-primary/40 active:scale-95",
-    secondary: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary hover:text-brand-dark active:scale-95",
+    primary: "bg-brand-primary text-white shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 active:scale-95",
+    secondary: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary/10 active:scale-95",
     ghost: "text-brand-text-secondary hover:text-brand-primary hover:bg-white/5 active:scale-95",
     outline: "border border-white/10 text-brand-text-heading hover:border-brand-primary hover:text-brand-primary active:scale-95",
   };
@@ -59,9 +61,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <Link to={to} className={combinedClasses}>
+      <MotionLink 
+        to={to} 
+        className={combinedClasses}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
         {content}
-      </Link>
+      </MotionLink>
     );
   }
 

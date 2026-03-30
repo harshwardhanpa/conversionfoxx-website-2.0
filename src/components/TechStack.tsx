@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import Section from './ui/Section';
+import Container from './ui/Container';
 
 const tools = [
   { name: 'HubSpot', icon: '🧡' },
@@ -14,14 +16,14 @@ const tools = [
 
 const TechStack: React.FC = () => {
   return (
-    <section id="tech-stack" className="py-24 relative overflow-hidden bg-white/2">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+    <Section id="tech-stack" padding="xl">
+      <Container>
         <div className="text-center space-y-4 mb-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-widest"
+            className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
           >
             Powered by Modern Technology
           </motion.span>
@@ -30,7 +32,7 @@ const TechStack: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
             The tools we use to build your future
           </motion.h2>
@@ -50,14 +52,14 @@ const TechStack: React.FC = () => {
               <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-500">
                 {tool.icon}
               </div>
-              <div className="text-lg font-bold text-brand-text-secondary opacity-60 group-hover:text-brand-text-heading group-hover:opacity-100 transition-colors">
+              <div className="text-lg font-bold text-brand-text-secondary opacity-60 group-hover:text-brand-text-heading group-hover:opacity-100 transition-colors font-display">
                 {tool.name}
               </div>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

@@ -139,15 +139,15 @@ const Blogs: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                   <BookOpen className="w-4 h-4" />
                   ConversionFoxx Insights
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                   Insights That Help <br />
                   Businesses Grow Smarter
                 </h1>
-                <p className="text-lg md:text-xl text-brand-text-secondary opacity-60 font-light leading-relaxed max-w-xl">
+                <p className="text-lg md:text-xl text-brand-text-secondary font-sans font-normal leading-[1.6] max-w-xl">
                   Explore practical insights from ConversionFoxx on digital growth, marketing performance, websites, applications, CRM systems, and the strategies that help modern businesses move forward.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -158,7 +158,7 @@ const Blogs: React.FC = () => {
                     Explore Services
                   </Button>
                 </div>
-                <p className="text-white/40 text-sm italic">
+                <p className="text-brand-text-secondary/40 text-sm font-sans italic">
                   “Built for founders, marketers, and businesses looking for clearer digital direction.”
                 </p>
               </motion.div>
@@ -176,8 +176,8 @@ const Blogs: React.FC = () => {
                         <TrendingUp className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">Growth Strategy</div>
-                        <div className="text-xs text-white/40">5 min read</div>
+                        <div className="text-sm font-display font-semibold text-brand-text-heading">Growth Strategy</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">5 min read</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-8">
@@ -185,8 +185,8 @@ const Blogs: React.FC = () => {
                         <LayoutIcon className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">Web Development</div>
-                        <div className="text-xs text-white/40">7 min read</div>
+                        <div className="text-sm font-display font-semibold text-brand-text-heading">Web Development</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">7 min read</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-4">
@@ -194,8 +194,8 @@ const Blogs: React.FC = () => {
                         <Database className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">CRM & Automation</div>
-                        <div className="text-xs text-white/40">4 min read</div>
+                        <div className="text-sm font-display font-semibold text-brand-text-heading">CRM & Automation</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">4 min read</div>
                       </div>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ const Blogs: React.FC = () => {
           <Container>
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-white/10" />
-              <h2 className="text-2xl font-bold tracking-tight uppercase tracking-widest text-white/40">Featured Insight</h2>
+              <h2 className="text-2xl font-display font-semibold tracking-tight uppercase tracking-[0.2em] text-brand-text-secondary/40">Featured Insight</h2>
               <div className="h-px flex-1 bg-white/10" />
             </div>
 
@@ -234,16 +234,16 @@ const Blogs: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent lg:hidden" />
                   </div>
                   <div className="p-8 md:p-16 flex flex-col justify-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-brand-primary">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-primary">
                       Growth Strategy
                     </div>
-                    <h3 className="text-3xl md:text-5xl font-bold leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading">
+                    <h3 className="text-3xl md:text-5xl font-display font-semibold leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading">
                       Why Connected Systems Matter More Than Isolated Marketing Tactics
                     </h3>
-                    <p className="text-brand-text-secondary opacity-60 text-lg leading-relaxed group-hover:opacity-100 transition-opacity">
+                    <p className="text-brand-text-secondary font-sans text-lg leading-[1.6] group-hover:text-brand-text-secondary transition-opacity">
                       Businesses often invest in campaigns, websites, and tools separately, but real growth comes when those systems work together. Here’s how connected execution creates stronger long-term performance.
                     </p>
-                    <div className="flex items-center gap-6 text-white/40 text-sm">
+                    <div className="flex items-center gap-6 text-brand-text-secondary/40 font-sans text-sm">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
                         Mar 18, 2026
@@ -276,10 +276,10 @@ const Blogs: React.FC = () => {
                     <button
                       key={category}
                       onClick={() => setActiveCategory(category)}
-                      className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${
+                      className={`px-6 py-2.5 rounded-xl text-sm font-sans font-semibold transition-all whitespace-nowrap ${
                         activeCategory === category 
                         ? 'bg-brand-primary text-brand-dark shadow-lg shadow-brand-primary/20' 
-                        : 'text-brand-text-secondary opacity-40 hover:opacity-100 hover:bg-white/5'
+                        : 'text-brand-text-secondary/40 hover:text-brand-text-secondary hover:bg-white/5'
                       }`}
                     >
                       {category}
@@ -296,7 +296,7 @@ const Blogs: React.FC = () => {
                   placeholder="Search insights, topics, and ideas..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full glass bg-white/5 border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                  className="w-full glass bg-white/5 border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm font-sans text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                 />
               </div>
             </div>
@@ -307,8 +307,8 @@ const Blogs: React.FC = () => {
         <Section className="py-12 pb-24">
           <Container>
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-bold tracking-tight">Latest Articles</h2>
-              <div className="text-white/40 text-sm font-bold uppercase tracking-widest">
+              <h2 className="text-3xl font-display font-semibold tracking-tight text-brand-text-heading">Latest Articles</h2>
+              <div className="text-brand-text-secondary/40 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                 Showing {filteredPosts.length} Results
               </div>
             </div>
@@ -332,12 +332,12 @@ const Blogs: React.FC = () => {
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                         />
-                        <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white">
+                        <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading">
                           {post.category}
                         </div>
                       </div>
                       <div className="space-y-4 px-2">
-                        <div className="flex items-center gap-4 text-white/30 text-[10px] font-bold uppercase tracking-widest">
+                        <div className="flex items-center gap-4 text-brand-text-secondary/30 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="w-3 h-3" />
                             {post.date}
@@ -347,13 +347,13 @@ const Blogs: React.FC = () => {
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading">
+                        <h3 className="text-2xl font-display font-semibold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading">
                           {post.title}
                         </h3>
-                        <p className="text-brand-text-secondary opacity-40 text-sm leading-relaxed line-clamp-2 group-hover:opacity-100 transition-opacity">
+                        <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] line-clamp-2 group-hover:text-brand-text-secondary transition-opacity">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all pt-2">
+                        <div className="flex items-center gap-2 text-brand-primary font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2">
                           Read More <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -366,12 +366,12 @@ const Blogs: React.FC = () => {
                 <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-8 h-8 text-white/20" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">No articles found</h3>
-                <p className="text-white/40">Try adjusting your search or filters to find what you're looking for.</p>
+                <h3 className="text-2xl font-display font-semibold mb-2 text-brand-text-heading">No articles found</h3>
+                <p className="text-brand-text-secondary font-sans">Try adjusting your search or filters to find what you're looking for.</p>
                 <Button 
                   variant="ghost"
                   onClick={() => {setActiveCategory('All'); setSearchQuery('');}}
-                  className="mt-8 text-brand-primary font-bold hover:underline"
+                  className="mt-8 text-brand-primary font-sans font-semibold hover:underline"
                 >
                   Clear all filters
                 </Button>
@@ -384,8 +384,8 @@ const Blogs: React.FC = () => {
         <Section background="subtle">
           <Container>
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Deep Dives</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Explore Popular Themes</h2>
+              <span className="text-brand-primary text-sm font-sans font-semibold uppercase tracking-[0.2em]">Deep Dives</span>
+              <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Explore Popular Themes</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -432,8 +432,8 @@ const Blogs: React.FC = () => {
                     <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-all duration-500">
                       <topic.icon className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{topic.title}</h3>
-                    <p className="text-white/40 text-sm leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
+                    <h3 className="text-2xl font-display font-semibold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{topic.title}</h3>
+                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] mb-8 group-hover:text-brand-text-secondary transition-colors">
                       {topic.description}
                     </p>
                     <div className="space-y-4">
@@ -443,10 +443,10 @@ const Blogs: React.FC = () => {
                           to={`/blogs/${link.slug}`}
                           className="flex items-center justify-between group/link py-3 border-b border-white/5 hover:border-brand-primary/30 transition-colors"
                         >
-                          <span className="text-sm font-medium text-white/70 group-hover/link:text-white transition-colors line-clamp-1">
+                          <span className="text-sm font-sans font-medium text-brand-text-secondary/70 group-hover/link:text-brand-text-heading transition-colors line-clamp-1">
                             {link.name}
                           </span>
-                          <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-brand-primary transition-colors" />
+                          <ChevronRight className="w-4 h-4 text-brand-text-secondary/20 group-hover/link:text-brand-primary transition-colors" />
                         </Link>
                       ))}
                     </div>
@@ -473,8 +473,8 @@ const Blogs: React.FC = () => {
                   <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-brand-primary" />
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Stay Connected With New Insights</h2>
-                  <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                  <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Stay Connected With New Insights</h2>
+                  <p className="text-brand-text-secondary font-sans text-lg max-w-2xl mx-auto font-normal leading-[1.6]">
                     Get practical ideas on growth, performance, systems, and digital execution from the ConversionFoxx perspective.
                   </p>
                   
@@ -482,13 +482,13 @@ const Blogs: React.FC = () => {
                     <input 
                       type="email" 
                       placeholder="Enter your email"
-                      className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                      className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                     />
-                    <Button type="submit" size="lg">
+                    <Button type="submit" size="lg" className="font-sans font-semibold">
                       Subscribe
                     </Button>
                   </form>
-                  <p className="text-white/30 text-xs font-bold uppercase tracking-widest">
+                  <p className="text-brand-text-secondary/30 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                     No spam. Just useful insights.
                   </p>
                 </div>
@@ -501,8 +501,8 @@ const Blogs: React.FC = () => {
         <Section>
           <Container>
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Editorial Philosophy</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Built Around Real Business Questions</h2>
+              <span className="text-brand-primary text-sm font-sans font-semibold uppercase tracking-[0.2em]">Our Editorial Philosophy</span>
+              <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Built Around Real Business Questions</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -539,8 +539,8 @@ const Blogs: React.FC = () => {
                     <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-primary transition-all duration-500">
                       <item.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
-                    <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/60 transition-colors">
+                    <h3 className="text-xl font-display font-semibold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{item.title}</h3>
+                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">
                       {item.description}
                     </p>
                   </Card>
@@ -563,18 +563,18 @@ const Blogs: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+                  <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tight leading-[1.1] text-brand-text-heading">
                     Need Help Turning <br />
-                    Insight Into Action?
+                    <span className="brand-gradient-text">Insight Into Action?</span>
                   </h2>
-                  <p className="text-brand-text-secondary opacity-60 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                  <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6]">
                     If your business needs stronger systems, better execution, or clearer digital direction, ConversionFoxx is ready to help.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-                    <Button to="/contact" size="xl" icon={ArrowRight}>
+                    <Button to="/contact" size="xl" icon={ArrowRight} className="font-sans font-semibold">
                       Let's Talk
                     </Button>
-                    <Button to="/services" variant="secondary" size="xl">
+                    <Button to="/services" variant="secondary" size="xl" className="font-sans font-semibold">
                       Explore Services
                     </Button>
                   </div>

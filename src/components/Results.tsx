@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { TrendingUp, Users, Rocket } from 'lucide-react';
+import Section from './ui/Section';
+import Container from './ui/Container';
 
 const results = [
   {
@@ -28,14 +30,14 @@ const results = [
 
 const Results: React.FC = () => {
   return (
-    <section id="results" className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+    <Section id="results" padding="xl">
+      <Container>
         <div className="text-center space-y-4 mb-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-widest"
+            className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
           >
             Real Results. Real Growth.
           </motion.span>
@@ -44,7 +46,7 @@ const Results: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
             Numbers that speak for themselves
           </motion.h2>
@@ -59,32 +61,32 @@ const Results: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center"
+              className="group relative glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center flex flex-col h-full"
             >
               <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3rem]" />
               
-              <div className="relative z-10 space-y-6">
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500">
+              <div className="relative z-10 space-y-6 flex flex-col h-full">
+                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500 shrink-0">
                   <result.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
                 </div>
                 
-                <div className="text-5xl md:text-6xl font-bold text-white group-hover:text-brand-primary transition-colors">
+                <div className="text-5xl md:text-6xl font-bold text-white group-hover:text-brand-primary transition-colors font-display">
                   {result.metric}
                 </div>
                 
-                <div className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-white transition-colors">
+                <div className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-white transition-colors font-display">
                   {result.label}
                 </div>
                 
-                <p className="text-brand-text-secondary opacity-50 leading-relaxed group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
+                <p className="text-brand-text-secondary opacity-50 leading-[1.6] group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors font-sans">
                   {result.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

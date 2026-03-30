@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
+import Section from './ui/Section';
+import Container from './ui/Container';
 
 const FinalCTA: React.FC = () => {
   const scrollToProcess = () => {
@@ -12,8 +14,8 @@ const FinalCTA: React.FC = () => {
   };
 
   return (
-    <section id="final-cta" className="py-24 px-4 md:px-8 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <Section id="final-cta" padding="xl">
+      <Container>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -25,17 +27,17 @@ const FinalCTA: React.FC = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
           
           <div className="relative z-10 space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mx-auto font-sans">
               <Sparkles className="w-4 h-4" />
               Ready to Scale Your Revenue?
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] font-display">
               Stop guessing. <br />
-              Start growing.
+              <span className="brand-gradient-text">Start growing.</span>
             </h2>
             
-            <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6] font-sans">
               Our Growth Architects are ready to audit your system and build a high-performance revenue engine that scales predictably.
             </p>
             
@@ -49,8 +51,8 @@ const FinalCTA: React.FC = () => {
             </div>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

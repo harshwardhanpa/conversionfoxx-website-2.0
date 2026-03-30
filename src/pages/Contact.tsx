@@ -204,20 +204,20 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em]">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
                   </span>
                   Let's Connect
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                   Let’s Build a <br />
-                  <span>
+                  <span className="brand-gradient-text">
                     Revenue System
                   </span> That Scales
                 </h1>
-                <p className="text-lg md:text-xl text-brand-text-secondary font-light leading-relaxed max-w-xl">
+                <p className="text-lg md:text-xl text-brand-text-secondary font-sans font-normal leading-[1.6] max-w-xl">
                   Whether you need a Growth Audit, high-performance Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to help you scale with precision.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
                     See How It Works
                   </Button>
                 </div>
-                <p className="text-white/40 text-sm italic">
+                <p className="text-brand-text-secondary/40 text-sm font-sans italic">
                   “Tell us what you need. We’ll help you find the right next step.”
                 </p>
               </motion.div>
@@ -260,8 +260,8 @@ const Contact: React.FC = () => {
                         <MessageSquare className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">New Message</div>
-                        <div className="text-xs text-white/40">From: Potential Client</div>
+                        <div className="text-sm font-display font-bold text-brand-text-heading">New Message</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">From: Potential Client</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-8">
@@ -269,8 +269,8 @@ const Contact: React.FC = () => {
                         <Zap className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">Project Scope</div>
-                        <div className="text-xs text-white/40">Status: Analyzing...</div>
+                        <div className="text-sm font-display font-bold text-brand-text-heading">Project Scope</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">Status: Analyzing...</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-4">
@@ -278,8 +278,8 @@ const Contact: React.FC = () => {
                         <Calendar className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold">Meeting Scheduled</div>
-                        <div className="text-xs text-white/40">Tomorrow at 10:00 AM</div>
+                        <div className="text-sm font-display font-bold text-brand-text-heading">Meeting Scheduled</div>
+                        <div className="text-xs text-brand-text-secondary font-sans">Tomorrow at 10:00 AM</div>
                       </div>
                     </div>
                   </div>
@@ -296,8 +296,8 @@ const Contact: React.FC = () => {
         <section className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">How You Can Reach Us</h2>
-              <p className="text-brand-text-secondary max-w-2xl mx-auto">Multiple ways to connect without friction. Choose the one that fits your needs.</p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">How You Can Reach Us</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">Multiple ways to connect without friction. Choose the one that fits your needs.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {contactOptions.map((option, idx) => (
@@ -314,11 +314,11 @@ const Contact: React.FC = () => {
                       {option.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{option.title}</h3>
-                  <p className="text-brand-text-secondary opacity-50 text-sm leading-relaxed mb-6 group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
+                  <h3 className="text-xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{option.title}</h3>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] mb-6 group-hover:text-brand-text-secondary transition-colors">
                     {option.description}
                   </p>
-                  <div className="text-brand-primary font-bold text-sm tracking-wide uppercase">
+                  <div className="text-brand-primary font-sans font-bold text-[10px] tracking-[0.2em] uppercase">
                     {option.info}
                   </div>
                 </motion.div>
@@ -336,8 +336,8 @@ const Contact: React.FC = () => {
 
               <div className="relative z-10">
                 <div className="text-center mb-12 space-y-4">
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Tell Us About Your Project</h2>
-                  <p className="text-brand-text-secondary max-w-2xl mx-auto">Share a few details and our team will reach out with the most relevant next step.</p>
+                  <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Tell Us About Your Project</h2>
+                  <p className="text-brand-text-secondary font-sans text-lg leading-[1.6] max-w-2xl mx-auto">Share a few details and our team will reach out with the most relevant next step.</p>
                 </div>
 
                 <AnimatePresence mode="wait">
@@ -352,7 +352,7 @@ const Contact: React.FC = () => {
                     >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <User className="w-4 h-4 text-brand-primary" />
                             Full Name
                           </label>
@@ -363,11 +363,11 @@ const Contact: React.FC = () => {
                             value={formState.name}
                             onChange={handleInputChange}
                             placeholder="John Doe"
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <Building className="w-4 h-4 text-brand-primary" />
                             Company Name
                           </label>
@@ -378,11 +378,11 @@ const Contact: React.FC = () => {
                             value={formState.company}
                             onChange={handleInputChange}
                             placeholder="Acme Corp"
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <Mail className="w-4 h-4 text-brand-primary" />
                             Email Address
                           </label>
@@ -393,11 +393,11 @@ const Contact: React.FC = () => {
                             value={formState.email}
                             onChange={handleInputChange}
                             placeholder="john@example.com"
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <Phone className="w-4 h-4 text-brand-primary" />
                             Phone Number
                           </label>
@@ -408,11 +408,11 @@ const Contact: React.FC = () => {
                             value={formState.phone}
                             onChange={handleInputChange}
                             placeholder="+1 (555) 000-0000"
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <Zap className="w-4 h-4 text-brand-primary" />
                             Service Needed
                           </label>
@@ -421,7 +421,7 @@ const Contact: React.FC = () => {
                             name="service"
                             value={formState.service}
                             onChange={handleInputChange}
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled className="bg-brand-dark">Select a service</option>
                             <option value="growth-audit" className="bg-brand-dark">Growth Audit</option>
@@ -433,7 +433,7 @@ const Contact: React.FC = () => {
                           </select>
                         </div>
                         <div className="space-y-2">
-                          <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                             <TrendingUp className="w-4 h-4 text-brand-primary" />
                             Project Budget
                           </label>
@@ -442,7 +442,7 @@ const Contact: React.FC = () => {
                             name="budget"
                             value={formState.budget}
                             onChange={handleInputChange}
-                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
+                            className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled className="bg-brand-dark">Select a budget range</option>
                             <option value="under-1k" className="bg-brand-dark">Under $1,000</option>
@@ -454,7 +454,7 @@ const Contact: React.FC = () => {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-brand-text-secondary/70 ml-1 flex items-center gap-2">
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-brand-text-secondary/70 ml-1 flex items-center gap-2">
                           <MessageSquare className="w-4 h-4 text-brand-primary" />
                           Project Details / Message
                         </label>
@@ -465,14 +465,14 @@ const Contact: React.FC = () => {
                           onChange={handleInputChange}
                           rows={5}
                           placeholder="Tell us about your challenges and what you're looking to achieve..."
-                          className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all resize-none"
+                          className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all resize-none"
                         ></textarea>
                       </div>
                       
                       {error && (
                         <div className="p-4 bg-brand-primary/10 border border-brand-primary/20 rounded-2xl flex items-center gap-3 text-brand-primary">
                           <AlertCircle size={20} />
-                          <p className="text-sm font-bold">{error}</p>
+                          <p className="text-sm font-sans font-bold">{error}</p>
                         </div>
                       )}
 
@@ -480,7 +480,7 @@ const Contact: React.FC = () => {
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full md:w-auto"
+                          className="w-full md:w-auto font-sans font-bold"
                           size="xl"
                           icon={isSubmitting ? undefined : ArrowRight}
                         >
@@ -493,7 +493,7 @@ const Contact: React.FC = () => {
                             "Send Inquiry"
                           )}
                         </Button>
-                        <p className="mt-6 text-white/30 text-sm flex items-center justify-center gap-2">
+                        <p className="mt-6 text-brand-text-secondary/30 text-sm font-sans flex items-center justify-center gap-2">
                           <ShieldCheck className="w-4 h-4" />
                           Your information stays private and is only used to respond to your inquiry.
                         </p>
@@ -510,8 +510,8 @@ const Contact: React.FC = () => {
                         <CheckCircle2 className="w-12 h-12 text-brand-primary" />
                       </div>
                       <div className="space-y-4">
-                        <h3 className="text-4xl font-bold">Inquiry Sent Successfully!</h3>
-                        <p className="text-white/60 text-lg max-w-md mx-auto">
+                        <h3 className="text-4xl font-display font-bold text-brand-text-heading">Inquiry Sent Successfully!</h3>
+                        <p className="text-brand-text-secondary font-sans text-lg max-w-md mx-auto leading-[1.6]">
                           {settings?.success_message || `Thank you for reaching out, ${formState.name.split(' ')[0]}. Our team has received your details and will get back to you within 24 hours.`}
                         </p>
                       </div>
@@ -533,8 +533,8 @@ const Contact: React.FC = () => {
         <section className="py-24 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Businesses Reach Out to ConversionFoxx</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">We focus on the intersection of technical excellence and business growth.</p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Why Businesses Reach Out to ConversionFoxx</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">We focus on the intersection of technical excellence and business growth.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyContactUs.map((item, idx) => (
@@ -551,8 +551,8 @@ const Contact: React.FC = () => {
                       {item.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed group-hover:text-white/70 transition-colors">
+                  <h3 className="text-xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{item.title}</h3>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">
                     {item.description}
                   </p>
                 </motion.div>
@@ -565,8 +565,8 @@ const Contact: React.FC = () => {
         <section className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">What Happens Next</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">We’ve streamlined our onboarding to get your project moving quickly and clearly.</p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">What Happens Next</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">We’ve streamlined our onboarding to get your project moving quickly and clearly.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {nextSteps.map((step, idx) => (
@@ -579,11 +579,11 @@ const Contact: React.FC = () => {
                   className="relative group"
                 >
                   <div className="glass p-10 rounded-[2.5rem] border-white/5 h-full hover:border-brand-primary/20 transition-all duration-500">
-                    <div className="text-6xl font-black text-white/5 mb-6 group-hover:text-brand-primary/10 transition-colors">
+                    <div className="text-6xl font-display font-black text-white/5 mb-6 group-hover:text-brand-primary/10 transition-colors">
                       {step.step}
                     </div>
-                    <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-white/40 text-sm leading-relaxed">
+                    <h3 className="text-xl font-display font-bold mb-4 text-brand-text-heading">{step.title}</h3>
+                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6]">
                       {step.description}
                     </p>
                   </div>
@@ -603,8 +603,8 @@ const Contact: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-1 space-y-8">
-                <h2 className="text-4xl font-bold tracking-tight">Business Information</h2>
-                <p className="text-white/60 text-lg leading-relaxed">
+                <h2 className="text-4xl font-display font-bold tracking-tight text-brand-text-heading">Business Information</h2>
+                <p className="text-brand-text-secondary font-sans text-lg leading-[1.6]">
                   We work with businesses looking for focused execution, stronger systems, and measurable digital growth.
                 </p>
                 <div className="w-20 h-1 bg-brand-primary rounded-full" />
@@ -615,8 +615,8 @@ const Contact: React.FC = () => {
                     <Mail className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Email</div>
-                    <div className="text-lg font-bold">hello@conversionfoxx.com</div>
+                    <div className="text-[10px] font-sans font-bold text-brand-text-secondary/40 uppercase tracking-[0.2em] mb-1">Email</div>
+                    <div className="text-lg font-display font-bold text-brand-text-heading">hello@conversionfoxx.com</div>
                   </div>
                 </div>
                 <div className="glass p-8 rounded-3xl border-white/5 flex items-start gap-6">
@@ -624,8 +624,8 @@ const Contact: React.FC = () => {
                     <Phone className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Phone</div>
-                    <div className="text-lg font-bold">+00 0000 000 000</div>
+                    <div className="text-[10px] font-sans font-bold text-brand-text-secondary/40 uppercase tracking-[0.2em] mb-1">Phone</div>
+                    <div className="text-lg font-display font-bold text-brand-text-heading">+00 0000 000 000</div>
                   </div>
                 </div>
                 <div className="glass p-8 rounded-3xl border-white/5 flex items-start gap-6">
@@ -633,8 +633,8 @@ const Contact: React.FC = () => {
                     <Clock className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Business Hours</div>
-                    <div className="text-lg font-bold">Mon – Fri, 9 AM – 6 PM</div>
+                    <div className="text-[10px] font-sans font-bold text-brand-text-secondary/40 uppercase tracking-[0.2em] mb-1">Business Hours</div>
+                    <div className="text-lg font-display font-bold text-brand-text-heading">Mon – Fri, 9 AM – 6 PM</div>
                   </div>
                 </div>
                 <div className="glass p-8 rounded-3xl border-white/5 flex items-start gap-6">
@@ -642,8 +642,8 @@ const Contact: React.FC = () => {
                     <MapPin className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Location</div>
-                    <div className="text-lg font-bold">Remote / Serving Globally</div>
+                    <div className="text-[10px] font-sans font-bold text-brand-text-secondary/40 uppercase tracking-[0.2em] mb-1">Location</div>
+                    <div className="text-lg font-display font-bold text-brand-text-heading">Remote / Serving Globally</div>
                   </div>
                 </div>
               </div>
@@ -655,8 +655,8 @@ const Contact: React.FC = () => {
         <section className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Frequently Asked Questions</h2>
-              <p className="text-white/60">Common questions about starting a project with ConversionFoxx.</p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Frequently Asked Questions</h2>
+              <p className="text-brand-text-secondary font-sans text-lg leading-[1.6]">Common questions about starting a project with ConversionFoxx.</p>
             </div>
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
@@ -665,7 +665,7 @@ const Contact: React.FC = () => {
                     onClick={() => toggleFaq(idx)}
                     className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
                   >
-                    <span className="font-bold text-lg">{faq.question}</span>
+                    <span className="font-display font-bold text-lg text-brand-text-heading">{faq.question}</span>
                     <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                       {activeFaq === idx ? (
                         <Minus className="w-4 h-4 text-brand-primary" />
@@ -682,7 +682,7 @@ const Contact: React.FC = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="p-6 pt-0 text-white/60 leading-relaxed border-t border-white/5">
+                        <div className="p-6 pt-0 text-brand-text-secondary font-sans leading-[1.6] border-t border-white/5">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -706,10 +706,10 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
               className="glass p-12 md:p-24 rounded-[4rem] text-center border-brand-primary/20 shadow-2xl shadow-brand-primary/5"
             >
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-                Have a Project <span>in Mind?</span>
+              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-8 text-brand-text-heading">
+                Have a Project <span className="brand-gradient-text">in Mind?</span>
               </h2>
-              <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+              <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto mb-12 font-normal leading-[1.6]">
                 Let’s turn your ideas, challenges, or growth goals into a clear and practical next step.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -717,6 +717,7 @@ const Contact: React.FC = () => {
                   to="#contact-form" 
                   size="xl" 
                   icon={ArrowRight}
+                  className="font-sans font-bold"
                   onClick={() => {
                     const el = document.getElementById('contact-form');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -724,12 +725,12 @@ const Contact: React.FC = () => {
                 >
                   Get Free Growth Audit
                 </Button>
-                <Button to="/" variant="secondary" size="xl">
+                <Button to="/" variant="secondary" size="xl" className="font-sans font-bold">
                   See How It Works
                 </Button>
               </div>
               <div className="mt-10">
-                <Link to="/services" className="text-brand-primary hover:text-brand-primary/80 font-bold flex items-center justify-center gap-2 transition-colors group">
+                <Link to="/services" className="text-brand-primary hover:text-brand-primary/80 font-sans font-bold flex items-center justify-center gap-2 transition-colors group">
                   Explore Services
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

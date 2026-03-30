@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                <span className="text-brand-dark font-bold text-xl">C</span>
+                <span className="text-brand-dark font-display font-bold text-xl">C</span>
               </div>
-              <span className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
+              <span className="text-xl font-display font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
                 Conversion<span className="text-brand-primary">Foxx</span>
               </span>
             </Link>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="space-y-8">
-            <h4 className="text-lg font-bold text-white uppercase tracking-widest">Quick Links</h4>
+            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Quick Links</h4>
             <ul className="flex flex-col gap-4">
               {[
                 { name: 'Home', href: '/' },
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                 { name: 'Contact', href: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/40 hover:text-brand-primary transition-colors">
+                  <Link to={link.href} className="text-sm font-sans text-white/40 hover:text-brand-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div className="space-y-8">
-            <h4 className="text-lg font-bold text-white uppercase tracking-widest">Services</h4>
+            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Services</h4>
             <ul className="flex flex-col gap-4">
               {[
                 { name: 'Growth Audit', href: '/services/growth-audit' },
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 { name: 'Revenue Operations System', href: '/services/revenue-operations-system' }
               ].map((service) => (
                 <li key={service.name}>
-                  <Link to={service.href} className="text-sm text-white/40 hover:text-brand-primary transition-colors">
+                  <Link to={service.href} className="text-sm font-sans text-white/40 hover:text-brand-primary transition-colors">
                     {service.name}
                   </Link>
                 </li>
@@ -84,15 +84,15 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-lg font-bold text-white uppercase tracking-widest">Contact Info</h4>
+            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Contact Info</h4>
             <ul className="flex flex-col gap-6">
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 glass rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/20 font-bold uppercase tracking-widest mb-1">Email Us</div>
-                  <a href="mailto:hello@conversionfoxx.com" className="text-sm text-white/60 hover:text-brand-primary transition-colors">
+                  <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Email Us</div>
+                  <a href="mailto:hello@conversionfoxx.com" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
                     hello@conversionfoxx.com
                   </a>
                 </div>
@@ -102,8 +102,8 @@ const Footer: React.FC = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/20 font-bold uppercase tracking-widest mb-1">Call Us</div>
-                  <a href="tel:+1234567890" className="text-sm text-white/60 hover:text-brand-primary transition-colors">
+                  <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Call Us</div>
+                  <a href="tel:+1234567890" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
                     +1 (234) 567-890
                   </a>
                 </div>
@@ -113,8 +113,8 @@ const Footer: React.FC = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/20 font-bold uppercase tracking-widest mb-1">Visit Us</div>
-                  <div className="text-sm text-white/60">
+                  <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Visit Us</div>
+                  <div className="text-sm font-sans text-white/60">
                     123 Digital Avenue, Tech City, TC 12345
                   </div>
                 </div>
@@ -124,12 +124,12 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="text-white/20 text-xs font-bold uppercase tracking-widest">
+          <div className="text-white/20 text-xs font-sans font-bold uppercase tracking-widest">
             &copy; 2026 ConversionFoxx IT Solutions. All rights reserved.
           </div>
           <div className="flex gap-8">
-            <Link to="/terms" className="text-xs text-white/20 font-bold uppercase tracking-widest hover:text-brand-primary transition-colors">Terms of Service</Link>
-            <Link to="/privacy" className="text-xs text-white/20 font-bold uppercase tracking-widest hover:text-brand-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-xs font-sans text-white/20 font-bold uppercase tracking-widest hover:text-brand-primary transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-xs font-sans text-white/20 font-bold uppercase tracking-widest hover:text-brand-primary transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </Container>

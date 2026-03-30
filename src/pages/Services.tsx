@@ -48,17 +48,17 @@ const Services: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto">
                 <Sparkles className="w-4 h-4" />
                 Our Expertise
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                 Services Built to Grow <br />
                 <span className="brand-gradient-text">
                   Modern Businesses
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-sans font-normal leading-[1.6]">
                 ConversionFoxx delivers growth-focused digital services that combine strategy, technology, and performance. Whether you need stronger visibility, better systems, or scalable digital products, our solutions are designed to move your business forward.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -81,9 +81,9 @@ const Services: React.FC = () => {
         <section id="explore-services" className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Explore Our Services</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Choose Your Growth Solution</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Choose Your Growth Solution</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
                 Choose the solution that fits your current growth stage, technical needs, and business goals.
               </p>
             </div>
@@ -124,18 +124,18 @@ const Services: React.FC = () => {
                   className={`glass p-10 rounded-[2.5rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 group flex flex-col h-full relative ${service.flagship ? 'ring-2 ring-brand-primary/50 bg-brand-primary/5' : ''}`}
                 >
                   {service.flagship && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em]">
                       Flagship
                     </div>
                   )}
                   <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:brand-gradient transition-all duration-500">
                     <service.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{service.title}</h3>
-                  <p className="text-brand-text-secondary opacity-50 leading-relaxed mb-8 flex-grow group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors">
+                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{service.title}</h3>
+                  <p className="text-brand-text-secondary font-sans leading-[1.6] mb-8 flex-grow group-hover:text-brand-text-secondary transition-colors">
                     {service.description}
                   </p>
-                  <Link to={service.link} className="inline-flex items-center gap-2 text-brand-primary font-bold group/btn hover:translate-x-1 transition-transform">
+                  <Link to={service.link} className="inline-flex items-center gap-2 text-brand-primary font-sans font-bold group/btn hover:translate-x-1 transition-transform">
                     Learn More
                     <ArrowRight className="w-5 h-5" />
                   </Link>
@@ -149,9 +149,9 @@ const Services: React.FC = () => {
         <section id="who-we-help" className="py-24 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Who We Help</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Built for Ambitious Brands</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Built for Ambitious Brands</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
                 Our services are built for businesses that need smarter execution, stronger systems, and measurable digital growth.
               </p>
             </div>
@@ -175,8 +175,8 @@ const Services: React.FC = () => {
                     <audience.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-brand-primary transition-colors">{audience.title}</h3>
-                    <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/60 transition-colors">{audience.text}</p>
+                    <h3 className="text-xl font-display font-bold mb-2 group-hover:text-brand-primary transition-colors text-brand-text-heading">{audience.title}</h3>
+                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{audience.text}</p>
                   </div>
                 </motion.div>
               ))}
@@ -188,9 +188,9 @@ const Services: React.FC = () => {
         <section id="engagement-models" className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">How We Work</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Engagement Models</h2>
-              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">How We Work</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Engagement Models</h2>
+              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
                 Flexible ways to partner with us based on your business needs and growth goals.
               </p>
             </div>
@@ -225,20 +225,20 @@ const Services: React.FC = () => {
                   className={`relative glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col ${model.popular ? 'ring-2 ring-brand-primary/50 bg-brand-primary/5' : ''}`}
                 >
                   {model.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-4 py-1 rounded-full uppercase tracking-[0.2em]">
                       Most Popular
                     </div>
                   )}
                   <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8">
                     <model.icon className="w-7 h-7 text-brand-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{model.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-8">
+                  <h3 className="text-2xl font-display font-bold mb-4 text-brand-text-heading">{model.title}</h3>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] mb-8">
                     {model.description}
                   </p>
                   <ul className="space-y-4 mb-10 flex-grow">
                     {model.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-white/70">
+                      <li key={feature} className="flex items-center gap-3 text-sm font-sans text-brand-text-secondary">
                         <CheckCircle2 className="w-4 h-4 text-brand-primary" />
                         {feature}
                       </li>
@@ -247,7 +247,7 @@ const Services: React.FC = () => {
                   <Button 
                     to="/contact" 
                     variant={model.popular ? 'primary' : 'outline'} 
-                    className="w-full"
+                    className="w-full font-sans font-medium"
                   >
                     Inquire Now
                   </Button>
@@ -270,11 +270,11 @@ const Services: React.FC = () => {
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
               
               <div className="relative z-10 space-y-8">
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                   Ready to Build Your <br />
                   <span className="brand-gradient-text">Growth Engine?</span>
                 </h2>
-                <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6]">
                   Whether you need a single project or a long-term growth partner, ConversionFoxx is ready to help you scale.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
