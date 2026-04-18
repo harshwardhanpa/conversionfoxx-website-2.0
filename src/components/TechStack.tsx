@@ -32,7 +32,7 @@ const TechStack: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
             The tools we use to build your future
           </motion.h2>
@@ -52,9 +52,9 @@ const TechStack: React.FC = () => {
               <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-500">
                 {tool.icon}
               </div>
-              <div className="text-lg font-bold text-brand-text-secondary opacity-60 group-hover:text-brand-text-heading group-hover:opacity-100 transition-colors font-display">
+              <h3 className="text-lg font-bold text-brand-text-secondary opacity-60 group-hover:text-brand-text-heading group-hover:opacity-100 transition-colors font-display">
                 {tool.name}
-              </div>
+              </h3>
             </motion.div>
           ))}
         </div>

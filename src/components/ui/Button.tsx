@@ -14,6 +14,8 @@ interface ButtonProps {
   iconPosition?: 'left' | 'right';
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  ariaLabel?: string;
+  fullWidth?: boolean;
 }
 
 const MotionLink = motion(Link);
@@ -32,6 +34,8 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = 'right',
   type = 'button',
   disabled = false,
+  ariaLabel,
+  fullWidth = false,
 }) => {
   const baseStyles = "inline-flex items-center justify-center font-medium tracking-wide font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed";
   
@@ -57,7 +61,7 @@ const Button: React.FC<ButtonProps> = ({
     </>
   );
 
-  const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+  const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
 
   if (to) {
     return (
@@ -66,6 +70,7 @@ const Button: React.FC<ButtonProps> = ({
         className={combinedClasses}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        aria-label={ariaLabel}
       >
         {content}
       </MotionLink>
@@ -80,6 +85,7 @@ const Button: React.FC<ButtonProps> = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={combinedClasses}
+      aria-label={ariaLabel}
     >
       {content}
     </motion.button>

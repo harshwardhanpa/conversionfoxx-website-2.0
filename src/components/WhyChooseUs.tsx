@@ -50,7 +50,7 @@ const WhyChooseUs: React.FC = () => {
           >
             <div className="space-y-4">
               <span className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans">Why ConversionFoxx?</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display">
                 We build systems, <br />
                 <span className="brand-gradient-text">not just services</span>
               </h2>

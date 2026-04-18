@@ -113,15 +113,15 @@ const DashboardMockup: React.FC = () => {
         <motion.div
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-10 -right-6 p-4 bg-[#121212] border border-white/[0.08] rounded-xl shadow-[0_16px_32px_rgba(0,0,0,0.4)] z-20"
+          className="absolute -top-6 md:-top-10 -right-2 md:-right-6 p-3 md:p-4 bg-[#121212] border border-white/[0.08] rounded-xl shadow-[0_16px_32px_rgba(0,0,0,0.4)] z-20 scale-75 md:scale-100"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#F26E22]/10 flex items-center justify-center">
-              <Users className="w-5 h-5 text-[#F26E22]" />
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-[#F26E22]/10 flex items-center justify-center">
+              <Users className="w-4 h-4 md:w-5 md:h-5 text-[#F26E22]" />
             </div>
             <div>
-              <div className="text-[9px] text-brand-text-secondary/60 font-sans font-semibold uppercase tracking-wider">New Leads</div>
-              <div className="text-base font-display font-semibold text-brand-text-heading tracking-tight">1,420</div>
+              <div className="text-[8px] md:text-[9px] text-brand-text-secondary/60 font-sans font-semibold uppercase tracking-wider">New Leads</div>
+              <div className="text-sm md:text-base font-display font-semibold text-brand-text-heading tracking-tight">1,420</div>
             </div>
           </div>
         </motion.div>
@@ -130,13 +130,13 @@ const DashboardMockup: React.FC = () => {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute -bottom-6 -left-4 p-3.5 bg-[#121212] border border-white/[0.08] rounded-xl shadow-[0_16px_32px_rgba(0,0,0,0.4)] z-20"
+          className="absolute -bottom-4 md:-bottom-6 -left-2 md:-left-4 p-2.5 md:p-3.5 bg-[#121212] border border-white/[0.08] rounded-xl shadow-[0_16px_32px_rgba(0,0,0,0.4)] z-20 scale-75 md:scale-100"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-[#22c55e]/10 flex items-center justify-center">
-              <BarChart3 className="w-4 h-4 text-[#22c55e]" />
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-[#22c55e]/10 flex items-center justify-center">
+              <BarChart3 className="w-3 h-3 md:w-4 md:h-4 text-[#22c55e]" />
             </div>
-            <div className="text-[11px] font-display font-semibold text-brand-text-heading tracking-tight">ROI +340%</div>
+            <div className="text-[10px] md:text-[11px] font-display font-semibold text-brand-text-heading tracking-tight">ROI +340%</div>
           </div>
         </motion.div>
       </motion.div>

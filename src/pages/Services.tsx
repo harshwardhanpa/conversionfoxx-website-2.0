@@ -82,34 +82,34 @@ const Services: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
               <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Choose Your Growth Solution</h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">We don’t offer isolated services.</h2>
               <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
-                Choose the solution that fits your current growth stage, technical needs, and business goals.
+                We build complete revenue systems that identify gaps, fix leaks, and drive predictable growth.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { 
                   title: 'Growth Audit', 
-                  description: 'Deep analysis of your entire growth system: funnel gaps, tracking issues, and conversion leaks.', 
+                  description: 'Identify exactly where your revenue system is leaking — from traffic and tracking to conversion and follow-ups.', 
                   icon: FileSearch,
                   link: '/services/growth-audit'
                 },
                 { 
                   title: 'Lead Generation', 
-                  description: 'Build scalable traffic systems that bring in high-quality leads consistently through paid channels.', 
+                  description: 'Attract high-intent buyers through scalable acquisition systems designed for consistent and qualified lead flow.', 
                   icon: Target,
                   link: '/services/lead-generation'
                 },
                 { 
                   title: 'Conversion Optimization', 
-                  description: 'Turn more visitors into customers through data-driven A/B testing and landing page optimization.', 
+                  description: 'Turn existing traffic into paying customers by eliminating friction, improving user journeys, and optimizing key conversion points.', 
                   icon: MousePointer2,
                   link: '/services/conversion-optimization'
                 },
                 { 
                   title: 'Revenue Operations System', 
-                  description: 'Our flagship service. A unified data infrastructure that aligns marketing, sales, and revenue.', 
+                  description: 'A fully integrated system that captures, tracks, nurtures, and converts every lead — ensuring no opportunity is lost.', 
                   icon: Workflow,
                   link: '/services/revenue-operations-system',
                   flagship: true
@@ -184,73 +184,48 @@ const Services: React.FC = () => {
           </div>
         </section>
 
-        {/* 4. ENGAGEMENT MODELS */}
+        {/* 4. HOW WE WORK */}
         <section id="engagement-models" className="py-24 px-4 md:px-8 bg-white/2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">How We Work</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Engagement Models</h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">How We Work</h2>
               <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
-                Flexible ways to partner with us based on your business needs and growth goals.
+                A structured approach to identify gaps, fix leaks, and scale your revenue system.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { 
-                  title: 'Project-Based', 
-                  description: 'Ideal for specific deliverables like a new website, app launch, or CRM setup.',
-                  features: ['Fixed Scope & Timeline', 'Expert Execution', 'Clear Deliverables'],
-                  icon: Clock
+                  title: 'Audit & Diagnose', 
+                  description: 'We analyze your entire funnel — from traffic and tracking to conversion and follow-ups — to identify exactly where revenue is being lost.',
+                  icon: FileSearch
                 },
                 { 
-                  title: 'Monthly Retainer', 
-                  description: 'Ongoing growth support for social media, paid ads, and continuous optimization.',
-                  features: ['Continuous Growth', 'Priority Support', 'Data-Driven Refinement'],
-                  icon: Calendar,
-                  popular: true
+                  title: 'Build & Optimize', 
+                  description: 'We implement and refine acquisition, conversion, and automation systems to turn your existing traffic into measurable revenue.',
+                  icon: Zap
                 },
                 { 
-                  title: 'Strategic Consulting', 
-                  description: 'High-level advisory for brands needing a roadmap before full execution.',
-                  features: ['Growth Roadmaps', 'Tech Stack Audit', 'Conversion Strategy'],
-                  icon: Users
+                  title: 'Automate & Scale', 
+                  description: 'We build systems that capture, nurture, and convert leads automatically, allowing you to scale without increasing operational complexity.',
+                  icon: TrendingUp
                 },
-              ].map((model, idx) => (
+              ].map((step, idx) => (
                 <motion.div
-                  key={model.title}
+                  key={step.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`relative glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col ${model.popular ? 'ring-2 ring-brand-primary/50 bg-brand-primary/5' : ''}`}
+                  className="glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col h-full"
                 >
-                  {model.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-4 py-1 rounded-full uppercase tracking-[0.2em]">
-                      Most Popular
-                    </div>
-                  )}
                   <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8">
-                    <model.icon className="w-7 h-7 text-brand-primary" />
+                    <step.icon className="w-7 h-7 text-brand-primary" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold mb-4 text-brand-text-heading">{model.title}</h3>
-                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] mb-8">
-                    {model.description}
+                  <h3 className="text-2xl font-display font-bold mb-4 text-brand-text-heading">{step.title}</h3>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6]">
+                    {step.description}
                   </p>
-                  <ul className="space-y-4 mb-10 flex-grow">
-                    {model.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm font-sans text-brand-text-secondary">
-                        <CheckCircle2 className="w-4 h-4 text-brand-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    to="/contact" 
-                    variant={model.popular ? 'primary' : 'outline'} 
-                    className="w-full font-sans font-medium"
-                  >
-                    Inquire Now
-                  </Button>
                 </motion.div>
               ))}
             </div>

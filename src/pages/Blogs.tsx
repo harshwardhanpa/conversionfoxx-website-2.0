@@ -24,6 +24,7 @@ import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import { blogPosts } from '../data/blogs';
 
 const categories = [
   'All',
@@ -36,84 +37,12 @@ const categories = [
   'Business Insights'
 ];
 
-const blogPosts = [
-  {
-    slug: 'better-website-structure-improves-lead-quality',
-    category: 'Web Development',
-    title: 'How a Better Website Structure Improves Lead Quality',
-    excerpt: 'A well-structured website doesn’t just look good; it guides users toward conversion. Learn how information architecture impacts your bottom line.',
-    date: 'Mar 15, 2026',
-    readTime: '6 min read',
-    image: 'https://picsum.photos/seed/web/800/600'
-  },
-  {
-    slug: 'when-businesses-should-invest-in-crm-automation',
-    category: 'CRM & Automation',
-    title: 'When Businesses Should Invest in CRM Automation',
-    excerpt: 'Manual lead management can only take you so far. Discover the signs that your business is ready for automated sales workflows.',
-    date: 'Mar 12, 2026',
-    readTime: '5 min read',
-    image: 'https://picsum.photos/seed/crm/800/600'
-  },
-  {
-    slug: 'paid-advertising-mistakes-that-quietly-waste-budget',
-    category: 'Paid Advertising',
-    title: 'Paid Advertising Mistakes That Quietly Waste Budget',
-    excerpt: 'Are your ad campaigns leaking money? We identify the common pitfalls in PPC and how to refine your targeting for better ROI.',
-    date: 'Mar 10, 2026',
-    readTime: '7 min read',
-    image: 'https://picsum.photos/seed/ads/800/600'
-  },
-  {
-    slug: 'social-media-content-consistency-and-effectiveness',
-    category: 'Social Media',
-    title: 'What Makes Social Media Content More Consistent and Effective',
-    excerpt: 'Consistency is the key to social growth. Learn our framework for creating content that resonates and stays on schedule.',
-    date: 'Mar 08, 2026',
-    readTime: '4 min read',
-    image: 'https://picsum.photos/seed/social/800/600'
-  },
-  {
-    slug: 'plan-an-app-product-before-development-starts',
-    category: 'App Development',
-    title: 'How to Plan an App Product Before Development Starts',
-    excerpt: 'The most successful apps are built on a foundation of rigorous planning. Here’s our pre-development checklist for founders.',
-    date: 'Mar 05, 2026',
-    readTime: '8 min read',
-    image: 'https://picsum.photos/seed/app/800/600'
-  },
-  {
-    slug: 'conversion-focused-design-matters-more-than-visual-trends',
-    category: 'Growth Strategy',
-    title: 'Why Conversion-Focused Design Matters More Than Visual Trends',
-    excerpt: 'Trends fade, but conversion principles are timeless. Explore why we prioritize user action over aesthetic novelties.',
-    date: 'Mar 02, 2026',
-    readTime: '6 min read',
-    image: 'https://picsum.photos/seed/design/800/600'
-  },
-  {
-    slug: 'digital-systems-support-long-term-business-growth',
-    category: 'Business Insights',
-    title: 'How Digital Systems Support Long-Term Business Growth',
-    excerpt: 'Scalability isn’t just about more sales; it’s about the systems that handle them. Learn how to build a resilient digital foundation.',
-    date: 'Feb 28, 2026',
-    readTime: '5 min read',
-    image: 'https://picsum.photos/seed/systems/800/600'
-  },
-  {
-    slug: 'signs-your-business-has-outgrown-manual-lead-management',
-    category: 'CRM & Automation',
-    title: 'Signs Your Business Has Outgrown Manual Lead Management',
-    excerpt: 'If you’re losing leads in spreadsheets, it’s time for a change. We break down the transition from manual to automated tracking.',
-    date: 'Feb 25, 2026',
-    readTime: '4 min read',
-    image: 'https://picsum.photos/seed/manual/800/600'
-  }
-];
-
 const Blogs: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const featuredPost = blogPosts[0];
+  const otherPosts = blogPosts.slice(1);
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = activeCategory === 'All' || post.category === activeCategory;
@@ -226,8 +155,8 @@ const Blogs: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                     <img 
-                      src="https://picsum.photos/seed/featured/1200/800" 
-                      alt="Featured Article" 
+                      src={featuredPost.image} 
+                      alt={featuredPost.title} 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                     />
@@ -235,26 +164,26 @@ const Blogs: React.FC = () => {
                   </div>
                   <div className="p-8 md:p-16 flex flex-col justify-center space-y-6">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-primary">
-                      Growth Strategy
+                      {featuredPost.category}
                     </div>
                     <h3 className="text-3xl md:text-5xl font-display font-semibold leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading">
-                      Why Connected Systems Matter More Than Isolated Marketing Tactics
+                      {featuredPost.title}
                     </h3>
                     <p className="text-brand-text-secondary font-sans text-lg leading-[1.6] group-hover:text-brand-text-secondary transition-opacity">
-                      Businesses often invest in campaigns, websites, and tools separately, but real growth comes when those systems work together. Here’s how connected execution creates stronger long-term performance.
+                      {featuredPost.excerpt}
                     </p>
                     <div className="flex items-center gap-6 text-brand-text-secondary/40 font-sans text-sm">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
-                        Mar 18, 2026
+                        {featuredPost.date}
                       </div>
                       <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
-                        5 min read
+                        {featuredPost.readTime}
                       </div>
                     </div>
                     <div className="pt-4">
-                      <Button to="/blogs/scaling-digital-growth-with-connected-systems" size="lg" icon={ArrowRight}>
+                      <Button to={`/blogs/${featuredPost.slug}`} size="lg" icon={ArrowRight}>
                         Read Article
                       </Button>
                     </div>

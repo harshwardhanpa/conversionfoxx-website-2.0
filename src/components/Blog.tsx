@@ -5,28 +5,12 @@ import Button from './ui/Button';
 import Section from './ui/Section';
 import Container from './ui/Container';
 
-const blogs = [
-  {
-    title: 'Why Most Businesses Fail at Scaling Ads',
-    preview: 'Scaling isn’t just about increasing budget. It’s about creative strategy and funnel entry optimization.',
-    category: 'Lead Gen',
-    image: 'https://picsum.photos/seed/ads/800/600',
-  },
-  {
-    title: 'The Real Reason Your Funnel Isn’t Converting',
-    preview: 'Stop blaming the traffic. Discover the conversion leaks that are draining your revenue every single day.',
-    category: 'CRO',
-    image: 'https://picsum.photos/seed/funnel/800/600',
-  },
-  {
-    title: 'From Leads to Revenue: Building a Growth System',
-    preview: 'Why a fragmented marketing approach fails and how a unified Revenue Operations System changes everything.',
-    category: 'Systems',
-    image: 'https://picsum.photos/seed/revenue/800/600',
-  },
-];
+import { Link } from 'react-router-dom';
+import { blogPosts } from '../data/blogs';
 
 const Blog: React.FC = () => {
+  const blogs = blogPosts.slice(1, 4); // Use some posts for the home page
+
   return (
     <Section id="blogs" padding="xl" background="subtle">
       <Container>
@@ -45,7 +29,7 @@ const Blog: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
             >
               Latest from our blog
             </motion.h2>
@@ -67,30 +51,32 @@ const Blog: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group cursor-pointer flex flex-col h-full"
+              className="group"
             >
-              <div className="aspect-[16/10] glass rounded-[2.5rem] mb-6 overflow-hidden border-none relative shrink-0">
-                <img
-                  src={blog.image}
-                  alt={blog.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
-                />
-                <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-white font-sans">
-                  {blog.category}
+              <Link to={`/blogs/${blog.slug}`} className="flex flex-col h-full">
+                <div className="aspect-[16/10] glass rounded-[2.5rem] mb-6 overflow-hidden border-none relative shrink-0">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                  />
+                  <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-white font-sans">
+                    {blog.category}
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-4 px-2 flex flex-col h-full">
-                <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading font-display">
-                  {blog.title}
-                </h3>
-                <p className="text-brand-text-secondary opacity-40 text-sm leading-[1.6] line-clamp-2 group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors flex-grow font-sans">
-                  {blog.preview}
-                </p>
-                <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all shrink-0 font-sans">
-                  Read More <ArrowRight className="w-4 h-4" />
+                <div className="space-y-4 px-2 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading font-display">
+                    {blog.title}
+                  </h3>
+                  <p className="text-brand-text-secondary opacity-40 text-sm leading-[1.6] line-clamp-2 group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors flex-grow font-sans">
+                    {blog.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all shrink-0 font-sans">
+                    Read More <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

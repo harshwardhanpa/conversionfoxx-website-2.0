@@ -47,7 +47,17 @@ const Header: React.FC = () => {
       >
         <nav className="flex items-center justify-between h-12 md:h-14">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2.5 group shrink-0" 
+            aria-label="ConversionFoxx Home"
+            onClick={(e) => {
+              if (location.pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <div className="w-9 h-9 bg-brand-primary rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-brand-primary/20">
               <span className="text-brand-dark font-display font-bold text-xl">C</span>
             </div>
@@ -132,7 +142,7 @@ const Header: React.FC = () => {
                 transition={{ delay: navLinks.length * 0.1 }}
                 className="pt-4 border-t border-white/10"
               >
-                <Button to="/contact" className="w-full font-sans font-medium" size="lg" icon={ArrowRight}>
+                <Button to="/contact" fullWidth className="font-sans font-medium" size="lg" icon={ArrowRight}>
                   Let's Talk
                 </Button>
               </motion.li>

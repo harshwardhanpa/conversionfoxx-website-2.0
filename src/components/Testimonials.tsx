@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
             Trusted by <span className="brand-gradient-text">industry leaders</span>
           </motion.h2>
@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
               <div className="relative z-10 space-y-6 flex flex-col h-full">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-brand-primary text-brand-primary" />
+                    <Star key={`${testimonial.name}-star-${i}`} className="w-4 h-4 fill-brand-primary text-brand-primary" />
                   ))}
                 </div>
                 
@@ -80,9 +80,9 @@ const Testimonials: React.FC = () => {
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors font-display">
+                    <h3 className="font-bold text-brand-text-heading group-hover:text-brand-primary transition-colors font-display">
                       {testimonial.name}
-                    </div>
+                    </h3>
                     <div className="text-xs text-brand-text-secondary opacity-40 uppercase tracking-widest font-sans">
                       {testimonial.role}
                     </div>

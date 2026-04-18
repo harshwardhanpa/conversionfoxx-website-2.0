@@ -211,19 +211,20 @@ const Contact: React.FC = () => {
                   </span>
                   Let's Connect
                 </div>
-                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                   Let’s Build a <br />
                   <span className="brand-gradient-text">
                     Revenue System
                   </span> That Scales
                 </h1>
-                <p className="text-lg md:text-xl text-brand-text-secondary font-sans font-normal leading-[1.6] max-w-xl">
+                <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary font-sans font-normal leading-[1.6] max-w-xl">
                   Whether you need a Growth Audit, high-performance Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to help you scale with precision.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Button 
                     to="#contact-form" 
-                    className="w-full sm:w-auto" 
+                    fullWidth
+                    className="sm:w-auto" 
                     size="xl" 
                     icon={ArrowRight}
                     onClick={() => {
@@ -236,7 +237,8 @@ const Contact: React.FC = () => {
                   <Button 
                     to="/services" 
                     variant="secondary" 
-                    className="w-full sm:w-auto" 
+                    fullWidth
+                    className="sm:w-auto" 
                     size="xl"
                   >
                     See How It Works
@@ -336,8 +338,8 @@ const Contact: React.FC = () => {
 
               <div className="relative z-10">
                 <div className="text-center mb-12 space-y-4">
-                  <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Tell Us About Your Project</h2>
-                  <p className="text-brand-text-secondary font-sans text-lg leading-[1.6] max-w-2xl mx-auto">Share a few details and our team will reach out with the most relevant next step.</p>
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Tell Us About Your Project</h2>
+                  <p className="text-base sm:text-lg text-brand-text-secondary font-sans leading-[1.6] max-w-2xl mx-auto">Share a few details and our team will reach out with the most relevant next step.</p>
                 </div>
 
                 <AnimatePresence mode="wait">
@@ -480,7 +482,8 @@ const Contact: React.FC = () => {
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full md:w-auto font-sans font-bold"
+                          fullWidth
+                          className="md:w-auto font-sans font-bold"
                           size="xl"
                           icon={isSubmitting ? undefined : ArrowRight}
                         >
@@ -660,7 +663,7 @@ const Contact: React.FC = () => {
             </div>
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="glass rounded-2xl border-white/5 overflow-hidden">
+                <div key={faq.question} className="glass rounded-2xl border-white/5 overflow-hidden">
                   <button
                     onClick={() => toggleFaq(idx)}
                     className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"

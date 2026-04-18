@@ -46,7 +46,7 @@ const Results: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
             Numbers that speak for themselves
           </motion.h2>
@@ -70,13 +70,13 @@ const Results: React.FC = () => {
                   <result.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
                 </div>
                 
-                <div className="text-5xl md:text-6xl font-bold text-white group-hover:text-brand-primary transition-colors font-display">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white group-hover:text-brand-primary transition-colors font-display">
                   {result.metric}
                 </div>
                 
-                <div className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-white transition-colors font-display">
+                <h3 className="text-xl font-bold tracking-tight text-brand-text-heading group-hover:text-white transition-colors font-display">
                   {result.label}
-                </div>
+                </h3>
                 
                 <p className="text-brand-text-secondary opacity-50 leading-[1.6] group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors font-sans">
                   {result.description}

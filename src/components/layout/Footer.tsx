@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Brand Info */}
           <div className="space-y-8">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group" aria-label="ConversionFoxx Home">
               <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                 <span className="text-brand-dark font-display font-bold text-xl">C</span>
               </div>
@@ -29,15 +29,20 @@ const Footer: React.FC = () => {
               ConversionFoxx is a premium IT and growth agency dedicated to building digital ecosystems that actually drive results. We bridge the gap between technology and business growth.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Facebook, name: 'Facebook' },
+                { Icon: Twitter, name: 'Twitter' },
+                { Icon: Instagram, name: 'Instagram' },
+                { Icon: Linkedin, name: 'LinkedIn' }
+              ].map((social) => (
                 <motion.a
-                  key={i}
+                  key={social.name}
                   href="#"
                   whileHover={{ scale: 1.1, color: '#BF4417' }}
                   className="w-10 h-10 glass rounded-xl flex items-center justify-center text-brand-text-secondary hover:text-brand-primary transition-colors"
-                  aria-label={`Social Media Link ${i + 1}`}
+                  aria-label={`Follow us on ${social.name}`}
                 >
-                  <Icon className="w-5 h-5" />
+                  <social.Icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>

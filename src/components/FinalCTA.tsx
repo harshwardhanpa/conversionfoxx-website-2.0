@@ -32,20 +32,20 @@ const FinalCTA: React.FC = () => {
               Ready to Scale Your Revenue?
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] font-display">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] font-display">
               Stop guessing. <br />
               <span className="brand-gradient-text">Start growing.</span>
             </h2>
             
-            <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6] font-sans">
+            <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6] font-sans text-brand-text-secondary">
               Our Growth Architects are ready to audit your system and build a high-performance revenue engine that scales predictably.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-              <Button to="/contact" size="xl" icon={ArrowRight}>
+              <Button to="/contact" size="xl" icon={ArrowRight} fullWidth className="sm:w-auto">
                 Get Free Growth Audit
               </Button>
-              <Button variant="secondary" size="xl" onClick={scrollToProcess}>
+              <Button variant="secondary" size="xl" onClick={scrollToProcess} fullWidth className="sm:w-auto">
                 See How It Works
               </Button>
             </div>

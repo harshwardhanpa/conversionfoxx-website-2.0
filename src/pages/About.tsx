@@ -27,18 +27,18 @@ const About: React.FC = () => {
                 <Sparkles className="w-4 h-4" />
                 About ConversionFoxx
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
                 We Build Systems That <br />
                 Scale Revenue Predictably
               </h1>
-              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-sans font-normal leading-[1.6]">
+              <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-sans font-normal leading-[1.6]">
                 ConversionFoxx is a growth system architecture firm. We help businesses scale through data-backed Growth Audits, high-performance Lead Generation, and our flagship Revenue Operations System. We don't just provide services; we build engines for sustainable growth.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                <Button to="/contact" size="xl" icon={ArrowRight}>
+                <Button to="/contact" size="xl" icon={ArrowRight} fullWidth className="sm:w-auto">
                   Get Free Growth Audit
                 </Button>
-                <Button to="/services" variant="secondary" size="xl">
+                <Button to="/services" variant="secondary" size="xl" fullWidth className="sm:w-auto">
                   See How It Works
                 </Button>
               </div>
@@ -57,8 +57,8 @@ const About: React.FC = () => {
                 className="space-y-8"
               >
                 <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Story</span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.2] text-brand-text-heading">Bridging the Gap Between <br />Traffic and Revenue</h2>
-                <div className="space-y-6 text-brand-text-secondary font-sans text-lg leading-[1.6]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.2] text-brand-text-heading">Bridging the Gap Between <br />Traffic and Revenue</h2>
+                <div className="space-y-6 text-brand-text-secondary font-sans text-base sm:text-lg leading-[1.6]">
                   <p>
                     In today's digital landscape, many businesses invest heavily in beautiful websites and expensive advertising, yet they often fail to see measurable revenue growth. They have traffic, but they lack a system to convert that traffic into predictable profit.
                   </p>

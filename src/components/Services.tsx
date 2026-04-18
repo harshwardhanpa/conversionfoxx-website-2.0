@@ -9,28 +9,28 @@ import Container from './ui/Container';
 const services = [
   {
     title: 'Growth Audit',
-    description: 'Deep analysis of your entire growth system to identify funnel gaps, tracking issues, and conversion leaks.',
+    description: 'Identify exactly where your revenue system is leaking — from traffic and tracking to conversion and follow-ups.',
     icon: Search,
     color: 'from-brand-primary/10 to-transparent',
     href: '/services/growth-audit',
   },
   {
     title: 'Lead Generation',
-    description: 'Build scalable traffic systems through paid ads, creative strategy, and funnel entry optimization.',
+    description: 'Attract high-intent buyers through scalable acquisition systems designed for consistent and qualified lead flow.',
     icon: Target,
     color: 'from-brand-primary/10 to-transparent',
     href: '/services/lead-generation',
   },
   {
     title: 'Conversion Optimization',
-    description: 'Turn traffic into revenue with landing page optimization, A/B testing, and data-driven CRO strategy.',
+    description: 'Turn existing traffic into paying customers by eliminating friction, improving user journeys, and optimizing key conversion points.',
     icon: Zap,
     color: 'from-brand-primary/10 to-transparent',
     href: '/services/conversion-optimization',
   },
   {
     title: 'Revenue Operations System',
-    description: 'The core system that ties everything together: CRM setup, automation, and full revenue visibility.',
+    description: 'A fully integrated system that captures, tracks, nurtures, and converts every lead — ensuring no opportunity is lost.',
     icon: LayoutDashboard,
     color: 'from-brand-primary/10 to-transparent',
     isFlagship: true,
@@ -59,11 +59,20 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
           >
-            Predictable growth through <br />
-            <span className="text-brand-text-secondary opacity-40">systematic optimization</span>
+            We don’t offer isolated services. <br />
+            <span className="text-brand-text-secondary opacity-40">We build complete revenue systems.</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-brand-text-secondary max-w-2xl mx-auto text-lg font-sans"
+          >
+            We build complete revenue systems that identify gaps, fix leaks, and drive predictable growth.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
