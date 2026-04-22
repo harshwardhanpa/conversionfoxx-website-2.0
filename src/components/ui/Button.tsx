@@ -37,20 +37,20 @@ const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   fullWidth = false,
 }) => {
-  const baseStyles = "inline-flex items-center justify-center font-medium tracking-wide font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center font-black tracking-tight font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed uppercase";
   
   const variants = {
-    primary: "bg-brand-primary text-white shadow-lg shadow-brand-primary/20 hover:bg-brand-primary/90 active:scale-95",
-    secondary: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary/10 active:scale-95",
-    ghost: "text-brand-text-secondary hover:text-brand-primary hover:bg-white/5 active:scale-95",
-    outline: "border border-white/10 text-brand-text-heading hover:border-brand-primary hover:text-brand-primary active:scale-95",
+    primary: "bg-brand-primary text-white shadow-[0_15px_30px_-10px_rgba(242,110,34,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(242,110,34,0.6)] hover:bg-brand-primary active:scale-95",
+    secondary: "border border-white/10 bg-white/5 text-white hover:bg-white/10 active:scale-95 backdrop-blur-md",
+    ghost: "text-brand-text-secondary hover:text-white hover:bg-white/5 active:scale-95",
+    outline: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary/10 active:scale-95",
   };
 
   const sizes = {
-    sm: "px-4 py-2 text-xs",
-    md: "px-6 py-3 text-sm",
-    lg: "px-8 py-4 text-base",
-    xl: "px-10 py-5 text-lg",
+    sm: "px-5 py-2.5 text-[10px] tracking-widest",
+    md: "px-8 py-3.5 text-xs tracking-widest",
+    lg: "px-10 py-4.5 text-sm tracking-widest",
+    xl: "px-14 py-6 text-base tracking-[0.2em]",
   };
 
   const content = (

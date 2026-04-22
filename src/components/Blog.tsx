@@ -12,15 +12,15 @@ const Blog: React.FC = () => {
   const blogs = blogPosts.slice(1, 4); // Use some posts for the home page
 
   return (
-    <Section id="blogs" padding="xl" background="subtle">
+    <Section id="blogs" padding="lg" background="subtle">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-          <div className="space-y-4">
+          <div className="space-y-6">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
+              className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
             >
               Insights & Resources
             </motion.span>
@@ -29,7 +29,7 @@ const Blog: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+              className="text-brand-text-heading font-display"
             >
               Latest from our blog
             </motion.h2>

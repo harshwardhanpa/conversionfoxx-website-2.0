@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       <div
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
           isScrolled 
-            ? 'glass shadow-2xl shadow-brand-primary/5 py-2.5 px-6' 
+            ? 'backdrop-blur-md bg-white/[0.03] border border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.4)] py-2.5 px-6' 
             : 'bg-transparent py-2 px-4'
         }`}
       >

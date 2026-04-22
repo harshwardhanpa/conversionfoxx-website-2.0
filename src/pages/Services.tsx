@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import Layout from '../components/layout/Layout';
+import Container from '../components/ui/Container';
+import Section from '../components/ui/Section';
+import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { 
   ArrowRight, 
@@ -19,7 +23,8 @@ import {
   Calendar,
   Zap,
   TrendingUp,
-  Layers
+  Layers,
+  ChevronRight
 } from 'lucide-react';
 
 const Services: React.FC = () => {
@@ -31,63 +36,62 @@ const Services: React.FC = () => {
   };
 
   return (
-    <>
-      {/* Background Decorative Elements */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-primary/5 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-brand-primary/5 blur-[100px] rounded-full" />
-      </div>
-
-      <div className="relative z-10 pt-32">
+    <Layout>
+      <div className="relative z-10 pt-20">
         {/* 1. SERVICES HERO */}
-        <section id="services-hero" className="min-h-[60vh] flex items-center justify-center px-4 md:px-8 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center">
+        <Section className="relative overflow-hidden pt-32 pb-20">
+          {/* Background Decorative Elements */}
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-500/5 blur-[120px] rounded-full animate-pulse pointer-events-none" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-orange-500/5 blur-[100px] rounded-full pointer-events-none" />
+
+          <Container>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="text-center space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-orange-500/20">
                 <Sparkles className="w-4 h-4" />
                 Our Expertise
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
                 Services Built to Grow <br />
-                <span className="brand-gradient-text">
+                <span className="text-orange-500">
                   Modern Businesses
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-brand-text-secondary max-w-3xl mx-auto font-sans font-normal leading-[1.6]">
-                ConversionFoxx delivers growth-focused digital services that combine strategy, technology, and performance. Whether you need stronger visibility, better systems, or scalable digital products, our solutions are designed to move your business forward.
+              <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto font-sans font-normal leading-relaxed">
+                ConversionFoxx delivers growth-focused digital services that combine strategy, technology, and performance.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                <Button to="/contact" size="xl" icon={ArrowRight}>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
                   Get Free Growth Audit
                 </Button>
                 <Button 
                   onClick={scrollToProcess} 
                   variant="secondary" 
-                  size="xl"
+                  size="lg"
+                  className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white"
                 >
                   See How It Works
                 </Button>
               </div>
             </motion.div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* 2. SERVICE CATEGORY GRID */}
-        <section id="explore-services" className="py-24 px-4 md:px-8 bg-white/2">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">We don’t offer isolated services.</h2>
-              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
+        <Section id="explore-services" background="subtle">
+          <Container>
+            <div className="text-center mb-16 space-y-4">
+              <span className="text-orange-500 text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">We don’t offer isolated services.</h2>
+              <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
                 We build complete revenue systems that identify gaps, fix leaks, and drive predictable growth.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
                   title: 'Growth Audit', 
@@ -121,41 +125,46 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`glass p-10 rounded-[2.5rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 group flex flex-col h-full relative ${service.flagship ? 'ring-2 ring-brand-primary/50 bg-brand-primary/5' : ''}`}
+                  className="h-full"
                 >
-                  {service.flagship && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em]">
-                      Flagship
+                  <Card 
+                    padding="lg" 
+                    className={`h-full flex flex-col relative transition-all duration-300 ${service.flagship ? 'ring-2 ring-orange-500/50 bg-orange-500/10' : ''}`}
+                  >
+                    {service.flagship && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg">
+                        Flagship
+                      </div>
+                    )}
+                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6 w-fit">
+                      <service.icon className="w-8 h-8" />
                     </div>
-                  )}
-                  <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:brand-gradient transition-all duration-500">
-                    <service.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{service.title}</h3>
-                  <p className="text-brand-text-secondary font-sans leading-[1.6] mb-8 flex-grow group-hover:text-brand-text-secondary transition-colors">
-                    {service.description}
-                  </p>
-                  <Link to={service.link} className="inline-flex items-center gap-2 text-brand-primary font-sans font-bold group/btn hover:translate-x-1 transition-transform">
-                    Learn More
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">{service.title}</h3>
+                    <p className="text-gray-400 font-sans text-sm leading-relaxed mb-8 flex-grow">
+                      {service.description}
+                    </p>
+                    <Link to={service.link} className="inline-flex items-center gap-2 text-orange-500 font-sans font-bold group/btn hover:translate-x-1 transition-transform">
+                      Learn More
+                      <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </Card>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* 3. WHO WE HELP */}
-        <section id="who-we-help" className="py-24 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">Built for Ambitious Brands</h2>
-              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
-                Our services are built for businesses that need smarter execution, stronger systems, and measurable digital growth.
+        <Section id="who-we-help">
+          <Container>
+            <div className="text-center mb-16 space-y-4">
+              <span className="text-orange-500 text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">Built for Ambitious Brands</h2>
+              <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+                Our services are built for businesses that need smarter execution and measurable digital growth.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: 'Startups', text: 'Building their first scalable digital foundation and market presence.', icon: Rocket },
                 { title: 'Growing Businesses', text: 'Needing better lead generation and conversion systems to scale.', icon: TrendingUp },
@@ -169,31 +178,32 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass p-8 rounded-3xl flex items-start gap-6 hover:bg-white/5 transition-colors group border-white/5 hover:border-brand-primary/20"
                 >
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary transition-colors">
-                    <audience.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold mb-2 group-hover:text-brand-primary transition-colors text-brand-text-heading">{audience.title}</h3>
-                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">{audience.text}</p>
-                  </div>
+                  <Card padding="md" className="flex items-start gap-6 h-full group">
+                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                      <audience.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-brand-text-heading">{audience.title}</h3>
+                      <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-xl">{audience.text}</p>
+                    </div>
+                  </Card>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* 4. HOW WE WORK */}
-        <section id="engagement-models" className="py-24 px-4 md:px-8 bg-white/2">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-text-heading">How We Work</h2>
-              <p className="text-brand-text-secondary font-sans max-w-2xl mx-auto text-lg leading-[1.6]">
+        <Section id="engagement-models" background="subtle">
+          <Container>
+            <div className="text-center mb-16 space-y-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">How We Work</h2>
+              <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
                 A structured approach to identify gaps, fix leaks, and scale your revenue system.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { 
                   title: 'Audit & Diagnose', 
@@ -217,55 +227,57 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col h-full"
                 >
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8">
-                    <step.icon className="w-7 h-7 text-brand-primary" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold mb-4 text-brand-text-heading">{step.title}</h3>
-                  <p className="text-brand-text-secondary font-sans text-sm leading-[1.6]">
-                    {step.description}
-                  </p>
+                  <Card padding="xl" className="h-full group">
+                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                      <step.icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">{step.title}</h3>
+                    <p className="text-gray-400 font-sans leading-relaxed text-sm">
+                      {step.description}
+                    </p>
+                  </Card>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* FINAL CTA SECTION */}
-        <section id="final-cta" className="py-24 px-4 md:px-8 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto">
+        <Section id="final-cta" className="relative overflow-hidden">
+          <Container>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="glass p-12 md:p-24 rounded-[3rem] text-center space-y-10 relative overflow-hidden border-brand-primary/20"
             >
-              <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
-              
-              <div className="relative z-10 space-y-8">
-                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
-                  Ready to Build Your <br />
-                  <span className="brand-gradient-text">Growth Engine?</span>
-                </h2>
-                <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6]">
-                  Whether you need a single project or a long-term growth partner, ConversionFoxx is ready to help you scale.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-                  <Button to="/contact" size="xl" icon={ArrowRight}>
-                    Get Free Growth Audit
-                  </Button>
-                  <Button to="/" variant="secondary" size="xl">
-                    See How It Works
-                  </Button>
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-orange-500/20 shadow-2xl shadow-orange-500/5" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
+                
+                <div className="relative z-10 space-y-8">
+                  <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
+                    Ready to Build Your <br />
+                    <span className="text-orange-500">Growth Engine?</span>
+                  </h2>
+                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+                    Whether you need a single project or a long-term growth partner, ConversionFoxx is ready to help you scale.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+                    <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
+                      Get Free Growth Audit
+                    </Button>
+                    <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white">
+                      See How It Works
+                    </Button>
+                  </div>
                 </div>
-              </div>
+              </Card>
             </motion.div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       </div>
-    </>
+    </Layout>
   );
 };
 

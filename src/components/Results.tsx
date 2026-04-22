@@ -30,25 +30,26 @@ const results = [
 
 const Results: React.FC = () => {
   return (
-    <Section id="results" padding="xl">
+    <Section id="results" padding="lg">
       <Container>
-        <div className="text-center space-y-4 mb-20">
+        <div className="text-center space-y-6 mb-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
+            className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
           >
-            Real Results. Real Growth.
+            Validated Growth Performance
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-brand-text-heading font-display max-w-4xl mx-auto"
           >
-            Numbers that speak for themselves
+            Systems that power <br />
+            <span className="text-brand-primary">hyper-scale growth.</span>
           </motion.h2>
         </div>
 

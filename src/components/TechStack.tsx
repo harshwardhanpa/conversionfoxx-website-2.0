@@ -16,43 +16,44 @@ const tools = [
 
 const TechStack: React.FC = () => {
   return (
-    <Section id="tech-stack" padding="xl">
+    <Section id="tech-stack" padding="lg" background="subtle">
       <Container>
-        <div className="text-center space-y-4 mb-20">
+        <div className="text-center space-y-6 mb-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans"
+            className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
           >
-            Powered by Modern Technology
+            Integrated Infrastructure
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display"
+            className="text-brand-text-heading max-w-4xl mx-auto font-display"
           >
-            The tools we use to build your future
+            The tech stack behind your <br />
+            <span className="text-brand-primary">revenue engine.</span>
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {tools.map((tool, idx) => (
             <motion.div
               key={tool.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
-              className="glass p-8 rounded-3xl border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center group"
+              whileHover={{ y: -10 }}
+              className="saas-border p-10 rounded-3xl group text-center"
             >
-              <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-500">
+              <div className="text-5xl mb-6 relative z-10 filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                 {tool.icon}
               </div>
-              <h3 className="text-lg font-bold text-brand-text-secondary opacity-60 group-hover:text-brand-text-heading group-hover:opacity-100 transition-colors font-display">
+              <h3 className="text-sm font-black text-white/30 uppercase tracking-[0.2em] group-hover:text-brand-primary transition-colors duration-700 font-sans">
                 {tool.name}
               </h3>
             </motion.div>

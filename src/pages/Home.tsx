@@ -19,13 +19,21 @@ const Home: React.FC = () => {
       </div>
 
       <Hero />
+      <div className="section-divider" />
       <Services />
+      <div className="section-divider" />
       <WhyChooseUs />
+      <div className="section-divider" />
       <Results />
+      <div className="section-divider" />
       <Testimonials />
+      <div className="section-divider" />
       <Process />
+      <div className="section-divider" />
       <TechStack />
+      <div className="section-divider" />
       <Blog />
+      <div className="section-divider" />
       <FinalCTA />
     </>
   );

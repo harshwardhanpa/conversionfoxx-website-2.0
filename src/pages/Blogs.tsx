@@ -55,11 +55,11 @@ const Blogs: React.FC = () => {
     <Layout>
       <div className="relative z-10">
         {/* 1. BLOGS HERO */}
-        <Section className="relative pt-40 pb-24 overflow-hidden">
+        <Section className="relative pt-40 pb-20 overflow-hidden">
           {/* Background Glows */}
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
-
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-orange-500/5 blur-[100px] rounded-full pointer-events-none" />
+          
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -68,26 +68,26 @@ const Blogs: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                   <BookOpen className="w-4 h-4" />
                   ConversionFoxx Insights
                 </div>
-                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-brand-text-heading max-w-2xl">
                   Insights That Help <br />
                   Businesses Grow Smarter
                 </h1>
-                <p className="text-lg md:text-xl text-brand-text-secondary font-sans font-normal leading-[1.6] max-w-xl">
+                <p className="text-base md:text-lg text-gray-400 font-sans font-normal leading-relaxed max-w-xl">
                   Explore practical insights from ConversionFoxx on digital growth, marketing performance, websites, applications, CRM systems, and the strategies that help modern businesses move forward.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <Button to="/contact" size="xl" icon={ArrowRight}>
+                  <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
                     Let's Talk
                   </Button>
-                  <Button to="/services" variant="secondary" size="xl">
+                  <Button to="/services" variant="secondary" size="lg" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                     Explore Services
                   </Button>
                 </div>
-                <p className="text-brand-text-secondary/40 text-sm font-sans italic">
+                <p className="text-gray-500 text-sm font-sans italic">
                   “Built for founders, marketers, and businesses looking for clearer digital direction.”
                 </p>
               </motion.div>
@@ -98,40 +98,40 @@ const Blogs: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative hidden lg:block"
               >
-                <Card padding="lg" className="rounded-[3rem] border-white/10 shadow-2xl" hoverEffect={false}>
+                <Card padding="lg" className="rounded-2xl border-white/10 shadow-2xl" hoverEffect={false}>
                   <div className="space-y-6">
-                    <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5">
-                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-brand-primary" />
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5">
+                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-orange-500" />
                       </div>
                       <div>
-                        <div className="text-sm font-display font-semibold text-brand-text-heading">Growth Strategy</div>
-                        <div className="text-xs text-brand-text-secondary font-sans">5 min read</div>
+                        <div className="text-sm font-semibold text-brand-text-heading">Growth Strategy</div>
+                        <div className="text-xs text-gray-400 font-sans">5 min read</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-8">
-                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
-                        <LayoutIcon className="w-6 h-6 text-brand-primary" />
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5 translate-x-8">
+                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                        <LayoutIcon className="w-6 h-6 text-orange-500" />
                       </div>
                       <div>
-                        <div className="text-sm font-display font-semibold text-brand-text-heading">Web Development</div>
-                        <div className="text-xs text-brand-text-secondary font-sans">7 min read</div>
+                        <div className="text-sm font-semibold text-brand-text-heading">Web Development</div>
+                        <div className="text-xs text-gray-400 font-sans">7 min read</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 p-4 glass rounded-2xl border-white/5 translate-x-4">
-                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
-                        <Database className="w-6 h-6 text-brand-primary" />
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5 translate-x-4">
+                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                        <Database className="w-6 h-6 text-orange-500" />
                       </div>
                       <div>
-                        <div className="text-sm font-display font-semibold text-brand-text-heading">CRM & Automation</div>
-                        <div className="text-xs text-brand-text-secondary font-sans">4 min read</div>
+                        <div className="text-sm font-semibold text-brand-text-heading">CRM & Automation</div>
+                        <div className="text-xs text-gray-400 font-sans">4 min read</div>
                       </div>
                     </div>
                   </div>
                 </Card>
                 {/* Decorative Elements */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-primary/20 blur-3xl rounded-full" />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-primary/10 blur-3xl rounded-full" />
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/20 blur-3xl rounded-full" />
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-orange-500/10 blur-3xl rounded-full" />
               </motion.div>
             </div>
           </Container>
@@ -142,7 +142,7 @@ const Blogs: React.FC = () => {
           <Container>
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-white/10" />
-              <h2 className="text-2xl font-display font-semibold tracking-tight uppercase tracking-[0.2em] text-brand-text-secondary/40">Featured Insight</h2>
+              <h2 className="text-xl font-bold uppercase tracking-[0.2em] text-gray-600">Featured Insight</h2>
               <div className="h-px flex-1 bg-white/10" />
             </div>
 
@@ -151,7 +151,7 @@ const Blogs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card padding="none" className="rounded-[3rem] border-white/5 overflow-hidden group">
+              <Card padding="none" className="rounded-2xl border-white/5 overflow-hidden group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                     <img 
@@ -160,30 +160,30 @@ const Blogs: React.FC = () => {
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent lg:hidden" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent lg:hidden" />
                   </div>
                   <div className="p-8 md:p-16 flex flex-col justify-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-primary">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500/10 rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-orange-500 border border-orange-500/20">
                       {featuredPost.category}
                     </div>
-                    <h3 className="text-3xl md:text-5xl font-display font-semibold leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading">
+                    <h3 className="text-3xl md:text-4xl font-semibold leading-tight group-hover:text-orange-500 transition-colors text-brand-text-heading">
                       {featuredPost.title}
                     </h3>
-                    <p className="text-brand-text-secondary font-sans text-lg leading-[1.6] group-hover:text-brand-text-secondary transition-opacity">
+                    <p className="text-gray-400 font-sans text-base md:text-lg leading-[1.6]">
                       {featuredPost.excerpt}
                     </p>
-                    <div className="flex items-center gap-6 text-brand-text-secondary/40 font-sans text-sm">
+                    <div className="flex items-center gap-6 text-gray-500 font-sans text-sm">
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-4 h-4 text-orange-500/60" />
                         {featuredPost.date}
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
+                        <Clock className="w-4 h-4 text-orange-500/60" />
                         {featuredPost.readTime}
                       </div>
                     </div>
                     <div className="pt-4">
-                      <Button to={`/blogs/${featuredPost.slug}`} size="lg" icon={ArrowRight}>
+                      <Button to={`/blogs/${featuredPost.slug}`} size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition">
                         Read Article
                       </Button>
                     </div>
@@ -195,9 +195,9 @@ const Blogs: React.FC = () => {
         </Section>
 
         {/* 3. BLOG CATEGORIES / FILTER BAR & 4. BLOG SEARCH BAR */}
-        <Section className="py-12 sticky top-24 z-30">
+        <Section className="py-8 sticky top-24 z-30">
           <Container>
-            <div className="glass p-4 rounded-[2rem] border-white/10 flex flex-col lg:flex-row items-center gap-6 shadow-2xl">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex flex-col lg:flex-row items-center gap-6 shadow-2xl">
               {/* Categories */}
               <div className="flex-1 w-full overflow-x-auto no-scrollbar">
                 <div className="flex items-center gap-2 min-w-max px-2">
@@ -207,8 +207,8 @@ const Blogs: React.FC = () => {
                       onClick={() => setActiveCategory(category)}
                       className={`px-6 py-2.5 rounded-xl text-sm font-sans font-semibold transition-all whitespace-nowrap ${
                         activeCategory === category 
-                        ? 'bg-brand-primary text-brand-dark shadow-lg shadow-brand-primary/20' 
-                        : 'text-brand-text-secondary/40 hover:text-brand-text-secondary hover:bg-white/5'
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20' 
+                        : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                       }`}
                     >
                       {category}
@@ -219,13 +219,13 @@ const Blogs: React.FC = () => {
 
               {/* Search */}
               <div className="w-full lg:w-96 relative group">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-brand-primary transition-colors" />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-orange-500 transition-colors" />
                 <input 
                   type="text" 
                   placeholder="Search insights, topics, and ideas..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full glass bg-white/5 border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm font-sans text-brand-text-heading placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl pl-14 pr-6 py-3 text-sm font-sans text-brand-text-heading placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
                 />
               </div>
             </div>
@@ -236,14 +236,14 @@ const Blogs: React.FC = () => {
         <Section className="py-12 pb-24">
           <Container>
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-display font-semibold tracking-tight text-brand-text-heading">Latest Articles</h2>
-              <div className="text-brand-text-secondary/40 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+              <h2 className="text-3xl font-semibold tracking-tight text-brand-text-heading">Latest Articles</h2>
+              <div className="text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                 Showing {filteredPosts.length} Results
               </div>
             </div>
 
             {filteredPosts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPosts.map((post, idx) => (
                   <motion.div
                     key={post.slug}
@@ -254,35 +254,35 @@ const Blogs: React.FC = () => {
                     className="group"
                   >
                     <Link to={`/blogs/${post.slug}`} className="block space-y-6">
-                      <div className="aspect-[16/10] glass rounded-[2.5rem] overflow-hidden border-none relative">
+                      <div className="aspect-[16/10] bg-white/5 rounded-2xl overflow-hidden border-none relative">
                         <img 
                           src={post.image} 
                           alt={post.title} 
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                         />
-                        <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading">
+                        <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading border border-white/10">
                           {post.category}
                         </div>
                       </div>
                       <div className="space-y-4 px-2">
-                        <div className="flex items-center gap-4 text-brand-text-secondary/30 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                        <div className="flex items-center gap-4 text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                           <div className="flex items-center gap-1.5">
-                            <Calendar className="w-3 h-3" />
+                            <Calendar className="w-3 h-3 text-orange-500" />
                             {post.date}
                           </div>
                           <div className="flex items-center gap-1.5">
-                            <Clock className="w-3 h-3" />
+                            <Clock className="w-3 h-3 text-orange-500" />
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-2xl font-display font-semibold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading">
+                        <h3 className="text-xl md:text-2xl font-semibold group-hover:text-orange-500 transition-colors leading-tight text-brand-text-heading">
                           {post.title}
                         </h3>
-                        <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] line-clamp-2 group-hover:text-brand-text-secondary transition-opacity">
+                        <p className="text-gray-400 font-sans text-sm leading-relaxed line-clamp-2">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center gap-2 text-brand-primary font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2">
+                        <div className="flex items-center gap-2 text-orange-500 font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2">
                           Read More <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -295,12 +295,12 @@ const Blogs: React.FC = () => {
                 <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-8 h-8 text-white/20" />
                 </div>
-                <h3 className="text-2xl font-display font-semibold mb-2 text-brand-text-heading">No articles found</h3>
-                <p className="text-brand-text-secondary font-sans">Try adjusting your search or filters to find what you're looking for.</p>
+                <h3 className="text-2xl font-semibold mb-2 text-brand-text-heading">No articles found</h3>
+                <p className="text-gray-400 font-sans">Try adjusting your search or filters to find what you're looking for.</p>
                 <Button 
                   variant="ghost"
                   onClick={() => {setActiveCategory('All'); setSearchQuery('');}}
-                  className="mt-8 text-brand-primary font-sans font-semibold hover:underline"
+                  className="mt-8 text-orange-500 font-sans font-semibold hover:underline"
                 >
                   Clear all filters
                 </Button>
@@ -312,12 +312,12 @@ const Blogs: React.FC = () => {
         {/* 6. EDITORIAL HIGHLIGHTS / TOPICS SECTION */}
         <Section background="subtle">
           <Container>
-            <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-semibold uppercase tracking-[0.2em]">Deep Dives</span>
-              <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Explore Popular Themes</h2>
+            <div className="text-center mb-16 space-y-4">
+              <span className="text-orange-500 text-sm font-sans font-semibold uppercase tracking-[0.2em]">Deep Dives</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">Explore Popular Themes</h2>
             </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {[
                 {
                   title: 'Growth & Conversion',
@@ -357,12 +357,12 @@ const Blogs: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card padding="lg" className="h-full hover:border-brand-primary/20 transition-all duration-500 group">
-                    <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-all duration-500">
-                      <topic.icon className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
+                  <Card padding="lg" className="h-full group">
+                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                      <topic.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-display font-semibold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{topic.title}</h3>
-                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] mb-8 group-hover:text-brand-text-secondary transition-colors">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">{topic.title}</h3>
+                    <p className="text-gray-400 font-sans text-sm leading-relaxed mb-8">
                       {topic.description}
                     </p>
                     <div className="space-y-4">
@@ -370,12 +370,12 @@ const Blogs: React.FC = () => {
                         <Link 
                           key={link.slug} 
                           to={`/blogs/${link.slug}`}
-                          className="flex items-center justify-between group/link py-3 border-b border-white/5 hover:border-brand-primary/30 transition-colors"
+                          className="flex items-center justify-between group/link py-3 border-b border-white/5 hover:border-orange-500/30 transition-colors"
                         >
-                          <span className="text-sm font-sans font-medium text-brand-text-secondary/70 group-hover/link:text-brand-text-heading transition-colors line-clamp-1">
+                          <span className="text-sm font-sans font-medium text-gray-400 group-hover/link:text-brand-text-heading transition-colors line-clamp-1">
                             {link.name}
                           </span>
-                          <ChevronRight className="w-4 h-4 text-brand-text-secondary/20 group-hover/link:text-brand-primary transition-colors" />
+                          <ChevronRight className="w-4 h-4 text-gray-600 group-hover/link:text-orange-500 transition-colors" />
                         </Link>
                       ))}
                     </div>
@@ -394,16 +394,16 @@ const Blogs: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-8 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
+              <Card padding="xl" className="text-center space-y-8 relative overflow-hidden border-orange-500/20" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-6">
-                  <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-brand-primary" />
+                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-4 mx-auto">
+                    <Mail className="w-8 h-8" />
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Stay Connected With New Insights</h2>
-                  <p className="text-brand-text-secondary font-sans text-lg max-w-2xl mx-auto font-normal leading-[1.6]">
+                  <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-brand-text-heading">Stay Connected With New Insights</h2>
+                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-2xl mx-auto font-normal">
                     Get practical ideas on growth, performance, systems, and digital execution from the ConversionFoxx perspective.
                   </p>
                   
@@ -411,13 +411,13 @@ const Blogs: React.FC = () => {
                     <input 
                       type="email" 
                       placeholder="Enter your email"
-                      className="w-full glass bg-white/5 border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-brand-text-secondary/20 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
                     />
-                    <Button type="submit" size="lg" className="font-sans font-semibold">
+                    <Button type="submit" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
                       Subscribe
                     </Button>
                   </form>
-                  <p className="text-brand-text-secondary/30 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                  <p className="text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                     No spam. Just useful insights.
                   </p>
                 </div>
@@ -429,12 +429,12 @@ const Blogs: React.FC = () => {
         {/* 8. WHY OUR INSIGHTS MATTER SECTION */}
         <Section>
           <Container>
-            <div className="text-center mb-20 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-semibold uppercase tracking-[0.2em]">Our Editorial Philosophy</span>
-              <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-brand-text-heading">Built Around Real Business Questions</h2>
+            <div className="text-center mb-16 space-y-4">
+              <span className="text-orange-500 text-sm font-sans font-semibold uppercase tracking-[0.2em]">Our Editorial Philosophy</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">Built Around Real Business Questions</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   title: 'Practical, Not Theoretical',
@@ -465,11 +465,11 @@ const Blogs: React.FC = () => {
                   transition={{ delay: idx * 0.1 }}
                 >
                   <Card padding="md" className="h-full text-center group">
-                    <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-primary transition-all duration-500">
-                      <item.icon className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
+                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                      <item.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-display font-semibold mb-4 group-hover:text-brand-primary transition-colors text-brand-text-heading">{item.title}</h3>
-                    <p className="text-brand-text-secondary font-sans text-sm leading-[1.6] group-hover:text-brand-text-secondary transition-colors">
+                    <h3 className="text-xl font-semibold mb-4 text-brand-text-heading">{item.title}</h3>
+                    <p className="text-gray-400 font-sans text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </Card>
@@ -487,23 +487,23 @@ const Blogs: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-orange-500/20" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tight leading-[1.1] text-brand-text-heading">
+                  <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
                     Need Help Turning <br />
-                    <span className="brand-gradient-text">Insight Into Action?</span>
+                    <span className="text-orange-500">Insight Into Action?</span>
                   </h2>
-                  <p className="text-brand-text-secondary font-sans text-lg md:text-xl max-w-2xl mx-auto font-normal leading-[1.6]">
+                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
                     If your business needs stronger systems, better execution, or clearer digital direction, ConversionFoxx is ready to help.
                   </p>
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-                    <Button to="/contact" size="xl" icon={ArrowRight} className="font-sans font-semibold">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+                    <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
                       Let's Talk
                     </Button>
-                    <Button to="/services" variant="secondary" size="xl" className="font-sans font-semibold">
+                    <Button to="/services" variant="secondary" size="lg" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       Explore Services
                     </Button>
                   </div>

@@ -39,24 +39,24 @@ const reasons = [
 
 const WhyChooseUs: React.FC = () => {
   return (
-    <Section id="why-us" padding="xl" background="subtle">
+    <Section id="why-us" padding="lg" background="subtle">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-10"
+            className="space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-brand-primary text-sm font-bold uppercase tracking-[0.2em] font-sans">Why ConversionFoxx?</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-display">
-                We build systems, <br />
-                <span className="brand-gradient-text">not just services</span>
+              <span className="text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5">The SaaS Difference</span>
+              <h2 className="text-brand-text-heading font-display">
+                We build engines, <br />
+                <span className="brand-gradient-text">not just outputs.</span>
               </h2>
             </div>
-            <p className="text-brand-text-secondary text-lg leading-[1.6] max-w-xl font-sans">
-              ConversionFoxx is your strategic growth partner. We don't just run ads or build pages—we architect complete revenue systems that scale your business predictably.
+            <p className="text-brand-text-secondary max-w-lg font-sans font-medium text-base md:text-lg leading-relaxed">
+              ConversionFoxx is your growth engineering laboratory. We architect complete revenue systems that scale your business with mathematical precision.
             </p>
             
             <div className="flex flex-col gap-6 pt-4">
