@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
       {/* Subtle Glow behind dashboard */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none opacity-40" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10 min-h-[700px]">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,12 +37,12 @@ const Hero: React.FC = () => {
             </div>
             
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-[56px] font-black tracking-tighter leading-[1.1] text-brand-text-heading font-display">
+              <h1 className="text-5xl md:text-[64px] font-black tracking-tighter leading-[1.05] text-brand-text-heading font-display">
                 Scalable <br />
                 <span className="text-brand-primary">Revenue Systems.</span>
               </h1>
               
-              <p className="text-base md:text-lg text-brand-text-secondary max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed font-sans">
+              <p className="text-base md:text-lg text-brand-text-secondary max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed font-sans opacity-90">
                 We engineer high-performance systems that transform raw traffic into predictable, automated revenue engines for modern SaaS enterprises.
               </p>
             </div>

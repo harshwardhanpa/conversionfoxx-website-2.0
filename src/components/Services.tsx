@@ -63,7 +63,7 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-brand-text-heading font-display"
+            className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
             Our Growth <span className="text-brand-primary">System.</span>
           </motion.h2>
@@ -86,17 +86,17 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`group hover-lift saas-card p-8 md:p-10 rounded-[2.5rem] flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
+              className={`group hover-lift saas-card p-8 md:p-10 rounded-[2rem] flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
             >
               {/* Step Counter */}
-              <div className="absolute top-8 right-8 text-6xl font-display font-black text-white/[0.01] pointer-events-none group-hover:text-brand-primary/[0.03] transition-colors duration-700">
+              <div className="absolute top-8 right-8 text-6xl font-display font-black text-white/[0.01] pointer-events-none group-hover:text-brand-primary/[0.05] transition-colors duration-700">
                 0{idx + 1}
               </div>
               
-              <div className="relative z-10 space-y-8 flex flex-col h-full">
+              <div className="relative z-10 space-y-8 flex flex-col h-full text-left">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-brand-primary shadow-lg shadow-brand-primary/5 transition-all duration-300">
-                    <step.icon className="w-7 h-7 text-brand-primary group-hover:text-brand-dark transition-colors duration-300" />
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 transition-all duration-300">
+                    <step.icon className="w-7 h-7" />
                   </div>
                   <span className="text-[10px] font-bold font-sans text-brand-primary uppercase tracking-[0.2em] bg-brand-primary/5 px-3 py-1 rounded-full border border-brand-primary/10">
                     {step.step}
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-2xl md:text-3xl font-black text-brand-text-heading font-display">
+                  <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight">
                     {step.title}
                   </h3>
                   <p className="text-brand-text-secondary/70 text-base leading-relaxed font-sans max-w-lg">
@@ -129,11 +129,11 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="group relative saas-card p-12 md:p-20 rounded-[3rem] flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl"
+            className="group relative saas-card p-12 md:p-20 rounded-[2rem] flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
           >
             <div className="absolute inset-0 bg-brand-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="space-y-6 relative z-10">
-              <h3 className="text-3xl md:text-5xl font-black text-brand-text-heading font-display">
+              <h3 className="text-2xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight">
                 Ready to fix your <br /> growth system?
               </h3>
               <p className="text-brand-text-secondary/60 max-w-lg mx-auto font-sans font-medium leading-relaxed text-base md:text-lg">

@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Cloud, BarChart3, Search, Globe, Briefcase, Zap, Database, MousePointer2 } from 'lucide-react';
 import Section from './ui/Section';
 import Container from './ui/Container';
 
 const tools = [
-  { name: 'HubSpot', icon: '🧡' },
-  { name: 'Salesforce', icon: '☁️' },
-  { name: 'GA4', icon: '📊' },
-  { name: 'Google Ads', icon: '🔍' },
-  { name: 'Meta Ads', icon: '📱' },
-  { name: 'LinkedIn Ads', icon: '💼' },
-  { name: 'Zapier', icon: '⚡' },
-  { name: 'Hotjar', icon: '🔥' },
+  { name: 'HubSpot', icon: Database },
+  { name: 'Salesforce', icon: Cloud },
+  { name: 'GA4', icon: BarChart3 },
+  { name: 'Google Ads', icon: Search },
+  { name: 'Meta Ads', icon: Globe },
+  { name: 'LinkedIn Ads', icon: Briefcase },
+  { name: 'Zapier', icon: Zap },
+  { name: 'Hotjar', icon: MousePointer2 },
 ];
 
 const TechStack: React.FC = () => {
@@ -50,8 +51,8 @@ const TechStack: React.FC = () => {
               whileHover={{ y: -10 }}
               className="saas-border p-10 rounded-3xl group text-center"
             >
-              <div className="text-5xl mb-6 relative z-10 filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                {tool.icon}
+              <div className="bg-brand-primary/10 p-4 rounded-2xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-700 shadow-xl shadow-brand-primary/10">
+                <tool.icon className="w-8 h-8" />
               </div>
               <h3 className="text-sm font-black text-white/30 uppercase tracking-[0.2em] group-hover:text-brand-primary transition-colors duration-700 font-sans">
                 {tool.name}

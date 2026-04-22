@@ -197,8 +197,8 @@ const Contact: React.FC = () => {
         {/* 1. CONTACT HERO */}
         <Section className="relative pt-40 pb-20 overflow-hidden">
           {/* Background Glows */}
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-orange-500/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 -right-20 w-96 h-96 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
 
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -208,16 +208,16 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
                   </span>
                   Let's Connect
                 </div>
-                <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-2xl">
+                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-2xl font-display">
                   Let’s Build a <br />
-                  <span className="text-orange-500">
+                  <span className="text-brand-primary">
                     Revenue System
                   </span> That Scales
                 </h1>
@@ -227,7 +227,7 @@ const Contact: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Button 
                     to="#contact-form" 
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto" 
+                    className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto" 
                     size="lg" 
                     onClick={() => {
                       const el = document.getElementById('contact-form');
@@ -239,7 +239,7 @@ const Contact: React.FC = () => {
                   <Button 
                     to="/services" 
                     variant="secondary" 
-                    className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto" 
+                    className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto" 
                     size="lg"
                   >
                     See How It Works
@@ -259,8 +259,8 @@ const Contact: React.FC = () => {
                 <Card padding="lg" className="rounded-2xl border-white/10 shadow-2xl" hoverEffect={false}>
                   <div className="space-y-6">
                     <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5">
-                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                        <MessageSquare className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <MessageSquare className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-brand-text-heading">New Message</div>
@@ -268,8 +268,8 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5 translate-x-8">
-                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                        <Zap className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <Zap className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-brand-text-heading">Project Scope</div>
@@ -277,8 +277,8 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border-white/5 translate-x-4">
-                      <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                        <Calendar className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-brand-text-heading">Meeting Scheduled</div>
@@ -288,8 +288,8 @@ const Contact: React.FC = () => {
                   </div>
                 </Card>
                 {/* Decorative Elements */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/20 blur-3xl rounded-full" />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-orange-500/10 blur-3xl rounded-full" />
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-primary/20 blur-3xl rounded-full" />
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-primary/10 blur-3xl rounded-full" />
               </motion.div>
             </div>
           </Container>
@@ -299,7 +299,7 @@ const Contact: React.FC = () => {
         <Section background="subtle">
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading">How You Can Reach Us</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading tracking-tight font-display">How You Can Reach Us</h2>
               <p className="text-gray-400 font-sans max-w-2xl mx-auto text-base md:text-lg">Multiple ways to connect without friction. Choose the one that fits your needs.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -311,17 +311,17 @@ const Contact: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: option.delay }}
                 >
-                  <Card padding="lg" className="h-full group">
-                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                  <Card padding="lg" className="h-full group hover-lift">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                       <div className="w-6 h-6 flex items-center justify-center">
                         {React.cloneElement(option.icon as React.ReactElement, { className: 'w-full h-full' })}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-4 text-brand-text-heading">{option.title}</h3>
+                    <h3 className="text-xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{option.title}</h3>
                     <p className="text-gray-400 font-sans text-sm leading-relaxed mb-6">
                       {option.description}
                     </p>
-                    <div className="text-orange-500 font-sans font-semibold text-[10px] tracking-[0.2em] uppercase">
+                    <div className="text-brand-primary font-sans font-semibold text-[10px] tracking-[0.2em] uppercase">
                       {option.info}
                     </div>
                   </Card>
@@ -339,13 +339,13 @@ const Contact: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="relative overflow-hidden border-orange-500/10 shadow-2xl" hoverEffect={false}>
+              <Card padding="xl" className="relative overflow-hidden border-brand-primary/10 shadow-2xl" hoverEffect={false}>
                 {/* Background Glow */}
-                <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute -top-40 -right-40 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
                 <div className="relative z-10">
                   <div className="text-center mb-12 space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading">Tell Us About Your Project</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading tracking-tight font-display">Tell Us About Your Project</h2>
                     <p className="text-base md:text-lg text-gray-400 font-sans leading-[1.6] max-w-2xl mx-auto">Share a few details and our team will reach out with the most relevant next step.</p>
                   </div>
 
@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <User className="w-4 h-4 text-orange-500" />
+                              <User className="w-4 h-4 text-brand-primary" />
                               Full Name
                             </label>
                             <input
@@ -377,7 +377,7 @@ const Contact: React.FC = () => {
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <Building className="w-4 h-4 text-orange-500" />
+                              <Building className="w-4 h-4 text-brand-primary" />
                               Company Name
                             </label>
                             <input
@@ -392,7 +392,7 @@ const Contact: React.FC = () => {
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <Mail className="w-4 h-4 text-orange-500" />
+                              <Mail className="w-4 h-4 text-brand-primary" />
                               Email Address
                             </label>
                             <input
@@ -402,12 +402,12 @@ const Contact: React.FC = () => {
                               value={formState.email}
                               onChange={handleInputChange}
                               placeholder="john@example.com"
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                             />
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-orange-500" />
+                              <Phone className="w-4 h-4 text-brand-primary" />
                               Phone Number
                             </label>
                             <input
@@ -417,12 +417,12 @@ const Contact: React.FC = () => {
                               value={formState.phone}
                               onChange={handleInputChange}
                               placeholder="+1 (555) 000-0000"
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                             />
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <Zap className="w-4 h-4 text-orange-500" />
+                              <Zap className="w-4 h-4 text-brand-primary" />
                               Service Needed
                             </label>
                             <select
@@ -430,7 +430,7 @@ const Contact: React.FC = () => {
                               name="service"
                               value={formState.service}
                               onChange={handleInputChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all appearance-none cursor-pointer"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
                             >
                               <option value="" disabled className="bg-[#0a0a0a]">Select a service</option>
                               <option value="growth-audit" className="bg-[#0a0a0a]">Growth Audit</option>
@@ -443,7 +443,7 @@ const Contact: React.FC = () => {
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                              <TrendingUp className="w-4 h-4 text-orange-500" />
+                              <TrendingUp className="w-4 h-4 text-brand-primary" />
                               Project Budget
                             </label>
                             <select
@@ -451,7 +451,7 @@ const Contact: React.FC = () => {
                               name="budget"
                               value={formState.budget}
                               onChange={handleInputChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all appearance-none cursor-pointer"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
                             >
                               <option value="" disabled className="bg-[#0a0a0a]">Select a budget range</option>
                               <option value="under-1k" className="bg-[#0a0a0a]">Under $1,000</option>
@@ -464,7 +464,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className="space-y-2">
                           <label className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-gray-500 ml-1 flex items-center gap-2">
-                            <MessageSquare className="w-4 h-4 text-orange-500" />
+                            <MessageSquare className="w-4 h-4 text-brand-primary" />
                             Project Details / Message
                           </label>
                           <textarea
@@ -474,12 +474,12 @@ const Contact: React.FC = () => {
                             onChange={handleInputChange}
                             rows={5}
                             placeholder="Tell us about your challenges and what you're looking to achieve..."
-                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all resize-none"
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all resize-none"
                           ></textarea>
                         </div>
                         
                         {error && (
-                          <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-2xl flex items-center gap-3 text-orange-500">
+                          <div className="p-4 bg-brand-primary/10 border border-brand-primary/20 rounded-2xl flex items-center gap-3 text-brand-primary">
                             <AlertCircle size={20} />
                             <p className="text-sm font-sans font-semibold">{error}</p>
                           </div>
@@ -489,7 +489,7 @@ const Contact: React.FC = () => {
                           <Button
                             type="submit"
                             disabled={isSubmitting}
-                            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-medium transition w-full md:w-auto"
+                            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-4 rounded-xl font-medium transition w-full md:w-auto"
                             size="lg"
                           >
                             {isSubmitting ? (
@@ -514,8 +514,8 @@ const Contact: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="text-center py-12 space-y-8"
                       >
-                        <div className="w-24 h-24 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto">
-                          <CheckCircle2 className="w-12 h-12 text-orange-500" />
+                        <div className="w-24 h-24 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle2 className="w-12 h-12 text-brand-primary" />
                         </div>
                         <div className="space-y-4">
                           <h3 className="text-3xl md:text-4xl font-semibold text-brand-text-heading">Inquiry Sent Successfully!</h3>
@@ -525,7 +525,7 @@ const Contact: React.FC = () => {
                         </div>
 
                         <div className="pt-4">
-                          <Button to="/" variant="secondary" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl">
+                          <Button to="/" variant="secondary" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl">
                             Back to Home
                           </Button>
                         </div>
@@ -542,7 +542,7 @@ const Contact: React.FC = () => {
         <Section>
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading">Why Businesses Reach Out to ConversionFoxx</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading tracking-tight font-display">Why Businesses Reach Out to ConversionFoxx</h2>
               <p className="text-gray-400 font-sans max-w-2xl mx-auto text-base md:text-lg">We focus on the intersection of technical excellence and business growth.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -554,13 +554,13 @@ const Contact: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card padding="lg" className="h-full text-center group">
-                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                  <Card padding="lg" className="h-full text-center group hover-lift">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                       <div className="w-6 h-6 flex items-center justify-center">
                         {React.cloneElement(item.icon as React.ReactElement, { className: 'w-full h-full' })}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-4 text-brand-text-heading">{item.title}</h3>
+                    <h3 className="text-xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{item.title}</h3>
                     <p className="text-gray-400 font-sans text-sm leading-relaxed">
                       {item.description}
                     </p>
@@ -575,7 +575,7 @@ const Contact: React.FC = () => {
         <Section background="subtle">
           <Container>
             <div className="text-center mb-20 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading">What Happens Next</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading tracking-tight font-display">What Happens Next</h2>
               <p className="text-gray-400 font-sans max-w-2xl mx-auto text-base md:text-lg">We’ve streamlined our onboarding to get your project moving quickly and clearly.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -588,11 +588,11 @@ const Contact: React.FC = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="relative group"
                 >
-                  <Card padding="lg" className="h-full">
-                    <div className="text-6xl font-black text-white/5 mb-6 group-hover:text-orange-500/10 transition-colors">
+                  <Card padding="lg" className="h-full hover-lift">
+                    <div className="text-6xl font-black text-white/5 mb-6 group-hover:text-brand-primary/10 transition-colors font-display">
                       {step.step}
                     </div>
-                    <h3 className="text-xl font-semibold mb-4 text-brand-text-heading">{step.title}</h3>
+                    <h3 className="text-xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{step.title}</h3>
                     <p className="text-gray-400 font-sans text-sm leading-relaxed">
                       {step.description}
                     </p>
@@ -617,11 +617,11 @@ const Contact: React.FC = () => {
                 <p className="text-gray-400 font-sans text-base md:text-lg leading-relaxed">
                   We work with businesses looking for focused execution, stronger systems, and measurable digital growth.
                 </p>
-                <div className="w-20 h-1 bg-orange-500 rounded-full" />
+                <div className="w-20 h-1 bg-brand-primary rounded-full" />
               </div>
               <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <Card padding="md" className="flex items-start gap-6">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 flex-shrink-0">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary flex-shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -630,7 +630,7 @@ const Contact: React.FC = () => {
                   </div>
                 </Card>
                 <Card padding="md" className="flex items-start gap-6">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 flex-shrink-0">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
@@ -639,7 +639,7 @@ const Contact: React.FC = () => {
                   </div>
                 </Card>
                 <Card padding="md" className="flex items-start gap-6">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 flex-shrink-0">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary flex-shrink-0">
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
@@ -648,7 +648,7 @@ const Contact: React.FC = () => {
                   </div>
                 </Card>
                 <Card padding="md" className="flex items-start gap-6">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 flex-shrink-0">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary flex-shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
@@ -678,9 +678,9 @@ const Contact: React.FC = () => {
                     <span className="font-semibold text-lg text-brand-text-heading">{faq.question}</span>
                     <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                       {activeFaq === idx ? (
-                        <Minus className="w-4 h-4 text-orange-500" />
+                        <Minus className="w-4 h-4 text-brand-primary" />
                       ) : (
-                        <Plus className="w-4 h-4 text-orange-500" />
+                        <Plus className="w-4 h-4 text-brand-primary" />
                       )}
                     </div>
                   </button>
@@ -707,7 +707,7 @@ const Contact: React.FC = () => {
         {/* 8. FINAL CTA SECTION */}
         <Section className="relative overflow-hidden">
           {/* Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 blur-[150px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
           <Container>
             <motion.div
@@ -715,11 +715,11 @@ const Contact: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-orange-500/20 shadow-2xl shadow-orange-500/5" hoverEffect={false}>
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5" hoverEffect={false}>
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
-                    Have a Project <span className="text-orange-500">in Mind?</span>
-                  </h2>
+              <h2 className="text-5xl md:text-6xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
+                Have a Project <span className="text-brand-primary">in Mind?</span>
+              </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-2xl mx-auto mb-12 font-normal leading-relaxed">
                     Let’s turn your ideas, challenges, or growth goals into a clear and practical next step.
                   </p>
@@ -727,7 +727,7 @@ const Contact: React.FC = () => {
                     <Button 
                       to="#contact-form" 
                       size="lg" 
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto"
+                      className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto"
                       onClick={() => {
                         const el = document.getElementById('contact-form');
                         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -735,12 +735,12 @@ const Contact: React.FC = () => {
                     >
                       Get Free Growth Audit
                     </Button>
-                    <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto">
+                    <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto">
                       See How It Works
                     </Button>
                   </div>
                   <div className="mt-10">
-                    <Link to="/services" className="text-orange-500 hover:text-orange-600 font-sans font-semibold flex items-center justify-center gap-2 transition-colors group">
+                    <Link to="/services" className="text-brand-primary hover:text-brand-primary/90 font-sans font-semibold flex items-center justify-center gap-2 transition-colors group">
                       Explore Services
                       <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>

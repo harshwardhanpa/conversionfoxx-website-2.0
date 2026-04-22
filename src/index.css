@@ -21,32 +21,32 @@
     @apply bg-[#050505] text-[#B0B9C6] font-sans antialiased leading-relaxed text-[16px] md:text-[18px];
   }
   h1 {
-    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[40px] md:text-[56px] leading-[1.1];
+    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[36px] md:text-[56px] leading-[1.1];
   }
   h2 {
-    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[32px] md:text-[40px] leading-[1.2];
+    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[28px] md:text-[36px] leading-[1.2];
   }
   h3 {
-    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[24px] md:text-[28px] leading-[1.2];
+    @apply font-display text-[#E6EAF0] tracking-tighter font-black text-[20px] md:text-[24px] leading-[1.2];
   }
 }
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-md bg-white/[0.02] border border-white/[0.05] shadow-[0_4px_24px_rgba(0,0,0,0.3)];
+    @apply backdrop-blur-md bg-white/[0.02] border border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.3)];
   }
   .saas-card {
-    @apply bg-[#0A0A0A] border border-white/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300;
+    @apply bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md transition-all duration-300;
   }
   .icon-glow {
     @apply relative flex items-center justify-center;
     &::after {
       content: '';
-      @apply absolute inset-0 bg-brand-primary/20 blur-[15px] opacity-0 transition-opacity duration-300;
+      @apply absolute inset-0 bg-brand-primary/10 blur-[15px] opacity-0 transition-opacity duration-300;
     }
   }
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
+    @apply transition-all duration-300 hover:border-brand-primary/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-primary/5;
   }
   .brand-gradient {
     background: linear-gradient(135deg, #F26E22 0%, #D91A2A 100%);

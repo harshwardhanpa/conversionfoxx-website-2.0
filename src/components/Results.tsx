@@ -46,7 +46,7 @@ const Results: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-brand-text-heading font-display max-w-4xl mx-auto"
+            className="text-3xl md:text-4xl font-black text-brand-text-heading font-display max-w-4xl mx-auto tracking-tight"
           >
             Systems that power <br />
             <span className="text-brand-primary">hyper-scale growth.</span>
@@ -62,16 +62,16 @@ const Results: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative glass p-10 rounded-[3rem] border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center flex flex-col h-full"
+              className="group relative saas-card p-10 rounded-2xl border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center flex flex-col h-full hover-lift"
             >
-              <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3rem]" />
+              <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
               
               <div className="relative z-10 space-y-6 flex flex-col h-full">
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500 shrink-0">
-                  <result.icon className="w-8 h-8 text-brand-primary group-hover:text-brand-dark transition-colors" />
+                <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-500 mb-4 mx-auto w-fit">
+                  <result.icon className="w-8 h-8" />
                 </div>
                 
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white group-hover:text-brand-primary transition-colors font-display">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-black text-white group-hover:text-brand-primary transition-colors font-display tracking-tighter">
                   {result.metric}
                 </div>
                 

@@ -50,7 +50,7 @@ const WhyChooseUs: React.FC = () => {
           >
             <div className="space-y-4">
               <span className="text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5">The SaaS Difference</span>
-              <h2 className="text-brand-text-heading font-display">
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight">
                 We build engines, <br />
                 <span className="brand-gradient-text">not just outputs.</span>
               </h2>
@@ -83,12 +83,12 @@ const WhyChooseUs: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="glass p-8 rounded-3xl hover:bg-white/5 transition-all group flex flex-col h-full"
+                className="saas-card p-8 rounded-2xl hover:bg-white/5 transition-all group flex flex-col h-full hover-lift"
               >
-                <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary transition-colors">
-                  <reason.icon className="w-5 h-5 text-brand-primary group-hover:text-brand-dark transition-colors" />
+                <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 mb-6 w-fit">
+                  <reason.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold mb-3 group-hover:text-brand-primary transition-colors font-display">{reason.title}</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-brand-primary transition-colors font-display tracking-tight">{reason.title}</h3>
                 <p className="text-sm text-brand-text-secondary opacity-50 leading-[1.6] group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors font-sans">{reason.description}</p>
               </motion.div>
             ))}

@@ -32,7 +32,7 @@ const data = [
 
 const DashboardMockup: React.FC = () => {
   return (
-    <div className="relative w-full max-w-[540px] mx-auto lg:ml-auto group">
+    <div className="relative w-full max-w-[500px] mx-auto lg:ml-auto group">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

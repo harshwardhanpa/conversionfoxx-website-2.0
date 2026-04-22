@@ -41,8 +41,8 @@ const Services: React.FC = () => {
         {/* 1. SERVICES HERO */}
         <Section className="relative overflow-hidden pt-32 pb-20">
           {/* Background Decorative Elements */}
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-500/5 blur-[120px] rounded-full animate-pulse pointer-events-none" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-orange-500/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-primary/5 blur-[120px] rounded-full animate-pulse pointer-events-none" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
 
           <Container>
             <motion.div
@@ -51,13 +51,13 @@ const Services: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-orange-500/20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20">
                 <Sparkles className="w-4 h-4" />
                 Our Expertise
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
                 Services Built to Grow <br />
-                <span className="text-orange-500">
+                <span className="text-brand-primary">
                   Modern Businesses
                 </span>
               </h1>
@@ -65,14 +65,14 @@ const Services: React.FC = () => {
                 ConversionFoxx delivers growth-focused digital services that combine strategy, technology, and performance.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
+                <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
                   Get Free Growth Audit
                 </Button>
                 <Button 
                   onClick={scrollToProcess} 
                   variant="secondary" 
                   size="lg"
-                  className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white"
+                  className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white"
                 >
                   See How It Works
                 </Button>
@@ -85,8 +85,8 @@ const Services: React.FC = () => {
         <Section id="explore-services" background="subtle">
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <span className="text-orange-500 text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">We don’t offer isolated services.</h2>
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">We don’t offer isolated services.</h2>
               <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
                 We build complete revenue systems that identify gaps, fix leaks, and drive predictable growth.
               </p>
@@ -129,21 +129,21 @@ const Services: React.FC = () => {
                 >
                   <Card 
                     padding="lg" 
-                    className={`h-full flex flex-col relative transition-all duration-300 ${service.flagship ? 'ring-2 ring-orange-500/50 bg-orange-500/10' : ''}`}
+                    className={`h-full flex flex-col relative transition-all duration-300 hover-lift ${service.flagship ? 'ring-2 ring-brand-primary/50 bg-brand-primary/10' : ''}`}
                   >
                     {service.flagship && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg">
                         Flagship
                       </div>
                     )}
-                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6 w-fit">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 w-fit">
                       <service.icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">{service.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{service.title}</h3>
                     <p className="text-gray-400 font-sans text-sm leading-relaxed mb-8 flex-grow">
                       {service.description}
                     </p>
-                    <Link to={service.link} className="inline-flex items-center gap-2 text-orange-500 font-sans font-bold group/btn hover:translate-x-1 transition-transform">
+                    <Link to={service.link} className="inline-flex items-center gap-2 text-brand-primary font-sans font-bold group/btn hover:translate-x-1 transition-transform">
                       Learn More
                       <ArrowRight className="w-5 h-5" />
                     </Link>
@@ -158,8 +158,8 @@ const Services: React.FC = () => {
         <Section id="who-we-help">
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <span className="text-orange-500 text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">Built for Ambitious Brands</h2>
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">Built for Ambitious Brands</h2>
               <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
                 Our services are built for businesses that need smarter execution and measurable digital growth.
               </p>
@@ -179,12 +179,12 @@ const Services: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card padding="md" className="flex items-start gap-6 h-full group">
-                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                  <Card padding="md" className="flex items-start gap-6 h-full group hover-lift">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary group-hover:text-brand-dark transition-colors">
                       <audience.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2 text-brand-text-heading">{audience.title}</h3>
+                      <h3 className="text-xl font-bold mb-2 text-brand-text-heading font-display tracking-tight">{audience.title}</h3>
                       <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-xl">{audience.text}</p>
                     </div>
                   </Card>
@@ -198,7 +198,7 @@ const Services: React.FC = () => {
         <Section id="engagement-models" background="subtle">
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-brand-text-heading max-w-2xl mx-auto">How We Work</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">How We Work</h2>
               <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
                 A structured approach to identify gaps, fix leaks, and scale your revenue system.
               </p>
@@ -228,11 +228,11 @@ const Services: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card padding="xl" className="h-full group">
-                    <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                  <Card padding="xl" className="h-full group hover-lift">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                       <step.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">{step.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{step.title}</h3>
                     <p className="text-gray-400 font-sans leading-relaxed text-sm">
                       {step.description}
                     </p>
@@ -251,23 +251,23 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-orange-500/20 shadow-2xl shadow-orange-500/5" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
                 
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-[64px] font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
                     Ready to Build Your <br />
-                    <span className="text-orange-500">Growth Engine?</span>
+                    <span className="text-brand-primary">Growth Engine?</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
                     Whether you need a single project or a long-term growth partner, ConversionFoxx is ready to help you scale.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
-                    <Button to="/contact" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
+                    <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
                       Get Free Growth Audit
                     </Button>
-                    <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-orange-500 px-6 py-3 rounded-xl w-full sm:w-auto text-white">
+                    <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       See How It Works
                     </Button>
                   </div>

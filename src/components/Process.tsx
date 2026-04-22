@@ -43,7 +43,7 @@ const Process: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-brand-text-heading font-display"
+            className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
             How we engine <br />
             <span className="text-brand-primary">your growth.</span>
