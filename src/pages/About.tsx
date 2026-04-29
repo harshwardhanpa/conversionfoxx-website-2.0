@@ -25,13 +25,13 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
                 <Sparkles className="w-4 h-4" />
                 About ConversionFoxx
               </div>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
+              <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
                 We Build Systems That <br />
-                Scale <span className="text-brand-primary">Revenue Predictably</span>
+                Scale <span className="brand-gradient-text">Revenue Predictably</span>
               </h1>
               <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto font-sans font-normal leading-relaxed">
                 ConversionFoxx is a growth system architecture firm. We help businesses scale through data-backed Growth Audits, high-performance Lead Generation, and our flagship Revenue Operations System.
@@ -74,10 +74,10 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <Card padding="xl" className="aspect-square flex items-center justify-center relative overflow-hidden group">
+                <Card padding="xl" className="aspect-square flex items-center justify-center relative overflow-hidden group liquid-glass">
                   <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                   <div className="relative z-10 text-center space-y-6">
-                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-4">
+                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-4 glass shadow-xl shadow-brand-primary/5">
                       <Rocket className="w-8 h-8" />
                     </div>
                     <h3 className="text-xl md:text-2xl font-black italic text-brand-text-heading leading-relaxed font-display">"Growth is not an accident; it's a system."</h3>
@@ -101,8 +101,8 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card padding="xl" className="h-full">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6">
+                <Card padding="xl" className="h-full hover-lift saas-card transition-all duration-300">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
                     <Target className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">Our Mission</h3>
@@ -117,8 +117,8 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                <Card padding="xl" className="h-full">
-                  <div className="bg-orange-500/10 p-3 rounded-xl text-orange-500 inline-flex items-center justify-center mb-6">
+                <Card padding="xl" className="h-full hover-lift saas-card transition-all duration-300">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
                     <Eye className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">Our Vision</h3>
@@ -374,14 +374,14 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5" hoverEffect={false}>
-                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
+              <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5 liquid-glass" hoverEffect={false}>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none opacity-50" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none opacity-30" />
                 
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
                     Let’s Build a <br />
-                    <span className="text-brand-primary">Revenue System</span>
+                    <span className="brand-gradient-text">Revenue System</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
                     Whether you need a Growth Audit, better Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to scale your business.

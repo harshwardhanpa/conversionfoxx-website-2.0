@@ -62,11 +62,11 @@ const Process: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative saas-border p-10 rounded-[3.5rem] transition-all duration-700 text-center"
+                className="group relative saas-card p-10 rounded-2xl transition-all duration-500 text-center hover-lift"
               >
                 <div className="relative z-10 space-y-8">
-                  <div className="w-20 h-20 bg-brand-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-10 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-700 shadow-xl shadow-brand-primary/10">
-                    <step.icon className="w-10 h-10 text-brand-primary group-hover:text-brand-dark transition-colors duration-700" />
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mx-auto mb-10 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-500 shadow-xl shadow-brand-primary/10">
+                    <step.icon className="w-8 h-8" />
                     <div className="absolute -top-3 -right-3 w-10 h-10 bg-brand-dark border-2 border-brand-primary/20 rounded-full flex items-center justify-center text-xs font-black text-brand-primary">
                       {idx + 1}
                     </div>

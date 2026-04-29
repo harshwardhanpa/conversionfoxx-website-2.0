@@ -58,8 +58,7 @@ const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative saas-border p-10 rounded-[3.5rem] transition-all duration-700 flex flex-col h-full overflow-hidden"
+              className="group relative saas-card p-10 rounded-2xl transition-all duration-500 flex flex-col h-full overflow-hidden hover-lift"
             >
               <div className="absolute -top-6 -right-6 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-120 transition-all duration-700 pointer-events-none">
                 <Quote className="w-32 h-32 text-brand-primary" />

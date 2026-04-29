@@ -32,17 +32,17 @@ const data = [
 
 const DashboardMockup: React.FC = () => {
   return (
-    <div className="relative w-full max-w-[500px] mx-auto lg:ml-auto group">
+    <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto group">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10"
       >
         {/* Main Dashboard Window */}
-        <div className="bg-[#0A0A0A] border border-white/[0.12] rounded-2xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
+        <div className="bg-[#0A0A0A]/80 border border-white/10 rounded-2xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] overflow-hidden glass">
           {/* Header */}
-          <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#0F0F0F]">
+          <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-white/[0.02]">
             <div className="flex items-center gap-2">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-[#FF5F57] shadow-lg shadow-[#FF5F57]/20" />
@@ -168,10 +168,10 @@ const DashboardMockup: React.FC = () => {
         <motion.div
           animate={{ x: [0, 10, 0], y: [0, -5, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-12 -right-8 p-5 bg-[#121212] border border-white/[0.15] rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 backdrop-blur-xl hidden md:block"
+          className="absolute -top-12 -right-8 p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 glass liquid-glass hidden md:block"
         >
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#22c55e]/20 flex items-center justify-center ring-1 ring-[#22c55e]/30">
+            <div className="w-12 h-12 rounded-xl bg-[#22c55e]/10 flex items-center justify-center ring-1 ring-[#22c55e]/20">
               <TrendingUp className="w-6 h-6 text-[#22c55e]" />
             </div>
             <div>
@@ -184,10 +184,10 @@ const DashboardMockup: React.FC = () => {
         <motion.div
           animate={{ x: [0, -8, 0], y: [0, 10, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute -bottom-10 -left-12 p-4 bg-[#121212] border border-white/[0.15] rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 backdrop-blur-xl hidden md:block"
+          className="absolute -bottom-10 -left-12 p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 glass liquid-glass hidden md:block"
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-brand-primary/20 flex items-center justify-center ring-1 ring-brand-primary/30">
+            <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center ring-1 ring-brand-primary/20">
               <Users className="w-5 h-5 text-brand-primary" />
             </div>
             <div>

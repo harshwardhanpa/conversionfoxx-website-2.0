@@ -134,12 +134,12 @@ const BlogPost: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="glass p-8 md:p-12 rounded-[3rem] border-brand-primary/20 relative overflow-hidden group"
+              className="glass p-8 md:p-12 rounded-2xl border-brand-primary/20 relative overflow-hidden group liquid-glass"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] rounded-full" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] rounded-full opacity-50" />
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                <div className="w-20 h-20 bg-brand-primary/20 rounded-[2rem] flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary transition-all duration-500">
-                  <Zap className="w-10 h-10 text-brand-primary group-hover:text-white transition-colors" />
+                <div className="w-20 h-20 bg-brand-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary transition-all duration-500 shadow-xl shadow-brand-primary/10 glass">
+                  <Zap className="w-10 h-10 text-brand-primary group-hover:text-brand-dark transition-colors" />
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-display font-semibold leading-tight text-brand-text-heading">
@@ -243,7 +243,7 @@ const BlogPost: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass p-12 md:p-16 rounded-[3rem] border-brand-primary/20 text-center space-y-8"
+              className="glass p-12 md:p-16 rounded-2xl border-brand-primary/20 text-center space-y-8 liquid-glass"
             >
               <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-brand-text-heading">Need Help Building Better Connected Systems?</h2>
               <p className="text-brand-text-secondary font-sans text-lg max-w-2xl mx-auto font-normal leading-[1.6]">
@@ -340,10 +340,10 @@ const BlogPost: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="glass p-12 md:p-24 rounded-[3rem] text-center space-y-10 relative overflow-hidden border-brand-primary/20"
+              className="glass p-12 md:p-24 rounded-2xl text-center space-y-10 relative overflow-hidden border-brand-primary/20 liquid-glass"
             >
-              <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
+              <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full opacity-50" />
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full opacity-30" />
               
               <div className="relative z-10 space-y-8">
                 <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.1] text-brand-text-heading">

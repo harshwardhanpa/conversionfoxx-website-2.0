@@ -37,11 +37,11 @@ const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   fullWidth = false,
 }) => {
-  const baseStyles = "inline-flex items-center justify-center font-black tracking-tight font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed uppercase";
+  const baseStyles = "inline-flex items-center justify-center font-black tracking-tight font-sans transition-all duration-300 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed uppercase btn-premium";
   
   const variants = {
-    primary: "bg-brand-primary text-white shadow-[0_15px_30px_-10px_rgba(242,110,34,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(242,110,34,0.6)] hover:bg-brand-primary active:scale-95",
-    secondary: "border border-white/10 bg-white/5 text-white hover:bg-white/10 active:scale-95 backdrop-blur-md",
+    primary: "bg-brand-primary text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_15px_30px_-10px_rgba(242,110,34,0.4)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_20px_40px_-10px_rgba(242,110,34,0.5)] active:scale-95 liquid-glass",
+    secondary: "border border-white/10 bg-white/5 text-white hover:bg-white/10 active:scale-95 backdrop-blur-md glass hover:border-white/20",
     ghost: "text-brand-text-secondary hover:text-white hover:bg-white/5 active:scale-95",
     outline: "border-2 border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary/10 active:scale-95",
   };

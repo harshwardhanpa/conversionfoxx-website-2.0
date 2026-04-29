@@ -215,7 +215,7 @@ const Contact: React.FC = () => {
                   </span>
                   Let's Connect
                 </div>
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-2xl font-display">
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-2xl font-display">
                   Let’s Build a <br />
                   <span className="text-brand-primary">
                     Revenue System
@@ -372,7 +372,7 @@ const Contact: React.FC = () => {
                               value={formState.name}
                               onChange={handleInputChange}
                               placeholder="John Doe"
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                             />
                           </div>
                           <div className="space-y-2">
@@ -387,7 +387,7 @@ const Contact: React.FC = () => {
                               value={formState.company}
                               onChange={handleInputChange}
                               placeholder="Acme Corp"
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans placeholder:text-gray-600 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
                             />
                           </div>
                           <div className="space-y-2">
@@ -717,7 +717,7 @@ const Contact: React.FC = () => {
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5" hoverEffect={false}>
                 <div className="relative z-10 space-y-8">
-              <h2 className="text-5xl md:text-6xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
+              <h2 className="text-3xl md:text-5xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
                 Have a Project <span className="text-brand-primary">in Mind?</span>
               </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-2xl mx-auto mb-12 font-normal leading-relaxed">

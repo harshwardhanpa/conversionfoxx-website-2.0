@@ -54,7 +54,7 @@ const Blog: React.FC = () => {
               className="group"
             >
               <Link to={`/blogs/${blog.slug}`} className="flex flex-col h-full">
-                <div className="aspect-[16/10] glass rounded-[2.5rem] mb-6 overflow-hidden border-none relative shrink-0">
+                <div className="aspect-[16/10] glass rounded-2xl mb-6 overflow-hidden border-none relative shrink-0">
                   <img
                     src={blog.image}
                     alt={blog.title}

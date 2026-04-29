@@ -72,7 +72,7 @@ const Blogs: React.FC = () => {
                   <BookOpen className="w-4 h-4" />
                   ConversionFoxx Insights
                 </div>
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-2xl font-display">
+                <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-2xl font-display">
                   Insights That Help <br />
                   Businesses Grow Smarter
                 </h1>
@@ -492,7 +492,7 @@ const Blogs: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full" />
                 
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
+                  <h2 className="text-3xl md:text-5xl font-black leading-[1.1] text-brand-text-heading max-w-4xl mx-auto">
                     Need Help Turning <br />
                     <span className="text-brand-primary">Insight Into Action?</span>
                   </h2>

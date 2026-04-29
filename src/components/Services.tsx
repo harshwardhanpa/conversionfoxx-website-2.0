@@ -86,7 +86,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`group hover-lift saas-card p-8 md:p-10 rounded-[2rem] flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
+              className={`group hover-lift saas-card p-8 md:p-10 rounded-2xl flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
             >
               {/* Step Counter */}
               <div className="absolute top-8 right-8 text-6xl font-display font-black text-white/[0.01] pointer-events-none group-hover:text-brand-primary/[0.05] transition-colors duration-700">
@@ -95,7 +95,7 @@ const Services: React.FC = () => {
               
               <div className="relative z-10 space-y-8 flex flex-col h-full text-left">
                 <div className="flex items-center justify-between">
-                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 transition-all duration-300">
+                  <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                     <step.icon className="w-7 h-7" />
                   </div>
                   <span className="text-[10px] font-bold font-sans text-brand-primary uppercase tracking-[0.2em] bg-brand-primary/5 px-3 py-1 rounded-full border border-brand-primary/10">
@@ -129,7 +129,7 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="group relative saas-card p-12 md:p-20 rounded-[2rem] flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
+            className="group relative saas-card p-12 md:p-20 rounded-2xl flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
           >
             <div className="absolute inset-0 bg-brand-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="space-y-6 relative z-10">

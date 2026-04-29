@@ -48,11 +48,10 @@ const TechStack: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              whileHover={{ y: -10 }}
-              className="saas-border p-10 rounded-3xl group text-center"
+              className="saas-card p-10 rounded-2xl group text-center hover-lift liquid-glass"
             >
-              <div className="bg-brand-primary/10 p-4 rounded-2xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-700 shadow-xl shadow-brand-primary/10">
-                <tool.icon className="w-8 h-8" />
+              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 w-fit mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-500 shadow-xl shadow-brand-primary/10 glass">
+                <tool.icon className="w-6 h-6" />
               </div>
               <h3 className="text-sm font-black text-white/30 uppercase tracking-[0.2em] group-hover:text-brand-primary transition-colors duration-700 font-sans">
                 {tool.name}
