@@ -30,15 +30,15 @@ const About: React.FC = () => {
                 About ConversionFoxx
               </div>
               <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
-                We Build Systems That <br />
-                Scale <span className="brand-gradient-text">Revenue Predictably</span>
+                Engineering High-Performance <br />
+                <span className="brand-gradient-text">Growth Infrastructure</span>
               </h1>
-              <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto font-sans font-normal leading-relaxed">
-                ConversionFoxx is a growth system architecture firm. We help businesses scale through data-backed Growth Audits, high-performance Lead Generation, and our flagship Revenue Operations System.
+              <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
+                ConversionFoxx is a growth system architecture firm. We help high-growth SaaS companies scale by engineering the technical and strategic infrastructure needed for predictable revenue acquisition.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
-                  Get Free Growth Audit
+                  Get Your Growth Audit
                 </Button>
                 <Button to="/services" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                   See How It Works
@@ -380,15 +380,15 @@ const About: React.FC = () => {
                 
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
-                    Let’s Build a <br />
-                    <span className="brand-gradient-text">Revenue System</span>
+                    Start Your <br />
+                    <span className="brand-gradient-text">Growth Audit</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                    Whether you need a Growth Audit, better Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to scale your business.
+                    Identify the leaks in your current acquisition model and build a predictable growth engine. Our Growth Architects are ready to engineer your SaaS revenue system.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
-                      Get Free Growth Audit
+                      Get Your Growth Audit
                     </Button>
                     <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       See How It Works

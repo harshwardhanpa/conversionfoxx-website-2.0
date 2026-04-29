@@ -8,37 +8,33 @@ import Container from './ui/Container';
 
 const steps = [
   {
-    step: 'Step 1',
-    title: 'Traffic Acquisition',
-    description: 'We deploy scalable acquisition systems to attract high-intent buyers through precision-engineered digital channels.',
-    outcome: 'Predictable high-quality lead flow',
+    step: 'Module 1',
+    title: 'Traffic Infrastructure',
+    description: 'We deploy precision-engineered acquisition systems to dominate search and social channels, attracting high-intent SaaS buyers ready to convert.',
+    outcome: 'Predictable qualified lead velocity',
     icon: Target,
-    color: 'from-brand-primary/20 to-transparent',
   },
   {
-    step: 'Step 2',
+    step: 'Module 2',
     title: 'Conversion Architecture',
-    description: 'We optimize the entire customer journey, eliminating friction and turning existing traffic into measurable revenue.',
-    outcome: 'Maximizing ROI on every visitor',
+    description: 'We re-engineer your user journey and landing experiences to eliminate friction, ensuring every visitor is funneled toward a high-value action.',
+    outcome: 'Maximize yield on existing traffic',
     icon: Zap,
-    color: 'from-brand-primary/20 to-transparent',
   },
   {
-    step: 'Step 3',
+    step: 'Module 3',
     title: 'Revenue Operations',
-    description: 'We integrate full-funnel tracking and CRM automation to ensure no lead is lost and every dollar is accounted for.',
-    outcome: 'Complete visibility into profitability',
+    description: 'Our flagship integration: we build the CRM automation and full-funnel tracking needed to turn leads into predictable expansion revenue.',
+    outcome: 'Automated deal flow & lifecycle management',
     icon: LayoutDashboard,
-    color: 'from-brand-primary/30 to-transparent',
     isFlagship: true,
   },
   {
-    step: 'Step 4',
-    title: 'System Optimization',
-    description: 'We run continuous A/B tests and data-backed experiments to refine the growth engine and unlock hidden revenue.',
-    outcome: 'Sustainable, compounded growth over time',
+    step: 'Module 4',
+    title: 'Growth Intelligence',
+    description: 'Direct-response data analysis and continuous multivariate testing that identifies hidden revenue leaks and scales winning experiments.',
+    outcome: 'Compound growth through data-backed iterations',
     icon: Search,
-    color: 'from-brand-primary/20 to-transparent',
   },
 ];
 
@@ -56,7 +52,7 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             className="px-4 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
           >
-            The Growth Infrastructure
+            The Growth Methodology
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -65,16 +61,16 @@ const Services: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
-            Our Growth <span className="text-brand-primary">System.</span>
+            The Revenue <span className="text-brand-primary">Engine.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-brand-text-secondary max-w-xl mx-auto text-base md:text-lg font-medium font-sans leading-relaxed"
+            className="text-brand-text-secondary max-w-2xl mx-auto text-base md:text-lg font-medium font-sans leading-relaxed"
           >
-            We don’t offer isolated services. We build complete, end-to-end revenue systems that identifies gaps and fixes leaks.
+            Most agencies sell hours and "deliverables." We build infrastructure. A four-part growth system designed to scale SaaS enterprises with mathematical precision.
           </motion.p>
         </div>
 
@@ -134,14 +130,14 @@ const Services: React.FC = () => {
             <div className="absolute inset-0 bg-brand-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="space-y-6 relative z-10">
               <h3 className="text-2xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight">
-                Ready to fix your <br /> growth system?
+                Stop guessing. <br /> Start scaling.
               </h3>
               <p className="text-brand-text-secondary/60 max-w-lg mx-auto font-sans font-medium leading-relaxed text-base md:text-lg">
-                Get a deep analysis of your entire growth engine and identify exactly where you're losing revenue.
+                Identify the hidden revenue leaks in your current acquisition model and build a predictable growth system.
               </p>
             </div>
             <Button to="/contact" size="lg" icon={ArrowRight} className="relative z-10">
-              Get Growth Audit
+              Claim Your Free Growth Audit
             </Button>
           </motion.div>
         </div>

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-white/40 leading-[1.6] text-sm font-sans">
-              ConversionFoxx is a premium growth agency and revenue operations partner. We architect complete revenue systems that scale businesses predictably through data-backed strategies.
+              ConversionFoxx is a growth architecture firm and revenue operations partner. We engineer predictable growth infrastructure for SaaS enterprises through data-backed systems.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (

@@ -56,17 +56,17 @@ const Services: React.FC = () => {
                 Our Expertise
               </div>
               <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
-                Services Built to Grow <br />
+                Engineering High-Performance <br />
                 <span className="text-brand-primary">
-                  Modern Businesses
+                  Growth Infrastructure
                 </span>
               </h1>
-              <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto font-sans font-normal leading-relaxed">
-                ConversionFoxx delivers growth-focused digital services that combine strategy, technology, and performance.
+              <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
+                Transform your customer acquisition experiments into a predictable, automated revenue engine designed for high-velocity SaaS growth.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
-                  Get Free Growth Audit
+                  Claim Your Free Growth Audit
                 </Button>
                 <Button 
                   onClick={scrollToProcess} 
@@ -85,35 +85,35 @@ const Services: React.FC = () => {
         <Section id="explore-services" background="subtle">
           <Container>
             <div className="text-center mb-16 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Explore Our Services</span>
-              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">We don’t offer isolated services.</h2>
+              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">The Growth System</span>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">SaaS Growth Methodology.</h2>
               <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
-                We build complete revenue systems that identify gaps, fix leaks, and drive predictable growth.
+                Most agencies sell hours and "deliverables." We build infrastructure: a four-part system designed for mathematical SaaS scale.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
-                  title: 'Growth Audit', 
-                  description: 'Identify exactly where your revenue system is leaking — from traffic and tracking to conversion and follow-ups.', 
+                  title: 'Module 1: Growth Audit', 
+                  description: 'A deep-dive analysis to identify exactly where your revenue system is leaking — from traffic and tracking to conversion and follow-ups.', 
                   icon: FileSearch,
                   link: '/services/growth-audit'
                 },
                 { 
-                  title: 'Lead Generation', 
-                  description: 'Attract high-intent buyers through scalable acquisition systems designed for consistent and qualified lead flow.', 
+                  title: 'Module 2: Lead Generation', 
+                  description: 'Scalable acquisition systems engineered to dominate search and social channels, delivering consistent, qualified lead velocity.', 
                   icon: Target,
                   link: '/services/lead-generation'
                 },
                 { 
-                  title: 'Conversion Optimization', 
-                  description: 'Turn existing traffic into paying customers by eliminating friction, improving user journeys, and optimizing key conversion points.', 
+                  title: 'Module 3: Conversion Optimization', 
+                  description: 'We re-engineer your user journey to eliminate friction, ensuring every visitor is funneled toward high-value conversions.', 
                   icon: MousePointer2,
                   link: '/services/conversion-optimization'
                 },
                 { 
-                  title: 'Revenue Operations System', 
-                  description: 'A fully integrated system that captures, tracks, nurtures, and converts every lead — ensuring no opportunity is lost.', 
+                  title: 'Module 4: Revenue Operations', 
+                  description: 'A fully integrated CRM and automation system that ensures every lead is tracked, nurtured, and converted with certainty.', 
                   icon: Workflow,
                   link: '/services/revenue-operations-system',
                   flagship: true
@@ -257,15 +257,15 @@ const Services: React.FC = () => {
                 
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-3xl md:text-5xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
-                    Ready to Build Your <br />
-                    <span className="brand-gradient-text">Growth Engine?</span>
+                    Scale Your SaaS <br />
+                    <span className="brand-gradient-text">Revenue Engine</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                    Whether you need a single project or a long-term growth partner, ConversionFoxx is ready to help you scale.
+                    Ready to build a predictable growth engine? Our Growth Architects are ready to engineer your SaaS revenue system.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
-                      Get Free Growth Audit
+                      Get Your Growth Audit
                     </Button>
                     <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       See How It Works

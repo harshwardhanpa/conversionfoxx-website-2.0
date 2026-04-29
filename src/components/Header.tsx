@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                 whileTap={{ scale: 0.98 }}
                 className="bg-brand-primary text-white hover:shadow-[0_15px_30px_-5px_rgba(242,110,34,0.3)] px-6 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all duration-500 group font-sans tracking-wide btn-premium liquid-glass shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"
               >
-                Get Free Growth Audit
+                Get Your Growth Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </Link>
@@ -130,7 +130,7 @@ const Header: React.FC = () => {
               >
                 <Link to="/contact">
                   <button className="w-full bg-brand-primary text-white py-4 rounded-xl font-black flex items-center justify-center gap-2 btn-premium liquid-glass">
-                    Get Free Growth Audit
+                    Get Your Growth Audit
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>

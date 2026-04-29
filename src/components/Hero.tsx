@@ -46,21 +46,21 @@ const Hero: React.FC = () => {
             
             <div className="space-y-6">
               <h1 className="text-5xl md:text-[64px] font-black tracking-tighter leading-[1.05] text-brand-text-heading font-display">
-                Scalable <br />
-                <span className="text-brand-primary">Revenue Systems.</span>
+                Scale SaaS Revenue with <br />
+                <span className="text-brand-primary">Growth Infrastructure.</span>
               </h1>
               
               <p className="text-base md:text-lg text-brand-text-secondary max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed font-sans opacity-90">
-                We engineer high-performance systems that transform raw traffic into predictable, automated revenue engines for modern SaaS enterprises.
+                We engineeered a structured revenue system specifically for SaaS enterprises. Transform inconsistent experiments into a predictable, automated engine for high-value customer acquisition.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-5 pt-4 justify-center lg:justify-start">
               <Button to="/contact" size="lg" icon={ArrowRight} className="w-full sm:w-auto">
-                Get Growth Audit
+                Get Your Growth Audit
               </Button>
               <Button variant="secondary" size="lg" onClick={scrollToProcess} className="w-full sm:w-auto">
-                How It Works
+                The Revenue Framework
               </Button>
             </div>
           </div>

@@ -32,17 +32,16 @@ const FinalCTA: React.FC = () => {
             </div>
             
             <h2 className="text-brand-text-heading font-display">
-              Stop guessing. <br />
-              <span className="text-brand-primary">Start scaling.</span>
+              Built for <span className="text-brand-primary">Growth Acceleration.</span>
             </h2>
             
             <p className="text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed font-sans text-brand-text-secondary/60">
-              Our Growth Architects are ready to engineer your revenue system and build a high-performance engine that scales with certainty.
+              Our Growth Architects are ready to engineer your revenue system. Transform your customer acquisition experiments into a high-performance engine that scales with mathematical certainty.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
               <Button to="/contact" size="lg" icon={ArrowRight} className="w-full sm:w-auto">
-                Get Growth Audit
+                Get Your Growth Audit
               </Button>
             </div>
           </div>
