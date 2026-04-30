@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/layout/Layout';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
@@ -36,7 +35,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <Layout>
+    <>
       <div className="relative z-10 pt-20">
         {/* 1. SERVICES HERO */}
         <Section className="relative overflow-hidden pt-32 pb-20">
@@ -46,12 +45,12 @@ const Services: React.FC = () => {
 
           <Container>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
                 <Sparkles className="w-4 h-4" />
                 Our Expertise
               </div>
@@ -62,7 +61,7 @@ const Services: React.FC = () => {
                 </span>
               </h1>
               <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
-                Transform your customer acquisition experiments into a predictable, automated revenue engine designed for high-velocity SaaS growth.
+                Transform your customer acquisition experiments into a predictable, automated revenue engine designed for high-velocity growth.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
@@ -86,12 +85,12 @@ const Services: React.FC = () => {
           <Container>
             <div className="text-center mb-16 space-y-4">
               <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">The Growth System</span>
-              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">SaaS Growth Methodology.</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">Expansion Growth Methodology.</h2>
               <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
-                Most agencies sell hours and "deliverables." We build infrastructure: a four-part system designed for mathematical SaaS scale.
+                Most agencies sell hours and "deliverables." We build infrastructure: a four-part system designed for mathematical scale.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
                   title: 'Module 1: Growth Audit', 
@@ -121,10 +120,10 @@ const Services: React.FC = () => {
               ].map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                   className="h-full"
                 >
                   <Card 
@@ -132,7 +131,7 @@ const Services: React.FC = () => {
                     className={`h-full flex flex-col relative transition-all duration-300 hover-lift liquid-glass ${service.flagship ? 'ring-2 ring-brand-primary/50' : ''}`}
                   >
                     {service.flagship && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-sans font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg liquid-glass">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-xs font-sans font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-lg liquid-glass">
                         Flagship
                       </div>
                     )}
@@ -154,46 +153,6 @@ const Services: React.FC = () => {
           </Container>
         </Section>
 
-        {/* 3. WHO WE HELP */}
-        <Section id="who-we-help">
-          <Container>
-            <div className="text-center mb-16 space-y-4">
-              <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Who We Help</span>
-              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto tracking-tight font-display">Built for Ambitious Brands</h2>
-              <p className="text-gray-400 font-sans max-w-xl mx-auto text-base md:text-lg leading-relaxed">
-                Our services are built for businesses that need smarter execution and measurable digital growth.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: 'Startups', text: 'Building their first scalable digital foundation and market presence.', icon: Rocket },
-                { title: 'Growing Businesses', text: 'Needing better lead generation and conversion systems to scale.', icon: TrendingUp },
-                { title: 'E-commerce Brands', text: 'Looking for stronger campaigns and optimized customer journeys.', icon: ShoppingBag },
-                { title: 'Service Companies', text: 'Wanting a more professional online presence and authority.', icon: Briefcase },
-                { title: 'Operations Teams', text: 'Ready to improve efficiency through CRM and automation.', icon: Settings },
-              ].map((audience, idx) => (
-                <motion.div
-                  key={audience.title}
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <Card padding="md" className="flex items-start gap-6 h-full group hover-lift">
-                    <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary group-hover:text-brand-dark transition-colors">
-                      <audience.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-brand-text-heading font-display tracking-tight">{audience.title}</h3>
-                      <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-xl">{audience.text}</p>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </Container>
-        </Section>
-
         {/* 4. HOW WE WORK */}
         <Section id="engagement-models" background="subtle">
           <Container>
@@ -203,30 +162,35 @@ const Services: React.FC = () => {
                 A structured approach to identify gaps, fix leaks, and scale your revenue system.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
-                  title: 'Audit & Diagnose', 
-                  description: 'We analyze your entire funnel — from traffic and tracking to conversion and follow-ups — to identify exactly where revenue is being lost.',
-                  icon: FileSearch
+                  title: 'Traffic', 
+                  description: 'We deploy precision-engineered acquisition systems to capture and dominate high-intent search and social intent.',
+                  icon: Target
                 },
                 { 
-                  title: 'Build & Optimize', 
-                  description: 'We implement and refine acquisition, conversion, and automation systems to turn your existing traffic into measurable revenue.',
+                  title: 'Conversion', 
+                  description: 'We re-engineer user journeys to eliminate friction, ensuring every visitor is funneled toward high-value conversions.',
                   icon: Zap
                 },
                 { 
-                  title: 'Automate & Scale', 
-                  description: 'We build systems that capture, nurture, and convert leads automatically, allowing you to scale without increasing operational complexity.',
+                  title: 'Revenue', 
+                  description: 'We build the CRM automation and full-funnel tracking needed to turn leads into predictable expansion revenue.',
+                  icon: Workflow
+                },
+                { 
+                  title: 'Optimization', 
+                  description: 'Continuous multivariate testing and data analysis that identifies hidden leaks and scales winning growth experiments.',
                   icon: TrendingUp
                 },
               ].map((step, idx) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <Card padding="xl" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -257,11 +221,11 @@ const Services: React.FC = () => {
                 
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-3xl md:text-5xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
-                    Scale Your SaaS <br />
+                    Scale Your <br />
                     <span className="brand-gradient-text">Revenue Engine</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                    Ready to build a predictable growth engine? Our Growth Architects are ready to engineer your SaaS revenue system.
+                    Ready to build a predictable growth engine? Our Growth Architects are ready to engineer your revenue system.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
@@ -277,7 +241,7 @@ const Services: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 

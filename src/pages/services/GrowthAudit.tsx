@@ -31,7 +31,6 @@ import Container from '../../components/ui/Container';
 import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import Layout from '../../components/layout/Layout';
 
 const GrowthAudit: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -64,7 +63,7 @@ const GrowthAudit: React.FC = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <div className="relative z-10">
         {/* BREADCRUMB */}
         <Container className="pt-32 mb-8">
@@ -93,7 +92,7 @@ const GrowthAudit: React.FC = () => {
                   <FileSearch className="w-4 h-4" />
                   Growth Audit
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
                   Stop Guessing. <br />
                   Start Auditing.
                 </h1>
@@ -102,7 +101,7 @@ const GrowthAudit: React.FC = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                   <Button to="/contact" size="lg" icon={ArrowRight}>
-                    Get Free Growth Audit
+                    Get Your Growth Audit
                   </Button>
                   <Button to="/services" variant="secondary" size="lg">
                     See How It Works
@@ -353,7 +352,7 @@ const GrowthAudit: React.FC = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
                     <Button to="/contact" size="lg" icon={ArrowRight}>
-                      Get Free Growth Audit
+                      Get Your Growth Audit
                     </Button>
                     <Button to="/services" variant="secondary" size="lg">
                       See How It Works
@@ -365,7 +364,7 @@ const GrowthAudit: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 

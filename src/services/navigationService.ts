@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface NavigationItem {
   id: string;
@@ -14,14 +14,20 @@ export interface NavigationItem {
 
 export const navigationService = {
   async getNavigationItems(menuType: 'header' | 'footer') {
-    const { data, error } = await supabase
-      .from('navigation_items')
-      .select('*')
-      .eq('menu_type', menuType)
-      .order('order_index', { ascending: true });
+    if (!isSupabaseConfigured) return [];
+    try {
+      const { data, error } = await supabase
+        .from('navigation_items')
+        .select('*')
+        .eq('menu_type', menuType)
+        .order('order_index', { ascending: true });
 
-    if (error) throw error;
-    return data as NavigationItem[];
+      if (error) throw error;
+      return data as NavigationItem[];
+    } catch (err) {
+      console.warn(`Supabase fetch error for navigation (${menuType}):`, err);
+      return [];
+    }
   },
 
   async updateNavigationItems(items: NavigationItem[]) {

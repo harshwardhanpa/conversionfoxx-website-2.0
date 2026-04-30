@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface FooterSettings {
   id: string;
@@ -15,13 +15,19 @@ export interface FooterSettings {
 
 export const footerService = {
   async getFooterSettings() {
-    const { data, error } = await supabase
-      .from('footer_settings')
-      .select('*')
-      .single();
+    if (!isSupabaseConfigured) return null;
+    try {
+      const { data, error } = await supabase
+        .from('footer_settings')
+        .select('*')
+        .single();
 
-    if (error && error.code !== 'PGRST116') throw error;
-    return data as FooterSettings | null;
+      if (error && error.code !== 'PGRST116') throw error;
+      return data as FooterSettings | null;
+    } catch (err) {
+      console.warn('Supabase fetch error for footer:', err);
+      return null;
+    }
   },
 
   async updateFooterSettings(settings: Partial<FooterSettings>) {

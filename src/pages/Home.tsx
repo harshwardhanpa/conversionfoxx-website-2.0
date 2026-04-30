@@ -1,8 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Logos from '../components/Logos';
 import Services from '../components/Services';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Results from '../components/Results';
+import CaseStudies from '../components/CaseStudies';
 import Testimonials from '../components/Testimonials';
 import Process from '../components/Process';
 import TechStack from '../components/TechStack';
@@ -19,12 +21,15 @@ const Home: React.FC = () => {
       </div>
 
       <Hero />
+      <Logos />
       <div className="section-divider" />
       <Services />
       <div className="section-divider" />
       <WhyChooseUs />
       <div className="section-divider" />
       <Results />
+      <div className="section-divider" />
+      <CaseStudies />
       <div className="section-divider" />
       <Testimonials />
       <div className="section-divider" />

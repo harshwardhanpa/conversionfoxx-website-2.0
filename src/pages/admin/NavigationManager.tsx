@@ -205,7 +205,7 @@ const NavigationManager: React.FC = () => {
               
               <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-1">
-                  <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Link Label</p>
+                  <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Link Label</p>
                   <input
                     type="text"
                     value={item.label || ''}
@@ -214,7 +214,7 @@ const NavigationManager: React.FC = () => {
                   />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Route / URL</p>
+                  <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Route / URL</p>
                   <div className="relative">
                     <input
                       type="text"
@@ -236,7 +236,7 @@ const NavigationManager: React.FC = () => {
               <div className="flex items-center gap-4">
                 <button 
                   onClick={() => toggleStatus(item.id)}
-                  className={`px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest border transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest border transition-all ${
                     item.status === 'active' 
                       ? 'bg-brand-primary/10 text-brand-primary border-brand-primary/20' 
                       : 'bg-white/5 text-white/20 border-white/10 hover:text-white/40'

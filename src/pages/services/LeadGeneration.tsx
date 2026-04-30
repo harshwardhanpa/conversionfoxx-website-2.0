@@ -31,7 +31,6 @@ import Container from '../../components/ui/Container';
 import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import Layout from '../../components/layout/Layout';
 
 const LeadGeneration: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -64,7 +63,7 @@ const LeadGeneration: React.FC = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <div className="relative z-10">
         {/* BREADCRUMB */}
         <Container className="pt-32 mb-8">
@@ -93,16 +92,16 @@ const LeadGeneration: React.FC = () => {
                   <Target className="w-4 h-4" />
                   Lead Generation
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-                  Scalable Traffic. <br />
-                  Predictable Leads.
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] font-display">
+                  Dominant <br />
+                  <span className="text-brand-primary">Traffic Acquisition.</span>
                 </h1>
-                <p className="text-lg md:text-xl text-brand-text-secondary font-light leading-relaxed max-w-xl">
-                  Build scalable traffic systems that bring in high-quality leads consistently. We focus on high-intent traffic sources and direct-response creative that drives revenue.
+                <p className="text-lg md:text-xl text-brand-text-secondary font-medium leading-relaxed max-w-xl opacity-80 font-sans">
+                  We engineer the acquisition layer of your revenue infrastructure to bridge the gap between anonymous traffic and high-intent SQLs. Predictable scale, forced through precision targeting.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                   <Button to="/contact" size="lg" icon={ArrowRight}>
-                    Get Free Growth Audit
+                    Get Your Growth Audit
                   </Button>
                   <Button to="/services" variant="secondary" size="lg">
                     See How It Works
@@ -353,7 +352,7 @@ const LeadGeneration: React.FC = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
                     <Button to="/contact" size="lg" icon={ArrowRight}>
-                      Get Free Growth Audit
+                      Get Your Growth Audit
                     </Button>
                     <Button to="/services" variant="secondary" size="lg">
                       See How It Works
@@ -365,7 +364,7 @@ const LeadGeneration: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 

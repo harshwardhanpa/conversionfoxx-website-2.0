@@ -92,7 +92,7 @@ const ServicesManager: React.FC = () => {
               <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
                 <Briefcase size={24} />
               </div>
-              <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
+              <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${
                 service.is_active 
                   ? 'bg-brand-primary/20 text-brand-primary border border-brand-primary/20' 
                   : 'bg-brand-primary/10 text-brand-primary border border-brand-primary/20'

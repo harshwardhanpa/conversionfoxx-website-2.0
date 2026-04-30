@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20">
           {/* Brand Info */}
           <div className="space-y-8">
             <Link to="/" className="flex items-center gap-2 group" aria-label="ConversionFoxx Home">

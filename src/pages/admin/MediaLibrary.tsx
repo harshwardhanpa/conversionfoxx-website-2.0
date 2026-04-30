@@ -201,12 +201,12 @@ const MediaLibrary: React.FC = () => {
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-3 text-white/20 group-hover:text-brand-primary transition-colors">
                       {getIcon(item.file_type)}
-                      <span className="text-[10px] font-bold uppercase tracking-widest">{item.file_type}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest">{item.file_type}</span>
                     </div>
                   )}
                   <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <p className="text-xs font-bold text-white truncate">{item.name}</p>
-                    <p className="text-[10px] text-white/40">{formatSize(item.file_size)}</p>
+                    <p className="text-xs text-white/40">{formatSize(item.file_size)}</p>
                   </div>
                 </div>
               ))}
@@ -271,27 +271,27 @@ const MediaLibrary: React.FC = () => {
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">File Name</p>
+                  <p className="text-xs text-white/30 uppercase font-bold tracking-widest mb-1">File Name</p>
                   <p className="text-sm font-bold break-all">{selectedItem.name}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">File Type</p>
+                    <p className="text-xs text-white/30 uppercase font-bold tracking-widest mb-1">File Type</p>
                     <p className="text-sm font-bold capitalize">{selectedItem.file_type}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">File Size</p>
+                    <p className="text-xs text-white/30 uppercase font-bold tracking-widest mb-1">File Size</p>
                     <p className="text-sm font-bold">{formatSize(selectedItem.file_size)}</p>
                   </div>
                 </div>
                 {selectedItem.dimensions && (
                   <div>
-                    <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">Dimensions</p>
+                    <p className="text-xs text-white/30 uppercase font-bold tracking-widest mb-1">Dimensions</p>
                     <p className="text-sm font-bold">{selectedItem.dimensions}</p>
                   </div>
                 )}
                 <div>
-                  <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">Uploaded On</p>
+                  <p className="text-xs text-white/30 uppercase font-bold tracking-widest mb-1">Uploaded On</p>
                   <p className="text-sm font-bold">{formatDate(selectedItem.created_at)}</p>
                 </div>
               </div>

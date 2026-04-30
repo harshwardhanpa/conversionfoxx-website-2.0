@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
     xl: 'p-12 md:p-16',
   }[padding];
 
-  const baseClasses = `saas-card relative overflow-hidden transition-all duration-500 ${paddingClasses} ${className}`;
+  const baseClasses = `core-card relative overflow-hidden transition-all duration-500 ${paddingClasses} ${className}`;
   const hoverClasses = hoverEffect ? 'hover-lift' : '';
 
   if (onClick) {

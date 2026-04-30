@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface SiteSettings {
   id?: string;
@@ -20,17 +20,23 @@ export interface SiteSettings {
 
 export const siteService = {
   async getSettings(): Promise<SiteSettings | null> {
-    const { data, error } = await supabase
-      .from('site_settings')
-      .select('*')
-      .single();
+    if (!isSupabaseConfigured) return null;
+    try {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('*')
+        .single();
 
-    if (error && error.code !== 'PGRST116') {
-      console.error('Error fetching site settings:', error);
+      if (error && error.code !== 'PGRST116') {
+        console.error('Error fetching site settings:', error);
+        return null;
+      }
+
+      return data;
+    } catch (err) {
+      console.warn('Supabase fetch error for site settings:', err);
       return null;
     }
-
-    return data;
   },
 
   async updateSettings(settings: Partial<SiteSettings>): Promise<boolean> {

@@ -34,16 +34,16 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
+            className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
-            SaaS Success Stories
+            Growth Success Stories
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-brand-text-heading max-w-4xl mx-auto font-display"
+            className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-4xl mx-auto font-display tracking-tight leading-tight"
           >
             The engine behind <br />
             <span className="text-brand-primary">high-growth brands.</span>
@@ -54,11 +54,11 @@ const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group relative saas-card p-10 rounded-2xl transition-all duration-500 flex flex-col h-full overflow-hidden hover-lift"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className="group relative core-card p-10 rounded-2xl transition-all duration-500 flex flex-col h-full overflow-hidden hover-lift"
             >
               <div className="absolute -top-6 -right-6 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-120 transition-all duration-700 pointer-events-none">
                 <Quote className="w-32 h-32 text-brand-primary" />
@@ -83,7 +83,7 @@ const Testimonials: React.FC = () => {
                     <h3 className="font-black text-brand-text-heading group-hover:text-brand-primary transition-colors duration-700 font-display">
                       {testimonial.name}
                     </h3>
-                    <div className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] font-sans">
+                    <div className="text-xs text-brand-primary font-black uppercase tracking-[0.2em] font-sans">
                       {testimonial.role}
                     </div>
                   </div>

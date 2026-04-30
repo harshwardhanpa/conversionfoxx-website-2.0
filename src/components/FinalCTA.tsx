@@ -19,16 +19,17 @@ const FinalCTA: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="saas-card p-12 md:p-24 rounded-2xl text-center space-y-10 relative overflow-hidden liquid-glass"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="core-card p-12 md:p-24 rounded-2xl text-center space-y-10 relative overflow-hidden liquid-glass"
         >
           {/* Background Glows */}
           <div className="absolute top-0 right-0 w-full h-full bg-brand-primary/[0.03] pointer-events-none" />
           
           <div className="relative z-10 space-y-10">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mx-auto font-sans glass liquid-glass">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mx-auto font-sans glass liquid-glass">
               <Sparkles className="w-3.5 h-3.5" />
-              SaaS Growth Infrastructure
+              Growth Infrastructure
             </div>
             
             <h2 className="text-brand-text-heading font-display">

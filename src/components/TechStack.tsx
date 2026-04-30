@@ -24,7 +24,7 @@ const TechStack: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
+            className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             Integrated Infrastructure
           </motion.span>
@@ -40,7 +40,7 @@ const TechStack: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {tools.map((tool, idx) => (
             <motion.div
               key={tool.name}
@@ -48,7 +48,7 @@ const TechStack: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="saas-card p-10 rounded-2xl group text-center hover-lift liquid-glass"
+              className="core-card p-6 md:p-10 rounded-2xl group text-center hover-lift liquid-glass"
             >
               <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 w-fit mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-500 shadow-xl shadow-brand-primary/10 glass">
                 <tool.icon className="w-6 h-6" />

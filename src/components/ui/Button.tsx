@@ -47,7 +47,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const sizes = {
-    sm: "px-5 py-2.5 text-[10px] tracking-widest",
+    sm: "px-5 py-2.5 text-xs tracking-widest",
     md: "px-8 py-3.5 text-xs tracking-widest",
     lg: "px-10 py-4.5 text-sm tracking-widest",
     xl: "px-14 py-6 text-base tracking-[0.2em]",

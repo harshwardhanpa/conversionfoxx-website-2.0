@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface ServicePage {
   id: string;
@@ -13,13 +13,19 @@ export interface ServicePage {
 
 export const servicePageService = {
   async getServicePages() {
-    const { data, error } = await supabase
-      .from('service_pages')
-      .select('*')
-      .order('title', { ascending: true });
+    if (!isSupabaseConfigured) return [];
+    try {
+      const { data, error } = await supabase
+        .from('service_pages')
+        .select('*')
+        .order('title', { ascending: true });
 
-    if (error) throw error;
-    return data as ServicePage[];
+      if (error) throw error;
+      return data as ServicePage[];
+    } catch (err) {
+      console.warn('Supabase fetch error for service pages:', err);
+      return [];
+    }
   },
 
   async getServicePageById(id: string) {

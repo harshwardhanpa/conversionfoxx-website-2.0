@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface BrandingSettings {
   id?: string;
@@ -16,17 +16,23 @@ export interface BrandingSettings {
 
 export const brandingService = {
   async getSettings(): Promise<BrandingSettings | null> {
-    const { data, error } = await supabase
-      .from('branding_settings')
-      .select('*')
-      .single();
+    if (!isSupabaseConfigured) return null;
+    try {
+      const { data, error } = await supabase
+        .from('branding_settings')
+        .select('*')
+        .single();
 
-    if (error && error.code !== 'PGRST116') {
-      console.error('Error fetching branding settings:', error);
+      if (error && error.code !== 'PGRST116') {
+        console.error('Error fetching branding settings:', error);
+        return null;
+      }
+
+      return data;
+    } catch (err) {
+      console.warn('Supabase fetch error for branding:', err);
       return null;
     }
-
-    return data;
   },
 
   async updateSettings(settings: Partial<BrandingSettings>): Promise<boolean> {

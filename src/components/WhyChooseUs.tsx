@@ -49,13 +49,13 @@ const WhyChooseUs: React.FC = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5">The SaaS Difference</span>
-              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight">
+              <span className="text-brand-primary text-xs font-black uppercase tracking-[0.2em] font-sans px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 inline-block">The Foxx Difference</span>
+              <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight leading-tight">
                 We build engines, <br />
                 <span className="brand-gradient-text">not just outputs.</span>
               </h2>
             </div>
-            <p className="text-brand-text-secondary max-w-lg font-sans font-medium text-base md:text-lg leading-relaxed">
+            <p className="text-brand-text-secondary max-w-lg font-sans font-medium text-base md:text-lg leading-relaxed opacity-90">
               ConversionFoxx is your growth engineering laboratory. We architect complete revenue systems that scale your business with mathematical precision.
             </p>
             
@@ -64,35 +64,38 @@ const WhyChooseUs: React.FC = () => {
                 <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors shrink-0">
                   <div className="w-6 h-6 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/40" />
                 </div>
-                <div className="text-lg font-bold text-brand-text-heading font-display">Predictable Revenue Growth</div>
+                <div className="text-lg font-black text-brand-text-heading font-display tracking-tight">Predictable Revenue Growth</div>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors shrink-0">
                   <div className="w-6 h-6 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/40" />
                 </div>
-                <div className="text-lg font-bold text-brand-text-heading font-display">Full Revenue Visibility</div>
+                <div className="text-lg font-black text-brand-text-heading font-display tracking-tight">Full Revenue Visibility</div>
               </div>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {reasons.map((reason, idx) => (
-              <motion.div
-                key={reason.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="saas-card p-8 rounded-2xl hover:bg-white/5 transition-all group flex flex-col h-full hover-lift"
-              >
-                <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 mb-6 w-fit">
-                  <reason.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-brand-primary transition-colors font-display tracking-tight">{reason.title}</h3>
-                <p className="text-sm text-brand-text-secondary opacity-50 leading-[1.6] group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors font-sans">{reason.description}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {reasons.map((reason, idx) => (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className="core-card p-8 rounded-2xl hover:bg-white/5 transition-all group flex flex-col h-full hover-lift"
+            >
+              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 mb-6 w-fit">
+                <reason.icon className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-brand-primary transition-colors font-display tracking-tight">{reason.title}</h3>
+              <p className="text-sm text-brand-text-secondary leading-[1.6] group-hover:text-brand-text-secondary transition-colors font-sans mb-4">{reason.description}</p>
+              <div className="mt-auto pt-4 border-t border-white/5 text-xs font-bold text-brand-primary uppercase tracking-[0.1em] font-sans">
+                Proven Outcome: Increased Yield
+              </div>
+            </motion.div>
+          ))}
+        </div>
         </div>
       </Container>
     </Section>

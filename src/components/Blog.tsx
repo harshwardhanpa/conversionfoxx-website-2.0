@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogs';
 
 const Blog: React.FC = () => {
-  const blogs = blogPosts.slice(1, 4); // Use some posts for the home page
+  const blogs = blogPosts.slice(0, 3); // Use the latest 3 posts for the home page
 
   return (
     <Section id="blogs" padding="lg" background="subtle">
@@ -20,7 +20,7 @@ const Blog: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
+              className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
             >
               Insights & Resources
             </motion.span>
@@ -29,15 +29,15 @@ const Blog: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-brand-text-heading font-display"
+              className="text-3xl md:text-5xl font-black text-brand-text-heading font-display tracking-tight leading-[1.1]"
             >
-              Latest from our blog
+              Latest from our <span className="text-brand-primary">blog.</span>
             </motion.h2>
           </div>
           <Button 
             to="/blogs"
             variant="ghost"
-            className="text-brand-primary font-bold flex items-center gap-2 hover:gap-3 transition-all font-sans"
+            className="text-brand-primary font-bold flex items-center gap-2 hover:gap-3 transition-all font-sans text-sm uppercase tracking-widest"
           >
             View All Posts <ArrowRight className="w-5 h-5" />
           </Button>
@@ -54,22 +54,22 @@ const Blog: React.FC = () => {
               className="group"
             >
               <Link to={`/blogs/${blog.slug}`} className="flex flex-col h-full">
-                <div className="aspect-[16/10] glass rounded-2xl mb-6 overflow-hidden border-none relative shrink-0">
+                <div className="aspect-[16/10] bg-white/5 rounded-2xl mb-6 overflow-hidden border border-white/5 relative shrink-0">
                   <img
                     src={blog.image}
                     alt={blog.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-white font-sans">
                     {blog.category}
                   </div>
                 </div>
                 <div className="space-y-4 px-2 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading font-display">
+                  <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight leading-tight group-hover:text-brand-primary transition-colors">
                     {blog.title}
                   </h3>
-                  <p className="text-brand-text-secondary opacity-40 text-sm leading-[1.6] line-clamp-2 group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors flex-grow font-sans">
+                  <p className="text-brand-text-secondary text-sm leading-[1.6] line-clamp-3 transition-colors flex-grow font-sans mt-2 opacity-80 group-hover:opacity-100">
                     {blog.excerpt}
                   </p>
                   <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all shrink-0 font-sans">

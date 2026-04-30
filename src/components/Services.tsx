@@ -8,32 +8,32 @@ import Container from './ui/Container';
 
 const steps = [
   {
-    step: 'Module 1',
-    title: 'Traffic Infrastructure',
-    description: 'We deploy precision-engineered acquisition systems to dominate search and social channels, attracting high-intent SaaS buyers ready to convert.',
-    outcome: 'Predictable qualified lead velocity',
+    step: 'Phase 01',
+    title: 'Traffic System',
+    description: 'We deploy precision-engineered acquisition systems to dominate search and social channels, forcing high-intent buyers into your ecosystem.',
+    outcome: 'Predictable high-velocity lead flow',
     icon: Target,
   },
   {
-    step: 'Module 2',
+    step: 'Phase 02',
     title: 'Conversion Architecture',
-    description: 'We re-engineer your user journey and landing experiences to eliminate friction, ensuring every visitor is funneled toward a high-value action.',
+    description: 'We re-engineer your user journey to eliminate friction and psychological barriers, ensuring every visitor is funneled toward high-value conversions.',
     outcome: 'Maximize yield on existing traffic',
     icon: Zap,
   },
   {
-    step: 'Module 3',
+    step: 'Phase 03',
     title: 'Revenue Operations',
-    description: 'Our flagship integration: we build the CRM automation and full-funnel tracking needed to turn leads into predictable expansion revenue.',
+    description: 'Our flagship integration: we build the CRM automation and full-funnel tracking needed to turn raw leads into predictable expansion revenue.',
     outcome: 'Automated deal flow & lifecycle management',
     icon: LayoutDashboard,
     isFlagship: true,
   },
   {
-    step: 'Module 4',
-    title: 'Growth Intelligence',
-    description: 'Direct-response data analysis and continuous multivariate testing that identifies hidden revenue leaks and scales winning experiments.',
-    outcome: 'Compound growth through data-backed iterations',
+    step: 'Phase 04',
+    title: 'Growth Optimization',
+    description: 'Continuous multivariate testing and direct-response data analysis that identifies hidden revenue leaks and scales winning growth experiments.',
+    outcome: 'Compound growth through data-backed scale',
     icon: Search,
   },
 ];
@@ -49,8 +49,8 @@ const Services: React.FC = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="px-4 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
+            viewport={{ once: true, margin: "-50px" }}
+            className="px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             The Growth Methodology
           </motion.span>
@@ -70,7 +70,7 @@ const Services: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-brand-text-secondary max-w-2xl mx-auto text-base md:text-lg font-medium font-sans leading-relaxed"
           >
-            Most agencies sell hours and "deliverables." We build infrastructure. A four-part growth system designed to scale SaaS enterprises with mathematical precision.
+            Most agencies sell hours and "deliverables." We build infrastructure. A four-part growth system designed to scale high-growth enterprises with mathematical precision.
           </motion.p>
         </div>
 
@@ -78,11 +78,11 @@ const Services: React.FC = () => {
           {steps.map((step, idx) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`group hover-lift saas-card p-8 md:p-10 rounded-2xl flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.05 }}
+              className={`group hover-lift core-card p-8 md:p-10 rounded-2xl flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
             >
               {/* Step Counter */}
               <div className="absolute top-8 right-8 text-6xl font-display font-black text-white/[0.01] pointer-events-none group-hover:text-brand-primary/[0.05] transition-colors duration-700">
@@ -94,7 +94,7 @@ const Services: React.FC = () => {
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                     <step.icon className="w-7 h-7" />
                   </div>
-                  <span className="text-[10px] font-bold font-sans text-brand-primary uppercase tracking-[0.2em] bg-brand-primary/5 px-3 py-1 rounded-full border border-brand-primary/10">
+                  <span className="text-xs font-bold font-sans text-brand-primary uppercase tracking-[0.2em] bg-brand-primary/5 px-3 py-1 rounded-full border border-brand-primary/10">
                     {step.step}
                   </span>
                 </div>
@@ -109,7 +109,7 @@ const Services: React.FC = () => {
                 </div>
 
                 <div className="mt-auto pt-8 border-t border-white/5 space-y-3">
-                  <div className="text-[10px] font-bold text-white/30 uppercase tracking-[0.1em] font-sans">System Outcome</div>
+                  <div className="text-xs font-bold text-white/30 uppercase tracking-[0.1em] font-sans">System Outcome</div>
                   <div className="flex items-center gap-3 text-brand-text-heading font-bold text-base font-sans">
                     <CheckCircle2 className="w-4 h-4 text-brand-primary shrink-0" />
                     {step.outcome}
@@ -123,9 +123,9 @@ const Services: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="group relative saas-card p-12 md:p-20 rounded-2xl flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="group relative core-card p-12 md:p-20 rounded-2xl flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
           >
             <div className="absolute inset-0 bg-brand-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="space-y-6 relative z-10">

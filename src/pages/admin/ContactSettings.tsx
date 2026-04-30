@@ -155,7 +155,7 @@ const ContactSettings: React.FC = () => {
           <MessageSquare size={18} />
           Recent Inquiries
           {newInquiriesCount > 0 && (
-            <span className="bg-brand-primary/20 text-brand-primary px-2 py-0.5 rounded-full text-[10px]">
+            <span className="bg-brand-primary/20 text-brand-primary px-2 py-0.5 rounded-full text-xs">
               {newInquiriesCount} New
             </span>
           )}
@@ -183,7 +183,7 @@ const ContactSettings: React.FC = () => {
                     onChange={(e) => handleChange('recipient_email', e.target.value)}
                     className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-brand-primary/50 transition-all"
                   />
-                  <p className="text-[10px] text-white/30 px-1">All website inquiries will be sent to this address.</p>
+                  <p className="text-xs text-white/30 px-1">All website inquiries will be sent to this address.</p>
                 </div>
 
                 <div className="space-y-2">
@@ -261,7 +261,7 @@ const ContactSettings: React.FC = () => {
                       <Mail size={18} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Email Us</p>
+                      <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Email Us</p>
                       <p className="text-sm font-bold">hello@conversionfoxx.com</p>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ const ContactSettings: React.FC = () => {
                       <Phone size={18} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Call Us</p>
+                      <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Call Us</p>
                       <p className="text-sm font-bold">+1 (555) 123-4567</p>
                     </div>
                   </div>
@@ -343,7 +343,7 @@ const ContactSettings: React.FC = () => {
                         <td className="px-8 py-6">
                           <div className="space-y-1">
                             <p className="text-sm font-bold text-white/80">{inquiry.service}</p>
-                            <p className="text-[10px] text-white/30 flex items-center gap-1">
+                            <p className="text-xs text-white/30 flex items-center gap-1">
                               <DollarSign size={10} />
                               {inquiry.budget}
                             </p>
@@ -353,7 +353,7 @@ const ContactSettings: React.FC = () => {
                           <select
                             value={inquiry.status}
                             onChange={(e) => handleUpdateStatus(inquiry.id, e.target.value as any)}
-                            className={`bg-transparent border-none text-[10px] font-bold uppercase tracking-widest focus:ring-0 cursor-pointer ${
+                            className={`bg-transparent border-none text-xs font-bold uppercase tracking-widest focus:ring-0 cursor-pointer ${
                               inquiry.status === 'new' 
                                 ? 'text-brand-primary' 
                                 : inquiry.status === 'contacted'

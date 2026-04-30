@@ -33,25 +33,25 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10 min-h-[700px]">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col justify-center text-center lg:text-left"
         >
           <div className="space-y-10">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] w-fit mx-auto lg:mx-0 glass liquid-glass">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] w-fit mx-auto lg:mx-0 glass liquid-glass">
               <Sparkles className="w-3.5 h-3.5" />
-              SaaS Growth Infrastructure
+              Enterprise Growth Infrastructure
             </div>
             
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-[64px] font-black tracking-tighter leading-[1.05] text-brand-text-heading font-display">
-                Scale SaaS Revenue with <br />
-                <span className="text-brand-primary">Growth Infrastructure.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-black tracking-tighter leading-[1.05] text-brand-text-heading font-display">
+                Engineering Predictable <br />
+                <span className="text-brand-primary">Revenue Scale.</span>
               </h1>
               
               <p className="text-base md:text-lg text-brand-text-secondary max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed font-sans opacity-90">
-                We engineeered a structured revenue system specifically for SaaS enterprises. Transform inconsistent experiments into a predictable, automated engine for high-value customer acquisition.
+                We build the technical and strategic infrastructure needed to transform high-growth companies into predictable revenue engines. Stop guessing—start scaling with mathematical certainty.
               </p>
             </div>
             
@@ -68,9 +68,9 @@ const Hero: React.FC = () => {
 
         {/* Right Side: Dashboard Visual */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 15 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
           <Suspense fallback={<div className="w-full aspect-video bg-white/5 rounded-2xl animate-pulse" />}>

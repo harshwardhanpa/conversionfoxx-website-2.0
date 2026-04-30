@@ -19,7 +19,6 @@ import {
   Users 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/layout/Layout';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
@@ -52,7 +51,7 @@ const Blogs: React.FC = () => {
   });
 
   return (
-    <Layout>
+    <>
       <div className="relative z-10">
         {/* 1. BLOGS HERO */}
         <Section className="relative pt-40 pb-20 overflow-hidden">
@@ -68,7 +67,7 @@ const Blogs: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-semibold uppercase tracking-[0.2em]">
                   <BookOpen className="w-4 h-4" />
                   ConversionFoxx Insights
                 </div>
@@ -163,13 +162,13 @@ const Blogs: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent lg:hidden" />
                   </div>
                   <div className="p-8 md:p-16 flex flex-col justify-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-primary/10 rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-primary border border-brand-primary/20">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-primary/10 rounded-full text-xs font-sans font-semibold uppercase tracking-[0.2em] text-brand-primary border border-brand-primary/20">
                       {featuredPost.category}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading font-display tracking-tight">
+                    <h3 className="text-xl md:text-3xl font-black leading-tight group-hover:text-brand-primary transition-colors text-brand-text-heading font-display tracking-tight">
                       {featuredPost.title}
                     </h3>
-                    <p className="text-gray-400 font-sans text-base md:text-lg leading-[1.6]">
+                    <p className="text-brand-text-secondary font-sans text-base md:text-lg leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity">
                       {featuredPost.excerpt}
                     </p>
                     <div className="flex items-center gap-6 text-gray-500 font-sans text-sm">
@@ -237,7 +236,7 @@ const Blogs: React.FC = () => {
           <Container>
             <div className="flex items-center justify-between mb-12">
               <h2 className="text-2xl font-black tracking-tight text-brand-text-heading font-display">Latest Articles</h2>
-              <div className="text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+              <div className="text-gray-500 text-xs font-sans font-semibold uppercase tracking-[0.2em]">
                 Showing {filteredPosts.length} Results
               </div>
             </div>
@@ -254,19 +253,19 @@ const Blogs: React.FC = () => {
                     className="group"
                   >
                     <Link to={`/blogs/${post.slug}`} className="block space-y-6">
-                      <div className="aspect-[16/10] bg-white/5 rounded-2xl overflow-hidden border-none relative">
+                      <div className="aspect-[16/10] bg-white/5 rounded-2xl overflow-hidden border-none relative group-hover:shadow-2xl transition-all duration-700">
                         <img 
                           src={post.image} 
                           alt={post.title} 
                           referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
                         />
-                        <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading border border-white/10">
+                        <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-xs font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading border border-white/10">
                           {post.category}
                         </div>
                       </div>
                       <div className="space-y-4 px-2">
-                        <div className="flex items-center gap-4 text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                        <div className="flex items-center gap-4 text-gray-500 text-xs font-sans font-semibold uppercase tracking-[0.2em]">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="w-3 h-3 text-brand-primary" />
                             {post.date}
@@ -279,7 +278,7 @@ const Blogs: React.FC = () => {
                         <h3 className="text-xl md:text-2xl font-black group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading font-display tracking-tight">
                           {post.title}
                         </h3>
-                        <p className="text-gray-400 font-sans text-sm leading-relaxed line-clamp-2">
+                        <p className="text-brand-text-secondary font-sans text-sm leading-relaxed line-clamp-2 opacity-80 group-hover:opacity-100 transition-opacity">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center gap-2 text-brand-primary font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2">
@@ -325,7 +324,7 @@ const Blogs: React.FC = () => {
                   icon: TrendingUp,
                   links: [
                     { name: 'The Psychology of High-Converting Landing Pages', slug: 'psychology-of-conversion' },
-                    { name: 'A/B Testing Frameworks for Modern SaaS', slug: 'ab-testing-frameworks' },
+                    { name: 'A/B Testing Frameworks for Modern Growth', slug: 'ab-testing-frameworks' },
                     { name: 'How to Reduce Churn Through Better Onboarding', slug: 'reduce-churn-onboarding' }
                   ]
                 },
@@ -402,8 +401,8 @@ const Blogs: React.FC = () => {
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-4 mx-auto">
                     <Mail className="w-8 h-8" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-brand-text-heading">Stay Connected With New Insights</h2>
-                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-2xl mx-auto font-normal">
+                  <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl mx-auto font-display tracking-tight">Stay Connected With New Insights</h2>
+                  <p className="text-brand-text-secondary font-sans text-base md:text-lg max-w-2xl mx-auto font-medium">
                     Get practical ideas on growth, performance, systems, and digital execution from the ConversionFoxx perspective.
                   </p>
                   
@@ -417,7 +416,7 @@ const Blogs: React.FC = () => {
                       Subscribe
                     </Button>
                   </form>
-                  <p className="text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
+                  <p className="text-gray-500 text-xs font-sans font-semibold uppercase tracking-[0.2em]">
                     No spam. Just useful insights.
                   </p>
                 </div>
@@ -468,10 +467,10 @@ const Blogs: React.FC = () => {
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 shadow-lg shadow-brand-primary/5">
                       <item.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-4 text-brand-text-heading">{item.title}</h3>
-                    <p className="text-gray-400 font-sans text-sm leading-relaxed">
-                      {item.description}
-                    </p>
+                   <h3 className="text-xl md:text-2xl font-black mb-4 text-brand-text-heading font-display tracking-tight group-hover:text-brand-primary transition-colors">{item.title}</h3>
+                  <p className="text-brand-text-secondary font-sans text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                   </Card>
                 </motion.div>
               ))}
@@ -513,7 +512,7 @@ const Blogs: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 

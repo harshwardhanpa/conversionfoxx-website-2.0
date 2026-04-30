@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface BlogPost {
   id: string;
@@ -15,13 +15,19 @@ export interface BlogPost {
 
 export const blogService = {
   async getPosts() {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .order('updated_at', { ascending: false });
+    if (!isSupabaseConfigured) return [];
+    try {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .order('updated_at', { ascending: false });
 
-    if (error) throw error;
-    return data as BlogPost[];
+      if (error) throw error;
+      return data as BlogPost[];
+    } catch (err) {
+      console.warn('Supabase fetch error for blog posts:', err);
+      return [];
+    }
   },
 
   async getPostById(id: string) {

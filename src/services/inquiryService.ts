@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 export interface Inquiry {
   id: string;
@@ -44,25 +44,46 @@ export const inquiryService = {
   },
 
   async getSettings() {
-    const { data, error } = await supabase
-      .from('contact_settings')
-      .select('*')
-      .single();
-
-    if (error) {
-      if (error.code === 'PGRST116') {
-        // No settings found, return default
-        return {
-          recipient_email: 'leads@conversionfoxx.com',
-          success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
-          error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
-          consultation_cta: 'Book Your Free Strategy Session',
-          consultation_link: '/contact',
-        };
-      }
-      throw error;
+    if (!isSupabaseConfigured) {
+      return {
+        recipient_email: 'leads@conversionfoxx.com',
+        success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
+        error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+        consultation_cta: 'Book Your Free Strategy Session',
+        consultation_link: '/contact',
+      };
     }
-    return data;
+
+    try {
+      const { data, error } = await supabase
+        .from('contact_settings')
+        .select('*')
+        .single();
+
+      if (error) {
+        if (error.code === 'PGRST116') {
+          // No settings found, return default
+          return {
+            recipient_email: 'leads@conversionfoxx.com',
+            success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
+            error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+            consultation_cta: 'Book Your Free Strategy Session',
+            consultation_link: '/contact',
+          };
+        }
+        throw error;
+      }
+      return data;
+    } catch (err) {
+      console.warn('Supabase fetch error, using defaults:', err);
+      return {
+        recipient_email: 'leads@conversionfoxx.com',
+        success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
+        error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+        consultation_cta: 'Book Your Free Strategy Session',
+        consultation_link: '/contact',
+      };
+    }
   },
 
   async updateSettings(settings: any) {

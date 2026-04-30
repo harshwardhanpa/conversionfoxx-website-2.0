@@ -135,7 +135,7 @@ const BlogManager: React.FC = () => {
                     </div>
                   </td>
                   <td className="px-8 py-6">
-                    <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
+                    <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${
                       blog.status === 'published' 
                         ? 'bg-brand-primary/10 text-brand-primary border border-brand-primary/20' 
                         : blog.status === 'draft'

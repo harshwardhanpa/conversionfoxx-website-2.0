@@ -7,22 +7,22 @@ import Container from './ui/Container';
 const results = [
   {
     metric: '320%',
-    label: 'Revenue Growth',
-    description: 'Average revenue increase for clients after implementing our Revenue Operations System.',
+    label: 'Revenue Expansion',
+    description: 'We help high-growth companies unlock expansion revenue through structured up-sell and cross-sell automation.',
     icon: TrendingUp,
     color: 'from-brand-primary/20 to-brand-primary/10',
   },
   {
     metric: '4.5X',
-    label: 'Lead Quality',
-    description: 'Increase in qualified lead volume through systematic funnel entry optimization.',
+    label: 'LTV/CAC Efficiency',
+    description: 'Our systems optimize acquisition spend, driving higher customer lifetime value while reducing unit costs.',
     icon: Users,
     color: 'from-brand-primary/20 to-brand-primary/10',
   },
   {
     metric: '28%',
-    label: 'Conversion Lift',
-    description: 'Average conversion rate improvement following our comprehensive Growth Audit.',
+    label: 'Gross Yield Lift',
+    description: 'Immediate performance improvements in your core funnel through our proprietary Growth Audit methodology.',
     icon: Rocket,
     color: 'from-brand-primary/20 to-brand-primary/10',
   },
@@ -37,7 +37,7 @@ const Results: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="px-3 py-1 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] font-sans"
+            className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             Validated Growth Performance
           </motion.span>
@@ -57,11 +57,11 @@ const Results: React.FC = () => {
           {results.map((result, idx) => (
             <motion.div
               key={result.label}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group relative saas-card p-10 rounded-2xl border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center flex flex-col h-full hover-lift liquid-glass"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className="group relative core-card p-10 rounded-2xl border-white/5 hover:border-brand-primary/30 transition-all duration-500 text-center flex flex-col h-full hover-lift liquid-glass"
             >
               <div className="absolute inset-0 brand-gradient opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700 rounded-2xl" />
               
@@ -78,7 +78,7 @@ const Results: React.FC = () => {
                   {result.label}
                 </h3>
                 
-                <p className="text-brand-text-secondary opacity-50 leading-[1.6] group-hover:text-brand-text-secondary group-hover:opacity-100 transition-colors font-sans">
+                <p className="text-brand-text-secondary text-sm leading-[1.6] group-hover:text-white transition-colors font-sans font-medium">
                   {result.description}
                 </p>
               </div>

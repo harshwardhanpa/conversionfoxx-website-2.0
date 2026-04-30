@@ -109,7 +109,7 @@ const PageEditor: React.FC = () => {
           <div>
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-bold tracking-tight">{page.title}</h2>
-              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest ${
+              <span className={`px-2 py-0.5 rounded text-xs font-bold uppercase tracking-widest ${
                 page.is_published ? 'bg-brand-primary/20 text-brand-primary' : 'bg-white/10 text-white/40'
               }`}>
                 {page.is_published ? 'Published' : 'Draft'}

@@ -31,7 +31,6 @@ import Container from '../../components/ui/Container';
 import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import Layout from '../../components/layout/Layout';
 
 const ConversionOptimization: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -64,7 +63,7 @@ const ConversionOptimization: React.FC = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <div className="relative z-10">
         {/* BREADCRUMB */}
         <Container className="pt-32 mb-8">
@@ -93,7 +92,7 @@ const ConversionOptimization: React.FC = () => {
                   <MousePointer2 className="w-4 h-4" />
                   Conversion Optimization
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
                   Better Experience. <br />
                   Higher Conversion.
                 </h1>
@@ -365,7 +364,7 @@ const ConversionOptimization: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -20,11 +20,11 @@ export const blogPosts: BlogPostData[] = [
   {
     slug: 'scaling-digital-growth-with-connected-systems',
     category: 'Growth Strategy',
-    title: 'Why Connected Systems Matter More Than Isolated Marketing Tactics',
-    excerpt: 'Businesses often invest in websites, campaigns, tools, and workflows separately. But when those systems are disconnected, growth becomes harder to sustain.',
+    title: 'Modern Enterprise Infrastructure: Scaling Beyond Isolated Tactics',
+    excerpt: 'Businesses often invest in websites, campaigns, tools, and workflows separately. but when those systems are disconnected, growth becomes harder to sustain.',
     date: 'Mar 18, 2026',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/featured/1200/800',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'In the modern digital landscape, businesses are often overwhelmed by the sheer number of platforms and tools available. It’s common to see a company investing heavily in a beautiful website, running aggressive ad campaigns on social media, and implementing a complex CRM system—all as separate, siloed initiatives.',
       sections: [
@@ -47,7 +47,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'A well-structured website doesn’t just look good; it guides users toward conversion. Learn how information architecture impacts your bottom line.',
     date: 'Mar 15, 2026',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/web/800/600',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Information architecture is the backbone of any successful digital platform. When users can find what they need without friction, they are more likely to convert.',
       sections: [
@@ -70,7 +70,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'Manual lead management can only take you so far. Discover the signs that your business is ready for automated sales workflows.',
     date: 'Mar 12, 2026',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/crm/800/600',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Spreadsheets are great for many things, but managing a growing sales pipeline isn’t one of them.',
       sections: [
@@ -93,7 +93,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'Are your ad campaigns leaking money? We identify the common pitfalls in PPC and how to refine your targeting for better ROI.',
     date: 'Mar 10, 2026',
     readTime: '7 min read',
-    image: 'https://picsum.photos/seed/ads/800/600',
+    image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Most ad budgets are wasted not on the wrong platforms, but on the wrong strategies.',
       sections: [
@@ -116,7 +116,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'Consistency is the key to social growth. Learn our framework for creating content that resonates and stays on schedule.',
     date: 'Mar 08, 2026',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/social/800/600',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Social media is a marathon, not a sprint. Success comes to those who show up consistently with value.',
       sections: [
@@ -139,7 +139,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'The most successful apps are built on a foundation of rigorous planning. Here’s our pre-development checklist for founders.',
     date: 'Mar 05, 2026',
     readTime: '8 min read',
-    image: 'https://picsum.photos/seed/app/800/600',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Building an app without a plan is like building a house without a blueprint.',
       sections: [
@@ -162,7 +162,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'Trends fade, but conversion principles are timeless. Explore why we prioritize user action over aesthetic novelties.',
     date: 'Mar 02, 2026',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/design/800/600',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'A beautiful website that doesn’t convert is just an expensive art project.',
       sections: [
@@ -185,7 +185,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'Scalability isn’t just about more sales; it’s about the systems that handle them. Learn how to build a resilient digital foundation.',
     date: 'Feb 28, 2026',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/systems/800/600',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     content: {
       intro: 'Growth without systems is chaos. To scale, you need a foundation that can handle the weight of your success.',
       sections: [
@@ -208,7 +208,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: 'If you’re losing leads in spreadsheets, it’s time for a change. We break down the transition from manual to automated tracking.',
     date: 'Feb 25, 2026',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/manual/800/600',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
     content: {
       intro: 'Spreadsheets are great for many things, but managing a growing sales pipeline isn’t one of them.',
       sections: [

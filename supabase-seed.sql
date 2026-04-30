@@ -86,7 +86,7 @@ ON CONFLICT (slug) DO NOTHING;
 INSERT INTO blog_posts (slug, title, content, excerpt, featured_image, status)
 VALUES 
   ('future-of-digital-transformation-2026', 'The Future of Digital Transformation in 2026', 'Full content here...', 'Exploring how AI and cloud computing are reshaping the IT landscape for modern enterprises.', 'https://picsum.photos/seed/tech/800/600', 'published'),
-  ('5-growth-strategies-for-saas-startups', '5 Growth Strategies for SaaS Startups', 'Full content here...', 'How to leverage data-driven marketing to scale your SaaS product faster and more efficiently.', 'https://picsum.photos/seed/growth/800/600', 'published'),
+  ('5-growth-strategies-for-high-growth-startups', '5 Growth Strategies for High-Growth Startups', 'Full content here...', 'How to leverage data-driven marketing to scale your product faster and more efficiently.', 'https://picsum.photos/seed/growth/800/600', 'published'),
   ('why-conversion-focused-design-matters', 'Why Conversion-Focused Design Matters', 'Full content here...', 'The psychology behind high-converting websites and how to apply it to your digital products.', 'https://picsum.photos/seed/design/800/600', 'published')
 ON CONFLICT (slug) DO NOTHING;
 

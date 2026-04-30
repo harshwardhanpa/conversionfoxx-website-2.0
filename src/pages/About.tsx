@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/layout/Layout';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
@@ -10,7 +9,7 @@ import { ArrowRight, Sparkles, Target, Eye, Zap, Layers, Rocket, ShieldCheck, Ba
 
 const About: React.FC = () => {
   return (
-    <Layout>
+    <>
       <div className="relative z-10 pt-20">
         {/* 1. ABOUT HERO SECTION */}
         <Section className="relative overflow-hidden pt-32 pb-20">
@@ -20,21 +19,21 @@ const About: React.FC = () => {
 
           <Container>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
                 <Sparkles className="w-4 h-4" />
                 About ConversionFoxx
               </div>
-              <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-brand-text-heading max-w-4xl mx-auto font-display">
                 Engineering High-Performance <br />
                 <span className="brand-gradient-text">Growth Infrastructure</span>
               </h1>
               <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
-                ConversionFoxx is a growth system architecture firm. We help high-growth SaaS companies scale by engineering the technical and strategic infrastructure needed for predictable revenue acquisition.
+                ConversionFoxx is a growth system architecture firm. We help high-growth companies scale by engineering the technical and strategic infrastructure needed for predictable revenue acquisition.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
@@ -53,9 +52,10 @@ const About: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
                 <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Story</span>
@@ -101,12 +101,12 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card padding="xl" className="h-full hover-lift saas-card transition-all duration-300">
+                <Card padding="xl" className="h-full hover-lift core-card transition-all duration-300">
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
                     <Target className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">Our Mission</h3>
-                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl leading-relaxed">
+                  <h3 className="text-xl md:text-2xl font-black mb-4 text-brand-text-heading font-display tracking-tight">Our Mission</h3>
+                  <p className="text-brand-text-secondary font-sans text-base leading-relaxed">
                     To help businesses turn marketing efforts into predictable revenue through system-based growth architecture and data-backed optimization.
                   </p>
                 </Card>
@@ -117,12 +117,12 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                <Card padding="xl" className="h-full hover-lift saas-card transition-all duration-300">
+                <Card padding="xl" className="h-full hover-lift core-card transition-all duration-300">
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
                     <Eye className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-brand-text-heading">Our Vision</h3>
-                  <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl leading-relaxed">
+                  <h3 className="text-xl md:text-2xl font-black mb-4 text-brand-text-heading font-display tracking-tight">Our Vision</h3>
+                  <p className="text-brand-text-secondary font-sans text-base leading-relaxed">
                     To become the world's leading growth architecture firm, known for building the most efficient and scalable revenue systems for ambitious brands.
                   </p>
                 </Card>
@@ -149,17 +149,17 @@ const About: React.FC = () => {
               ].map((item, idx) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <Card padding="lg" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
                       <item.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold mb-4 text-brand-text-heading font-display tracking-tight">{item.title}</h3>
-                    <p className="text-gray-400 font-sans text-sm leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-black mb-4 text-brand-text-heading font-display tracking-tight">{item.title}</h3>
+                    <p className="text-brand-text-secondary font-sans text-sm leading-relaxed">{item.description}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -187,10 +187,10 @@ const About: React.FC = () => {
               ].map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.98 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <Card padding="lg" className="h-full hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -216,9 +216,10 @@ const About: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
                 <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl font-display tracking-tight">We Focus on Results <br /><span className="text-brand-primary">That Scale</span></h2>
@@ -241,25 +242,25 @@ const About: React.FC = () => {
                   ))}
                 </div>
               </motion.div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-6 pt-12">
                     <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center space-y-2 hover:border-brand-primary/30 transition-all duration-300 hover-lift">
                       <div className="text-4xl font-black text-brand-primary tracking-tighter">300%</div>
-                      <div className="text-[10px] font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">ROI Increase</div>
+                      <div className="text-xs font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">ROI Increase</div>
                     </div>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center space-y-2 hover:border-brand-primary/30 transition-all duration-300 hover-lift">
                     <div className="text-4xl font-black text-brand-primary tracking-tighter">5X</div>
-                    <div className="text-[10px] font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Lead Gen</div>
+                    <div className="text-xs font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Lead Gen</div>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center space-y-2 hover:border-brand-primary/30 transition-all duration-300 hover-lift">
                     <div className="text-4xl font-black text-brand-primary tracking-tighter">24/7</div>
-                    <div className="text-[10px] font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Monitoring</div>
+                    <div className="text-xs font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Monitoring</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center space-y-2 hover:border-brand-primary/30 transition-all duration-300 hover-lift">
                     <div className="text-4xl font-black text-brand-primary tracking-tighter">100%</div>
-                    <div className="text-[10px] font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Commitment</div>
+                    <div className="text-xs font-sans text-gray-500 font-bold uppercase tracking-[0.2em]">Commitment</div>
                   </div>
                 </div>
               </div>
@@ -286,17 +287,17 @@ const About: React.FC = () => {
               ].map((member, idx) => (
                 <motion.div
                   key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <Card padding="lg" className="h-full text-center hover-lift">
                     <div className="w-20 h-20 bg-brand-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center font-black text-2xl text-brand-primary transition-transform font-display">
                       {member.name.charAt(0)}
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-brand-text-heading font-display tracking-tight">{member.name}</h3>
-                    <div className="text-brand-primary text-[10px] font-sans font-bold uppercase tracking-[0.2em] mb-4">{member.role}</div>
+                    <div className="text-brand-primary text-xs font-sans font-bold uppercase tracking-[0.2em] mb-4">{member.role}</div>
                     <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-xl mx-auto">{member.bio}</p>
                   </Card>
                 </motion.div>
@@ -314,17 +315,17 @@ const About: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {[
-                { title: 'Growth Audit', description: 'We dive deep into your business to find leaks and build a roadmap for growth.', icon: Search },
-                { title: 'System Architecture', description: 'We design your custom Revenue Operations System to tie everything together.', icon: PenTool },
-                { title: 'Execution & Launch', description: 'We launch your traffic systems and funnels with data-backed precision.', icon: Rocket },
-                { title: 'Scale & Optimize', description: 'We continuously optimize the system to reach new heights of revenue.', icon: TrendingUp },
+                { title: 'Traffic System', description: 'We deploy precision acquisition systems to dominate search and social intent.', icon: Search },
+                { title: 'Conversion Architecture', description: 'We re-engineer user journeys to eliminate friction and maximize yield.', icon: PenTool },
+                { title: 'Revenue Operations', description: 'We build the CRM automation and tracking needed to turn leads into revenue.', icon: Rocket },
+                { title: 'Growth Optimization', description: 'Continuous data analysis to identify leaks and scale winning experiments.', icon: TrendingUp },
               ].map((step, idx) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <Card padding="lg" className="h-full text-center group hover-lift">
                     <div className="relative z-10 space-y-6">
@@ -384,7 +385,7 @@ const About: React.FC = () => {
                     <span className="brand-gradient-text">Growth Audit</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                    Identify the leaks in your current acquisition model and build a predictable growth engine. Our Growth Architects are ready to engineer your SaaS revenue system.
+                    Identify the leaks in your current acquisition model and build a predictable growth engine. Our Growth Architects are ready to engineer your revenue system.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
@@ -400,7 +401,7 @@ const About: React.FC = () => {
           </Container>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 
