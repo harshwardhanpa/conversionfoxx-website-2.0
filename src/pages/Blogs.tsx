@@ -252,20 +252,26 @@ const Blogs: React.FC = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="group"
                   >
-                    <Link to={`/blogs/${post.slug}`} className="block space-y-6">
-                      <div className="aspect-[16/10] bg-white/5 rounded-2xl overflow-hidden border-none relative group-hover:shadow-2xl transition-all duration-700">
-                        <img 
-                          src={post.image} 
-                          alt={post.title} 
-                          referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
-                        />
-                        <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-xs font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading border border-white/10">
+                    <Link to={`/blogs/${post.slug}`} className="block space-y-6 flex flex-col h-full">
+                      <div className="aspect-[16/10] bg-white/5 rounded-2xl overflow-hidden border border-white/10 relative group-hover:shadow-2xl transition-all duration-700 shrink-0">
+                        {post.image ? (
+                          <img 
+                            src={post.image} 
+                            alt={post.title} 
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-brand-primary/20 to-brand-primary/5 flex items-center justify-center p-6 text-center">
+                            <span className="text-brand-text-heading font-display font-black text-lg opacity-40">{post.title}</span>
+                          </div>
+                        )}
+                        <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-text-heading border border-white/10">
                           {post.category}
                         </div>
                       </div>
-                      <div className="space-y-4 px-2">
-                        <div className="flex items-center gap-4 text-gray-500 text-xs font-sans font-semibold uppercase tracking-[0.2em]">
+                      <div className="space-y-4 px-2 flex flex-col flex-grow">
+                        <div className="flex items-center gap-4 text-gray-500 text-[10px] font-sans font-semibold uppercase tracking-[0.2em]">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="w-3 h-3 text-brand-primary" />
                             {post.date}
@@ -278,10 +284,10 @@ const Blogs: React.FC = () => {
                         <h3 className="text-xl md:text-2xl font-black group-hover:text-brand-primary transition-colors leading-tight text-brand-text-heading font-display tracking-tight">
                           {post.title}
                         </h3>
-                        <p className="text-brand-text-secondary font-sans text-sm leading-relaxed line-clamp-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                        <p className="text-brand-text-secondary font-sans text-sm leading-relaxed line-clamp-2 opacity-70 group-hover:opacity-100 transition-opacity flex-grow">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center gap-2 text-brand-primary font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2">
+                        <div className="flex items-center gap-2 text-brand-primary font-sans font-semibold text-sm group-hover:gap-3 transition-all pt-2 group-hover:translate-x-1 duration-300">
                           Read More <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>

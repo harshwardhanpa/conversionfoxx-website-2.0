@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { Logo } from './ui/Logo';
 
 const navLinks = [
   { name: 'About Us', href: '/about' },
@@ -44,9 +45,7 @@ const Header: React.FC = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-white font-bold text-xl font-display">C</span>
-            </div>
+            <Logo className="w-8 h-8" />
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300 font-display">
               Conversion<span className="text-brand-primary">Foxx</span>
             </span>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from '../ui/Button';
+import { Logo } from '../ui/Logo';
 
 const navLinks = [
   { name: 'About Us', href: '/about' },
@@ -58,9 +59,7 @@ const Header: React.FC = () => {
               }
             }}
           >
-            <div className="w-9 h-9 bg-brand-primary rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-brand-primary/20">
-              <span className="text-brand-dark font-display font-bold text-xl">C</span>
-            </div>
+            <Logo className="w-9 h-9" />
             <span className="text-xl font-display font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
               Conversion<span className="text-brand-primary">Foxx</span>
             </span>

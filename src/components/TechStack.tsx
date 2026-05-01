@@ -50,10 +50,10 @@ const TechStack: React.FC = () => {
               transition={{ delay: idx * 0.05 }}
               className="core-card p-6 md:p-10 rounded-2xl group text-center hover-lift liquid-glass"
             >
-              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 w-fit mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-500 shadow-xl shadow-brand-primary/10 glass">
+              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 w-fit mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 shadow-xl shadow-brand-primary/10 glass border border-brand-primary/20">
                 <tool.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-black text-white/30 uppercase tracking-[0.2em] group-hover:text-brand-primary transition-colors duration-700 font-sans">
+              <h3 className="text-sm font-black text-white/60 uppercase tracking-[0.2em] group-hover:text-brand-primary transition-colors duration-300 font-sans">
                 {tool.name}
               </h3>
             </motion.div>

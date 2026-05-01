@@ -327,13 +327,19 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
-                  <Card padding="lg" className="h-full text-center group hover-lift">
+                  <Card padding="lg" className="h-full group hover-lift bg-white/5 border border-white/10 border-l-2 border-l-brand-primary/30 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10 space-y-6">
-                      <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-4 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
-                        <step.icon className="w-8 h-8" />
+                      <div className="relative inline-flex">
+                        <div className="bg-brand-primary/10 p-4 rounded-xl text-brand-primary inline-flex items-center justify-center mb-4 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 shadow-xl shadow-brand-primary/10 border border-brand-primary/20">
+                          <step.icon className="w-8 h-8" />
+                        </div>
+                        <div className="absolute -top-3 -right-3 w-7 h-7 bg-[#0a0a0a] border border-brand-primary/30 rounded-full flex items-center justify-center text-[10px] font-black text-brand-primary">
+                          0{idx + 1}
+                        </div>
                       </div>
-                      <h3 className="text-xl font-bold text-brand-text-heading font-display tracking-tight">{step.title}</h3>
-                      <p className="text-gray-400 font-sans leading-relaxed max-w-xl mx-auto">{step.description}</p>
+                      <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight group-hover:text-brand-primary transition-colors">{step.title}</h3>
+                      <p className="text-gray-400 font-sans text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">{step.description}</p>
                     </div>
                   </Card>
                 </motion.div>

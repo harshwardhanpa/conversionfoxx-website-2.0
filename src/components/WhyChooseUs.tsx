@@ -85,11 +85,15 @@ const WhyChooseUs: React.FC = () => {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="core-card p-8 rounded-2xl hover:bg-white/5 transition-all group flex flex-col h-full hover-lift"
             >
-              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 mb-6 w-fit">
+              <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary/20 transition-all duration-300 mb-6 w-fit border border-brand-primary/20">
                 <reason.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-brand-primary transition-colors font-display tracking-tight">{reason.title}</h3>
-              <p className="text-sm text-brand-text-secondary leading-[1.6] group-hover:text-brand-text-secondary transition-colors font-sans mb-4">{reason.description}</p>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-brand-primary transition-colors font-display tracking-tight text-white/90">
+                {reason.title}
+              </h3>
+              <p className="text-sm text-brand-text-secondary leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity font-sans mb-4">
+                {reason.description}
+              </p>
               <div className="mt-auto pt-4 border-t border-white/5 text-xs font-bold text-brand-primary uppercase tracking-[0.1em] font-sans">
                 Proven Outcome: Increased Yield
               </div>

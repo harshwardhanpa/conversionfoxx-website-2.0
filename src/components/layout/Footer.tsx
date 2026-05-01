@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
+import { Logo } from '../ui/Logo';
 
 /**
  * Shared site-wide footer with premium dark glassmorphism style.
@@ -15,12 +16,9 @@ const Footer: React.FC = () => {
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20">
-          {/* Brand Info */}
           <div className="space-y-8">
             <Link to="/" className="flex items-center gap-2 group" aria-label="ConversionFoxx Home">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                <span className="text-brand-dark font-display font-bold text-xl">C</span>
-              </div>
+              <Logo className="w-10 h-10" />
               <span className="text-xl font-display font-bold tracking-tight text-brand-text-heading group-hover:text-brand-primary transition-colors duration-300">
                 Conversion<span className="text-brand-primary">Foxx</span>
               </span>

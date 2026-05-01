@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Palette, Save, RotateCcw, Type, Layout, Sliders, Check, Eye, Loader2 } from 'lucide-react';
 import { brandingService, BrandingSettings as IBrandingSettings } from '../../services/brandingService';
+import { Logo } from '../../components/ui/Logo';
 
 interface ColorPickerProps {
   label: string;
@@ -250,7 +251,7 @@ const Branding: React.FC = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
             
             <div className="space-y-4 relative z-10">
-              <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center font-bold text-black text-xl">C</div>
+              <Logo className="w-12 h-12" />
               <h4 className="text-2xl font-bold tracking-tight" style={{ color: branding.text_color, fontFamily: branding.font_family_heading }}>
                 Design <span style={{ color: branding.primary_color }}>Preview</span>
               </h4>

@@ -100,17 +100,17 @@ const Services: React.FC = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight group-hover:text-brand-primary transition-colors duration-500">
                     {step.title}
                   </h3>
-                  <p className="text-brand-text-secondary/70 text-base leading-relaxed font-sans max-w-lg">
+                  <p className="text-brand-text-secondary opacity-80 text-base leading-relaxed font-sans max-w-lg group-hover:opacity-100 transition-opacity">
                     {step.description}
                   </p>
                 </div>
 
                 <div className="mt-auto pt-8 border-t border-white/5 space-y-3">
-                  <div className="text-xs font-bold text-white/30 uppercase tracking-[0.1em] font-sans">System Outcome</div>
-                  <div className="flex items-center gap-3 text-brand-text-heading font-bold text-base font-sans">
+                  <div className="text-xs font-bold text-white/40 uppercase tracking-[0.1em] font-sans">System Outcome</div>
+                  <div className="flex items-center gap-3 text-brand-text-heading font-bold text-base font-sans group-hover:translate-x-1 transition-transform duration-300">
                     <CheckCircle2 className="w-4 h-4 text-brand-primary shrink-0" />
                     {step.outcome}
                   </div>
@@ -132,7 +132,7 @@ const Services: React.FC = () => {
               <h3 className="text-2xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight">
                 Stop guessing. <br /> Start scaling.
               </h3>
-              <p className="text-brand-text-secondary/60 max-w-lg mx-auto font-sans font-medium leading-relaxed text-base md:text-lg">
+              <p className="text-brand-text-secondary opacity-70 max-w-lg mx-auto font-sans font-medium leading-relaxed text-base md:text-lg group-hover:opacity-100 transition-opacity">
                 Identify the hidden revenue leaks in your current acquisition model and build a predictable growth system.
               </p>
             </div>

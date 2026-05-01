@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Save, RotateCcw, Globe, Share2, Info, CheckCircle2, AlertCircle, Eye, ExternalLink, Plus, Edit3 } from 'lucide-react';
+import { Logo } from '../../components/ui/Logo';
 
 interface SEOItem {
   id: string;
@@ -169,7 +170,7 @@ const SEOManager: React.FC = () => {
             </h3>
             <div className="bg-white rounded-2xl p-6 space-y-2 shadow-2xl">
               <div className="flex items-center gap-2 text-xs text-[#202124]">
-                <div className="w-4 h-4 bg-[#f1f3f4] rounded-full flex items-center justify-center text-[8px] font-bold">C</div>
+                <Logo className="w-4 h-4" />
                 <span>conversionfoxx.com</span>
               </div>
               <h4 className="text-xl text-[#1a0dab] hover:underline cursor-pointer line-clamp-1">{globalSEO.siteTitle}</h4>

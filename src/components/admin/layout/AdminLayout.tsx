@@ -21,6 +21,7 @@ import {
   Menu
 } from 'lucide-react';
 import { useAdminAuth } from '../../../context/AdminAuthContext';
+import { Logo } from '../../ui/Logo';
 
 interface SidebarItemProps {
   to: string;
@@ -94,7 +95,7 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="h-full flex flex-col p-6">
           <div className="flex items-center justify-between mb-10">
             <Link to="/admin/dashboard" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold text-black">C</div>
+              <Logo className="w-8 h-8" />
               <span className="text-xl font-bold tracking-tight">Conversion<span className="text-brand-primary">Foxx</span></span>
             </Link>
             <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-white/60 hover:text-white">

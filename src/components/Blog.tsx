@@ -54,14 +54,20 @@ const Blog: React.FC = () => {
               className="group"
             >
               <Link to={`/blogs/${blog.slug}`} className="flex flex-col h-full">
-                <div className="aspect-[16/10] bg-white/5 rounded-2xl mb-6 overflow-hidden border border-white/5 relative shrink-0">
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-widest text-white font-sans">
+                <div className="aspect-[16/10] bg-white/5 rounded-2xl mb-6 overflow-hidden border border-white/10 relative shrink-0">
+                  {blog.image ? (
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-brand-primary/20 to-brand-primary/5 flex items-center justify-center p-6 text-center">
+                      <span className="text-brand-text-heading font-display font-black text-lg opacity-40">{blog.title}</span>
+                    </div>
+                  )}
+                  <div className="absolute top-6 left-6 px-4 py-1.5 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white font-sans border border-white/10">
                     {blog.category}
                   </div>
                 </div>
@@ -69,10 +75,10 @@ const Blog: React.FC = () => {
                   <h3 className="text-xl md:text-2xl font-black text-brand-text-heading font-display tracking-tight leading-tight group-hover:text-brand-primary transition-colors">
                     {blog.title}
                   </h3>
-                  <p className="text-brand-text-secondary text-sm leading-[1.6] line-clamp-3 transition-colors flex-grow font-sans mt-2 opacity-80 group-hover:opacity-100">
+                  <p className="text-brand-text-secondary text-sm leading-[1.6] line-clamp-3 transition-colors flex-grow font-sans mt-2 opacity-70 group-hover:opacity-100">
                     {blog.excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all shrink-0 font-sans">
+                  <div className="flex items-center gap-2 text-brand-primary font-bold text-sm group-hover:gap-3 transition-all shrink-0 font-sans group-hover:translate-x-1 duration-300">
                     Read More <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
