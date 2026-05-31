@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Section from './ui/Section';
 import Container from './ui/Container';
 import Button from './ui/Button';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const cases = [
   {
@@ -23,24 +24,26 @@ const cases = [
 ];
 
 const CaseStudies: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX } = useResponsiveAnimation();
+
   return (
     <Section id="case-studies" padding="lg" background="subtle">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="space-y-6 max-w-2xl">
             <motion.span
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: adjustY(10) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
               className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
             >
               Proven Growth Systems
             </motion.span>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ delay: 0.1 })}
               className="text-4xl md:text-5xl font-black text-brand-text-heading font-display tracking-tight"
             >
               Measurable <span className="text-brand-primary">Business Outcomes.</span>
@@ -48,9 +51,10 @@ const CaseStudies: React.FC = () => {
           </div>
           
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: adjustX(20) }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition()}
           >
             <Button variant="secondary" to="/contact" icon={ArrowRight}>
               View All Outcomes
@@ -62,10 +66,10 @@ const CaseStudies: React.FC = () => {
           {cases.map((item, idx) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              viewport={getViewport({ once: true, margin: "-100px" })}
+              transition={getTransition({ duration: 0.6, delay: idx * 0.1 })}
               className="group core-card overflow-hidden hover-lift flex flex-col h-full"
             >
               <div className="aspect-[16/9] w-full relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 bg-white/5">

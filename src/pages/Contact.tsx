@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
@@ -30,6 +31,7 @@ import { Link } from 'react-router-dom';
 import { inquiryService } from '../services/inquiryService';
 
 const Contact: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
   const [formState, setFormState] = useState({
     name: '',
     company: '',
@@ -202,9 +204,9 @@ const Contact: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: adjustX(-30) }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={getTransition({ duration: 0.8 })}
                 className="space-y-8"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-semibold uppercase tracking-[0.2em]">
@@ -250,9 +252,9 @@ const Contact: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: adjustScale(0.9) }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={getTransition({ duration: 0.8, delay: 0.2 })}
                 className="relative hidden lg:block"
               >
                 <Card padding="lg" className="rounded-2xl border-white/10 shadow-2xl" hoverEffect={false}>
@@ -305,10 +307,10 @@ const Contact: React.FC = () => {
               {contactOptions.map((option, idx) => (
                 <motion.div
                   key={option.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: option.delay }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: option.delay })}
                 >
                   <Card padding="lg" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -334,9 +336,10 @@ const Contact: React.FC = () => {
         <Section id="contact-form" className="relative">
           <Container size="md">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="relative overflow-hidden border-brand-primary/10 shadow-2xl" hoverEffect={false}>
                 {/* Background Glow */}
@@ -558,10 +561,10 @@ const Contact: React.FC = () => {
               {whyContactUs.map((item, idx) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: adjustScale(0.95) }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                 >
                   <Card padding="lg" className="h-full text-center group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -591,10 +594,10 @@ const Contact: React.FC = () => {
               {nextSteps.map((step, idx) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: adjustX(-20) }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                   className="relative group"
                 >
                   <Card padding="lg" className="h-full hover-lift">
@@ -720,9 +723,10 @@ const Contact: React.FC = () => {
 
           <Container>
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: adjustY(30) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5" hoverEffect={false}>
                 <div className="relative z-10 space-y-8">

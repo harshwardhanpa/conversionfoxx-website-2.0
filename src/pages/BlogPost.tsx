@@ -21,11 +21,13 @@ import {
   Users
 } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
+import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
 
 import Button from '../components/ui/Button';
 import { blogPosts } from '../data/blogs';
 
 const BlogPost: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
   const { slug } = useParams<{ slug: string }>();
 
   const post = useMemo(() => {
@@ -61,9 +63,9 @@ const BlogPost: React.FC = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: adjustX(-30) }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={getTransition({ duration: 0.8 })}
                 className="space-y-8"
               >
                 <div className="flex items-center justify-between">
@@ -114,9 +116,9 @@ const BlogPost: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: adjustScale(0.95) }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={getTransition({ duration: 0.8, delay: 0.2 })}
                 className="aspect-[4/3] rounded-3xl overflow-hidden glass border-white/10 relative group shadow-2xl"
               >
                 <img 
@@ -135,9 +137,10 @@ const BlogPost: React.FC = () => {
         <section className="pb-24 px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
               className="glass p-8 md:p-12 rounded-2xl border-brand-primary/20 relative overflow-hidden group liquid-glass"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] rounded-full opacity-50" />
@@ -221,10 +224,10 @@ const BlogPost: React.FC = () => {
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                   className="glass p-8 rounded-3xl border-white/5 flex gap-6 group hover:border-brand-primary/30 transition-all duration-500 hover-lift"
                 >
                   <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary transition-all duration-500 shadow-xl shadow-brand-primary/10">
@@ -244,9 +247,10 @@ const BlogPost: React.FC = () => {
         <section className="py-24 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: adjustY(30) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
               className="glass p-12 md:p-16 rounded-2xl border-brand-primary/20 text-center space-y-8 liquid-glass"
             >
               <h2 className="text-3xl md:text-4xl font-display font-black tracking-tight text-brand-text-heading leading-tight">Need Help Building Better Connected Systems?</h2>
@@ -301,10 +305,10 @@ const BlogPost: React.FC = () => {
               {relatedArticles.map((post, idx) => (
                 <motion.div
                   key={post.slug}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                   className="group"
                 >
                   <Link to={`/blogs/${post.slug}`} className="block space-y-6">
@@ -341,9 +345,10 @@ const BlogPost: React.FC = () => {
         <section className="py-24 px-4 md:px-8 relative overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
               className="glass p-12 md:p-24 rounded-2xl text-center space-y-10 relative overflow-hidden border-brand-primary/20 liquid-glass"
             >
               <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full opacity-50" />

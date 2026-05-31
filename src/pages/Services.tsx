@@ -5,6 +5,7 @@ import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
 import { 
   ArrowRight, 
   Sparkles, 
@@ -27,6 +28,7 @@ import {
 } from 'lucide-react';
 
 const Services: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustScale } = useResponsiveAnimation();
   const scrollToProcess = () => {
     const element = document.getElementById('engagement-models');
     if (element) {
@@ -45,9 +47,9 @@ const Services: React.FC = () => {
 
           <Container>
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: adjustY(15) }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={getTransition({ duration: 0.6, ease: [0.16, 1, 0.3, 1] })}
               className="text-center space-y-8"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
@@ -120,10 +122,10 @@ const Services: React.FC = () => {
               ].map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: adjustY(15) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                   className="h-full"
                 >
                   <Card 
@@ -187,10 +189,10 @@ const Services: React.FC = () => {
               ].map((step, idx) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: adjustY(15) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 >
                   <Card padding="xl" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -211,9 +213,10 @@ const Services: React.FC = () => {
         <Section id="final-cta" className="relative overflow-hidden">
           <Container>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5 liquid-glass" hoverEffect={false}>
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none opacity-50" />

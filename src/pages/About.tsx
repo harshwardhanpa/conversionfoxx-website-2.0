@@ -5,9 +5,12 @@ import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
 import { ArrowRight, Sparkles, Target, Eye, Zap, Layers, Rocket, ShieldCheck, BarChart3, Share2, Code, Smartphone, Megaphone, Database, Search, PenTool, TrendingUp, ChevronRight } from 'lucide-react';
 
 const About: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
   return (
     <>
       <div className="relative z-10 pt-20">
@@ -19,9 +22,9 @@ const About: React.FC = () => {
 
           <Container>
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: adjustY(15) }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={getTransition({ duration: 0.6, ease: [0.16, 1, 0.3, 1] })}
               className="text-center space-y-8"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-bold uppercase tracking-[0.2em] mx-auto border border-brand-primary/20 glass liquid-glass">
@@ -52,10 +55,10 @@ const About: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: adjustX(-20) }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6 }}
+                viewport={getViewport({ once: true, margin: "-50px" })}
+                transition={getTransition({ duration: 0.6 })}
                 className="space-y-6"
               >
                 <span className="text-brand-primary text-sm font-sans font-bold uppercase tracking-[0.2em]">Our Story</span>
@@ -70,9 +73,10 @@ const About: React.FC = () => {
                 </div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: adjustScale(0.9) }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={getViewport({ once: true })}
+                transition={getTransition({ duration: 0.6 })}
               >
                 <Card padding="xl" className="aspect-square flex items-center justify-center relative overflow-hidden group liquid-glass">
                   <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -97,9 +101,10 @@ const About: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: adjustY(20) }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={getViewport({ once: true })}
+                transition={getTransition({ duration: 0.6 })}
               >
                 <Card padding="xl" className="h-full hover-lift core-card transition-all duration-300">
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
@@ -112,10 +117,10 @@ const About: React.FC = () => {
                 </Card>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: adjustY(20) }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+                viewport={getViewport({ once: true })}
+                transition={getTransition({ duration: 0.6, delay: 0.1 })}
               >
                 <Card padding="xl" className="h-full hover-lift core-card transition-all duration-300">
                   <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6">
@@ -149,10 +154,10 @@ const About: React.FC = () => {
               ].map((item, idx) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: adjustY(15) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 >
                   <Card padding="lg" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -187,10 +192,10 @@ const About: React.FC = () => {
               ].map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, scale: 0.98 }}
+                  initial={{ opacity: 0, scale: adjustScale(0.98) }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 >
                   <Card padding="lg" className="h-full hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -216,10 +221,10 @@ const About: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: adjustX(-20) }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6 }}
+                viewport={getViewport({ once: true, margin: "-50px" })}
+                transition={getTransition({ duration: 0.6 })}
                 className="space-y-6"
               >
                 <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl font-display tracking-tight">We Focus on Results <br /><span className="text-brand-primary">That Scale</span></h2>
@@ -287,10 +292,10 @@ const About: React.FC = () => {
               ].map((member, idx) => (
                 <motion.div
                   key={member.name}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: adjustY(15) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 >
                   <Card padding="lg" className="h-full text-center hover-lift">
                     <div className="w-20 h-20 bg-brand-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center font-black text-2xl text-brand-primary transition-transform font-display">
@@ -322,10 +327,10 @@ const About: React.FC = () => {
               ].map((step, idx) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  viewport={getViewport({ once: true, margin: "-50px" })}
+                  transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 >
                   <Card padding="lg" className="h-full group hover-lift bg-white/5 border border-white/10 border-l-2 border-l-brand-primary/30 relative overflow-hidden">
                     <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -352,9 +357,10 @@ const About: React.FC = () => {
         <Section id="internal-cta">
           <Container>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-8 relative overflow-hidden" hoverEffect={false}>
                 <div className="absolute top-0 left-0 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
@@ -377,9 +383,10 @@ const About: React.FC = () => {
         <Section id="final-cta" className="relative overflow-hidden">
           <Container>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20 shadow-2xl shadow-brand-primary/5 liquid-glass" hoverEffect={false}>
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none opacity-50" />

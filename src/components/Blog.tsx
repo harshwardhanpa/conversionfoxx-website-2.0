@@ -4,12 +4,14 @@ import { ArrowRight } from 'lucide-react';
 import Button from './ui/Button';
 import Section from './ui/Section';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogs';
 
 const Blog: React.FC = () => {
   const blogs = blogPosts.slice(0, 3); // Use the latest 3 posts for the home page
+  const { getTransition, getViewport, adjustY } = useResponsiveAnimation();
 
   return (
     <Section id="blogs" padding="lg" background="subtle">
@@ -17,18 +19,18 @@ const Blog: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="space-y-6">
             <motion.span
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: adjustY(10) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
               className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
             >
               Insights & Resources
             </motion.span>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ delay: 0.1 })}
               className="text-3xl md:text-5xl font-black text-brand-text-heading font-display tracking-tight leading-[1.1]"
             >
               Latest from our <span className="text-brand-primary">blog.</span>
@@ -47,10 +49,10 @@ const Blog: React.FC = () => {
           {blogs.map((blog, idx) => (
             <motion.div
               key={blog.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: adjustY(30) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ delay: idx * 0.1 })}
               className="group"
             >
               <Link to={`/blogs/${blog.slug}`} className="flex flex-col h-full">

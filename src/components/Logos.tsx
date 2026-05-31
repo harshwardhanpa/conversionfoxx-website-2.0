@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const logos = [
   { name: 'Acme Corp', slug: 'acme' },
@@ -12,6 +13,8 @@ const logos = [
 ];
 
 const Logos: React.FC = () => {
+  const { getTransition, getViewport } = useResponsiveAnimation();
+
   return (
     <div className="py-12 bg-brand-dark/50 border-y border-white/5 overflow-hidden">
       <Container>
@@ -27,8 +30,8 @@ const Logos: React.FC = () => {
               key={logo.name}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ delay: idx * 0.1 })}
               className="text-xl font-black text-white/40 font-display tracking-tighter"
             >
               {logo.name}

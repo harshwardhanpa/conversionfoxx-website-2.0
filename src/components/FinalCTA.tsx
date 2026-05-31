@@ -4,8 +4,10 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
 import Section from './ui/Section';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const FinalCTA: React.FC = () => {
+  const { getTransition, getViewport, adjustScale } = useResponsiveAnimation();
   const scrollToProcess = () => {
     const element = document.getElementById('process');
     if (element) {
@@ -17,10 +19,10 @@ const FinalCTA: React.FC = () => {
     <Section id="final-cta" padding="lg">
       <Container>
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
+          initial={{ opacity: 0, scale: adjustScale(0.98) }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={getViewport({ once: true, margin: "-50px" })}
+          transition={getTransition({ duration: 0.6, ease: [0.16, 1, 0.3, 1] })}
           className="core-card p-12 md:p-24 rounded-2xl text-center space-y-10 relative overflow-hidden liquid-glass"
         >
           {/* Background Glows */}

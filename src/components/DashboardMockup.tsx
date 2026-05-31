@@ -20,6 +20,7 @@ import {
   Tooltip
 } from 'recharts';
 import { Logo } from './ui/Logo';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const data = [
   { name: 'Mon', value: 420 },
@@ -32,12 +33,14 @@ const data = [
 ];
 
 const DashboardMockup: React.FC = () => {
+  const { getTransition, adjustY, isMobile } = useResponsiveAnimation();
+
   return (
     <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto group">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: adjustY(40) }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={getTransition({ duration: 0.8, ease: [0.22, 1, 0.36, 1] })}
         className="relative z-10"
       >
         {/* Main Dashboard Window */}
@@ -147,7 +150,7 @@ const DashboardMockup: React.FC = () => {
                         strokeWidth={2}
                         fillOpacity={1} 
                         fill="url(#brandGradient)" 
-                        animationDuration={1200}
+                        animationDuration={isMobile ? 650 : 1200}
                       />
                     </AreaChart>
                   </ResponsiveContainer>
@@ -186,8 +189,8 @@ const DashboardMockup: React.FC = () => {
 
         {/* Floating KPI Badges */}
         <motion.div
-          animate={{ x: [0, 10, 0], y: [0, -5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          animate={isMobile ? { y: 0 } : { x: [0, 8, 0], y: [0, -3, 0] }}
+          transition={isMobile ? {} : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-12 -right-8 p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 glass liquid-glass hidden md:block"
         >
           <div className="flex items-center gap-4">
@@ -202,8 +205,8 @@ const DashboardMockup: React.FC = () => {
         </motion.div>
 
         <motion.div
-          animate={{ x: [0, -8, 0], y: [0, 10, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          animate={isMobile ? { y: 0 } : { x: [0, -6, 0], y: [0, 6, 0] }}
+          transition={isMobile ? {} : { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute -bottom-10 -left-12 p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-20 glass liquid-glass hidden md:block"
         >
           <div className="flex items-center gap-3">

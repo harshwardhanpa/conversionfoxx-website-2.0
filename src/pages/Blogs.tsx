@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
 import { 
   ArrowRight, 
   Search, 
@@ -37,6 +38,7 @@ const categories = [
 ];
 
 const Blogs: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -62,9 +64,9 @@ const Blogs: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: adjustX(-30) }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={getTransition({ duration: 0.8 })}
                 className="space-y-8"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-sans font-semibold uppercase tracking-[0.2em]">
@@ -92,9 +94,9 @@ const Blogs: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: adjustScale(0.9) }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={getTransition({ duration: 0.8, delay: 0.2 })}
                 className="relative hidden lg:block"
               >
                 <Card padding="lg" className="rounded-2xl border-white/10 shadow-2xl" hoverEffect={false}>
@@ -146,9 +148,10 @@ const Blogs: React.FC = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: adjustY(30) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="none" className="rounded-2xl border-white/5 overflow-hidden group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -246,10 +249,10 @@ const Blogs: React.FC = () => {
                 {filteredPosts.map((post, idx) => (
                   <motion.div
                     key={post.slug}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: adjustY(20) }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
+                    viewport={getViewport({ once: true })}
+                    transition={getTransition({ delay: idx * 0.1 })}
                     className="group"
                   >
                     <Link to={`/blogs/${post.slug}`} className="block space-y-6 flex flex-col h-full">
@@ -357,10 +360,10 @@ const Blogs: React.FC = () => {
               ].map((topic, idx) => (
                 <motion.div
                   key={topic.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                 >
                   <Card padding="lg" className="h-full group hover-lift">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300">
@@ -395,9 +398,10 @@ const Blogs: React.FC = () => {
         <Section>
           <Container size="md">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-8 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />
@@ -464,10 +468,10 @@ const Blogs: React.FC = () => {
               ].map((item, idx) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: adjustY(20) }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  viewport={getViewport({ once: true })}
+                  transition={getTransition({ delay: idx * 0.1 })}
                 >
                   <Card padding="md" className="h-full text-center group">
                     <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary inline-flex items-center justify-center mb-6 mx-auto group-hover:bg-brand-primary group-hover:text-brand-dark transition-all duration-300 shadow-lg shadow-brand-primary/5">
@@ -488,9 +492,10 @@ const Blogs: React.FC = () => {
         <Section className="relative overflow-hidden">
           <Container>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />

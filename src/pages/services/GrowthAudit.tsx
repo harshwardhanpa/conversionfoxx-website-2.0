@@ -31,8 +31,10 @@ import Container from '../../components/ui/Container';
 import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
+import { useResponsiveAnimation } from '../../components/utils/useResponsiveAnimation';
 
 const GrowthAudit: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -83,9 +85,9 @@ const GrowthAudit: React.FC = () => {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: adjustX(-30) }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={getTransition({ duration: 0.8 })}
                 className="space-y-8"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest">
@@ -110,9 +112,9 @@ const GrowthAudit: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: adjustScale(0.9) }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={getTransition({ duration: 0.8, delay: 0.2 })}
                 className="relative hidden lg:block"
               >
                 <Card padding="lg" className="rounded-[3rem] border-white/10 relative z-10" hoverEffect={false}>
@@ -334,9 +336,10 @@ const GrowthAudit: React.FC = () => {
         <Section id="final-cta">
           <Container>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: adjustScale(0.95) }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={getViewport({ once: true })}
+              transition={getTransition({ duration: 0.6 })}
             >
               <Card padding="xl" className="text-center space-y-10 relative overflow-hidden border-brand-primary/20" hoverEffect={false}>
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full" />

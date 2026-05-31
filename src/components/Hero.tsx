@@ -2,10 +2,12 @@ import React, { Suspense, lazy } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const DashboardMockup = lazy(() => import('./DashboardMockup'));
 
 const Hero: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustX } = useResponsiveAnimation();
   const scrollToProcess = () => {
     const element = document.getElementById('process');
     if (element) {
@@ -33,9 +35,9 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10 min-h-[700px]">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: adjustY(15) }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={getTransition({ duration: 0.8, ease: [0.16, 1, 0.3, 1] })}
           className="flex flex-col justify-center text-center lg:text-left"
         >
           <div className="space-y-10">
@@ -68,9 +70,9 @@ const Hero: React.FC = () => {
 
         {/* Right Side: Dashboard Visual */}
         <motion.div
-          initial={{ opacity: 0, x: 15 }}
+          initial={{ opacity: 0, x: adjustX(15) }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={getTransition({ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] })}
           className="relative"
         >
           <Suspense fallback={<div className="w-full aspect-video bg-white/5 rounded-2xl animate-pulse" />}>

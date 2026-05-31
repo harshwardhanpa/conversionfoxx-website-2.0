@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
 import Section from './ui/Section';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const testimonials = [
   {
@@ -26,23 +27,25 @@ const testimonials = [
 ];
 
 const Testimonials: React.FC = () => {
+  const { getTransition, getViewport, adjustY } = useResponsiveAnimation();
+
   return (
     <Section id="testimonials" padding="lg" background="subtle">
       <Container>
         <div className="text-center space-y-6 mb-20">
           <motion.span
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: adjustY(10) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={getViewport({ once: true })}
             className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             Growth Success Stories
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: adjustY(20) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition({ delay: 0.1 })}
             className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-4xl mx-auto font-display tracking-tight leading-tight"
           >
             The engine behind <br />
@@ -54,10 +57,10 @@ const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              viewport={getViewport({ once: true, margin: "-50px" })}
+              transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
               className="group relative core-card p-10 rounded-2xl transition-all duration-500 flex flex-col h-full overflow-hidden hover-lift"
             >
               <div className="absolute -top-6 -right-6 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-120 transition-all duration-700 pointer-events-none">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Search, PenTool, TrendingUp, Rocket } from 'lucide-react';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const steps = [
   {
@@ -26,23 +27,25 @@ const steps = [
 ];
 
 const Process: React.FC = () => {
+  const { getTransition, getViewport, adjustY } = useResponsiveAnimation();
+
   return (
     <section id="process" className="py-20 md:py-[100px] relative overflow-hidden bg-[#080808]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center space-y-6 mb-20">
           <motion.span
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: adjustY(10) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={getViewport({ once: true })}
             className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             Engineering Workflow
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: adjustY(20) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition({ delay: 0.1 })}
             className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
             How we engine <br />
@@ -58,10 +61,10 @@ const Process: React.FC = () => {
             {steps.map((step, idx) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: adjustY(20) }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                viewport={getViewport({ once: true, margin: "-100px" })}
+                transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
                 className="group relative bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl transition-all duration-500 text-center hover-lift overflow-hidden border-l-2 border-l-brand-primary/30"
               >
                 {/* Subtle background glow on hover */}

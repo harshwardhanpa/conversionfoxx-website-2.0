@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Target, Zap, Layers, Rocket, ShieldCheck, BarChart3 } from 'lucide-react';
 import Section from './ui/Section';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const reasons = [
   {
@@ -38,14 +39,17 @@ const reasons = [
 ];
 
 const WhyChooseUs: React.FC = () => {
+  const { getTransition, getViewport, adjustX, adjustY } = useResponsiveAnimation();
+
   return (
     <Section id="why-us" padding="lg" background="subtle">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: adjustX(-30) }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition({ duration: 0.8, ease: [0.16, 1, 0.3, 1] })}
             className="space-y-8"
           >
             <div className="space-y-4">
@@ -79,10 +83,10 @@ const WhyChooseUs: React.FC = () => {
           {reasons.map((reason, idx) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: adjustY(15) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              viewport={getViewport({ once: true, margin: "-50px" })}
+              transition={getTransition({ duration: 0.5, delay: idx * 0.05 })}
               className="core-card p-8 rounded-2xl hover:bg-white/5 transition-all group flex flex-col h-full hover-lift"
             >
               <div className="bg-brand-primary/10 p-3 rounded-xl text-brand-primary group-hover:bg-brand-primary/20 transition-all duration-300 mb-6 w-fit border border-brand-primary/20">

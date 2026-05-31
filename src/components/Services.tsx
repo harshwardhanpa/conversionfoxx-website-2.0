@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Button from './ui/Button';
 import Section from './ui/Section';
 import Container from './ui/Container';
+import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const steps = [
   {
@@ -39,6 +40,8 @@ const steps = [
 ];
 
 const Services: React.FC = () => {
+  const { getTransition, getViewport, adjustY, adjustScale } = useResponsiveAnimation();
+
   return (
     <Section id="services" padding="lg" className="bg-[#080808]">
       {/* Background Orbs */}
@@ -47,27 +50,27 @@ const Services: React.FC = () => {
       <Container>
         <div className="text-center space-y-6 mb-20">
           <motion.span
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: adjustY(10) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={getViewport({ once: true, margin: "-50px" })}
             className="px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
           >
             The Growth Methodology
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: adjustY(20) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition({ delay: 0.1 })}
             className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
             The Revenue <span className="text-brand-primary">Engine.</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: adjustY(20) }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            viewport={getViewport({ once: true })}
+            transition={getTransition({ delay: 0.2 })}
             className="text-brand-text-secondary max-w-2xl mx-auto text-base md:text-lg font-medium font-sans leading-relaxed"
           >
             Most agencies sell hours and "deliverables." We build infrastructure. A four-part growth system designed to scale high-growth enterprises with mathematical precision.
@@ -78,10 +81,10 @@ const Services: React.FC = () => {
           {steps.map((step, idx) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: adjustY(15) }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: idx * 0.05 }}
+              viewport={getViewport({ once: true, margin: "-50px" })}
+              transition={getTransition({ duration: 0.6, delay: idx * 0.05 })}
               className={`group hover-lift core-card p-8 md:p-10 rounded-2xl flex flex-col h-full overflow-hidden ${step.isFlagship ? 'md:col-span-2' : ''}`}
             >
               {/* Step Counter */}
@@ -121,10 +124,10 @@ const Services: React.FC = () => {
           
           {/* Custom CTA Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
+            initial={{ opacity: 0, scale: adjustScale(0.98) }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={getViewport({ once: true, margin: "-50px" })}
+            transition={getTransition({ duration: 0.6, delay: 0.2 })}
             className="group relative core-card p-12 md:p-20 rounded-2xl flex flex-col justify-center items-center text-center gap-10 overflow-hidden lg:col-span-2 shadow-2xl hover:border-brand-primary/30"
           >
             <div className="absolute inset-0 bg-brand-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
