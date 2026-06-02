@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
+import { useSEO } from '../components/utils/useSEO';
 
 import Button from '../components/ui/Button';
 import { blogPosts } from '../data/blogs';
@@ -37,6 +38,17 @@ const BlogPost: React.FC = () => {
   const relatedArticles = useMemo(() => {
     return blogPosts.filter(p => p.slug !== slug).slice(0, 3);
   }, [slug]);
+
+  // Hook must be called unconditionally or before conditional exits,
+  // but if post is undefined, we redirect. To follow React Hook rules perfectly, 
+  // we can supply fallback values to useSEO and prevent conditional hook executes.
+  useSEO({
+    title: post ? post.title : 'Blog Post',
+    description: post ? post.excerpt : 'Read our latest blog post on digital marketing and web solutions.',
+    canonical: post ? `/blogs/${post.slug}` : '/blogs',
+    ogType: 'article',
+    ogImage: post ? post.image : undefined
+  });
 
   if (!post) {
     return <Navigate to="/blogs" replace />;

@@ -32,9 +32,17 @@ import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { useResponsiveAnimation } from '../../components/utils/useResponsiveAnimation';
+import { useSEO } from '../../components/utils/useSEO';
 
 const RevenueOperationsSystem: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Revenue Operations & CRM Automation Systems',
+    description: 'Eliminate administrative drag and siloed marketing datasets. Unify marketing, sales, and analytics with robust Hubspot/Salesforce automation and workflows.',
+    canonical: '/services/revenue-operations-system'
+  });
+
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {

@@ -32,9 +32,17 @@ import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { useResponsiveAnimation } from '../../components/utils/useResponsiveAnimation';
+import { useSEO } from '../../components/utils/useSEO';
 
 const LeadGeneration: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Predictable B2B Lead Generation Systems',
+    description: 'Build scalable, high-intent B2B customer acquisition pipelines designed to feed your sales team with quality leads continuously.',
+    canonical: '/services/lead-generation'
+  });
+
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSEO } from '../components/utils/useSEO';
 import Hero from '../components/Hero';
 import Logos from '../components/Logos';
 import Services from '../components/Services';
@@ -12,6 +13,12 @@ import Blog from '../components/Blog';
 import FinalCTA from '../components/FinalCTA';
 
 const Home: React.FC = () => {
+  useSEO({
+    title: 'ConversionFoxx | Predictable Growth Systems',
+    description: 'ConversionFoxx helps high-growth businesses scale through systematic optimization, systematic B2B lead generation, and CRM automation system design.',
+    canonical: '/'
+  });
+
   return (
     <>
       {/* Background Decorative Elements */}

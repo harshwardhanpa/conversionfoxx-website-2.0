@@ -6,10 +6,17 @@ import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
+import { useSEO } from '../components/utils/useSEO';
 import { ArrowRight, Sparkles, Target, Eye, Zap, Layers, Rocket, ShieldCheck, BarChart3, Share2, Code, Smartphone, Megaphone, Database, Search, PenTool, TrendingUp, ChevronRight } from 'lucide-react';
 
 const About: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'About Us | Our Story & Conversion Focus',
+    description: 'Learn about the ConversionFoxx team, our mission, core values, and our result-focused methodology for building scalable B2B growth systems.',
+    canonical: '/about'
+  });
 
   return (
     <>

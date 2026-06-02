@@ -32,9 +32,17 @@ import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { useResponsiveAnimation } from '../../components/utils/useResponsiveAnimation';
+import { useSEO } from '../../components/utils/useSEO';
 
 const ConversionOptimization: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Systematic Conversion Rate Optimization (CRO)',
+    description: 'Maximize your revenue per visitor. Turn idle traffic into high-value sales conversations with conversion-centered user experiences and continuous testing.',
+    canonical: '/services/conversion-optimization'
+  });
+
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {

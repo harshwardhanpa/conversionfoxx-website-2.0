@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
+import { useSEO } from '../components/utils/useSEO';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
@@ -32,6 +33,13 @@ import { inquiryService } from '../services/inquiryService';
 
 const Contact: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Get in Touch | Request a Strategic Growth Consultation',
+    description: 'Contact ConversionFoxx today to discuss how we can help optimize your funnel, scale your qualified B2B leads, and build continuous growth systems.',
+    canonical: '/contact'
+  });
+
   const [formState, setFormState] = useState({
     name: '',
     company: '',

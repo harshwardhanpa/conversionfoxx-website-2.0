@@ -32,9 +32,17 @@ import Section from '../../components/ui/Section';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { useResponsiveAnimation } from '../../components/utils/useResponsiveAnimation';
+import { useSEO } from '../../components/utils/useSEO';
 
 const GrowthAudit: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Growth Audit & Strategic Funnel Analysis',
+    description: 'Get a comprehensive diagnostic audit of your customer acquisition funnel, conversion metrics, systems stack, and conversion loop opportunities.',
+    canonical: '/services/growth-audit'
+  });
+
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {

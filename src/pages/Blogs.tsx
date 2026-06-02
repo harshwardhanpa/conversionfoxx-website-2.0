@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
+import { useSEO } from '../components/utils/useSEO';
 import { 
   ArrowRight, 
   Search, 
@@ -39,6 +40,13 @@ const categories = [
 
 const Blogs: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Growth Marketing, CRO & CRM Automation Blog',
+    description: 'Read conversion strategy articles, automation case studies, and step-by-step optimization guides from our team of B2B growth architects.',
+    canonical: '/blogs'
+  });
+
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 

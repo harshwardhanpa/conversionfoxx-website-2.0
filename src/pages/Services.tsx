@@ -6,6 +6,7 @@ import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { useResponsiveAnimation } from '../components/utils/useResponsiveAnimation';
+import { useSEO } from '../components/utils/useSEO';
 import { 
   ArrowRight, 
   Sparkles, 
@@ -29,6 +30,13 @@ import {
 
 const Services: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustScale } = useResponsiveAnimation();
+
+  useSEO({
+    title: 'Strategic Growth & Conversion Services',
+    description: 'Explore our connected digital solutions: Growth Audits, predictable Lead Generation, systematic Conversion Optimization, and robust Revenue Operations CRM automation.',
+    canonical: '/services'
+  });
+
   const scrollToProcess = () => {
     const element = document.getElementById('engagement-models');
     if (element) {
