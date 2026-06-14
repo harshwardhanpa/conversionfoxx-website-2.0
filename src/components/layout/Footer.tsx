@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="space-y-8">
-            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Quick Links</h4>
+            <h3 className="text-lg font-display font-bold text-white uppercase tracking-widest">Quick Links</h3>
             <ul className="flex flex-col gap-4">
               {[
                 { name: 'Home', href: '/' },
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div className="space-y-8">
-            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Services</h4>
+            <h3 className="text-lg font-display font-bold text-white uppercase tracking-widest">Services</h3>
             <ul className="flex flex-col gap-4">
               {[
                 { name: 'Growth Audit', href: '/services/growth-audit' },
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-lg font-display font-bold text-white uppercase tracking-widest">Contact Info</h4>
+            <h3 className="text-lg font-display font-bold text-white uppercase tracking-widest">Contact</h3>
             <ul className="flex flex-col gap-6">
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 glass rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">

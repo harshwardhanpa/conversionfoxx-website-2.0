@@ -34,46 +34,9 @@ const data = [
 
 const DashboardMockup: React.FC = () => {
   const { getTransition, adjustY, isMobile } = useResponsiveAnimation();
-  const [imageError, setImageError] = React.useState(false);
-
-  // If we have optimized high-performance static graphics, load them instantly.
-  // We specify standard <picture> tags for mobile core web vitals LCP optimization.
-  if (!imageError && (typeof window !== 'undefined' && window.location.search.includes('use-static-lcp'))) {
-    return (
-      <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto group">
-        <picture>
-          <source srcSet="/dashboard-mockup-mobile.webp" type="image/webp" media="(max-width: 768px)" />
-          <img 
-            src="/dashboard-mockup-desktop.png" 
-            alt="ConversionFoxx Revenue Dashboard Mockup" 
-            loading="eager"
-            // @ts-ignore
-            fetchPriority="high"
-            className="rounded-2xl border border-brand-border-card shadow-[0_40px_80px_-15px_rgba(0,0,0,0.9)] w-full object-cover" 
-            onError={() => setImageError(true)}
-          />
-        </picture>
-        <div className="absolute inset-0 bg-brand-primary/10 blur-[120px] rounded-full -z-10 group-hover:bg-brand-primary/15 transition-colors duration-1000" />
-      </div>
-    );
-  }
 
   return (
     <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto group">
-      {/* Fallback for optimization check or LCP tests */}
-      <div className="hidden">
-        <picture>
-          <source srcSet="/dashboard-mockup-mobile.webp" type="image/webp" media="(max-width: 768px)" />
-          <img 
-            src="/dashboard-mockup-desktop.png" 
-            alt="Revenue Mockup Preloader" 
-            loading="eager"
-            // @ts-ignore
-            fetchPriority="high"
-          />
-        </picture>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: adjustY(40) }}
         animate={{ opacity: 1, y: 0 }}

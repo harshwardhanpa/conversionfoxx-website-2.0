@@ -12,14 +12,14 @@
   --color-brand-bg-card: rgba(20, 16, 12, 0.45);
   --color-brand-border-card: rgba(255, 115, 0, 0.09);
   --color-brand-text-heading: #FFFFFF;
-  --color-brand-text-secondary: #A1A1AA;
+  --color-brand-text-secondary: #E4E4E7;
 }
 
 @layer base {
   body {
     background: radial-gradient(circle at 10% 10%, #301400 0%, #070605 70%) no-repeat fixed;
     background-color: #070605;
-    @apply text-[#A1A1AA] font-sans antialiased leading-relaxed text-[16px] md:text-[17px] selection:bg-[#FF6A00] selection:text-white;
+    @apply text-[#E4E4E7] font-sans antialiased leading-relaxed text-[16px] md:text-[17px] selection:bg-[#FF6A00] selection:text-white;
   }
   h1 {
     @apply font-display text-white tracking-tighter font-black text-[32px] md:text-[48px] leading-[1.1];

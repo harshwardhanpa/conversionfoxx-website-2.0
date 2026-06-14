@@ -68,14 +68,23 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Right Side: Dashboard Visual */}
+        {/* Right Side: Dashboard Visual Layout Boundaries to Crush CLS */}
         <motion.div
           initial={{ opacity: 0, x: adjustX(15) }}
           animate={{ opacity: 1, x: 0 }}
           transition={getTransition({ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] })}
-          className="relative"
+          className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] aspect-[4/5] sm:aspect-[4/5]"
         >
-          <Suspense fallback={<div className="w-full aspect-video bg-white/5 rounded-2xl animate-pulse" />}>
+          <Suspense fallback={
+            <div className="w-full h-full rounded-2xl bg-white/[0.02] border border-white/10 animate-pulse flex flex-col justify-between p-6">
+              <div className="h-6 bg-white/5 rounded w-1/3" />
+              <div className="space-y-4 flex-grow justify-center flex flex-col">
+                <div className="h-24 bg-white/5 rounded w-full" />
+                <div className="h-20 bg-white/5 rounded w-full" />
+              </div>
+              <div className="h-8 bg-white/5 rounded w-full" />
+            </div>
+          }>
             <DashboardMockup />
           </Suspense>
         </motion.div>

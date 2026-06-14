@@ -161,9 +161,9 @@ const BlogPost: React.FC = () => {
                   <Zap className="w-10 h-10 text-brand-primary group-hover:text-brand-dark transition-colors" />
                 </div>
                 <div className="text-center md:text-left">
-                  <h3 className="text-2xl md:text-3xl font-display font-black leading-tight text-brand-text-heading tracking-tight">
+                  <p className="text-2xl md:text-3xl font-display font-black leading-tight text-brand-text-heading tracking-tight">
                     {post.excerpt}
-                  </h3>
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -246,7 +246,7 @@ const BlogPost: React.FC = () => {
                     <CheckCircle2 className="w-6 h-6 text-brand-primary group-hover:text-brand-dark transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-display font-black mb-2 text-brand-text-heading tracking-tight">{item.title}</h4>
+                    <h3 className="text-lg font-display font-black mb-2 text-brand-text-heading tracking-tight">{item.title}</h3>
                     <p className="text-brand-text-secondary font-sans text-sm leading-[1.6]">{item.description}</p>
                   </div>
                 </motion.div>
@@ -289,7 +289,7 @@ const BlogPost: React.FC = () => {
                 <Quote className="w-10 h-10 text-brand-primary" />
               </div>
               <div className="space-y-4 text-center md:text-left">
-                <h4 className="text-xl font-display font-black text-brand-text-heading tracking-tight">About ConversionFoxx Insights</h4>
+                <h3 className="text-xl font-display font-black text-brand-text-heading tracking-tight">About ConversionFoxx Insights</h3>
                 <p className="text-brand-text-secondary/80 font-sans text-sm leading-[1.6]">
                   Our articles are built around practical business questions in growth, technology, performance, and digital systems. We write to help modern businesses make clearer, smarter digital decisions.
                 </p>

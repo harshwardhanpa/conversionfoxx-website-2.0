@@ -35,8 +35,10 @@ const ContactSettings = lazy(() => import('./pages/admin/ContactSettings'));
 const Profile = lazy(() => import('./pages/admin/Profile'));
 
 import { AdminAuthProvider } from './context/AdminAuthContext';
-import ProtectedRoute from './components/admin/auth/ProtectedRoute';
-import AdminLayout from './components/admin/layout/AdminLayout';
+
+// Lazy load admin utility shells to reduce main bundle payload size
+const ProtectedRoute = lazy(() => import('./components/admin/auth/ProtectedRoute'));
+const AdminLayout = lazy(() => import('./components/admin/layout/AdminLayout'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen bg-brand-dark flex items-center justify-center">
