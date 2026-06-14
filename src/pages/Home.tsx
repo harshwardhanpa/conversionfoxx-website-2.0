@@ -1,16 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { useSEO } from '../components/utils/useSEO';
 import Hero from '../components/Hero';
 import Logos from '../components/Logos';
-import Services from '../components/Services';
-import WhyChooseUs from '../components/WhyChooseUs';
-import Results from '../components/Results';
-import CaseStudies from '../components/CaseStudies';
-import Testimonials from '../components/Testimonials';
-import Process from '../components/Process';
-import TechStack from '../components/TechStack';
-import Blog from '../components/Blog';
-import FinalCTA from '../components/FinalCTA';
+
+// Lazy load below-the-fold components
+const Services = lazy(() => import('../components/Services'));
+const WhyChooseUs = lazy(() => import('../components/WhyChooseUs'));
+const Results = lazy(() => import('../components/Results'));
+const CaseStudies = lazy(() => import('../components/CaseStudies'));
+const Testimonials = lazy(() => import('../components/Testimonials'));
+const Process = lazy(() => import('../components/Process'));
+const TechStack = lazy(() => import('../components/TechStack'));
+const Blog = lazy(() => import('../components/Blog'));
+const FinalCTA = lazy(() => import('../components/FinalCTA'));
+
+// Intersection Observer wrapper to avoid blocking main thread paint for below-fold modules
+const LazySection: React.FC<{ children: React.ReactNode; fallbackMinHeight?: string }> = ({ 
+  children, 
+  fallbackMinHeight = '200px' 
+}) => {
+  const [isNear, setIsNear] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setIsNear(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNear(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '250px 0px', // Pre-load slightly before scrolling into view
+        threshold: 0.01,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div ref={ref} style={{ minHeight: isNear ? 'auto' : fallbackMinHeight }}>
+      {isNear ? (
+        <Suspense fallback={<div className="h-24 animate-pulse bg-white/5 rounded-2xl" />}>
+          {children}
+        </Suspense>
+      ) : (
+        <div className="h-24 animate-pulse bg-white/5 rounded-2xl" />
+      )}
+    </div>
+  );
+};
 
 const Home: React.FC = () => {
   useSEO({
@@ -29,24 +80,51 @@ const Home: React.FC = () => {
 
       <Hero />
       <Logos />
+      
       <div className="section-divider" />
-      <Services />
+      <LazySection fallbackMinHeight="400px">
+        <Services />
+      </LazySection>
+      
       <div className="section-divider" />
-      <WhyChooseUs />
+      <LazySection fallbackMinHeight="300px">
+        <WhyChooseUs />
+      </LazySection>
+      
       <div className="section-divider" />
-      <Results />
+      <LazySection fallbackMinHeight="300px">
+        <Results />
+      </LazySection>
+      
       <div className="section-divider" />
-      <CaseStudies />
+      <LazySection fallbackMinHeight="400px">
+        <CaseStudies />
+      </LazySection>
+      
       <div className="section-divider" />
-      <Testimonials />
+      <LazySection fallbackMinHeight="300px">
+        <Testimonials />
+      </LazySection>
+      
       <div className="section-divider" />
-      <Process />
+      <LazySection fallbackMinHeight="400px">
+        <Process />
+      </LazySection>
+      
       <div className="section-divider" />
-      <TechStack />
+      <LazySection fallbackMinHeight="250px">
+        <TechStack />
+      </LazySection>
+      
       <div className="section-divider" />
-      <Blog />
+      <LazySection fallbackMinHeight="300px">
+        <Blog />
+      </LazySection>
+      
       <div className="section-divider" />
-      <FinalCTA />
+      <LazySection fallbackMinHeight="250px">
+        <FinalCTA />
+      </LazySection>
     </>
   );
 };
