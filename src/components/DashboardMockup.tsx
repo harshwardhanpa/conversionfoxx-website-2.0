@@ -44,7 +44,7 @@ const DashboardMockup: React.FC = () => {
         className="relative z-10"
       >
         {/* Main Dashboard Window */}
-        <div className="bg-[#0A0A0A]/80 border border-white/10 rounded-2xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] overflow-hidden glass">
+        <div className="rounded-2xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.9)] overflow-hidden glass border border-brand-border-card shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
           {/* Header */}
           <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-white/[0.02]">
             <div className="flex items-center gap-2">
@@ -78,7 +78,7 @@ const DashboardMockup: React.FC = () => {
 
           <div className="flex">
             {/* Sidebar Left */}
-            <div className="w-16 border-r border-white/5 bg-[#0D0D0D] hidden sm:flex flex-col items-center py-6 gap-6">
+            <div className="w-16 border-r border-white/5 bg-white/[0.01] hidden sm:flex flex-col items-center py-6 gap-6">
               {[Activity, BarChart3, Users, PieChart].map((Icon, i) => (
                 <div key={i} className={`p-2 rounded-lg transition-colors ${i === 1 ? 'bg-brand-primary/10 text-brand-primary' : 'text-white/20 hover:text-white/40 hover:bg-white/5'}`}>
                   <Icon className="w-5 h-5" />
@@ -87,7 +87,7 @@ const DashboardMockup: React.FC = () => {
             </div>
 
             {/* Content Area */}
-            <div className="flex-1 p-6 md:p-8 space-y-8 bg-[#0A0A0A]">
+            <div className="flex-1 p-6 md:p-8 space-y-8 bg-transparent">
               {/* Top Stats */}
               <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-1">
@@ -111,7 +111,7 @@ const DashboardMockup: React.FC = () => {
               </div>
 
               {/* Chart Section */}
-              <div className="h-[180px] sm:h-[220px] w-full rounded-2xl bg-[#0D0D0D] border border-white/[0.05] p-3 sm:p-4 relative">
+              <div className="h-[180px] sm:h-[220px] w-full rounded-2xl bg-white/[0.02] border border-white/[0.05] p-3 sm:p-4 relative">
                 <div className="absolute top-3 left-4 sm:top-4 sm:left-6 flex items-center gap-2 z-10">
                   <div className="w-2 h-2 rounded-full bg-brand-primary" />
                   <span className="text-[10px] sm:text-xs text-white/40 font-bold uppercase tracking-wider">Revenue Forecast</span>
@@ -121,8 +121,8 @@ const DashboardMockup: React.FC = () => {
                     <AreaChart data={data} margin={{ top: 10, right: 5, left: -20, bottom: 0 }}>
                       <defs>
                         <linearGradient id="brandGradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#F26E22" stopOpacity={0.2}/>
-                          <stop offset="95%" stopColor="#F26E22" stopOpacity={0}/>
+                          <stop offset="5%" stopColor="#FF6A00" stopOpacity={0.25}/>
+                          <stop offset="95%" stopColor="#FF6A00" stopOpacity={0}/>
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.03)" vertical={false} />
@@ -146,7 +146,7 @@ const DashboardMockup: React.FC = () => {
                       <Area 
                         type="monotone" 
                         dataKey="value" 
-                        stroke="#F26E22" 
+                        stroke="#FF6A00" 
                         strokeWidth={2}
                         fillOpacity={1} 
                         fill="url(#brandGradient)" 

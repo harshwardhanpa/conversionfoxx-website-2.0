@@ -72,15 +72,15 @@ const SiteSettings: React.FC = () => {
   const [settings, setSettings] = useState<ISiteSettings>({
     site_name: 'ConversionFoxx',
     site_description: '',
-    contact_email: 'hello@conversionfoxx.com',
-    contact_phone: '+1 (555) 123-4567',
-    address: 'San Francisco, CA',
+    contact_email: 'info@conversionfoxx.com',
+    contact_phone: '+91 79901 26349',
+    address: 'Ahmedabad, India',
     google_analytics_id: '',
     favicon_url: '',
     logo_url: '',
     tagline: 'Precision Digital Marketing & Web Solutions',
     facebook_url: 'https://facebook.com/conversionfoxx',
-    twitter_url: 'https://twitter.com/conversionfoxx',
+    twitter_url: '',
     linkedin_url: 'https://linkedin.com/company/conversionfoxx',
     instagram_url: 'https://instagram.com/conversionfoxx',
     copyright_text: '© 2026 ConversionFoxx. All rights reserved.',
@@ -305,9 +305,10 @@ const SiteSettings: React.FC = () => {
               onChange={(e) => handleChange('facebook_url', e.target.value)} 
             />
             <InputField 
-              label="Twitter URL" 
+              label="X (formerly Twitter) URL" 
               value={settings.twitter_url || ''} 
               onChange={(e) => handleChange('twitter_url', e.target.value)} 
+              placeholder="https://x.com/your-profile"
             />
             <InputField 
               label="LinkedIn URL" 

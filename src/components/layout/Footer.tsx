@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
 import { Logo } from '../ui/Logo';
+import { siteService, SiteSettings } from '../../services/siteService';
 
 /**
  * Shared site-wide footer with premium dark glassmorphism style.
  */
 const Footer: React.FC = () => {
+  const [settings, setSettings] = useState<SiteSettings | null>(null);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const data = await siteService.getSettings();
+        if (data) {
+          setSettings(data);
+        }
+      } catch (err) {
+        console.warn('Error loading site settings for footer:', err);
+      }
+    };
+    fetchSettings();
+  }, []);
+
+  // Determine active social links (excluding Twitter/X as requested)
+  const fbUrl = settings?.facebook_url || 'https://facebook.com/conversionfoxx';
+  const instaUrl = settings?.instagram_url || 'https://instagram.com/conversionfoxx';
+  const linkedinUrl = settings?.linkedin_url || 'https://linkedin.com/company/conversionfoxx';
+
+  const socialLinks = [
+    { Icon: Facebook, name: 'Facebook', url: fbUrl },
+    { Icon: Instagram, name: 'Instagram', url: instaUrl },
+    { Icon: Linkedin, name: 'LinkedIn', url: linkedinUrl },
+  ].filter(link => link.url && link.url !== '#' && link.url !== '');
+
   return (
     <footer className="py-24 px-4 md:px-8 border-t border-white/5 relative overflow-hidden">
       {/* Background Glow */}
@@ -27,16 +55,13 @@ const Footer: React.FC = () => {
               ConversionFoxx is a premium IT and growth agency dedicated to building digital ecosystems that actually drive results. We bridge the gap between technology and business growth.
             </p>
             <div className="flex gap-4">
-              {[
-                { Icon: Facebook, name: 'Facebook' },
-                { Icon: Twitter, name: 'Twitter' },
-                { Icon: Instagram, name: 'Instagram' },
-                { Icon: Linkedin, name: 'LinkedIn' }
-              ].map((social) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
-                  href="#"
-                  whileHover={{ scale: 1.1, color: '#BF4417' }}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, color: '#FF7300' }}
                   className="w-10 h-10 glass rounded-xl flex items-center justify-center text-brand-text-secondary hover:text-brand-primary transition-colors"
                   aria-label={`Follow us on ${social.name}`}
                 >
@@ -95,8 +120,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Email Us</div>
-                  <a href="mailto:hello@conversionfoxx.com" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
-                    hello@conversionfoxx.com
+                  <a href="mailto:info@conversionfoxx.com" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
+                    info@conversionfoxx.com
                   </a>
                 </div>
               </li>
@@ -106,8 +131,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Call Us</div>
-                  <a href="tel:+1234567890" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
-                    +1 (234) 567-890
+                  <a href="tel:+917990126349" className="text-sm font-sans text-white/60 hover:text-brand-primary transition-colors">
+                    +91 79901 26349
                   </a>
                 </div>
               </li>
@@ -118,7 +143,7 @@ const Footer: React.FC = () => {
                 <div>
                   <div className="text-xs text-white/20 font-sans font-bold uppercase tracking-widest mb-1">Visit Us</div>
                   <div className="text-sm font-sans text-white/60">
-                    123 Digital Avenue, Tech City, TC 12345
+                    Ahmedabad, India
                   </div>
                 </div>
               </li>

@@ -262,7 +262,7 @@ const ContactSettings: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Email Us</p>
-                      <p className="text-sm font-bold">hello@conversionfoxx.com</p>
+                      <p className="text-sm font-bold">info@conversionfoxx.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -271,7 +271,7 @@ const ContactSettings: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs text-white/30 uppercase font-bold tracking-widest">Call Us</p>
-                      <p className="text-sm font-bold">+1 (555) 123-4567</p>
+                      <p className="text-sm font-bold">+91 79901 26349</p>
                     </div>
                   </div>
                 </div>

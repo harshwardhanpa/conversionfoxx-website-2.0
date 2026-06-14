@@ -6,9 +6,9 @@ const FooterManager: React.FC = () => {
   const [footerData, setFooterData] = useState<Partial<FooterSettings>>({
     brand_text: 'ConversionFoxx',
     description: 'Precision digital marketing and web solutions for high-growth businesses. We build the systems that drive measurable results.',
-    email: 'hello@conversionfoxx.com',
-    phone: '+1 (555) 123-4567',
-    location: 'San Francisco, CA',
+    email: 'info@conversionfoxx.com',
+    phone: '+91 79901 26349',
+    location: 'Ahmedabad, India',
     copyright_text: '© 2026 ConversionFoxx. All rights reserved.',
     column_1_title: 'Quick Links',
     column_2_title: 'Our Services'

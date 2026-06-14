@@ -241,5 +241,5 @@ VALUES ('#F27D26')
 ON CONFLICT DO NOTHING;
 
 INSERT INTO contact_settings (recipient_email, success_message)
-VALUES ('leads@conversionfoxx.com', 'Thank you for your inquiry!')
+VALUES ('info@conversionfoxx.com', 'Thank you for your inquiry!')
 ON CONFLICT DO NOTHING;

@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
     {
       title: 'Email Us',
       description: 'Send us your requirements, questions, or project goals and we’ll get back to you with clarity.',
-      info: 'hello@conversionfoxx.com',
+      info: 'info@conversionfoxx.com',
       icon: <Mail className="w-6 h-6 text-brand-primary" />,
       delay: 0.1
     },
@@ -646,7 +646,9 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs font-sans font-semibold text-gray-500 uppercase tracking-[0.2em] mb-1">Email</div>
-                    <div className="text-lg font-semibold text-brand-text-heading">hello@conversionfoxx.com</div>
+                    <a href="mailto:info@conversionfoxx.com" className="text-lg font-semibold text-brand-text-heading hover:text-brand-primary transition-colors">
+                      info@conversionfoxx.com
+                    </a>
                   </div>
                 </Card>
                 <Card padding="md" className="flex items-start gap-6">
@@ -655,7 +657,9 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs font-sans font-semibold text-gray-500 uppercase tracking-[0.2em] mb-1">Phone</div>
-                    <div className="text-lg font-semibold text-brand-text-heading">+00 0000 000 000</div>
+                    <a href="tel:+917990126349" className="text-lg font-semibold text-brand-text-heading hover:text-brand-primary transition-colors">
+                      +91 79901 26349
+                    </a>
                   </div>
                 </Card>
                 <Card padding="md" className="flex items-start gap-6">
@@ -673,7 +677,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs font-sans font-semibold text-gray-500 uppercase tracking-[0.2em] mb-1">Location</div>
-                    <div className="text-lg font-semibold text-brand-text-heading">Remote / Serving Globally</div>
+                    <div className="text-lg font-semibold text-brand-text-heading">Ahmedabad, India</div>
                   </div>
                 </Card>
               </div>

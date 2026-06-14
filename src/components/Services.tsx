@@ -43,9 +43,9 @@ const Services: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustScale } = useResponsiveAnimation();
 
   return (
-    <Section id="services" padding="lg" className="bg-[#080808]">
+    <Section id="services" padding="lg" className="bg-[#070605]">
       {/* Background Orbs */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(242,110,34,0.02)_0%,transparent_100%)] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,106,0,0.02)_0%,transparent_100%)] pointer-events-none" />
 
       <Container>
         <div className="text-center space-y-6 mb-20">
@@ -64,7 +64,7 @@ const Services: React.FC = () => {
             transition={getTransition({ delay: 0.1 })}
             className="text-3xl md:text-4xl font-black text-brand-text-heading font-display tracking-tight"
           >
-            The Revenue <span className="text-brand-primary">Engine.</span>
+            The Revenue <span className="brand-gradient-text">Engine.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: adjustY(20) }}

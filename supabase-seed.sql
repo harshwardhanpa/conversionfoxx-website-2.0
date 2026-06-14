@@ -6,9 +6,9 @@ INSERT INTO site_settings (site_name, site_description, contact_email, contact_p
 VALUES (
   'ConversionFoxx',
   'ConversionFoxx helps businesses scale faster with powerful tech, data-driven marketing, and conversion-focused solutions.',
-  'hello@conversionfoxx.com',
-  '+1 (234) 567-890',
-  '123 Digital Avenue, Tech City, TC 12345',
+  'info@conversionfoxx.com',
+  '+91 79901 26349',
+  'Ahmedabad, India',
   'UA-XXXXXXXXX-X',
   'https://conversionfoxx.com/favicon.ico',
   'https://conversionfoxx.com/logo.png',
@@ -40,9 +40,9 @@ INSERT INTO footer_settings (brand_text, description, email, phone, location, co
 VALUES (
   'ConversionFoxx',
   'ConversionFoxx is a premium IT and growth agency dedicated to building digital ecosystems that actually drive results.',
-  'hello@conversionfoxx.com',
-  '+1 (234) 567-890',
-  '123 Digital Avenue, Tech City, TC 12345',
+  'info@conversionfoxx.com',
+  '+91 79901 26349',
+  'Ahmedabad, India',
   '© 2026 ConversionFoxx IT Solutions. All rights reserved.',
   'Services',
   'Company'
@@ -94,7 +94,7 @@ ON CONFLICT (slug) DO NOTHING;
 INSERT INTO contact_settings (id, recipient_email, success_message, error_message, consultation_cta, consultation_link)
 VALUES (
   1,
-  'hello@conversionfoxx.com',
+  'info@conversionfoxx.com',
   'Thank you for your inquiry! We will get back to you shortly.',
   'Something went wrong. Please try again later.',
   'Book a Free Consultation',

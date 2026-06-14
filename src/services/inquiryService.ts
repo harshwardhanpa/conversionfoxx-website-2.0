@@ -46,9 +46,9 @@ export const inquiryService = {
   async getSettings() {
     if (!isSupabaseConfigured) {
       return {
-        recipient_email: 'leads@conversionfoxx.com',
+        recipient_email: 'info@conversionfoxx.com',
         success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
-        error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+        error_message: 'Something went wrong. Please try again or contact us directly at info@conversionfoxx.com.',
         consultation_cta: 'Book Your Free Strategy Session',
         consultation_link: '/contact',
       };
@@ -56,17 +56,17 @@ export const inquiryService = {
 
     try {
       const { data, error } = await supabase
-        .from('contact_settings')
-        .select('*')
-        .single();
+          .from('contact_settings')
+          .select('*')
+          .single();
 
       if (error) {
         if (error.code === 'PGRST116') {
           // No settings found, return default
           return {
-            recipient_email: 'leads@conversionfoxx.com',
+            recipient_email: 'info@conversionfoxx.com',
             success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
-            error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+            error_message: 'Something went wrong. Please try again or contact us directly at info@conversionfoxx.com.',
             consultation_cta: 'Book Your Free Strategy Session',
             consultation_link: '/contact',
           };
@@ -77,9 +77,9 @@ export const inquiryService = {
     } catch (err) {
       console.warn('Supabase fetch error, using defaults:', err);
       return {
-        recipient_email: 'leads@conversionfoxx.com',
+        recipient_email: 'info@conversionfoxx.com',
         success_message: 'Thank you for your inquiry! Our team will get back to you within 24 hours.',
-        error_message: 'Something went wrong. Please try again or contact us directly at hello@conversionfoxx.com.',
+        error_message: 'Something went wrong. Please try again or contact us directly at info@conversionfoxx.com.',
         consultation_cta: 'Book Your Free Strategy Session',
         consultation_link: '/contact',
       };
