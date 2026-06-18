@@ -112,7 +112,7 @@ const Services: React.FC = () => {
                 </div>
 
                 <div className="mt-auto pt-8 border-t border-white/5 space-y-3">
-                  <div className="text-xs font-bold text-white/40 uppercase tracking-[0.1em] font-sans">System Outcome</div>
+                  <div className="text-xs font-bold text-white/60 uppercase tracking-[0.1em] font-sans">System Outcome</div>
                   <div className="flex items-center gap-3 text-brand-text-heading font-bold text-base font-sans group-hover:translate-x-1 transition-transform duration-300">
                     <CheckCircle2 className="w-4 h-4 text-brand-primary shrink-0" />
                     {step.outcome}
