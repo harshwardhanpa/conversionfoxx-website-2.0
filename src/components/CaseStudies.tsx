@@ -31,14 +31,14 @@ const CaseStudies: React.FC = () => {
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="space-y-6 max-w-2xl">
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: adjustY(10) }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={getViewport({ once: true })}
-              className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
+              className="inline-block px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
             >
               Proven Growth Systems
-            </motion.span>
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ const CaseStudies: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60" />
                 <div className="absolute top-6 left-6">
-                  <span className="px-3 py-1.5 rounded-full bg-brand-dark/80 backdrop-blur-md border border-white/10 text-xs font-bold text-brand-primary uppercase tracking-[0.2em] font-sans">
+                  <span className="inline-block px-3 py-1.5 rounded-full bg-brand-dark/80 backdrop-blur-md border border-white/10 text-xs font-bold text-brand-primary uppercase tracking-[0.2em] font-sans">
                     {item.category}
                   </span>
                 </div>

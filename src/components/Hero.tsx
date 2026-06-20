@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
 import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
-import DashboardMockup from './DashboardMockup';
+
+const DashboardMockup = lazy(() => import('./DashboardMockup'));
 
 const Hero: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX } = useResponsiveAnimation();
@@ -15,7 +16,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-brand-dark">
+    <section id="hero" className="relative min-h-screen flex flex-col pt-32 pb-20 overflow-hidden bg-brand-dark">
       {/* Background Layers & Visual Depth */}
       <div className="absolute inset-0 bg-brand-dark" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-primary/5 via-transparent to-transparent opacity-40 pointer-events-none" />
@@ -31,7 +32,7 @@ const Hero: React.FC = () => {
         className="absolute top-[25%] left-[15%] w-24 h-24 glass rounded-full hidden lg:block liquid-glass blur-[0.5px]" 
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10 min-h-[700px]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 my-auto relative z-10 w-full">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: adjustY(15) }}
@@ -72,9 +73,20 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, x: adjustX(15) }}
           animate={{ opacity: 1, x: 0 }}
           transition={getTransition({ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] })}
-          className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] aspect-[4/5] sm:aspect-[4/5]"
+          className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] h-auto"
         >
-          <DashboardMockup />
+          <Suspense fallback={
+            <div className="w-full h-full rounded-2xl bg-white/[0.02] border border-white/10 animate-pulse flex flex-col justify-between p-6">
+              <div className="h-6 bg-white/5 rounded w-1/3" />
+              <div className="space-y-4 flex-grow justify-center flex flex-col">
+                <div className="h-24 bg-white/5 rounded w-full" />
+                <div className="h-20 bg-white/5 rounded w-full" />
+              </div>
+              <div className="h-8 bg-white/5 rounded w-full" />
+            </div>
+          }>
+            <DashboardMockup />
+          </Suspense>
         </motion.div>
       </div>
     </section>

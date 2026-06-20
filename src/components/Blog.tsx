@@ -18,14 +18,14 @@ const Blog: React.FC = () => {
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="space-y-6">
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: adjustY(10) }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={getViewport({ once: true })}
-              className="px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
+              className="inline-block px-3 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
             >
               Insights & Resources
-            </motion.span>
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: adjustY(20) }}
               whileInView={{ opacity: 1, y: 0 }}

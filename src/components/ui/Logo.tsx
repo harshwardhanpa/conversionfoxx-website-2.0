@@ -9,7 +9,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-8 h-8", variant = 'ic
   return (
     <div className={`flex items-center gap-2 group ${className}`}>
       <img 
-        src="/logo.webp" 
+        src="/logo.png" 
         alt="ConversionFoxx Logo" 
         className="w-full h-full object-contain"
         referrerPolicy="no-referrer"

@@ -49,14 +49,14 @@ const Services: React.FC = () => {
 
       <Container>
         <div className="text-center space-y-6 mb-20">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: adjustY(10) }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={getViewport({ once: true, margin: "-50px" })}
-            className="px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans"
+            className="inline-block px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] font-sans mb-4"
           >
             The Growth Methodology
-          </motion.span>
+          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: adjustY(20) }}
             whileInView={{ opacity: 1, y: 0 }}
