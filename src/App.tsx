@@ -2,8 +2,9 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 
-// Lazy load public pages
-const Home = lazy(() => import('./pages/Home'));
+import Home from './pages/Home';
+
+// Lazy load non-critical pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 

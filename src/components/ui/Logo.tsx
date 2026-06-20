@@ -5,13 +5,13 @@ interface LogoProps {
   variant?: 'full' | 'icon';
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = "w-8 h-8", variant = 'icon' }) => {
+export const Logo: React.FC<LogoProps> = ({ className = "h-8", variant = 'icon' }) => {
   return (
     <div className={`flex items-center gap-2 group ${className}`}>
       <img 
         src="/logo.png" 
         alt="ConversionFoxx Logo" 
-        className="w-full h-full object-contain"
+        className="h-full w-auto object-contain"
         referrerPolicy="no-referrer"
       />
       
