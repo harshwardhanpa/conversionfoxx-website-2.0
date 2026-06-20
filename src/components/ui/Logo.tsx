@@ -11,6 +11,8 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-8", variant = 'icon' 
       <img 
         src="/logo.png" 
         alt="ConversionFoxx Logo" 
+        width="48"
+        height="48"
         className="h-full w-auto object-contain"
         referrerPolicy="no-referrer"
       />

@@ -1,10 +1,9 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
 import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
-
-const DashboardMockup = lazy(() => import('./DashboardMockup'));
+import DashboardMockup from './DashboardMockup';
 
 const Hero: React.FC = () => {
   const { getTransition, getViewport, adjustY, adjustX } = useResponsiveAnimation();
@@ -75,17 +74,7 @@ const Hero: React.FC = () => {
           transition={getTransition({ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] })}
           className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] h-auto flex flex-col justify-center"
         >
-          <Suspense fallback={
-            <div className="w-full h-[420px] lg:h-[500px] rounded-2xl bg-white/[0.02] border border-white/5 animate-pulse flex flex-col justify-between p-6">
-              <div className="h-4 bg-white/5 rounded w-1/4" />
-              <div className="space-y-4 flex-grow flex flex-col justify-center">
-                <div className="h-16 bg-white/5 rounded w-full" />
-                <div className="h-40 bg-white/5 rounded w-full" />
-              </div>
-            </div>
-          }>
-            <DashboardMockup />
-          </Suspense>
+          <DashboardMockup />
         </motion.div>
       </div>
     </section>

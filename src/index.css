@@ -16,7 +16,6 @@
 
 @layer base {
   body {
-    background: radial-gradient(circle at 10% 10%, #301400 0%, #070605 70%) no-repeat fixed;
     background-color: #070605;
     @apply text-[#E4E4E7] font-sans antialiased leading-relaxed text-[16px] md:text-[17px] selection:bg-[#FF6A00] selection:text-white;
   }
@@ -33,7 +32,6 @@
 
 @layer utilities {
   .bg-brand-dark {
-    background: radial-gradient(circle at 10% 10%, #301400 0%, #070605 70%) no-repeat fixed !important;
     background-color: #070605 !important;
   }
   .glass {

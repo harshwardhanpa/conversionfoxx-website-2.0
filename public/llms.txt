@@ -2,11 +2,8 @@
 
 ConversionFoxx builds the technical and strategic infrastructure needed to transform high-growth companies into predictable revenue engines.
 
-## Services
-- Growth Audit
-- Lead Generation
-- Conversion Optimization
-- Revenue Operations System
-
-## Contact
-You can visit /contact or use the Let's Talk button.
+## Resources
+- [Home](/)
+- [About](/about)
+- [Contact](/contact)
+- [Services](/services)
