@@ -17,6 +17,9 @@ const RevenueOperationsSystem = lazy(() => import('./pages/services/RevenueOpera
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 
+// Admin context wrapper to lazy load Supabase JS
+const AdminWrapper = lazy(() => import('./components/admin/AdminWrapper'));
+
 // Admin Lazy Imports
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
 const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
@@ -35,8 +38,6 @@ const FooterManager = lazy(() => import('./pages/admin/FooterManager'));
 const ContactSettings = lazy(() => import('./pages/admin/ContactSettings'));
 const Profile = lazy(() => import('./pages/admin/Profile'));
 
-import { AdminAuthProvider } from './context/AdminAuthContext';
-
 // Lazy load admin utility shells to reduce main bundle payload size
 const ProtectedRoute = lazy(() => import('./components/admin/auth/ProtectedRoute'));
 const AdminLayout = lazy(() => import('./components/admin/layout/AdminLayout'));
@@ -49,23 +50,23 @@ const LoadingFallback = () => (
 
 const App: React.FC = () => {
   return (
-    <AdminAuthProvider>
-      <Router>
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/" element={<Layout><Home /></Layout>} />
-            <Route path="/about" element={<Layout><About /></Layout>} />
-            <Route path="/services" element={<Layout><Services /></Layout>} />
-            <Route path="/services/growth-audit" element={<Layout><GrowthAudit /></Layout>} />
-            <Route path="/services/lead-generation" element={<Layout><LeadGeneration /></Layout>} />
-            <Route path="/services/conversion-optimization" element={<Layout><ConversionOptimization /></Layout>} />
-            <Route path="/services/revenue-operations-system" element={<Layout><RevenueOperationsSystem /></Layout>} />
-            <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
-            <Route path="/blogs/:slug" element={<Layout><BlogPost /></Layout>} />
-            <Route path="/contact" element={<Layout><Contact /></Layout>} />
+    <Router>
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/services/growth-audit" element={<Layout><GrowthAudit /></Layout>} />
+          <Route path="/services/lead-generation" element={<Layout><LeadGeneration /></Layout>} />
+          <Route path="/services/conversion-optimization" element={<Layout><ConversionOptimization /></Layout>} />
+          <Route path="/services/revenue-operations-system" element={<Layout><RevenueOperationsSystem /></Layout>} />
+          <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
+          <Route path="/blogs/:slug" element={<Layout><BlogPost /></Layout>} />
+          <Route path="/contact" element={<Layout><Contact /></Layout>} />
 
-            {/* Admin Routes */}
+          {/* Admin Routes - Wrap all with AdminWrapper to lazy load Supabase */}
+          <Route element={<AdminWrapper />}>
             <Route path="/admin/login" element={<AdminLogin />} />
             
             <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
@@ -85,10 +86,10 @@ const App: React.FC = () => {
             <Route path="/admin/footer" element={<ProtectedRoute><AdminLayout><FooterManager /></AdminLayout></ProtectedRoute>} />
             <Route path="/admin/contact-settings" element={<ProtectedRoute><AdminLayout><ContactSettings /></AdminLayout></ProtectedRoute>} />
             <Route path="/admin/profile" element={<ProtectedRoute><AdminLayout><Profile /></AdminLayout></ProtectedRoute>} />
-          </Routes>
-        </Suspense>
-      </Router>
-    </AdminAuthProvider>
+          </Route>
+        </Routes>
+      </Suspense>
+    </Router>
   );
 };
 
