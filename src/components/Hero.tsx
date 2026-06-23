@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
 import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
-import DashboardMockup from './DashboardMockup';
+
+const DashboardMockup = lazy(() => import('./DashboardMockup'));
 
 const Hero: React.FC = () => {
-  const { getTransition, getViewport, adjustY, adjustX } = useResponsiveAnimation();
   const scrollToProcess = () => {
     const element = document.getElementById('process');
     if (element) {
@@ -25,19 +25,14 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-[20%] left-[5%] w-[480px] h-[480px] bg-[#E63900]/4 blur-[150px] rounded-full mix-blend-screen pointer-events-none" />
       
       {/* Floating Decorative Elements */}
-      <motion.div 
-        animate={{ y: [0, -15, 0], opacity: [0.1, 0.25, 0.1] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[25%] left-[15%] w-24 h-24 glass rounded-full hidden lg:block liquid-glass blur-[0.5px]" 
+      <div 
+        className="absolute top-[25%] left-[15%] w-24 h-24 glass rounded-full hidden lg:block liquid-glass blur-[0.5px] animate-float" 
       />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative z-10 w-full mt-10 md:mt-0">
         {/* Left Content */}
-        <motion.div
-          initial={{ opacity: 0, y: adjustY(15) }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={getTransition({ duration: 0.8, ease: [0.16, 1, 0.3, 1] })}
-          className="flex flex-col justify-center text-center lg:text-left"
+        <div
+          className="flex flex-col justify-center text-center lg:text-left animate-fade-in-up"
         >
           <div className="space-y-10">
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] w-fit mx-auto lg:mx-0 glass liquid-glass">
@@ -65,17 +60,24 @@ const Hero: React.FC = () => {
               </Button>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right Side: Dashboard Visual Layout Boundaries to Crush CLS */}
-        <motion.div
-          initial={{ opacity: 0, x: adjustX(15) }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={getTransition({ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] })}
-          className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] h-auto flex flex-col justify-center"
+        <div
+          className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[520px] h-auto flex flex-col justify-center animate-fade-in-left-delay"
         >
-          <DashboardMockup />
-        </motion.div>
+          <Suspense fallback={
+            <div className="w-full h-[420px] lg:h-[500px] rounded-2xl bg-white/[0.02] border border-white/5 animate-pulse flex flex-col justify-between p-6">
+              <div className="h-4 bg-white/5 rounded w-1/4" />
+              <div className="space-y-4 flex-grow flex flex-col justify-center">
+                <div className="h-16 bg-white/5 rounded w-full" />
+                <div className="h-40 bg-white/5 rounded w-full" />
+              </div>
+            </div>
+          }>
+            <DashboardMockup />
+          </Suspense>
+        </div>
       </div>
     </section>
   );
