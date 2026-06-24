@@ -17,12 +17,31 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative h-auto min-h-screen flex flex-col justify-center pt-32 pb-32 lg:pb-24 overflow-hidden bg-brand-dark">
       {/* Background Layers & Visual Depth */}
-      <div className="absolute inset-0 bg-brand-dark" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-primary/5 via-transparent to-transparent opacity-40 pointer-events-none" />
-      
-      {/* Liquid Glass Highlights */}
-      <div className="absolute top-[10%] right-[10%] w-96 h-96 bg-[#FF6A00]/8 blur-[130px] rounded-full mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[5%] w-[480px] h-[480px] bg-[#E63900]/4 blur-[150px] rounded-full mix-blend-screen pointer-events-none" />
+      <div className="absolute inset-0 bg-brand-dark overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-primary/5 via-transparent to-transparent opacity-40 pointer-events-none" />
+        
+        {/* Animated Lighting Effects */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.15, 0.3, 0.15],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[10%] right-[10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#FF6A00]/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" 
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.1, 0.25, 0.1],
+            x: [0, -40, 0],
+            y: [0, 40, 0]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[-10%] left-[-5%] w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] bg-[#E63900]/20 blur-[150px] rounded-full mix-blend-screen pointer-events-none" 
+        />
+      </div>
       
       {/* Floating Decorative Elements */}
       <div 

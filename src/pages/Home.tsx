@@ -73,9 +73,23 @@ const Home: React.FC = () => {
   return (
     <>
       {/* Background Decorative Elements */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-primary/10 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-brand-primary/5 blur-[100px] rounded-full" />
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#0A0A0A]">
+        {/* Base dark layer */}
+        
+        {/* Animated Glows */}
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#FF6A00]/20 blur-[130px] rounded-full animate-float opacity-70" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#E63900]/20 blur-[140px] rounded-full animate-float opacity-60" style={{ animationDuration: '12s', animationDelay: '2s' }} />
+        <div className="absolute top-[30%] left-[60%] w-[30%] h-[30%] bg-[#FFA200]/10 blur-[120px] rounded-full animate-float opacity-50" style={{ animationDuration: '10s', animationDelay: '1s' }} />
+        
+        {/* Grid overlay for texture */}
+        <div 
+          className="absolute inset-0 opacity-20" 
+          style={{ 
+            backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgMGg0MHYxSDB6bTAgMHY0MGgxVjB6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+Cjwvc3ZnPg==')",
+            maskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)"
+          }} 
+        />
       </div>
 
       <Hero />
