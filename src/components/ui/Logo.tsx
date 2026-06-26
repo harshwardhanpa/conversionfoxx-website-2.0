@@ -13,6 +13,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "w-8 h-8", variant = 'ic
         alt="ConversionFoxx Logo"
         width="48"
         height="48"
+        fetchPriority="high"
         className={`object-contain ${className}`}
         referrerPolicy="no-referrer"
         onError={(e) => {

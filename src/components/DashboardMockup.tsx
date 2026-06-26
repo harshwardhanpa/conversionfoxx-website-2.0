@@ -19,7 +19,6 @@ import {
   CartesianGrid,
   Tooltip
 } from 'recharts';
-import { Logo } from './ui/Logo';
 import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 
 const data = [
@@ -55,8 +54,7 @@ const DashboardMockup: React.FC = () => {
               </div>
               <div className="ml-4 h-6 w-px bg-white/10" />
               <div className="ml-4 flex items-center gap-2 text-xs font-sans font-bold text-white/60 uppercase tracking-[0.2em]">
-                <Logo className="w-4 h-4" />
-                Revenue OS
+                <span className="font-bold text-white tracking-widest text-[10px]">Revenue OS</span>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -71,7 +69,7 @@ const DashboardMockup: React.FC = () => {
                 </div>
               </div>
               <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center p-1.5 ring-2 ring-white/5">
-                <Logo className="w-full h-full" />
+                <Layout className="w-4 h-4 text-white/50" />
               </div>
             </div>
           </div>
