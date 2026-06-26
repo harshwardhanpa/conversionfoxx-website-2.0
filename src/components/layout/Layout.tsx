@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import ScrollToTop from '../utils/ScrollToTop';
+
+const Footer = lazy(() => import('./Footer'));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,7 +22,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      <Footer />
+      <Suspense fallback={<div className="h-40 bg-[#0A0705]" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

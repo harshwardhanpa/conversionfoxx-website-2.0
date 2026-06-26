@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './ui/Button';
@@ -7,6 +7,17 @@ import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
 const DashboardMockup = lazy(() => import('./DashboardMockup'));
 
 const Hero: React.FC = () => {
+  const [shouldLoadMockup, setShouldLoadMockup] = useState(false);
+
+  useEffect(() => {
+    // Delay the loading of the heavy DashboardMockup component by a few hundred ms 
+    // to allow the browser to paint the LCP (text) and become interactive first.
+    const timer = setTimeout(() => {
+      setShouldLoadMockup(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToProcess = () => {
     const element = document.getElementById('process');
     if (element) {
@@ -94,7 +105,15 @@ const Hero: React.FC = () => {
               </div>
             </div>
           }>
-            <DashboardMockup />
+            {shouldLoadMockup ? <DashboardMockup /> : (
+              <div className="w-full h-[420px] lg:h-[500px] rounded-2xl bg-white/[0.02] border border-white/5 animate-pulse flex flex-col justify-between p-6">
+                <div className="h-4 bg-white/5 rounded w-1/4" />
+                <div className="space-y-4 flex-grow flex flex-col justify-center">
+                  <div className="h-16 bg-white/5 rounded w-full" />
+                  <div className="h-40 bg-white/5 rounded w-full" />
+                </div>
+              </div>
+            )}
           </Suspense>
         </div>
       </div>
