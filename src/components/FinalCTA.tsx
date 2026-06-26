@@ -44,7 +44,7 @@ const FinalCTA: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
               <Button to="/contact" size="lg" icon={ArrowRight} className="w-full sm:w-auto">
-                Get Your Growth Audit
+                Book Strategy Call
               </Button>
             </div>
           </div>

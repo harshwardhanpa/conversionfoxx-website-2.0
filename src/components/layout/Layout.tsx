@@ -13,9 +13,7 @@ interface LayoutProps {
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-primary selection:text-white overflow-x-hidden flex flex-col">
-      {/* Hardware-accelerated fixed background to avoid painting flicker */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none" style={{ background: 'radial-gradient(circle at 10% 10%, #301400 0%, #070605 70%) no-repeat' }} />
+    <div className="min-h-screen text-white selection:bg-brand-primary selection:text-white overflow-x-hidden flex flex-col bg-transparent">
       <ScrollToTop />
       <Header />
       

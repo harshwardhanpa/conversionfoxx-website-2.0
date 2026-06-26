@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: 'Sarah Johnson',
     role: 'CEO, TechFlow Solutions',
-    content: 'The Growth Audit was a eye-opener. ConversionFoxx identified leaks in our funnel we didn\'t even know existed. Our ROI has doubled since implementing their Revenue Operations System.',
+    content: 'Their strategy was an eye-opener. ConversionFoxx identified leaks in our funnel we didn\'t even know existed. Our ROI has doubled since implementing their Revenue Operations System.',
     rating: 5,
   },
   {

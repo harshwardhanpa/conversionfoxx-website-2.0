@@ -10,7 +10,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 
 // Lazy load non-critical pages
 const Services = lazy(() => import('./pages/Services'));
-const GrowthAudit = lazy(() => import('./pages/services/GrowthAudit'));
 const LeadGeneration = lazy(() => import('./pages/services/LeadGeneration'));
 const ConversionOptimization = lazy(() => import('./pages/services/ConversionOptimization'));
 const RevenueOperationsSystem = lazy(() => import('./pages/services/RevenueOperationsSystem'));
@@ -43,7 +42,7 @@ const ProtectedRoute = lazy(() => import('./components/admin/auth/ProtectedRoute
 const AdminLayout = lazy(() => import('./components/admin/layout/AdminLayout'));
 
 const LoadingFallback = () => (
-  <div className="min-h-screen bg-brand-dark flex items-center justify-center">
+  <div className="min-h-screen bg-transparent flex items-center justify-center">
     <div className="w-10 h-10 border-4 border-brand-primary border-t-transparent rounded-full animate-spin" />
   </div>
 );
@@ -57,7 +56,6 @@ const App: React.FC = () => {
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
-          <Route path="/services/growth-audit" element={<Layout><GrowthAudit /></Layout>} />
           <Route path="/services/lead-generation" element={<Layout><LeadGeneration /></Layout>} />
           <Route path="/services/conversion-optimization" element={<Layout><ConversionOptimization /></Layout>} />
           <Route path="/services/revenue-operations-system" element={<Layout><RevenueOperationsSystem /></Layout>} />

@@ -12,50 +12,6 @@
     <meta name="description" content="ConversionFoxx helps businesses scale through predictable growth systems, systematic optimization, and connected digital execution." />
   </head>
   <body>
-    <script>
-      const originalError = window.onerror;
-      window.onerror = function(msg, url, lineNo, columnNo, error) {
-        if (msg === 'ResizeObserver loop limit exceeded' || msg === 'Script error.' || msg === 'ResizeObserver loop completed with undelivered notifications.') {
-          return true; // Suppress
-        }
-        if (originalError) return originalError(msg, url, lineNo, columnNo, error);
-        return false;
-      };
-      
-      const originalConsoleError = console.error;
-      console.error = function(...args) {
-        if (args.length > 0 && typeof args[0] === 'string') {
-          if (args[0].includes('ResizeObserver') || args[0].includes('Script error.')) {
-            return;
-          }
-        }
-        if (args.length > 0 && args[0] instanceof Error) {
-           if (args[0].message.includes('ResizeObserver') || args[0].message === 'Script error.') {
-             return;
-           }
-        }
-        originalConsoleError.apply(console, args);
-      };
-
-      const originalConsoleWarn = console.warn;
-      console.warn = function(...args) {
-        if (args.length > 0 && typeof args[0] === 'string' && args[0].includes('motion:')) {
-          return;
-        }
-        originalConsoleWarn.apply(console, args);
-      };
-
-      window.addEventListener('error', (event) => {
-        if (event.message === 'ResizeObserver loop limit exceeded' || event.message === 'Script error.' || event.message === 'ResizeObserver loop completed with undelivered notifications.') {
-           event.stopImmediatePropagation();
-           return;
-        }
-        console.error("Global error caught:", event.error || event.message);
-      });
-      window.addEventListener('unhandledrejection', (event) => {
-        console.error("Unhandled promise rejection:", event.reason);
-      });
-    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

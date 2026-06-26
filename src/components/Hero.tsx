@@ -15,9 +15,9 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative h-auto min-h-screen flex flex-col justify-center pt-32 pb-32 lg:pb-24 overflow-hidden bg-brand-dark">
+    <section id="hero" className="relative h-auto min-h-screen flex flex-col justify-center pt-32 pb-32 lg:pb-24 overflow-hidden bg-transparent">
       {/* Background Layers & Visual Depth */}
-      <div className="absolute inset-0 bg-brand-dark overflow-hidden">
+      <div className="absolute inset-0 bg-transparent overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-primary/5 via-transparent to-transparent opacity-40 pointer-events-none" />
         
         {/* Animated Lighting Effects */}
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center gap-5 pt-4 justify-center lg:justify-start">
               <Button to="/contact" size="lg" icon={ArrowRight} className="w-full sm:w-auto">
-                Get Your Growth Audit
+                Book Strategy Call
               </Button>
               <Button variant="secondary" size="lg" onClick={scrollToProcess} className="w-full sm:w-auto">
                 The Revenue Framework

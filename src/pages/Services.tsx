@@ -33,7 +33,7 @@ const Services: React.FC = () => {
 
   useSEO({
     title: 'Strategic Growth & Conversion Services',
-    description: 'Explore our connected digital solutions: Growth Audits, predictable Lead Generation, systematic Conversion Optimization, and robust Revenue Operations CRM automation.',
+    description: 'Explore our connected digital solutions: predictable Lead Generation, systematic Conversion Optimization, and robust Revenue Operations CRM automation.',
     canonical: '/services'
   });
 
@@ -75,7 +75,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
-                  Claim Your Free Growth Audit
+                  Book Strategy Call
                 </Button>
                 <Button 
                   onClick={scrollToProcess} 
@@ -100,28 +100,22 @@ const Services: React.FC = () => {
                 Most agencies sell hours and "deliverables." We build infrastructure: a four-part system designed for mathematical scale.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { 
-                  title: 'Module 1: Growth Audit', 
-                  description: 'A deep-dive analysis to identify exactly where your revenue system is leaking — from traffic and tracking to conversion and follow-ups.', 
-                  icon: FileSearch,
-                  link: '/services/growth-audit'
-                },
-                { 
-                  title: 'Module 2: Lead Generation', 
+                  title: 'Module 1: Lead Generation', 
                   description: 'Scalable acquisition systems engineered to dominate search and social channels, delivering consistent, qualified lead velocity.', 
                   icon: Target,
                   link: '/services/lead-generation'
                 },
                 { 
-                  title: 'Module 3: Conversion Optimization', 
+                  title: 'Module 2: Conversion Optimization', 
                   description: 'We re-engineer your user journey to eliminate friction, ensuring every visitor is funneled toward high-value conversions.', 
                   icon: MousePointer2,
                   link: '/services/conversion-optimization'
                 },
                 { 
-                  title: 'Module 4: Revenue Operations', 
+                  title: 'Module 3: Revenue Operations', 
                   description: 'A fully integrated CRM and automation system that ensures every lead is tracked, nurtured, and converted with certainty.', 
                   icon: Workflow,
                   link: '/services/revenue-operations-system',
@@ -240,7 +234,7 @@ const Services: React.FC = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
-                      Get Your Growth Audit
+                      Book Strategy Call
                     </Button>
                     <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       See How It Works

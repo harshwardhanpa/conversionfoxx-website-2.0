@@ -47,7 +47,7 @@ const About: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-bold transition w-full sm:w-auto">
-                  Get Your Growth Audit
+                  Book Strategy Call
                 </Button>
                 <Button to="/services" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                   See How It Works
@@ -189,9 +189,8 @@ const About: React.FC = () => {
                 Built to support modern business growth across strategy, technology, and performance.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {[
-                { title: 'Growth Audit', description: 'Deep analysis of your entire growth system to find leaks and inefficiencies.', icon: Search },
                 { title: 'Lead Generation', description: 'Scalable traffic systems built to drive high-quality leads predictably.', icon: Megaphone },
                 { title: 'Conversion Optimization', description: 'Data-backed optimization to turn more of your traffic into revenue.', icon: TrendingUp },
                 { title: 'Revenue Operations', description: 'The flagship system that ties your marketing and sales into a unified engine.', icon: Database },
@@ -236,7 +235,7 @@ const About: React.FC = () => {
               >
                 <h2 className="text-3xl md:text-4xl font-black text-brand-text-heading max-w-2xl font-display tracking-tight">We Focus on Results <br /><span className="text-brand-primary">That Scale</span></h2>
                 <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl leading-relaxed">
-                  Every Growth Audit, Lead Gen campaign, or Revenue Operations System we build is centered around efficiency, conversion, and long-term scalability.
+                  Every strategy, Lead Gen campaign, or Revenue Operations System we build is centered around efficiency, conversion, and long-term scalability.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                   {[
@@ -247,7 +246,7 @@ const About: React.FC = () => {
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 group">
                       <div className="w-5 h-5 rounded-full bg-brand-primary/20 flex items-center justify-center group-hover:bg-brand-primary transition-colors">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-primary group-hover:bg-brand-dark" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-primary group-hover:bg-[#0A0705]" />
                       </div>
                       <span className="font-sans font-medium text-gray-400 group-hover:text-brand-text-heading transition-colors">{item}</span>
                     </div>
@@ -402,14 +401,14 @@ const About: React.FC = () => {
                 <div className="relative z-10 space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black leading-[1.05] text-brand-text-heading max-w-4xl mx-auto tracking-tight font-display">
                     Start Your <br />
-                    <span className="brand-gradient-text">Growth Audit</span>
+                    <span className="brand-gradient-text">Journey</span>
                   </h2>
                   <p className="text-gray-400 font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed">
                     Identify the leaks in your current acquisition model and build a predictable growth engine. Our Growth Architects are ready to engineer your revenue system.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                     <Button to="/contact" size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 py-3 rounded-xl font-medium transition w-full sm:w-auto">
-                      Get Your Growth Audit
+                      Book Strategy Call
                     </Button>
                     <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto text-white">
                       See How It Works

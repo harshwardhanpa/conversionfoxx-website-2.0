@@ -111,7 +111,7 @@ const ConversionOptimization: React.FC = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                   <Button to="/contact" size="lg" icon={ArrowRight}>
-                    Get Free Growth Audit
+                    Book Strategy Call
                   </Button>
                   <Button to="/services" variant="secondary" size="lg">
                     See How It Works
@@ -299,14 +299,8 @@ const ConversionOptimization: React.FC = () => {
               <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Explore More</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Related Services</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
-                { 
-                  title: 'Growth Audit', 
-                  description: 'Deep analysis of your entire growth system to identify funnel gaps and tracking issues.', 
-                  icon: FileSearch,
-                  link: '/services/growth-audit'
-                },
                 { 
                   title: 'Lead Generation', 
                   description: 'Build scalable traffic systems that bring in high-quality leads consistently through paid channels.', 
@@ -359,11 +353,11 @@ const ConversionOptimization: React.FC = () => {
                     Visitors into Customers?
                   </h2>
                   <p className="text-brand-text-secondary text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                    Stop wasting traffic. Let's optimize your website for maximum conversion and revenue. Get your free Growth Audit today.
+                    Stop wasting traffic. Let's optimize your website for maximum conversion and revenue. Book your strategy call today.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
                     <Button to="/contact" size="lg" icon={ArrowRight}>
-                      Get Free Growth Audit
+                      Book Strategy Call
                     </Button>
                     <Button to="/services" variant="secondary" size="lg">
                       See How It Works

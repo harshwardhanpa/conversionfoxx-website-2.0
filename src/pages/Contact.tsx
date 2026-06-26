@@ -157,31 +157,22 @@ const Contact: React.FC = () => {
   const nextSteps = [
     {
       step: '01',
-      title: 'Growth Audit',
-      description: 'We perform a preliminary analysis of your growth system to identify immediate opportunities.'
-    },
-    {
-      step: '02',
       title: 'Discovery Call',
       description: 'We dive deep into your business model, revenue goals, and current bottlenecks.'
     },
     {
-      step: '03',
+      step: '02',
       title: 'System Architecture',
       description: 'We present a tailored roadmap and system design to scale your revenue predictably.'
     },
     {
-      step: '04',
+      step: '03',
       title: 'Execution & Launch',
       description: 'Once aligned, we begin building and optimizing your high-performance growth engine.'
     }
   ];
 
   const faqs = [
-    {
-      question: 'What is a Growth Audit?',
-      answer: 'A Growth Audit is a deep analysis of your entire revenue engine. We look at your traffic sources, funnel conversion rates, and tracking infrastructure to find where you are losing money and where the biggest opportunities for growth are.'
-    },
     {
       question: 'How is this different from a marketing agency?',
       answer: 'Traditional agencies focus on tactics like "running ads" or "posting on social." We focus on systems. We architect the entire Revenue Operations System that connects your traffic to your bottom line, ensuring every dollar spent on marketing has a clear path to revenue.'
@@ -192,7 +183,7 @@ const Contact: React.FC = () => {
     },
     {
       question: 'How soon can we see results?',
-      answer: 'Our Growth Audit typically takes 7-10 days. Once we begin implementation, most clients see measurable improvements in lead quality and conversion rates within the first 30-60 days.'
+      answer: 'Once we begin implementation, most clients see measurable improvements in lead quality and conversion rates within the first 30-60 days.'
     },
     {
       question: 'What is the Revenue Operations System?',
@@ -231,7 +222,7 @@ const Contact: React.FC = () => {
                   </span> That Scales
                 </h1>
                 <p className="text-base md:text-lg text-gray-400 font-sans font-normal leading-[1.6] max-w-xl">
-                  Whether you need a Growth Audit, high-performance Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to help you scale with precision.
+                  Whether you need high-performance Lead Generation, or a complete Revenue Operations System, ConversionFoxx is ready to help you scale with precision.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Button 
@@ -243,7 +234,7 @@ const Contact: React.FC = () => {
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Get Free Growth Audit
+                    Book Strategy Call
                   </Button>
                   <Button 
                     to="/services" 
@@ -444,7 +435,6 @@ const Contact: React.FC = () => {
                                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-brand-text-heading font-sans focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all appearance-none cursor-pointer"
                               >
                                 <option value="" disabled className="bg-[#0a0a0a]">Select a service</option>
-                                <option value="growth-audit" className="bg-[#0a0a0a]">Growth Audit</option>
                                 <option value="lead-gen" className="bg-[#0a0a0a]">Lead Generation</option>
                                 <option value="cro" className="bg-[#0a0a0a]">Conversion Optimization</option>
                                 <option value="rev-ops" className="bg-[#0a0a0a]">Revenue Operations System</option>
@@ -758,7 +748,7 @@ const Contact: React.FC = () => {
                         if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
                     >
-                      Get Free Growth Audit
+                      Book Strategy Call
                     </Button>
                     <Button to="/" variant="secondary" size="lg" className="border border-white/20 hover:border-brand-primary px-6 py-3 rounded-xl w-full sm:w-auto">
                       See How It Works

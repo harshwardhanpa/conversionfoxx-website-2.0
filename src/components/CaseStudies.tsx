@@ -81,7 +81,7 @@ const CaseStudies: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60" />
                 <div className="absolute top-6 left-6">
-                  <span className="inline-block px-3 py-1.5 rounded-full bg-brand-dark/80 backdrop-blur-md border border-white/10 text-xs font-bold text-brand-primary uppercase tracking-[0.2em] font-sans">
+                  <span className="inline-block px-3 py-1.5 rounded-full bg-[#0A0705]/80 backdrop-blur-md border border-white/10 text-xs font-bold text-brand-primary uppercase tracking-[0.2em] font-sans">
                     {item.category}
                   </span>
                 </div>

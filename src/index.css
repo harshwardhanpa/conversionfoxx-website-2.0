@@ -6,62 +6,69 @@
   --color-brand-primary: #FF6A00;
   --color-brand-secondary: #E63900;
   --color-brand-accent: rgba(255, 106, 0, 0.12);
-  --color-brand-dark: #070605;
-  --color-brand-dark-alt: #120E0B;
-  --color-brand-bg-card: rgba(20, 16, 12, 0.45);
-  --color-brand-border-card: rgba(255, 115, 0, 0.09);
-  --color-brand-text-heading: #FFFFFF;
-  --color-brand-text-secondary: #E4E4E7;
+  --color-brand-dark: var(--bg-global);
+  --color-brand-dark-alt: var(--bg-global);
+  --color-brand-bg-card: var(--bg-card);
+  --color-brand-border-card: var(--border-card);
+  --color-brand-text-heading: var(--text-primary);
+  --color-brand-text-secondary: var(--text-secondary);
 }
 
 @layer base {
+  :root {
+    /* Blotato Dark Theme Colors */
+    --bg-global: #0A0705;
+    --bg-card: rgba(20, 16, 12, 0.45);
+    --border-card: rgba(255, 115, 0, 0.09);
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    
+    /* Accent Gradients */
+    --accent-gradient: linear-gradient(135deg, #FF6A00 0%, #E63900 100%);
+  }
   body {
-    background-color: #070605;
-    @apply text-[#E4E4E7] font-sans antialiased leading-relaxed text-[16px] md:text-[17px] selection:bg-[#FF6A00] selection:text-white;
+    background-color: var(--bg-global);
+    background-image: radial-gradient(circle at top center, #2A1100 0%, #0A0705 50%, #0A0705 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    @apply antialiased leading-relaxed text-[16px] md:text-[17px] selection:bg-[#FF6A00] selection:text-white;
   }
   h1 {
-    @apply font-display text-white tracking-tighter font-black text-[32px] md:text-[48px] leading-[1.1];
+    @apply font-display tracking-tighter font-black text-[32px] md:text-[48px] leading-[1.1];
+    color: var(--text-primary);
   }
   h2 {
-    @apply font-display text-white tracking-tighter font-black text-[24px] md:text-[32px] leading-[1.15];
+    @apply font-display tracking-tighter font-black text-[24px] md:text-[32px] leading-[1.15];
+    color: var(--text-primary);
   }
   h3 {
-    @apply font-display text-white tracking-tight font-black text-[18px] md:text-[22px] leading-[1.2];
+    @apply font-display tracking-tight font-black text-[18px] md:text-[22px] leading-[1.2];
+    color: var(--text-primary);
   }
 }
 
 @layer utilities {
   .bg-brand-dark {
-    background-color: #070605 !important;
+    background-color: var(--bg-global) !important;
   }
   .glass {
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    background-color: rgba(20, 16, 12, 0.45) !important;
-    border: 1px solid rgba(255, 115, 0, 0.09) !important;
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-card) !important;
     box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   }
-  @media (max-width: 768px) {
-    .glass {
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      background-color: #120e0b !important;
-    }
-  }
   .core-card {
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    background-color: rgba(20, 16, 12, 0.45) !important;
-    border: 1px solid rgba(255, 115, 0, 0.09) !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-card) !important;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.3);
-    @apply rounded-2xl transition-all duration-500;
-  }
-  @media (max-width: 768px) {
-    .core-card {
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      background-color: #120e0b !important;
-    }
+    @apply transition-all duration-500;
   }
   .liquid-glass {
     @apply relative overflow-hidden transition-all duration-500;
@@ -80,7 +87,7 @@
     @apply relative transition-all duration-300 active:translate-y-px active:shadow-none;
   }
   .btn-primary-neon {
-    background: linear-gradient(135deg, #FF6A00 0%, #E63900 100%) !important;
+    background: var(--accent-gradient) !important;
     box-shadow: 0 4px 24px rgba(255, 106, 0, 0.45) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     @apply text-white transition-all duration-500 hover:shadow-[0_4px_30px_rgba(255,106,0,0.65)] hover:scale-[1.02] active:scale-95;
@@ -94,10 +101,10 @@
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 20px 40px rgba(255, 106, 0, 0.15) !important;
   }
   .brand-gradient {
-    background: linear-gradient(135deg, #FF6A00 0%, #E63900 100%);
+    background: var(--accent-gradient);
   }
   .brand-gradient-text {
-    background: linear-gradient(135deg, #FF6A00 0%, #E63900 100%);
+    background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

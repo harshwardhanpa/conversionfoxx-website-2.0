@@ -140,7 +140,7 @@ const Services: React.FC = () => {
               </p>
             </div>
             <Button to="/contact" size="lg" icon={ArrowRight} className="relative z-10">
-              Claim Your Free Growth Audit
+              Book Strategy Call
             </Button>
           </motion.div>
         </div>

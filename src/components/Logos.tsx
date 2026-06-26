@@ -16,7 +16,7 @@ const Logos: React.FC = () => {
   const { getTransition, getViewport } = useResponsiveAnimation();
 
   return (
-    <div className="py-12 bg-brand-dark/50 border-y border-white/5 overflow-hidden">
+    <div className="py-12 bg-[#0A0705]/50 border-y border-white/5 overflow-hidden">
       <Container>
         <div className="text-center mb-8">
           <p className="text-xs font-bold text-white/50 uppercase tracking-[0.3em] font-sans">

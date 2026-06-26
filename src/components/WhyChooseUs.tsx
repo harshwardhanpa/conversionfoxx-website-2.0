@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Target, Zap, Layers, Rocket, ShieldCheck, BarChart3 } from 'lucide-react';
+import { Target, Zap, Layers, Rocket, ShieldCheck, BarChart3, CheckCircle2 } from 'lucide-react';
 import Section from './ui/Section';
 import Container from './ui/Container';
 import { useResponsiveAnimation } from './utils/useResponsiveAnimation';
@@ -18,7 +18,7 @@ const reasons = [
   },
   {
     title: 'Data-Backed Strategy',
-    description: 'No guesswork. We use deep analytics and Growth Audits to drive every decision.',
+    description: 'No guesswork. We use deep analytics to drive every decision.',
     icon: BarChart3,
   },
   {
@@ -63,18 +63,14 @@ const WhyChooseUs: React.FC = () => {
               ConversionFoxx is your growth engineering laboratory. We architect complete revenue systems that scale your business with mathematical precision.
             </p>
             
-            <div className="flex flex-col gap-6 pt-4">
+            <div className="flex flex-col gap-5 pt-4">
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors shrink-0">
-                  <div className="w-6 h-6 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/40" />
-                </div>
-                <div className="text-lg font-black text-brand-text-heading font-display tracking-tight">Predictable Revenue Growth</div>
+                <CheckCircle2 className="w-6 h-6 text-brand-primary shrink-0" />
+                <div className="text-lg font-bold text-brand-text-heading font-display tracking-tight">Predictable Revenue Growth</div>
               </div>
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors shrink-0">
-                  <div className="w-6 h-6 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/40" />
-                </div>
-                <div className="text-lg font-black text-brand-text-heading font-display tracking-tight">Full Revenue Visibility</div>
+                <CheckCircle2 className="w-6 h-6 text-brand-primary shrink-0" />
+                <div className="text-lg font-bold text-brand-text-heading font-display tracking-tight">Full Revenue Visibility</div>
               </div>
             </div>
           </motion.div>

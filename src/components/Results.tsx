@@ -23,7 +23,7 @@ const results = [
   {
     metric: '28%',
     label: 'Gross Yield Lift',
-    description: 'Immediate performance improvements in your core funnel through our proprietary Growth Audit methodology.',
+    description: 'Immediate performance improvements in your core funnel through our proprietary optimization methodology.',
     icon: Rocket,
     color: 'from-brand-primary/20 to-brand-primary/10',
   },

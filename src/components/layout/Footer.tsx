@@ -96,7 +96,6 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-display font-bold text-white uppercase tracking-widest">Services</h3>
             <ul className="flex flex-col gap-4">
               {[
-                { name: 'Growth Audit', href: '/services/growth-audit' },
                 { name: 'Lead Generation', href: '/services/lead-generation' },
                 { name: 'Conversion Optimization', href: '/services/conversion-optimization' },
                 { name: 'Revenue Operations System', href: '/services/revenue-operations-system' }
